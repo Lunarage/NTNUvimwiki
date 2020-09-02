@@ -1,0 +1,65 @@
+= Contents =
+    - [[#Multimedia Networking|Multimedia Networking]]
+        - [[#Multimedia Networking#Multimedia Networking Applications|Multimedia Networking Applications]]
+        - [[#Multimedia Networking#Streaming Stored Video|Streaming Stored Video]]
+        - [[#Multimedia Networking#Voice-Over-IP|Voice-Over-IP]]
+            - [[#Multimedia Networking#Voice-Over-IP#Recovering from Packet Loss|Recovering from Packet Loss]]
+                - [[#Multimedia Networking#Voice-Over-IP#Recovering from Packet Loss#Forward Error Correction (FEC)|Forward Error Correction (FEC)]]
+                - [[#Multimedia Networking#Voice-Over-IP#Recovering from Packet Loss#Interleaving|Interleaving]]
+        - [[#Multimedia Networking#Protocols for Real-Time Conversational Applications|Protocols for Real-Time Conversational Applications]]
+            - [[#Multimedia Networking#Protocols for Real-Time Conversational Applications#RTP (Real-Time Transport Protocol)|RTP (Real-Time Transport Protocol)]]
+                - [[#Multimedia Networking#Protocols for Real-Time Conversational Applications#RTP (Real-Time Transport Protocol)#RTP Packet Header Fields|RTP Packet Header Fields]]
+                    - [[#Multimedia Networking#Protocols for Real-Time Conversational Applications#RTP (Real-Time Transport Protocol)#RTP Packet Header Fields#Payload type|Payload type]]
+                    - [[#Multimedia Networking#Protocols for Real-Time Conversational Applications#RTP (Real-Time Transport Protocol)#RTP Packet Header Fields#Sequence number|Sequence number]]
+                    - [[#Multimedia Networking#Protocols for Real-Time Conversational Applications#RTP (Real-Time Transport Protocol)#RTP Packet Header Fields#Timestamp|Timestamp]]
+                    - [[#Multimedia Networking#Protocols for Real-Time Conversational Applications#RTP (Real-Time Transport Protocol)#RTP Packet Header Fields#Synchronization source identifier (SSRC)|Synchronization source identifier (SSRC)]]
+
+= Multimedia Networking =
+
+== Multimedia Networking Applications ==
+
+== Streaming Stored Video ==
+
+== Voice-Over-IP ==
+VoIP
+
+=== Recovering from Packet Loss ===
+
+==== Forward Error Correction (FEC) ====
+The basic idea of FEC is to include redundant information to the original packet stream.
+
+==== Interleaving ====
+Shuffle.
+Does not increase overhead.
+Increases latency.
+
+==== Error Concealment ====
+Nothing is really wrong, i swear. Listen to the audio, it works.
+
+
+== Protocols for Real-Time Conversational Applications ==
+
+=== RTP (Real-Time Transport Protocol) ===
+RTP typically runs on top of UDP.
+
+==== RTP Packet Header Fields ====
+
+| Payload type | Sequence number | Timestamp | Synchronization source identifier | Miscellaneous fields |
+
+===== Payload type =====
+* 7 bits
+* What encoding is used
+* Sender can change encoding on the fly
+
+===== Sequence number =====
+* 16 bit
+* Increments by one for each packet sent
+
+===== Timestamp =====
+* 32 bits
+* Can be used to reduce jitter
+
+===== Synchronization source identifier (SSRC) =====
+* 32 bits
+* Identifies the source of the stream
+* Randomly chosen by the sender

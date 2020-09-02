@@ -1,0 +1,463 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="Stylesheet" type="text/css" href="../style.css" />
+        <title>Intro</title>
+        <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    </head>
+    <body>
+        <div class="content">
+        
+<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<ul>
+<li>
+<a href="Intro.html#Intro">Intro</a>
+
+<ul>
+<li>
+<a href="Intro.html#Intro-What is the Internet?">What is the Internet?</a>
+
+<li>
+<a href="Intro.html#Intro-The Network Edge">The Network Edge</a>
+
+<ul>
+<li>
+<a href="Intro.html#Intro-The Network Edge-Physical Medium">Physical Medium</a>
+
+</ul>
+<li>
+<a href="Intro.html#Intro-The Network Core">The Network Core</a>
+
+<ul>
+<li>
+<a href="Intro.html#Intro-The Network Core-Packet Switching">Packet Switching</a>
+
+<li>
+<a href="Intro.html#Intro-The Network Core-Circuit Switching">Circuit Switching</a>
+
+<ul>
+<li>
+<a href="Intro.html#Intro-The Network Core-Circuit Switching-Multiplexing in Circuit-Switching Networks">Multiplexing in Circuit-Switching Networks</a>
+
+</ul>
+</ul>
+<li>
+<a href="Intro.html#Intro-Delay, Loss, and Throughput in Packet-Switched Networks">Delay, Loss, and Throughput in Packet-Switched Networks</a>
+
+<li>
+<a href="Intro.html#Intro-Protocol Layers and Their Service Models">Protocol Layers and Their Service Models</a>
+
+<ul>
+<li>
+<a href="Intro.html#Intro-Protocol Layers and Their Service Models-Encapsulation">Encapsulation</a>
+
+</ul>
+<li>
+<a href="Intro.html#Intro-Networks Under Attack">Networks Under Attack</a>
+
+<li>
+<a href="Intro.html#Intro-History of Computer Networking and the Internet">History of Computer Networking and the Internet</a>
+
+</ul>
+</ul>
+
+<div id="Intro"><h1 id="Intro" class="header"><a href="#Intro">Intro</a></h1></div>
+<div id="Intro-What is the Internet?"><h2 id="What is the Internet?" class="header"><a href="#Intro-What is the Internet?">What is the Internet?</a></h2></div>
+<blockquote>
+Ten movies streaming across that, that Internet, and what happens to your own personal Internet? I just the other day got... an Internet was sent by my staff at 10 o'clock in the morning on Friday. I got it yesterday [Tuesday]. Why? Because it got tangled up with all these things going on the Internet commercially. [...] They want to deliver vast amounts of information over the Internet. And again, the Internet is not something that you just dump something on. It's not a big truck. <em>It's a series of tubes.</em> And if you don't understand, those tubes can be filled and if they are filled, when you put your message in, it gets in line and it's going to be delayed by anyone that puts into that tube enormous amounts of material, enormous amounts of material.
+</blockquote>
+<p>
+-Ted Stevens<br />
+</p>
+<blockquote>
+Information is moving—you know, nightly news is one way, of course, but it's also moving through the blogosphere and through the Internets.
+</blockquote>
+<p>
+-George W. Bush<br />
+</p>
+<div id="Intro-The Network Edge"><h2 id="The Network Edge" class="header"><a href="#Intro-The Network Edge">The Network Edge</a></h2></div>
+<div id="Intro-The Network Edge-Physical Medium"><h3 id="Physical Medium" class="header"><a href="#Intro-The Network Edge-Physical Medium">Physical Medium</a></h3></div>
+<p>
+Two categories:<br />
+</p>
+<ul>
+<li>
+Guided media
+
+<ul>
+<li>
+Solid
+
+<li>
+Cables
+
+</ul>
+<li>
+Unguided media
+
+<ul>
+<li>
+Air, Space
+
+<li>
+Wireless
+
+</ul>
+</ul>
+
+
+<ul>
+<li>
+Twisted-Pair Copper Wire
+
+<ul>
+<li>
+10 Mbps to 10 Gbps
+<table>
+<tr>
+<th>
+Industry abbreviations
+</th>
+<th>
+ISO/IEC 11801
+</th>
+<th>
+Cable shielding
+</th>
+<th>
+Pair shielding
+</th>
+</tr>
+<tr>
+<td>
+UTP, TP
+</td>
+<td>
+U/UTP
+</td>
+<td>
+None
+</td>
+<td>
+None
+</td>
+</tr>
+<tr>
+<td>
+STP, ScTP, PiMF
+</td>
+<td>
+U/FTP
+</td>
+<td>
+None
+</td>
+<td>
+Foil
+</td>
+</tr>
+<tr>
+<td>
+FTP, STP, ScTP
+</td>
+<td>
+F/UTP
+</td>
+<td>
+Foil
+</td>
+<td>
+None
+</td>
+</tr>
+<tr>
+<td>
+STP, ScTP
+</td>
+<td>
+S/UTP
+</td>
+<td>
+Braiding
+</td>
+<td>
+None
+</td>
+</tr>
+<tr>
+<td>
+SFTP, S-FTP, STP
+</td>
+<td>
+SF/UTP
+</td>
+<td>
+Braiding and Foil
+</td>
+<td>
+None
+</td>
+</tr>
+<tr>
+<td>
+FFTP, STP
+</td>
+<td>
+F/FTP
+</td>
+<td>
+Foil
+</td>
+<td>
+Foil
+</td>
+</tr>
+<tr>
+<td>
+SSTP, SFTP, STP, STP PiMF
+</td>
+<td>
+S/FTP
+</td>
+<td>
+Braiding
+</td>
+<td>
+Foil
+</td>
+</tr>
+<tr>
+<td>
+SSTP, SFT, STP
+</td>
+<td>
+SF/FTP
+</td>
+<td>
+Braiding and Foil
+</td>
+<td>
+Foil
+</td>
+</tr>
+</table>
+
+</ul>
+</ul>
+
+<ul>
+<li>
+Coaxial Cable
+
+<ul>
+<li>
+Two concentric copper conductors
+
+<li>
+Can be used as a guided <span id="Intro-The Network Edge-Physical Medium-shared medium"></span><strong id="shared medium">shared medium</strong>
+
+</ul>
+<li>
+Fiber Optics
+
+<ul>
+<li>
+Tens to hundreds of Gbps
+
+<li>
+Immune to electromagnetic interference
+
+<li>
+Optical devices (transmitters, receivers, switches) are expensive
+
+</ul>
+<li>
+Terrestrial Radio Channels
+
+<ul>
+<li>
+Broadly classified in three groups
+
+<ul>
+<li>
+Very short distance: Meters
+
+<ul>
+<li>
+Bluetooth
+
+</ul>
+<li>
+Local area: Tens to Hundreds Meters
+
+<ul>
+<li>
+WiFi
+
+</ul>
+<li>
+Wide area: Kilometers
+
+<ul>
+<li>
+Cellular Technology
+
+</ul>
+</ul>
+</ul>
+<li>
+Satellite Radio Channels
+
+<ul>
+<li>
+Microwaves
+
+<li>
+Ground Stations
+
+<li>
+Satellites as repeaters
+
+<ul>
+<li>
+Low Earth Orbiting (LEO) Satellites
+
+<ul>
+<li>
+Orbit at ~2000 km
+
+<li>
+ISS (~400 km), Hubble Space Telescope (~540 km)
+
+</ul>
+<li>
+Geostationary Satellites
+
+<ul>
+<li>
+Orbit at 36000 km
+
+<li>
+Propagation Delay: 280 ms
+
+</ul>
+</ul>
+</ul>
+</ul>
+
+<div id="Intro-The Network Core"><h2 id="The Network Core" class="header"><a href="#Intro-The Network Core">The Network Core</a></h2></div>
+<div id="Intro-The Network Core-Packet Switching"><h3 id="Packet Switching" class="header"><a href="#Intro-The Network Core-Packet Switching">Packet Switching</a></h3></div>
+<p>
+Packet Length: <em>L</em> bits<br />
+Transmission Rate: <em>R</em> bps<br />
+</p>
+
+<p>
+Store-and-forward transmission:<br />
+</p>
+<ul>
+<li>
+Packet switch must receive a packet in its entirety before transmitting.
+
+</ul>
+
+<p>
+Sending a packet of length <em>L</em> bits through <em>N</em> packet switches over links with transmission rate <em>R</em> bps, assuming no propagation delay.<br />
+End-to-end delay:<br />
+</p>
+\[
+    d_{end-to-end} = N\frac{L}{N}
+\]
+
+<p>
+For each attached link to the packet switch:<br />
+</p>
+<ul>
+<li>
+Output buffer (aka output queue)
+
+<ul>
+<li>
+Queuing delay dependent on the congestion on the link
+
+<li>
+If full, incoming packet or a packet in buffer is dropped and packet loss has occurred
+
+</ul>
+</ul>
+
+
+<div id="Intro-The Network Core-Circuit Switching"><h3 id="Circuit Switching" class="header"><a href="#Intro-The Network Core-Circuit Switching">Circuit Switching</a></h3></div>
+<div id="Intro-The Network Core-Circuit Switching-Multiplexing in Circuit-Switching Networks"><h4 id="Multiplexing in Circuit-Switching Networks" class="header"><a href="#Intro-The Network Core-Circuit Switching-Multiplexing in Circuit-Switching Networks">Multiplexing in Circuit-Switching Networks</a></h4></div>
+<p>
+A circuit link is implemented with either:<br />
+</p>
+<ul>
+<li>
+Frequency-division multiplexing (FDM)
+
+<li>
+Time-division multiplexing (TDM)
+
+</ul>
+
+<div id="Intro-Delay, Loss, and Throughput in Packet-Switched Networks"><h2 id="Delay, Loss, and Throughput in Packet-Switched Networks" class="header"><a href="#Intro-Delay, Loss, and Throughput in Packet-Switched Networks">Delay, Loss, and Throughput in Packet-Switched Networks</a></h2></div>
+<p>
+<span id="Intro-Delay, Loss, and Throughput in Packet-Switched Networks-Total nodal delay"></span><strong id="Total nodal delay">Total nodal delay</strong> (\(d_{nodal}\)) is the sum of:<br />
+</p>
+<ul>
+<li>
+<span id="Intro-Delay, Loss, and Throughput in Packet-Switched Networks-Nodal processing delay"></span><strong id="Nodal processing delay">Nodal processing delay</strong> (\(d_{proc}\))
+
+<ul>
+<li>
+Routing, error detection etc.
+
+</ul>
+<li>
+<span id="Intro-Delay, Loss, and Throughput in Packet-Switched Networks-Queuing delay"></span><strong id="Queuing delay">Queuing delay</strong> (\(d_{queue}\))
+
+<ul>
+<li>
+Depends on congestion
+
+</ul>
+<li>
+<span id="Intro-Delay, Loss, and Throughput in Packet-Switched Networks-Transmission delay"></span><strong id="Transmission delay">Transmission delay</strong> (\(d_{trans}\))
+
+<ul>
+<li>
+\( d_{trans} = L/R \) where <em>R</em> is transmission rate and <em>L</em> is the length of the packet
+
+</ul>
+<li>
+<span id="Intro-Delay, Loss, and Throughput in Packet-Switched Networks-Propagation delay"></span><strong id="Propagation delay">Propagation delay</strong> (\(d_{prop}\))
+
+<ul>
+<li>
+Propagation speed <em>s</em> is typically \( 2\cdot10^8 \)to \( 3\cdot10^8 \)
+
+<li>
+\( d_{prop} = d/s \) where <em>d</em> is the length of the link
+
+</ul>
+</ul>
+
+<div id="Intro-Protocol Layers and Their Service Models"><h2 id="Protocol Layers and Their Service Models" class="header"><a href="#Intro-Protocol Layers and Their Service Models">Protocol Layers and Their Service Models</a></h2></div>
+
+<div id="Intro-Protocol Layers and Their Service Models-Encapsulation"><h3 id="Encapsulation" class="header"><a href="#Intro-Protocol Layers and Their Service Models-Encapsulation">Encapsulation</a></h3></div>
+<p>
+Packets within payloads.<br />
+</p>
+
+<div id="Intro-Networks Under Attack"><h2 id="Networks Under Attack" class="header"><a href="#Intro-Networks Under Attack">Networks Under Attack</a></h2></div>
+
+<div id="Intro-History of Computer Networking and the Internet"><h2 id="History of Computer Networking and the Internet" class="header"><a href="#Intro-History of Computer Networking and the Internet">History of Computer Networking and the Internet</a></h2></div>
+
+        </div>
+        <p><small>Page created on 2020-09-02</small></p>
+    </body>
+</html>

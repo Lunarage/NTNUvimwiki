@@ -1,0 +1,118 @@
+= Contents =
+    - [[#Intro|Intro]]
+        - [[#Intro#What is the Internet?|What is the Internet?]]
+        - [[#Intro#The Network Edge|The Network Edge]]
+            - [[#Intro#The Network Edge#Physical Medium|Physical Medium]]
+        - [[#Intro#The Network Core|The Network Core]]
+            - [[#Intro#The Network Core#Packet Switching|Packet Switching]]
+            - [[#Intro#The Network Core#Circuit Switching|Circuit Switching]]
+                - [[#Intro#The Network Core#Circuit Switching#Multiplexing in Circuit-Switching Networks|Multiplexing in Circuit-Switching Networks]]
+        - [[#Intro#Delay, Loss, and Throughput in Packet-Switched Networks|Delay, Loss, and Throughput in Packet-Switched Networks]]
+        - [[#Intro#Protocol Layers and Their Service Models|Protocol Layers and Their Service Models]]
+            - [[#Intro#Protocol Layers and Their Service Models#Encapsulation|Encapsulation]]
+        - [[#Intro#Networks Under Attack|Networks Under Attack]]
+        - [[#Intro#History of Computer Networking and the Internet|History of Computer Networking and the Internet]]
+
+= Intro =
+== What is the Internet? ==
+    Ten movies streaming across that, that Internet, and what happens to your own personal Internet? I just the other day got... an Internet was sent by my staff at 10 o'clock in the morning on Friday. I got it yesterday [Tuesday]. Why? Because it got tangled up with all these things going on the Internet commercially. [...] They want to deliver vast amounts of information over the Internet. And again, the Internet is not something that you just dump something on. It's not a big truck. _It's a series of tubes._ And if you don't understand, those tubes can be filled and if they are filled, when you put your message in, it gets in line and it's going to be delayed by anyone that puts into that tube enormous amounts of material, enormous amounts of material.
+-Ted Stevens
+
+    Information is moving—you know, nightly news is one way, of course, but it's also moving through the blogosphere and through the Internets.
+-George W. Bush
+== The Network Edge ==
+=== Physical Medium ===
+Two categories:
+* Guided media
+    - Solid
+    - Cables
+* Unguided media
+    - Air, Space
+    - Wireless
+
+
+* Twisted-Pair Copper Wire
+    - 10 Mbps to 10 Gbps
+| Industry abbreviations    | ISO/IEC 11801 | Cable shielding   | Pair shielding |
+|---------------------------|---------------|-------------------|----------------|
+| UTP, TP                   | U/UTP         | None              | None           |
+| STP, ScTP, PiMF           | U/FTP         | None              | Foil           |
+| FTP, STP, ScTP            | F/UTP         | Foil              | None           |
+| STP, ScTP                 | S/UTP         | Braiding          | None           |
+| SFTP, S-FTP, STP          | SF/UTP        | Braiding and Foil | None           |
+| FFTP, STP                 | F/FTP         | Foil              | Foil           |
+| SSTP, SFTP, STP, STP PiMF | S/FTP         | Braiding          | Foil           |
+| SSTP, SFT, STP            | SF/FTP        | Braiding and Foil | Foil           |
+
+* Coaxial Cable
+    - Two concentric copper conductors
+    - Can be used as a guided *shared medium*
+* Fiber Optics
+    - Tens to hundreds of Gbps
+    - Immune to electromagnetic interference
+    - Optical devices (transmitters, receivers, switches) are expensive
+* Terrestrial Radio Channels
+    - Broadly classified in three groups
+        * Very short distance: Meters
+            - Bluetooth
+        * Local area: Tens to Hundreds Meters
+            - WiFi
+        * Wide area: Kilometers
+            - Cellular Technology
+* Satellite Radio Channels
+    - Microwaves
+    - Ground Stations
+    - Satellites as repeaters
+        * Low Earth Orbiting (LEO) Satellites
+            - Orbit at ~2000 km
+            - ISS (~400 km), Hubble Space Telescope (~540 km)
+        * Geostationary Satellites
+            - Orbit at 36000 km
+            - Propagation Delay: 280 ms
+
+== The Network Core ==
+=== Packet Switching ===
+Packet Length: _L_ bits
+Transmission Rate: _R_ bps
+
+Store-and-forward transmission:
+* Packet switch must receive a packet in its entirety before transmitting.
+
+Sending a packet of length _L_ bits through _N_ packet switches over links with transmission rate _R_ bps, assuming no propagation delay.
+End-to-end delay:
+{{$
+    d_{end-to-end} = N\frac{L}{N}
+}}$
+
+For each attached link to the packet switch:
+* Output buffer (aka output queue)
+    - Queuing delay dependent on the congestion on the link
+    - If full, incoming packet or a packet in buffer is dropped and packet loss has occurred
+
+
+=== Circuit Switching ===
+==== Multiplexing in Circuit-Switching Networks ====
+A circuit link is implemented with either:
+* Frequency-division multiplexing (FDM)
+* Time-division multiplexing (TDM)
+
+== Delay, Loss, and Throughput in Packet-Switched Networks ==
+*Total nodal delay* ($d_{nodal}$) is the sum of:
+* *Nodal processing delay* ($d_{proc}$)
+    - Routing, error detection etc.
+* *Queuing delay* ($d_{queue}$)
+    - Depends on congestion
+* *Transmission delay* ($d_{trans}$)
+    - $ d_{trans} = L/R $ where _R_ is transmission rate and _L_ is the length of the packet
+* *Propagation delay* ($d_{prop}$)
+    - Propagation speed _s_ is typically $ 2\cdot10^8 $to $ 3\cdot10^8 $
+    - $ d_{prop} = d/s $ where _d_ is the length of the link
+
+== Protocol Layers and Their Service Models ==
+
+=== Encapsulation ===
+Packets within payloads.
+
+== Networks Under Attack ==
+
+== History of Computer Networking and the Internet ==

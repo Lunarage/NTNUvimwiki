@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="Stylesheet" type="text/css" href="../style.css" />
+        <title>Forelesning 2020-03-19</title>
+        <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    </head>
+    <body>
+        <div class="content">
+        
+<div id="Link layer"><h1 id="Link layer" class="header"><a href="#Link layer">Link layer</a></h1></div>
+<div id="Link layer-MAC address"><h2 id="MAC address" class="header"><a href="#Link layer-MAC address">MAC address</a></h2></div>
+<ul>
+<li>
+48-bit
+
+<li>
+HEX-notasjon (XX:XX:XX:XX:XX:XX)
+
+</ul>
+
+<div id="Link layer-ARP"><h2 id="ARP" class="header"><a href="#Link layer-ARP">ARP</a></h2></div>
+<ul>
+<li>
+Mapping MAC &lt;-&gt; IP
+
+<li>
+ARP-tabell caches hos hver klient
+
+<li>
+Who has &lt;ip&gt;? Tell &lt;ip&gt;
+
+</ul>
+
+<div id="Link layer-Ethernet"><h2 id="Ethernet" class="header"><a href="#Link layer-Ethernet">Ethernet</a></h2></div>
+<ul>
+<li>
+Connectionless (No handshaking)
+
+<li>
+Unreliable
+
+</ul>
+
+<div id="Link layer-Ethernet-Frame structure"><h3 id="Frame structure" class="header"><a href="#Link layer-Ethernet-Frame structure">Frame structure</a></h3></div>
+<ul>
+<li>
+Preamble (8 bytes used to synchronize clock)
+
+<li>
+Destination address (6 bytes)
+
+<li>
+Source address (6 bytes)
+
+<li>
+Type (2 bytes, typisk IP)
+
+<li>
+Payload (46-1500 bytes)
+
+<li>
+CRC (4 bytes error detection, drops on error)
+
+</ul>
+
+<div id="Link layer-Ethernet-Switches"><h3 id="Switches" class="header"><a href="#Link layer-Ethernet-Switches">Switches</a></h3></div>
+<ul>
+<li>
+Store and forward Ethernet frames
+
+<li>
+Examine incoming frame's MAC address (intelligent forwarding)
+
+<li>
+Transparent (hosts are unaware of presence of switches)
+
+<li>
+Self-learning
+
+</ul>
+
+<div id="Wireless and mobile networks"><h1 id="Wireless and mobile networks" class="header"><a href="#Wireless and mobile networks">Wireless and mobile networks</a></h1></div>
+<ul>
+<li>
+WiFi
+
+<li>
+Point-to-point microwave
+
+<li>
+Wide-area
+
+<li>
+Satellite
+
+</ul>
+
+        </div>
+        <p><small>Page created on 2020-09-02</small></p>
+    </body>
+</html>

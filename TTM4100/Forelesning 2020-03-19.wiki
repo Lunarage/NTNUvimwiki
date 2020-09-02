@@ -1,0 +1,33 @@
+= Link layer =
+== MAC address ==
+* 48-bit
+* HEX-notasjon (XX:XX:XX:XX:XX:XX)
+
+== ARP ==
+* Mapping MAC <-> IP
+* ARP-tabell caches hos hver klient
+* Who has <ip>? Tell <ip>
+
+== Ethernet ==
+* Connectionless (No handshaking)
+* Unreliable
+
+=== Frame structure ===
+* Preamble (8 bytes used to synchronize clock)
+* Destination address (6 bytes)
+* Source address (6 bytes)
+* Type (2 bytes, typisk IP)
+* Payload (46-1500 bytes)
+* CRC (4 bytes error detection, drops on error)
+
+=== Switches ===
+* Store and forward Ethernet frames
+* Examine incoming frame's MAC address (intelligent forwarding)
+* Transparent (hosts are unaware of presence of switches)
+* Self-learning
+
+= Wireless and mobile networks =
+* WiFi
+* Point-to-point microwave
+* Wide-area
+* Satellite

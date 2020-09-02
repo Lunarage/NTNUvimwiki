@@ -1,0 +1,344 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="Stylesheet" type="text/css" href="../style.css" />
+        <title>Application Layer</title>
+        <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    </head>
+    <body>
+        <div class="content">
+        
+<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<ul>
+<li>
+<a href="Application Layer.html#The Application Layer">The Application Layer</a>
+
+<ul>
+<li>
+<a href="Application Layer.html#The Application Layer-Principles of Network Applications">Principles of Network Applications</a>
+
+<li>
+<a href="Application Layer.html#The Application Layer-The Web and HTTP">The Web and HTTP</a>
+
+<li>
+<a href="Application Layer.html#The Application Layer-Electronic Mail in the Internet">Electronic Mail in the Internet</a>
+
+<li>
+<a href="Application Layer.html#The Application Layer-DNS The Internet's Directory Service">DNS The Internet's Directory Service</a>
+
+<ul>
+<li>
+<a href="Application Layer.html#The Application Layer-DNS The Internet's Directory Service-Services Provided by DNS">Services Provided by DNS</a>
+
+<li>
+<a href="Application Layer.html#The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works">Overview of How DNS Works</a>
+
+<ul>
+<li>
+<a href="Application Layer.html#The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works-A Distributed, Hierarchical Database">A Distributed, Hierarchical Database</a>
+
+<li>
+<a href="Application Layer.html#The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works-DNS Caching">DNS Caching</a>
+
+</ul>
+<li>
+<a href="Application Layer.html#The Application Layer-DNS The Internet's Directory Service-DNS Records and Messages">DNS Records and Messages</a>
+
+<ul>
+<li>
+<a href="Application Layer.html#The Application Layer-DNS The Internet's Directory Service-DNS Records and Messages-DNS Messages">DNS Messages</a>
+
+</ul>
+</ul>
+<li>
+<a href="Application Layer.html#The Application Layer-Video Streaming and Content Distribution Networks">Video Streaming and Content Distribution Networks</a>
+
+<li>
+<a href="Application Layer.html#The Application Layer-Socket Programming: Creating Network Applications">Socket Programming: Creating Network Applications</a>
+
+</ul>
+</ul>
+
+<div id="The Application Layer"><h1 id="The Application Layer" class="header"><a href="#The Application Layer">The Application Layer</a></h1></div>
+
+<div id="The Application Layer-Principles of Network Applications"><h2 id="Principles of Network Applications" class="header"><a href="#The Application Layer-Principles of Network Applications">Principles of Network Applications</a></h2></div>
+
+<div id="The Application Layer-The Web and HTTP"><h2 id="The Web and HTTP" class="header"><a href="#The Application Layer-The Web and HTTP">The Web and HTTP</a></h2></div>
+
+<div id="The Application Layer-Electronic Mail in the Internet"><h2 id="Electronic Mail in the Internet" class="header"><a href="#The Application Layer-Electronic Mail in the Internet">Electronic Mail in the Internet</a></h2></div>
+
+<div id="The Application Layer-DNS The Internet's Directory Service"><h2 id="DNS The Internet's Directory Service" class="header"><a href="#The Application Layer-DNS The Internet's Directory Service">DNS The Internet's Directory Service</a></h2></div>
+<p>
+<span id="The Application Layer-DNS The Internet's Directory Service-Hostname"></span><strong id="Hostname">Hostname</strong><br />
+</p>
+
+<div id="The Application Layer-DNS The Internet's Directory Service-Services Provided by DNS"><h3 id="Services Provided by DNS" class="header"><a href="#The Application Layer-DNS The Internet's Directory Service-Services Provided by DNS">Services Provided by DNS</a></h3></div>
+<p>
+The Internet's <span id="The Application Layer-DNS The Internet's Directory Service-Services Provided by DNS-Domain name system (DNS)"></span><strong id="Domain name system (DNS)">Domain name system (DNS)</strong> is:<br />
+</p>
+<ul>
+<li>
+A distributed database
+
+<li>
+An application-layer protocol that allows hosts to query said database.
+
+</ul>
+
+<p>
+Primary function: Translate hostnames to IP addresses.<br />
+<span id="The Application Layer-DNS The Internet's Directory Service-Services Provided by DNS-DNS Servers"></span><strong id="DNS Servers">DNS Servers</strong> are typically UNIX machines running the Berkeley Internet Name Domain (BIND) software.<br />
+The DNS protocol runs over UDP and uses port 53.<br />
+</p>
+
+<p>
+DNS provides a few other important services:<br />
+</p>
+<ul>
+<li>
+<span id="The Application Layer-DNS The Internet's Directory Service-Services Provided by DNS-Host Aliasing"></span><strong id="Host Aliasing">Host Aliasing</strong>
+
+<ul>
+<li>
+The real name is called the canonical name.
+
+</ul>
+<li>
+<span id="The Application Layer-DNS The Internet's Directory Service-Services Provided by DNS-Mail Server Aliasing"></span><strong id="Mail Server Aliasing">Mail Server Aliasing</strong>
+
+<li>
+<span id="The Application Layer-DNS The Internet's Directory Service-Services Provided by DNS-Load distribution"></span><strong id="Load distribution">Load distribution</strong>
+
+</ul>
+
+<p>
+The DNS is specified in RFC 1034 and RFC 1035, and updated in several additional RFCs.<br />
+</p>
+
+<div id="The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works"><h3 id="Overview of How DNS Works" class="header"><a href="#The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works">Overview of How DNS Works</a></h3></div>
+
+<p>
+Problems with a centralized design include:<br />
+</p>
+<ul>
+<li>
+<span id="The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works-A single point of failure"></span><strong id="A single point of failure">A single point of failure</strong>
+
+<li>
+<span id="The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works-Traffic volume"></span><strong id="Traffic volume">Traffic volume</strong>
+
+<li>
+<span id="The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works-Distant centralized database"></span><strong id="Distant centralized database">Distant centralized database</strong>
+
+<li>
+<span id="The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works-Maintenance"></span><strong id="Maintenance">Maintenance</strong>
+
+</ul>
+
+<p>
+In summary a centralized database simply does not scale.<br />
+</p>
+
+<div id="The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works-A Distributed, Hierarchical Database"><h4 id="A Distributed, Hierarchical Database" class="header"><a href="#The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works-A Distributed, Hierarchical Database">A Distributed, Hierarchical Database</a></h4></div>
+<p>
+No single DNS server has all the mappings for all the hosts in the Internet.<br />
+</p>
+
+<p>
+Approximate Hierarchy:<br />
+</p>
+<ul>
+<li>
+root DNS servers
+
+<ul>
+<li>
+provides the IP addresses of TLD DNS servers
+
+</ul>
+<li>
+top-level domain (TLD) DNS servers
+
+<ul>
+<li>
+For each com, org, net, edu etc. there is a DNS server (or server cluster)
+
+</ul>
+<li>
+authoritative DNS servers
+
+<ul>
+<li>
+Maintained by organizations with hosts
+
+<li>
+Can also be outsourced
+
+</ul>
+</ul>
+
+<p>
+<span id="The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works-A Distributed, Hierarchical Database-Local DNS servers"></span><strong id="Local DNS servers">Local DNS servers</strong> (aka default name servers)<br />
+</p>
+
+<div id="The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works-DNS Caching"><h4 id="DNS Caching" class="header"><a href="#The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works-DNS Caching">DNS Caching</a></h4></div>
+<p>
+It is just what is sounds like.<br />
+Improves delay performance and reduces the number of DNS messages sent through the Internet.<br />
+</p>
+
+<div id="The Application Layer-DNS The Internet's Directory Service-DNS Records and Messages"><h3 id="DNS Records and Messages" class="header"><a href="#The Application Layer-DNS The Internet's Directory Service-DNS Records and Messages">DNS Records and Messages</a></h3></div>
+<p>
+<span id="The Application Layer-DNS The Internet's Directory Service-DNS Records and Messages-Resource records (RRs)"></span><strong id="Resource records (RRs)">Resource records (RRs)</strong>:<br />
+<code>(Name, Value, Type, TTL)</code><br />
+</p>
+
+<p>
+<code>TTL</code>: Time to live. Determines when the record should be removed from cache.<br />
+The meaning of <code>Name</code> and <code>Value</code> depend on <code>Type</code>:<br />
+</p>
+<ul>
+<li>
+If <code>Type=A</code>, then <code>Name</code> is a hostname and <code>Value</code> is the IP address for the hostname.
+
+<li>
+If <code>Type=NS</code>, then <code>Name</code> is a domain and <code>Value</code> is the hostname of an authoritative DNS server that knows how to obtain the IP addresses of hosts in the domain.
+
+<li>
+If <code>Type=CNAME</code>, then <code>Value</code> is a canonical hostname for the alias hostname <code>Name</code>.
+
+<li>
+If <code>Type=MX</code>, then <code>Value</code> is the canonical name of a mail server that has alias hostname <code>Name</code>
+
+</ul>
+
+<div id="The Application Layer-DNS The Internet's Directory Service-DNS Records and Messages-DNS Messages"><h4 id="DNS Messages" class="header"><a href="#The Application Layer-DNS The Internet's Directory Service-DNS Records and Messages-DNS Messages">DNS Messages</a></h4></div>
+<p>
+DNS message format:<br />
+<table>
+<tr>
+<td>
+Identification
+</td>
+<td>
+Flags
+</td>
+<td rowspan="3">
+12 bytes
+</td>
+</tr>
+<tr>
+<td>
+Number of questions
+</td>
+<td>
+Number of answer RRs
+</td>
+</tr>
+<tr>
+<td>
+Number of authority RRs
+</td>
+<td>
+Number of additional RRs
+</td>
+</tr>
+<tr>
+<td colspan="2">
+Questions (Variable number of questions)
+</td>
+<td>
+Name, type fields for a query
+</td>
+</tr>
+<tr>
+<td colspan="2">
+Answers (variable number of RRs)
+</td>
+<td>
+RRs in response to query
+</td>
+</tr>
+<tr>
+<td colspan="2">
+Authority (variable number of RRs
+</td>
+<td>
+Records for authoritative servers
+</td>
+</tr>
+<tr>
+<td colspan="2">
+Additional information (variable number of RRs)
+</td>
+<td>
+Additional "helpful" information that may be used
+</td>
+</tr>
+</table>
+</p>
+
+<ul>
+<li>
+The first 12 bytes is the header section:
+
+<ul>
+<li>
+Identification:
+
+<ul>
+<li>
+16-bit number that identifies the query
+
+<li>
+It is copied into the reply message, allowing the client to match received replies with queries.
+
+</ul>
+<li>
+Flags:
+
+<ul>
+<li>
+1-bit Query(0)/Reply(1)
+
+<li>
+1-bit Authoritative
+
+<li>
+1-bit recursion-desired flag
+
+</ul>
+<li>
+Number-of fields
+
+</ul>
+<li>
+Question Section
+
+<ul>
+<li>
+
+
+</ul>
+<li>
+Answer section
+
+<li>
+Authority section
+
+<li>
+Additional section
+
+</ul>
+
+<div id="The Application Layer-Video Streaming and Content Distribution Networks"><h2 id="Video Streaming and Content Distribution Networks" class="header"><a href="#The Application Layer-Video Streaming and Content Distribution Networks">Video Streaming and Content Distribution Networks</a></h2></div>
+
+<div id="The Application Layer-Socket Programming: Creating Network Applications"><h2 id="Socket Programming: Creating Network Applications" class="header"><a href="#The Application Layer-Socket Programming: Creating Network Applications">Socket Programming: Creating Network Applications</a></h2></div>
+
+        </div>
+        <p><small>Page created on 2020-09-02</small></p>
+    </body>
+</html>

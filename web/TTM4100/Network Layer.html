@@ -1,0 +1,601 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="Stylesheet" type="text/css" href="../style.css" />
+        <title>Network Layer</title>
+        <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    </head>
+    <body>
+        <div class="content">
+        
+<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<ul>
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane">Network Layer I: Data Plane</a>
+
+<ul>
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More">The Internet Protocol (IP): IPv4, Addressing, IPv6 and More</a>
+
+<ul>
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format">IPv4 Datagram Format</a>
+
+<ul>
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Version">Version</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Header Length">Header Length</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Type of Service (TOS)">Type of Service (TOS)</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Datagram Length">Datagram Length</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Identifier, Flags, Fragmentation Offset">Identifier, Flags, Fragmentation Offset</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Time-to-live">Time-to-live</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Protocol">Protocol</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Header Checksum">Header Checksum</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Source and Destination IP Address">Source and Destination IP Address</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Options">Options</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Data">Data</a>
+
+</ul>
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Fragmentation">IPv4 Datagram Fragmentation</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Addressing">IPv4 Addressing</a>
+
+<ul>
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Addressing-DHCP">DHCP</a>
+
+</ul>
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-NAT">NAT</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6">IPv6</a>
+
+<ul>
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format">IPv6 Datagram Format</a>
+
+<ul>
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Version">Version</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Traffic Class">Traffic Class</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Flow Label">Flow Label</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Payload Length">Payload Length</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Next Header">Next Header</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Hop Limit">Hop Limit</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Source and Destination Address">Source and Destination Address</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Data">Data</a>
+
+</ul>
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers">Difference in IPv4 and IPv6 headers</a>
+
+<ul>
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers-Fragmentation">Fragmentation</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers-Header Checksum">Header Checksum</a>
+
+<li>
+<a href="Network Layer.html#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers-Options">Options</a>
+
+</ul>
+</ul>
+</ul>
+</ul>
+<li>
+<a href="Network Layer.html#Network Layer II: Control Plane">Network Layer II: Control Plane</a>
+
+<ul>
+<li>
+<a href="Network Layer.html#Network Layer II: Control Plane-Introduction">Introduction</a>
+
+<li>
+<a href="Network Layer.html#Network Layer II: Control Plane-Routing Algorithms">Routing Algorithms</a>
+
+<li>
+<a href="Network Layer.html#Network Layer II: Control Plane-ICMP: The Internet Control Message Protocol">ICMP: The Internet Control Message Protocol</a>
+
+</ul>
+</ul>
+
+<div id="Network Layer I: Data Plane"><h1 id="Network Layer I: Data Plane" class="header"><a href="#Network Layer I: Data Plane">Network Layer I: Data Plane</a></h1></div>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More"><h2 id="The Internet Protocol (IP): IPv4, Addressing, IPv6 and More" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More">The Internet Protocol (IP): IPv4, Addressing, IPv6 and More</a></h2></div>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format"><h3 id="IPv4 Datagram Format" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format">IPv4 Datagram Format</a></h3></div>
+<table>
+<tr>
+<th colspan="5">
+32 bits
+</th>
+</tr>
+<tr>
+<td>
+Version
+</td>
+<td>
+Header Length
+</td>
+<td>
+Type of Service
+</td>
+<td colspan="2">
+Datagram Length (Bytes)
+</td>
+</tr>
+<tr>
+<td colspan="3">
+16-bit identifier
+</td>
+<td>
+Flags
+</td>
+<td>
+13-bit Fragmentation offset
+</td>
+</tr>
+<tr>
+<td colspan="2">
+Time-to- Live
+</td>
+<td>
+Upper-layer protocol
+</td>
+<td colspan="2">
+Header Checksum
+</td>
+</tr>
+<tr>
+<td colspan="5">
+32-bit Source IP address
+</td>
+</tr>
+<tr>
+<td colspan="5">
+32-bit Destination IP address
+</td>
+</tr>
+<tr>
+<td colspan="5">
+Options (if any)
+</td>
+</tr>
+<tr>
+<td colspan="5">
+Data
+</td>
+</tr>
+</table>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Version"><h4 id="Version" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Version">Version</a></h4></div>
+<ul>
+<li>
+4 bits
+
+<li>
+What version
+
+</ul>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Header Length"><h4 id="Header Length" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Header Length">Header Length</a></h4></div>
+<ul>
+<li>
+4 bits
+
+</ul>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Type of Service (TOS)"><h4 id="Type of Service (TOS)" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Type of Service (TOS)">Type of Service (TOS)</a></h4></div>
+<ul>
+<li>
+8 bits
+
+<li>
+Distinguish between different types of datagrams. e.g. real-time vs ftp
+
+</ul>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Datagram Length"><h4 id="Datagram Length" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Datagram Length">Datagram Length</a></h4></div>
+<ul>
+<li>
+16 bits
+
+<li>
+Total number of bytes
+
+<li>
+Theoretical maximum size: 65535 Bytes
+
+<li>
+Typical size: &gt;1500
+
+<li>
+Must fit the link-layer frame
+
+</ul>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Identifier, Flags, Fragmentation Offset"><h4 id="Identifier, Flags, Fragmentation Offset" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Identifier, Flags, Fragmentation Offset">Identifier, Flags, Fragmentation Offset</a></h4></div>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Time-to-live"><h4 id="Time-to-live" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Time-to-live">Time-to-live</a></h4></div>
+<ul>
+<li>
+8 bits
+
+<li>
+Ensures a datagram does not circulate forever
+
+<li>
+Decreases by 1 for each hop
+
+<li>
+If 0, drop datagram
+
+</ul>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Protocol"><h4 id="Protocol" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Protocol">Protocol</a></h4></div>
+<ul>
+<li>
+8 bits
+
+<li>
+Typically used only at final destination
+
+<li>
+Indicates the specific transport protocol
+
+<li>
+6 = TCP
+
+<li>
+17 = UDP
+
+<li>
+Links Network layer to Transport layer
+
+</ul>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Header Checksum"><h4 id="Header Checksum" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Header Checksum">Header Checksum</a></h4></div>
+<ul>
+<li>
+16 bits
+
+<li>
+Error detection
+
+</ul>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Source and Destination IP Address"><h4 id="Source and Destination IP Address" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Source and Destination IP Address">Source and Destination IP Address</a></h4></div>
+<ul>
+<li>
+32 bits (4.29E+09 possible addresses)
+
+</ul>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Options"><h4 id="Options" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Options">Options</a></h4></div>
+<ul>
+<li>
+Maybe?
+
+</ul>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Data"><h4 id="Data" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Format-Data">Data</a></h4></div>
+<ul>
+<li>
+Payload
+
+<li>
+Can contain a transport layer segment
+
+<li>
+Other uses such as ICMP
+
+</ul>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Fragmentation"><h3 id="IPv4 Datagram Fragmentation" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Fragmentation">IPv4 Datagram Fragmentation</a></h3></div>
+<p>
+<span id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Fragmentation-Maximum Transmission Unit (MTU)"></span><strong id="Maximum Transmission Unit (MTU)">Maximum Transmission Unit (MTU)</strong>:<br />
+</p>
+<ul>
+<li>
+Determined by the biggest frame the link-layer can handle
+
+<li>
+e.g. Ethernet frames can carry up to 1500 bytes
+
+<li>
+Hard limit for the size of an IP datagram
+
+</ul>
+
+<p>
+Routers can fragment a datagram into smaller datagrams (fragments) to fit the size of the link-layer frame.<br />
+Fragments are then reassembled at the destination:<br />
+</p>
+<ul>
+<li>
+Fragments of a datagram share the same Identifier field
+
+<li>
+Fragments have the Flag field set to 1
+
+<li>
+The last fragment has the Flag field set to 0
+
+<li>
+The order of the fragments are determined by the Fragmentation offset field
+
+</ul>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Addressing"><h3 id="IPv4 Addressing" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Addressing">IPv4 Addressing</a></h3></div>
+<p>
+The Internet's address assignment strategy is known as <span id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Addressing-Classless Interdomain Routing (CIDR)"></span><strong id="Classless Interdomain Routing (CIDR)">Classless Interdomain Routing (CIDR)</strong>.<br />
+a.b.c.d/x<br />
+The x most significant bits constitute the network portion of the IP address.<br />
+</p>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Addressing-DHCP"><h4 id="DHCP" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Addressing-DHCP">DHCP</a></h4></div>
+<p>
+<span id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Addressing-DHCP-Dynamic Host Configuration Protocol"></span><strong id="Dynamic Host Configuration Protocol">Dynamic Host Configuration Protocol</strong>:<br />
+Four step process:<br />
+</p>
+<ol>
+<li>
+DHCP server discovery:
+
+<ul>
+<li>
+<span id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Addressing-DHCP-DHCP discover message"></span><strong id="DHCP discover message">DHCP discover message</strong>: 
+
+<ul>
+<li>
+UDP packet to port 67
+
+<li>
+IP Destination 255.255.255.255
+
+<li>
+IP Source: 0.0.0.0
+
+<li>
+MAC Destination: FF-FF-FF-FF-FF-FF (broadcast)
+
+</ul>
+</ul>
+<li>
+DHCP server offer(s):
+
+<ul>
+<li>
+<span id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Addressing-DHCP-DHCP offer message"></span><strong id="DHCP offer message">DHCP offer message</strong>:
+
+<ul>
+<li>
+
+
+</ul>
+</ul>
+<li>
+DHCP request:
+
+<li>
+DHCP ACK:
+
+</ol>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-NAT"><h3 id="NAT" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-NAT">NAT</a></h3></div>
+<p>
+<span id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-NAT-Network Address Translation"></span><strong id="Network Address Translation">Network Address Translation</strong>, or how the network layer fucks with the transport layer.<br />
+</p>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6"><h3 id="IPv6" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6">IPv6</a></h3></div>
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format"><h4 id="IPv6 Datagram Format" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format">IPv6 Datagram Format</a></h4></div>
+
+<p>
+Fixed length 40-byte header<br />
+</p>
+
+<table>
+<tr>
+<th colspan="5">
+32 bits
+</th>
+</tr>
+<tr>
+<td>
+Version
+</td>
+<td>
+Traffic class
+</td>
+<td colspan="3">
+Flow Label
+</td>
+</tr>
+<tr>
+<td colspan="3">
+Payload Length
+</td>
+<td>
+Next header
+</td>
+<td>
+Hop Limit
+</td>
+</tr>
+<tr>
+<td colspan="5">
+Source address
+</td>
+</tr>
+<tr>
+<td colspan="5">
+Destination address
+</td>
+</tr>
+<tr>
+<td colspan="5">
+Data
+</td>
+</tr>
+</table>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Version"><h5 id="Version" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Version">Version</a></h5></div>
+<ul>
+<li>
+4 bits
+
+<li>
+Contains the number 6 for IPv6 (Surprise!)
+
+</ul>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Traffic Class"><h5 id="Traffic Class" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Traffic Class">Traffic Class</a></h5></div>
+<ul>
+<li>
+8 bits
+
+<li>
+Like the TOS in IPv4
+
+</ul>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Flow Label"><h5 id="Flow Label" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Flow Label">Flow Label</a></h5></div>
+<ul>
+<li>
+20 bit
+
+<li>
+Elusive definition
+
+<li>
+Priority?
+
+</ul>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Payload Length"><h5 id="Payload Length" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Payload Length">Payload Length</a></h5></div>
+<ul>
+<li>
+16 bit
+
+<li>
+Unsigned Int
+
+<li>
+Number of bytes of data after header
+
+</ul>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Next Header"><h5 id="Next Header" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Next Header">Next Header</a></h5></div>
+<ul>
+<li>
+8 bits?
+
+<li>
+Like Protocol in IPv4
+
+</ul>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Hop Limit"><h5 id="Hop Limit" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Hop Limit">Hop Limit</a></h5></div>
+<ul>
+<li>
+Like TTL in IPv4
+
+</ul>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Source and Destination Address"><h5 id="Source and Destination Address" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Source and Destination Address">Source and Destination Address</a></h5></div>
+<ul>
+<li>
+128 bit (3.40E+38 possible addresses!)
+
+</ul>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Data"><h5 id="Data" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format-Data">Data</a></h5></div>
+<ul>
+<li>
+Payload
+
+</ul>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers"><h4 id="Difference in IPv4 and IPv6 headers" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers">Difference in IPv4 and IPv6 headers</a></h4></div>
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers-Fragmentation"><h5 id="Fragmentation" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers-Fragmentation">Fragmentation</a></h5></div>
+<p>
+Fragmentation is only allowed at sources and destinations.<br />
+If a datagram is too big the router sends "Packet Too Big" ICMP error message back.<br />
+The source can then send smaller datagrams.<br />
+</p>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers-Header Checksum"><h5 id="Header Checksum" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers-Header Checksum">Header Checksum</a></h5></div>
+<p>
+Link layer and transport layer handles error detection.<br />
+</p>
+
+<div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers-Options"><h5 id="Options" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers-Options">Options</a></h5></div>
+<p>
+Removed as field and moved to next header field.<br />
+</p>
+
+<div id="Network Layer II: Control Plane"><h1 id="Network Layer II: Control Plane" class="header"><a href="#Network Layer II: Control Plane">Network Layer II: Control Plane</a></h1></div>
+
+<div id="Network Layer II: Control Plane-Introduction"><h2 id="Introduction" class="header"><a href="#Network Layer II: Control Plane-Introduction">Introduction</a></h2></div>
+
+<div id="Network Layer II: Control Plane-Routing Algorithms"><h2 id="Routing Algorithms" class="header"><a href="#Network Layer II: Control Plane-Routing Algorithms">Routing Algorithms</a></h2></div>
+
+<div id="Network Layer II: Control Plane-ICMP: The Internet Control Message Protocol"><h2 id="ICMP: The Internet Control Message Protocol" class="header"><a href="#Network Layer II: Control Plane-ICMP: The Internet Control Message Protocol">ICMP: The Internet Control Message Protocol</a></h2></div>
+<p>
+Carried in payload of a IP datagram.<br />
+Error messages<br />
+Other uses:<br />
+</p>
+<ul>
+<li>
+Ping
+
+<li>
+Traceroute
+
+</ul>
+
+        </div>
+        <p><small>Page created on 2020-09-02</small></p>
+    </body>
+</html>

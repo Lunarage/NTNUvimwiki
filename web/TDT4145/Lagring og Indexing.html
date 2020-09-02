@@ -1,0 +1,210 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="Stylesheet" type="text/css" href="../style.css" />
+        <title>Lagring og Indexing</title>
+        <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    </head>
+    <body>
+        <div class="content">
+        
+<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<ul>
+<li>
+<a href="Lagring og Indexing.html#Storage, Indexes and Query Processing">Storage, Indexes and Query Processing</a>
+
+<ul>
+<li>
+<a href="Lagring og Indexing.html#Storage, Indexes and Query Processing-Storage">Storage</a>
+
+<ul>
+<li>
+<a href="Lagring og Indexing.html#Storage, Indexes and Query Processing-Storage-Block Format">Block Format</a>
+
+<li>
+<a href="Lagring og Indexing.html#Storage, Indexes and Query Processing-Storage-Database Buffer">Database Buffer</a>
+
+<li>
+<a href="Lagring og Indexing.html#Storage, Indexes and Query Processing-Storage-Heap Files">Heap Files</a>
+
+<li>
+<a href="Lagring og Indexing.html#Storage, Indexes and Query Processing-Storage-Static hashing">Static hashing</a>
+
+<li>
+<a href="Lagring og Indexing.html#Storage, Indexes and Query Processing-Storage-Extendable hashing">Extendable hashing</a>
+
+</ul>
+<li>
+<a href="Lagring og Indexing.html#Storage, Indexes and Query Processing-Indexes">Indexes</a>
+
+<ul>
+<li>
+<a href="Lagring og Indexing.html#Storage, Indexes and Query Processing-Indexes-Indexing">Indexing</a>
+
+<li>
+<a href="Lagring og Indexing.html#Storage, Indexes and Query Processing-Indexes-B+-tree">B+-tree</a>
+
+</ul>
+<li>
+<a href="Lagring og Indexing.html#Storage, Indexes and Query Processing-Query Processing">Query Processing</a>
+
+<ul>
+<li>
+<a href="Lagring og Indexing.html#Storage, Indexes and Query Processing-Query Processing-Queries and Storage Structures">Queries and Storage Structures</a>
+
+</ul>
+</ul>
+</ul>
+
+<div id="Storage, Indexes and Query Processing"><h1 id="Storage, Indexes and Query Processing" class="header"><a href="#Storage, Indexes and Query Processing">Storage, Indexes and Query Processing</a></h1></div>
+
+<div id="Storage, Indexes and Query Processing-Storage"><h2 id="Storage" class="header"><a href="#Storage, Indexes and Query Processing-Storage">Storage</a></h2></div>
+<div id="Storage, Indexes and Query Processing-Storage-Block Format"><h3 id="Block Format" class="header"><a href="#Storage, Indexes and Query Processing-Storage-Block Format">Block Format</a></h3></div>
+<p>
+A <span id="Storage, Indexes and Query Processing-Storage-Block Format-block"></span><strong id="block">block</strong> is a basic storage unit used by the DBMS to store data in a database.<br />
+The DBMS reads and writes from/to disk in units of blocks.<br />
+</p>
+
+<p>
+A block is identified by a BlockId:<br />
+</p>
+<ul>
+<li>
+DeviceID
+
+<li>
+Index
+
+</ul>
+
+<div id="Storage, Indexes and Query Processing-Storage-Database Buffer"><h3 id="Database Buffer" class="header"><a href="#Storage, Indexes and Query Processing-Storage-Database Buffer">Database Buffer</a></h3></div>
+<p>
+The buffer resides in memory.<br />
+</p>
+
+<p>
+When a block is residing in the database buffer, it is also identified by the BlockId, and there exists a hash index to find the block in the buffer.<br />
+</p>
+
+<div id="Storage, Indexes and Query Processing-Storage-Heap Files"><h3 id="Heap Files" class="header"><a href="#Storage, Indexes and Query Processing-Storage-Heap Files">Heap Files</a></h3></div>
+<p>
+Most basic storage.<br />
+Data is not ordered in any particular way, it is simply stored in the order it is inserted.<br />
+</p>
+
+<p>
+Usually implemented with a liked list scheme.<br />
+</p>
+
+<p>
+Heap files are mainly used to store tables when there is an index to the table, or it may be used to store records in temporary files during query processing.<br />
+</p>
+
+<div id="Storage, Indexes and Query Processing-Storage-Static hashing"><h3 id="Static hashing" class="header"><a href="#Storage, Indexes and Query Processing-Storage-Static hashing">Static hashing</a></h3></div>
+<p>
+The most basic form of hashed storage.<br />
+</p>
+<ul>
+<li>
+A file is composed of <em>N</em> block.
+
+<li>
+Apply a hash function to the search key, this the blockID of the block the record is put in.
+
+<li>
+To retrieve a record, apply hash to search key. This is the blockID where your record is.
+
+</ul>
+
+<p>
+A simple hash function:<br />
+\( h(K) = K \bmod N \)<br />
+Where <em>K</em> is the key and <em>N</em> is the number of blocks in the file.<br />
+</p>
+
+<p>
+If a block becomes full:<br />
+</p>
+<ul>
+<li>
+<em>Open addressing</em>: Store the record in the first successive block having free space.
+
+<li>
+<em>Separate overflow</em>: Special blocks storing overflow records. The overflow blocks may be shared among many blocks, or may be separate for each block needing overflow storage.
+
+<li>
+<em>Multiple hashing</em>: Use another hash function to calculate the block to store the record. This may be considered as <em>distributed overflow</em>.
+
+</ul>
+
+<p>
+Not dynamic. Long overflow chains are bad for performance.<br />
+</p>
+
+<div id="Storage, Indexes and Query Processing-Storage-Extendable hashing"><h3 id="Extendable hashing" class="header"><a href="#Storage, Indexes and Query Processing-Storage-Extendable hashing">Extendable hashing</a></h3></div>
+<p>
+Extendible hashing is designed to allow for dynamic hash files.<br />
+Uses a directory to point into the hash file.<br />
+</p>
+
+<div id="Storage, Indexes and Query Processing-Indexes"><h2 id="Indexes" class="header"><a href="#Storage, Indexes and Query Processing-Indexes">Indexes</a></h2></div>
+
+<div id="Storage, Indexes and Query Processing-Indexes-Indexing"><h3 id="Indexing" class="header"><a href="#Storage, Indexes and Query Processing-Indexes-Indexing">Indexing</a></h3></div>
+<p>
+There are two reasons for doing indexing:<br />
+</p>
+<ol>
+<li>
+Improve retrieval speed when accessing through the indexed field.
+
+<li>
+Ensure uniqueness for the indexed field.
+
+</ol>
+
+<p>
+<span id="Storage, Indexes and Query Processing-Indexes-Indexing-Index field"></span><strong id="Index field">Index field</strong>: Field/attribute of the record/row that is indexed.<br />
+<span id="Storage, Indexes and Query Processing-Indexes-Indexing-Primary index"></span><strong id="Primary index">Primary index</strong>: An index structure which indexes the primary key of the records/rows.<br />
+<span id="Storage, Indexes and Query Processing-Indexes-Indexing-Clustered index"></span><strong id="Clustered index">Clustered index</strong>: Index on table where the records are stored physically in the same order as the index records. In practice this is a B+-tree or hash index where the records of the table are stored within the index itself.<br />
+<span id="Storage, Indexes and Query Processing-Indexes-Indexing-Secondary index"></span><strong id="Secondary index">Secondary index</strong>: An index which is not a primary index. (duh)<br />
+</p>
+
+<div id="Storage, Indexes and Query Processing-Indexes-B+-tree"><h3 id="B+-tree" class="header"><a href="#Storage, Indexes and Query Processing-Indexes-B+-tree">B+-tree</a></h3></div>
+<p>
+Some summarized concepts about B+-trees:<br />
+</p>
+<ul>
+<li>
+The indexed records are stored at the leaf level (level 0). The blocks above the leaf level are merely used to navigate to the leaf level.
+
+<li>
+The records/keys at one level are sorted.
+
+<li>
+The block should at least be 50% filled. On average a block will be 2/3 or 67% filled when inserting keys randomly. Some books operate with 69% (nice) fill degree (ln(2)).
+
+<li>
+The blocks have a size that fits the disk, typically, 4KB, 8KB, 16KB or 32KB.
+
+<li>
+Blocks are disk-oriented and are traditionally read into memory in disk format. However, it is also possible to convert the disk format to e.g. Java objects when reading in a block, and opposite when writing the block.
+
+<li>
+Search is performed from the root to the leaf level.
+
+<li>
+In comparison to LSM trees, B+-trees are regarded to have superior read performance, but LSM trees have superior write performance.
+
+</ul>
+
+
+<div id="Storage, Indexes and Query Processing-Query Processing"><h2 id="Query Processing" class="header"><a href="#Storage, Indexes and Query Processing-Query Processing">Query Processing</a></h2></div>
+<div id="Storage, Indexes and Query Processing-Query Processing-Queries and Storage Structures"><h3 id="Queries and Storage Structures" class="header"><a href="#Storage, Indexes and Query Processing-Query Processing-Queries and Storage Structures">Queries and Storage Structures</a></h3></div>
+
+        </div>
+        <p><small>Page created on 2020-09-02</small></p>
+    </body>
+</html>

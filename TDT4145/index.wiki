@@ -1,0 +1,7 @@
+= TDT4145 Database =
+[[SQL]]
+[[Normaliseringsteori]]
+[[Lagring og Indexing]]
+[[Transaksjoner]]
+
+[[EksamenV2020]]

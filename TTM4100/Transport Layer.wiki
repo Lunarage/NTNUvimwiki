@@ -1,0 +1,227 @@
+= Contents =
+    - [[#The Transport Layer|The Transport Layer]]
+        - [[#The Transport Layer#Introduction and Transport-Layer Services|Introduction and Transport-Layer Services]]
+            - [[#The Transport Layer#Introduction and Transport-Layer Services#Overview of the Transport Layer in the Internet|Overview of the Transport Layer in the Internet]]
+        - [[#The Transport Layer#Multiplexing and Demultiplexing|Multiplexing and Demultiplexing]]
+        - [[#The Transport Layer#Connectionless Transport: UDP|Connectionless Transport: UDP]]
+            - [[#The Transport Layer#Connectionless Transport: UDP#UDP Segment Structure|UDP Segment Structure]]
+        - [[#The Transport Layer#Principles of Reliable Data Transfer|Principles of Reliable Data Transfer]]
+            - [[#The Transport Layer#Principles of Reliable Data Transfer#Building a Reliable Data Transfer Protocol|Building a Reliable Data Transfer Protocol]]
+            - [[#The Transport Layer#Principles of Reliable Data Transfer#Pipelined Reliable Data Transfer Protocols|Pipelined Reliable Data Transfer Protocols]]
+            - [[#The Transport Layer#Principles of Reliable Data Transfer#Go-Back-N|Go-Back-N]]
+            - [[#The Transport Layer#Principles of Reliable Data Transfer#Selective Repeat|Selective Repeat]]
+        - [[#The Transport Layer#Connection-Oriented Transport: TCP|Connection-Oriented Transport: TCP]]
+            - [[#The Transport Layer#Connection-Oriented Transport: TCP#The TCP Connection|The TCP Connection]]
+            - [[#The Transport Layer#Connection-Oriented Transport: TCP#TCP Segment Structure|TCP Segment Structure]]
+                - [[#The Transport Layer#Connection-Oriented Transport: TCP#TCP Segment Structure#Sequence Number and Acknowledgement number|Sequence Number and Acknowledgement number]]
+                - [[#The Transport Layer#Connection-Oriented Transport: TCP#TCP Segment Structure#Receive Window|Receive Window]]
+                - [[#The Transport Layer#Connection-Oriented Transport: TCP#TCP Segment Structure#Header Length|Header Length]]
+                - [[#The Transport Layer#Connection-Oriented Transport: TCP#TCP Segment Structure#Options|Options]]
+                - [[#The Transport Layer#Connection-Oriented Transport: TCP#TCP Segment Structure#Flag Field|Flag Field]]
+            - [[#The Transport Layer#Connection-Oriented Transport: TCP#Flow Control|Flow Control]]
+            - [[#The Transport Layer#Connection-Oriented Transport: TCP#TCP Connection Management|TCP Connection Management]]
+        - [[#The Transport Layer#Principles of Congestion Control|Principles of Congestion Control]]
+        - [[#The Transport Layer#TCP Congestion Control|TCP Congestion Control]]
+
+= The Transport Layer =
+== Introduction and Transport-Layer Services ==
+A transport layer protocol provides logical communication between processes running on different hosts.
+Transport-Layer packets: *Segments*
+
+=== Overview of the Transport Layer in the Internet ===
+* *UDP (User Datagram Protocol)*:
+    * Unreliable
+    * Connectionless
+    * No congestion control
+* *TCP (Transmission Control Protocol)*:
+    * Reliable
+    * Connection-oriented
+    * Provides congestion control
+
+Extending host-to-host delivery to process-to-process delivery is called *transport-layer multiplexing* and *demultiplexing*.
+
+== Multiplexing and Demultiplexing ==
+*Sockets*: Doors through which data passes from the network to the process and vice-versa.
+*Port numbers*:
+* 16-bit (0 - 65535)
+* 0 to 1023 are well known e.g:
+    - 23: FTP
+    - 53: DNS
+    - 80: HTTP
+
+Transport-layer segment:
+| 32 bits                    | >                  |
+|----------------------------|--------------------|
+| Source port #              | Destination port # |
+| Other header fields        | >                  |
+| Application data (message) | >                  |
+
+== Connectionless Transport: UDP ==
+
+=== UDP Segment Structure ===
+UDP segment:
+| 32 bits                    | >                  |
+|----------------------------|--------------------|
+| Source port #              | Destination port # |
+| Length                     | Checksum           |
+| Application data (message) | >                  |
+
+Error detection:
+* 1s complement of the sum of all the 16-bit words in the segment
+* Overflow wrapped around
+* No error recovery
+
+== Principles of Reliable Data Transfer ==
+
+=== Building a Reliable Data Transfer Protocol ===
+
+=== Pipelined Reliable Data Transfer Protocols ===
+
+=== Go-Back-N ===
+
+=== Selective Repeat ===
+
+=== Summary ===
+| Mechanism                | Use, Comments |
+|--------------------------|---------------|
+| Checksum                 |               |
+| Timer                    |               |
+| Sequence Number          |               |
+| Acknowledgement          |               |
+| Negative Acknowledgement |               |
+| Window, pipelining       |               |
+
+== Connection-Oriented Transport: TCP ==
+
+=== The TCP Connection ===
+* Connection-oriented
+    - Handshakes
+* Full-duplex service
+    - Data can flow both ways
+* Point-to-point
+    - Between a single sender and a single receiver
+
+Three-way handshake:
+* → SYN (random sequence number, _A_)
+* ← SYN-ACK (acknowledge number _A_++, random sequence number _B_) 
+* → ACK (sequence number _A_++, acknowledge number _B_++)
+
+=== TCP Segment Structure ===
+TCP segment:
+| 32 bits                | >      | >   | >   | >   | >   | >   | >   | >   | >   | >                   |
+|------------------------|--------|-----|-----|-----|-----|-----|-----|-----|-----|---------------------|
+| Source port #          | >      | >   | >   | >   | >   | >   | >   | >   | >   | Destination port #  |
+| Sequence number        | >      | >   | >   | >   | >   | >   | >   | >   | >   | >                   |
+| Acknowledgement number | >      | >   | >   | >   | >   | >   | >   | >   | >   | >                   |
+| Header Length          | Unused | CWR | ECE | URG | ACK | PSH | RST | SYN | FIN | Receive Window      |
+| Internet checksum      | >      | >   | >   | >   | >   | >   | >   | >   | >   | Urgent data pointer |
+| Options                | >      | >   | >   | >   | >   | >   | >   | >   | >   | >                   |
+| Data                   | >      | >   | >   | >   | >   | >   | >   | >   | >   | >                   |
+
+==== Sequence Number and Acknowledgement number ====
+* 32 bits
+* Used to implement reliable data transfer
+
+==== Receive Window ====
+* 16 bits
+* Used for [[#Flow Control|flow control]]
+
+==== Header Length ====
+* 4 bits
+* Length in 32-bit words
+* Typical TCP header is 20 bytes
+
+==== Options ====
+* Variable length
+* Used to:
+    - Negotiate the maximum segment size (MMS)
+    - Window scaling factor
+    - A time-stamping option is also available ([[https://tools.ietf.org/html/rfc854|RFC 854]] and [[https://tools.ietf.org/html/rfc1323|RFC 1323]])
+
+==== Flag Field ====
+Six bits:
+* CWR and ECE:
+    - Explicit congestion notification
+* URG:
+    - Urgent?
+    - The location of the last byte of this urgent data is indicated by the Urgent data pointer field
+* ACK:
+    - The value in the Acknowledgement field is valid
+* PSH:
+    - Pass the data to the upper layer immediately
+* RST, SYN and FIN:
+    - Used for connection setup and teardown.
+
+=== Flow Control ===
+Flow-control service:
+* Eliminate the possibility of the sender overflowing the receiver's buffer
+
+Sender maintains a variable called *receive window*.
+* Used to give the sender an idea of how much free buffer space is available at the receiver.
+
+Receiver:
+* RcvBuffer: Allocated receive buffer.
+* LastByteRead: Number of the last byte in the data stream read from the buffer.
+* LastByteRcvd: Number of the last byte in the data stream that has arrived and placed in the buffer.
+
+{{{
+    LastByteRcvd - LastByteRead ≤ RcvBuffer
+}}}
+and
+{{{
+    ReceiveWindow = RcvBuffer - (LastByteRcvd - LastByteRead)
+}}}
+
+| RcvBuffer     | >                  |
+| ReceiveWindow |                    |
+|---------------|--------------------|
+| Spare Room    | TCP data in buffer |
+
+Sender:
+* LastByteSent
+* LastByteAcked
+Maintains
+{{{
+    LastByteSent - LastByteAcked ≤ ReceiveWindow
+}}}
+
+=== TCP Connection Management ===
+How to TCP connection really good:
+1. Client sends a segment with:
+    * No data 
+    * SYN = 1
+    * Random sequence number (_A_)
+2. Server allocates TCP buffer and responds with a segment:
+    * with no data
+    * SYN = 1
+    * ACK = 1
+    * Acknowledgement Number = _A_ + 1
+    * Random sequence number (_B_)
+    * "I received your SYN packet to start a connection with your initial sequence number, _A_. I agree to establish this connection. My own initial sequence number is _B_.
+3. Client allocates TCP buffer and sends the server another segment:
+    * Acknowledgement number = _B_ + 1
+    * ACK = 1
+    * SYN = 0
+
+How to close a TCP connection really good:
+1. Client sends a segment with:
+    * FIN = 1
+2. Server responds with a segment:
+    * ACK = 1
+3. Server sends another segment:
+    * FIN = 1
+4. Client responds with a segment:
+    * ACK = 1
+
+*TCP States*:
+{{Tcp_state_diagram.png| Your TCP Sate Diagram here}}
+[[https://commons.wikimedia.org/w/index.php?curid=30810617| By Scil100, CC BY-SA 3.0]]
+
+== Principles of Congestion Control ==
+
+== TCP Congestion Control ==
+For congestion control the sender keeps track of an additional variable, the *congestion window* such that:
+{{{
+LastByteSent - LastByteAcked ≤ min{CongestionWindow, ReceiveWindow}
+}}}
+

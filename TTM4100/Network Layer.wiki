@@ -1,0 +1,207 @@
+= Contents =
+    - [[#Network Layer I: Data Plane|Network Layer I: Data Plane]]
+        - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More|The Internet Protocol (IP): IPv4, Addressing, IPv6 and More]]
+            - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv4 Datagram Format|IPv4 Datagram Format]]
+                - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv4 Datagram Format#Version|Version]]
+                - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv4 Datagram Format#Header Length|Header Length]]
+                - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv4 Datagram Format#Type of Service (TOS)|Type of Service (TOS)]]
+                - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv4 Datagram Format#Datagram Length|Datagram Length]]
+                - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv4 Datagram Format#Identifier, Flags, Fragmentation Offset|Identifier, Flags, Fragmentation Offset]]
+                - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv4 Datagram Format#Time-to-live|Time-to-live]]
+                - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv4 Datagram Format#Protocol|Protocol]]
+                - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv4 Datagram Format#Header Checksum|Header Checksum]]
+                - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv4 Datagram Format#Source and Destination IP Address|Source and Destination IP Address]]
+                - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv4 Datagram Format#Options|Options]]
+                - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv4 Datagram Format#Data|Data]]
+            - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv4 Datagram Fragmentation|IPv4 Datagram Fragmentation]]
+            - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv4 Addressing|IPv4 Addressing]]
+                - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv4 Addressing#DHCP|DHCP]]
+            - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#NAT|NAT]]
+            - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv6|IPv6]]
+                - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv6#IPv6 Datagram Format|IPv6 Datagram Format]]
+                    - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv6#IPv6 Datagram Format#Version|Version]]
+                    - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv6#IPv6 Datagram Format#Traffic Class|Traffic Class]]
+                    - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv6#IPv6 Datagram Format#Flow Label|Flow Label]]
+                    - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv6#IPv6 Datagram Format#Payload Length|Payload Length]]
+                    - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv6#IPv6 Datagram Format#Next Header|Next Header]]
+                    - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv6#IPv6 Datagram Format#Hop Limit|Hop Limit]]
+                    - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv6#IPv6 Datagram Format#Source and Destination Address|Source and Destination Address]]
+                    - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv6#IPv6 Datagram Format#Data|Data]]
+                - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv6#Difference in IPv4 and IPv6 headers|Difference in IPv4 and IPv6 headers]]
+                    - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv6#Difference in IPv4 and IPv6 headers#Fragmentation|Fragmentation]]
+                    - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv6#Difference in IPv4 and IPv6 headers#Header Checksum|Header Checksum]]
+                    - [[#Network Layer I: Data Plane#The Internet Protocol (IP): IPv4, Addressing, IPv6 and More#IPv6#Difference in IPv4 and IPv6 headers#Options|Options]]
+    - [[#Network Layer II: Control Plane|Network Layer II: Control Plane]]
+        - [[#Network Layer II: Control Plane#Introduction|Introduction]]
+        - [[#Network Layer II: Control Plane#Routing Algorithms|Routing Algorithms]]
+        - [[#Network Layer II: Control Plane#ICMP: The Internet Control Message Protocol|ICMP: The Internet Control Message Protocol]]
+
+= Network Layer I: Data Plane =
+
+== The Internet Protocol (IP): IPv4, Addressing, IPv6 and More ==
+
+=== IPv4 Datagram Format ===
+| 32 bits                       | >             | >                    | >                       | >                           |
+|-------------------------------|---------------|----------------------|-------------------------|-----------------------------|
+| Version                       | Header Length | Type of Service      | Datagram Length (Bytes) | >                           |
+| 16-bit identifier             | >             | >                    | Flags                   | 13-bit Fragmentation offset |
+| Time-to- Live                 | >             | Upper-layer protocol | Header Checksum         | >                           |
+| 32-bit Source IP address      | >             | >                    | >                       | >                           |
+| 32-bit Destination IP address | >             | >                    | >                       | >                           |
+| Options (if any)              | >             | >                    | >                       | >                           |
+| Data                          | >             | >                    | >                       | >                           |
+
+==== Version ====
+* 4 bits
+* What version
+
+==== Header Length ====
+* 4 bits
+
+==== Type of Service (TOS) ====
+* 8 bits
+* Distinguish between different types of datagrams. e.g. real-time vs ftp
+
+==== Datagram Length ====
+* 16 bits
+* Total number of bytes
+* Theoretical maximum size: 65535 Bytes
+* Typical size: >1500
+* Must fit the link-layer frame
+
+==== Identifier, Flags, Fragmentation Offset ====
+
+==== Time-to-live ====
+* 8 bits
+* Ensures a datagram does not circulate forever
+* Decreases by 1 for each hop
+* If 0, drop datagram
+
+==== Protocol ====
+* 8 bits
+* Typically used only at final destination
+* Indicates the specific transport protocol
+* 6 = TCP
+* 17 = UDP
+* Links Network layer to Transport layer
+
+==== Header Checksum ====
+* 16 bits
+* Error detection
+
+==== Source and Destination IP Address ====
+* 32 bits (4.29E+09 possible addresses)
+
+==== Options ====
+* Maybe?
+
+==== Data ====
+* Payload
+* Can contain a transport layer segment
+* Other uses such as ICMP
+
+=== IPv4 Datagram Fragmentation ===
+*Maximum Transmission Unit (MTU)*:
+* Determined by the biggest frame the link-layer can handle
+* e.g. Ethernet frames can carry up to 1500 bytes
+* Hard limit for the size of an IP datagram
+
+Routers can fragment a datagram into smaller datagrams (fragments) to fit the size of the link-layer frame.
+Fragments are then reassembled at the destination:
+* Fragments of a datagram share the same Identifier field
+* Fragments have the Flag field set to 1
+* The last fragment has the Flag field set to 0
+* The order of the fragments are determined by the Fragmentation offset field
+
+=== IPv4 Addressing ===
+The Internet's address assignment strategy is known as *Classless Interdomain Routing (CIDR)*.
+a.b.c.d/x
+The x most significant bits constitute the network portion of the IP address.
+
+==== DHCP ====
+*Dynamic Host Configuration Protocol*:
+Four step process:
+1. DHCP server discovery:
+    * *DHCP discover message*: 
+        - UDP packet to port 67
+        - IP Destination 255.255.255.255
+        - IP Source: 0.0.0.0
+        - MAC Destination: FF-FF-FF-FF-FF-FF (broadcast)
+2. DHCP server offer(s):
+    * *DHCP offer message*:
+        - 
+3. DHCP request:
+4. DHCP ACK:
+
+=== NAT ===
+*Network Address Translation*, or how the network layer fucks with the transport layer.
+
+=== IPv6 ===
+==== IPv6 Datagram Format====
+
+Fixed length 40-byte header
+
+| 32 bits             | >             | >          | >           | >         |
+|---------------------|---------------|------------|-------------|-----------|
+| Version             | Traffic class | Flow Label | >           | >         |
+| Payload Length      | >             | >          | Next header | Hop Limit |
+| Source address      | >             | >          | >           | >         |
+| Destination address | >             | >          | >           | >         |
+| Data                | >             | >          | >           | >         |
+
+===== Version =====
+* 4 bits
+* Contains the number 6 for IPv6 (Surprise!)
+
+===== Traffic Class =====
+* 8 bits
+* Like the TOS in IPv4
+
+===== Flow Label =====
+* 20 bit
+* Elusive definition
+* Priority?
+
+===== Payload Length =====
+* 16 bit
+* Unsigned Int
+* Number of bytes of data after header
+
+===== Next Header =====
+* 8 bits?
+* Like Protocol in IPv4
+
+===== Hop Limit =====
+* Like TTL in IPv4
+
+===== Source and Destination Address =====
+* 128 bit (3.40E+38 possible addresses!)
+
+===== Data =====
+* Payload
+
+==== Difference in IPv4 and IPv6 headers ====
+===== Fragmentation =====
+Fragmentation is only allowed at sources and destinations.
+If a datagram is too big the router sends "Packet Too Big" ICMP error message back.
+The source can then send smaller datagrams.
+
+===== Header Checksum =====
+Link layer and transport layer handles error detection.
+
+===== Options =====
+Removed as field and moved to next header field.
+
+= Network Layer II: Control Plane =
+
+== Introduction ==
+
+== Routing Algorithms ==
+
+== ICMP: The Internet Control Message Protocol ==
+Carried in payload of a IP datagram.
+Error messages
+Other uses:
+* Ping
+* Traceroute
+

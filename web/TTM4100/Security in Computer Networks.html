@@ -1,0 +1,188 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="Stylesheet" type="text/css" href="../style.css" />
+        <title>Security in Computer Networks</title>
+        <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    </head>
+    <body>
+        <div class="content">
+        
+<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<ul>
+<li>
+<a href="Security in Computer Networks.html#Security in Computer Networks">Security in Computer Networks</a>
+
+<ul>
+<li>
+<a href="Security in Computer Networks.html#Security in Computer Networks-What Is Network Security">What Is Network Security</a>
+
+<li>
+<a href="Security in Computer Networks.html#Security in Computer Networks-Symmetric Key Cryptography">Symmetric Key Cryptography</a>
+
+<li>
+<a href="Security in Computer Networks.html#Security in Computer Networks-Message Integrity and Digital Signatures">Message Integrity and Digital Signatures</a>
+
+<ul>
+<li>
+<a href="Security in Computer Networks.html#Security in Computer Networks-Message Integrity and Digital Signatures-Cryptographic Hash Functions">Cryptographic Hash Functions</a>
+
+<li>
+<a href="Security in Computer Networks.html#Security in Computer Networks-Message Integrity and Digital Signatures-Message Authentication Code (MAC)">Message Authentication Code (MAC)</a>
+
+</ul>
+<li>
+<a href="Security in Computer Networks.html#Security in Computer Networks-Securing TCP Connections: SSL">Securing TCP Connections: SSL</a>
+
+<ul>
+<li>
+<a href="Security in Computer Networks.html#Security in Computer Networks-Securing TCP Connections: SSL-Handshake">Handshake</a>
+
+<li>
+<a href="Security in Computer Networks.html#Security in Computer Networks-Securing TCP Connections: SSL-Key Derivation">Key Derivation</a>
+
+<li>
+<a href="Security in Computer Networks.html#Security in Computer Networks-Securing TCP Connections: SSL-Data Transfer">Data Transfer</a>
+
+</ul>
+<li>
+<a href="Security in Computer Networks.html#Security in Computer Networks-Securing Wireless LANs">Securing Wireless LANs</a>
+
+<ul>
+<li>
+<a href="Security in Computer Networks.html#Security in Computer Networks-Securing Wireless LANs-Wired Equivalent Privacy (WEP)">Wired Equivalent Privacy (WEP)</a>
+
+</ul>
+</ul>
+</ul>
+
+<div id="Security in Computer Networks"><h1 id="Security in Computer Networks" class="header"><a href="#Security in Computer Networks">Security in Computer Networks</a></h1></div>
+
+<div id="Security in Computer Networks-What Is Network Security"><h2 id="What Is Network Security" class="header"><a href="#Security in Computer Networks-What Is Network Security">What Is Network Security</a></h2></div>
+<p>
+Desirable properties of <span id="Security in Computer Networks-What Is Network Security-secure communication"></span><strong id="secure communication">secure communication</strong>:<br />
+</p>
+<ul>
+<li>
+Confidentiality
+
+<ul>
+<li>
+Only sender and receiver should be able to understand the contents of the transmitted message.
+
+</ul>
+<li>
+Message integrity
+
+<ul>
+<li>
+Content of communication is not altered.
+
+</ul>
+<li>
+End-point authentication
+
+<ul>
+<li>
+Both the sender and receiver should be able to confirm the identity of the other party involved in the communication.
+
+</ul>
+<li>
+Operational security
+
+</ul>
+
+<div id="Security in Computer Networks-Symmetric Key Cryptography"><h2 id="Symmetric Key Cryptography" class="header"><a href="#Security in Computer Networks-Symmetric Key Cryptography">Symmetric Key Cryptography</a></h2></div>
+
+
+<ul>
+<li>
+Ciphertext-only attack:
+
+<li>
+Known-plaintext attack:
+
+<ul>
+<li>
+
+
+</ul>
+<li>
+Chosen-plaintext attack:
+
+</ul>
+
+<div id="Security in Computer Networks-Message Integrity and Digital Signatures"><h2 id="Message Integrity and Digital Signatures" class="header"><a href="#Security in Computer Networks-Message Integrity and Digital Signatures">Message Integrity and Digital Signatures</a></h2></div>
+<div id="Security in Computer Networks-Message Integrity and Digital Signatures-Cryptographic Hash Functions"><h3 id="Cryptographic Hash Functions" class="header"><a href="#Security in Computer Networks-Message Integrity and Digital Signatures-Cryptographic Hash Functions">Cryptographic Hash Functions</a></h3></div>
+<p>
+A hash function takes an input <em>m</em> and computes a string <em>H(m)</em> known as a hash.<br />
+A <span id="Security in Computer Networks-Message Integrity and Digital Signatures-Cryptographic Hash Functions-cryptographic hash function"></span><strong id="cryptographic hash function">cryptographic hash function</strong> is required to have the following additional property:<br />
+</p>
+<ul>
+<li>
+It is computational infeasible to find any two different messages <em>x</em> and <em>y</em> such that <em>H(x)</em> = <em>H(y)</em>.
+
+</ul>
+
+<div id="Security in Computer Networks-Message Integrity and Digital Signatures-Message Authentication Code (MAC)"><h3 id="Message Authentication Code (MAC)" class="header"><a href="#Security in Computer Networks-Message Integrity and Digital Signatures-Message Authentication Code (MAC)">Message Authentication Code (MAC)</a></h3></div>
+
+<div id="Security in Computer Networks-Securing TCP Connections: SSL"><h2 id="Securing TCP Connections: SSL" class="header"><a href="#Security in Computer Networks-Securing TCP Connections: SSL">Securing TCP Connections: SSL</a></h2></div>
+<p>
+<span id="Security in Computer Networks-Securing TCP Connections: SSL-SSL: Secure Sockets Layer"></span><strong id="SSL: Secure Sockets Layer">SSL: Secure Sockets Layer</strong><br />
+<span id="Security in Computer Networks-Securing TCP Connections: SSL-TLS: Transport Layer Security"></span><strong id="TLS: Transport Layer Security">TLS: Transport Layer Security</strong><br />
+</p>
+
+<p>
+Lives in the application layer.<br />
+</p>
+
+<p>
+Three Phases:<br />
+</p>
+<ul>
+<li>
+Handshake
+
+<li>
+Key derivation
+
+<li>
+Data transfer
+
+</ul>
+
+<div id="Security in Computer Networks-Securing TCP Connections: SSL-Handshake"><h4 id="Handshake" class="header"><a href="#Security in Computer Networks-Securing TCP Connections: SSL-Handshake">Handshake</a></h4></div>
+
+<div id="Security in Computer Networks-Securing TCP Connections: SSL-Key Derivation"><h4 id="Key Derivation" class="header"><a href="#Security in Computer Networks-Securing TCP Connections: SSL-Key Derivation">Key Derivation</a></h4></div>
+
+<div id="Security in Computer Networks-Securing TCP Connections: SSL-Data Transfer"><h4 id="Data Transfer" class="header"><a href="#Security in Computer Networks-Securing TCP Connections: SSL-Data Transfer">Data Transfer</a></h4></div>
+
+<div id="Security in Computer Networks-Securing Wireless LANs"><h2 id="Securing Wireless LANs" class="header"><a href="#Security in Computer Networks-Securing Wireless LANs">Securing Wireless LANs</a></h2></div>
+<div id="Security in Computer Networks-Securing Wireless LANs-Wired Equivalent Privacy (WEP)"><h3 id="Wired Equivalent Privacy (WEP)" class="header"><a href="#Security in Computer Networks-Securing Wireless LANs-Wired Equivalent Privacy (WEP)">Wired Equivalent Privacy (WEP)</a></h3></div>
+
+<ol>
+<li>
+A wireless host requests authentication by an access point
+
+<li>
+The access point responds to the authentication request with a 128-byte nonce value.
+
+<li>
+The wireless host encrypts the nonce using the symmetric key that it shares with the access point.
+
+<li>
+The access point decrypts the host-encrypted nonce.
+
+</ol>
+
+<p>
+WEP bad. Don't use.<br />
+</p>
+
+        </div>
+        <p><small>Page created on 2020-09-02</small></p>
+    </body>
+</html>

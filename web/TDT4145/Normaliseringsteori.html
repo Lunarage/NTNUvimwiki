@@ -1,0 +1,503 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="Stylesheet" type="text/css" href="../style.css" />
+        <title>Normaliseringsteori</title>
+        <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    </head>
+    <body>
+        <div class="content">
+        
+<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<ul>
+<li>
+<a href="Normaliseringsteori.html#Normalization">Normalization</a>
+
+<ul>
+<li>
+<a href="Normaliseringsteori.html#Normalization-Some Definitions">Some Definitions</a>
+
+<li>
+<a href="Normaliseringsteori.html#Normalization-Functional Dependencies">Functional Dependencies</a>
+
+<ul>
+<li>
+<a href="Normaliseringsteori.html#Normalization-Functional Dependencies-Inference Rules">Inference Rules</a>
+
+</ul>
+<li>
+<a href="Normaliseringsteori.html#Normalization-Keys">Keys</a>
+
+<li>
+<a href="Normaliseringsteori.html#Normalization-Decomposition">Decomposition</a>
+
+<li>
+<a href="Normaliseringsteori.html#Normalization-Normal Forms">Normal Forms</a>
+
+<ul>
+<li>
+<a href="Normaliseringsteori.html#Normalization-Normal Forms-1NF">1NF</a>
+
+<li>
+<a href="Normaliseringsteori.html#Normalization-Normal Forms-2NF">2NF</a>
+
+<li>
+<a href="Normaliseringsteori.html#Normalization-Normal Forms-3NF">3NF</a>
+
+<li>
+<a href="Normaliseringsteori.html#Normalization-Normal Forms-BCNF">BCNF</a>
+
+<li>
+<a href="Normaliseringsteori.html#Normalization-Normal Forms-4NF">4NF</a>
+
+</ul>
+</ul>
+</ul>
+
+<div id="Normalization"><h1 id="Normalization" class="header"><a href="#Normalization">Normalization</a></h1></div>
+
+<div id="Normalization-Some Definitions"><h2 id="Some Definitions" class="header"><a href="#Normalization-Some Definitions">Some Definitions</a></h2></div>
+<p>
+<span id="Normalization-Some Definitions-Database Schema"></span><strong id="Database Schema">Database Schema</strong>: The description of a database.<br />
+Formally:<br />
+</p>
+<blockquote>
+The formal definition of a database schema is a set of formulas (sentences) called integrity constraints imposed on a database.
+</blockquote>
+    
+
+<p>
+The implicit goals of the design activity are information preservation and minimum redundancy.<br />
+</p>
+
+<div id="Normalization-Functional Dependencies"><h2 id="Functional Dependencies" class="header"><a href="#Normalization-Functional Dependencies">Functional Dependencies</a></h2></div>
+<p>
+A functional dependency (FD) is a constraint between two sets of attributes.<br />
+Formally:<br />
+</p>
+<blockquote>
+A <span id="Normalization-Functional Dependencies-functional dependency"></span><strong id="functional dependency">functional dependency</strong>, denoted by <em>X</em> → <em>Y</em>, between two sets of attributes <em>X</em> and <em>Y</em> that are subsets of <em>R</em> specifies a <em>constraint</em> on the possible tuples that can form a relation state <em>r</em> of <em>R</em>.
+The constraint is that, for any two tuples \( t_1 \) and \( t_2 \) in <em>r</em> that have \( t_1[X] = t_2[X] \), they must also have \( t_1[Y] = t_2[Y] \).
+</blockquote>
+
+<div id="Normalization-Functional Dependencies-Inference Rules"><h3 id="Inference Rules" class="header"><a href="#Normalization-Functional Dependencies-Inference Rules">Inference Rules</a></h3></div>
+<table>
+<tr>
+<th>
+#
+</th>
+<th>
+Name
+</th>
+<th>
+if
+</th>
+<th>
+then
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+Reflexive
+</td>
+<td>
+X ⊆ Y
+</td>
+<td>
+X → Y
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+Augmentation
+</td>
+<td>
+{X → Y}
+</td>
+<td>
+XZ → YZ
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+Transitive
+</td>
+<td>
+{X → Y, Y → Z}
+</td>
+<td>
+X → Z
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+Decomposition
+</td>
+<td>
+{X → YZ}
+</td>
+<td>
+X → Y
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+Additive
+</td>
+<td>
+{X → Y, X → Z}
+</td>
+<td>
+X → YZ
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+Pseudotransitive
+</td>
+<td>
+{X → Y, WY → Z}
+</td>
+<td>
+WX → Z
+</td>
+</tr>
+</table>
+
+<div id="Normalization-Keys"><h2 id="Keys" class="header"><a href="#Normalization-Keys">Keys</a></h2></div>
+<blockquote>
+A <span id="Normalization-Keys-superkey"></span><strong id="superkey">superkey</strong> of a relation schema \( R = \{A_1, A_2, \dots, A_n\} \) is a set of attributes <em>S</em> ⊆ <em>R</em> with the property that no two tuples \(t_1\) and \(t_2\) in any legal relation state <em>r</em> of <em>R</em> will have \(t_1[S] = t_2[S]\).
+A <span id="Normalization-Keys-key"></span><strong id="key">key</strong> <em>K</em> is a superkey with the additional property that removal of any attribute from <em>K</em> will cause <em>K</em> not to be a superkey anymore.
+</blockquote>
+<blockquote>
+An attribute of relation schema <em>R</em> is called a <span id="Normalization-Keys-prime attribute"></span><strong id="prime attribute">prime attribute</strong> of <em>R</em> if it is a member of <em>some candidate key</em> of <em>R</em>.
+An attribute is called nonprime if it is not a prime attribute—that is, if it is not a member of any candidate key.
+</blockquote>
+
+<div id="Normalization-Decomposition"><h2 id="Decomposition" class="header"><a href="#Normalization-Decomposition">Decomposition</a></h2></div>
+<ul>
+<li>
+The <span id="Normalization-Decomposition-non-additive join or lossless join property"></span><strong id="non-additive join or lossless join property">non-additive join or lossless join property</strong>
+
+<ul>
+<li>
+No spurious tuple generation
+
+<li>
+Must be achieved at any cost
+
+</ul>
+<li>
+The <span id="Normalization-Decomposition-dependency preservation property"></span><strong id="dependency preservation property">dependency preservation property</strong>
+
+<ul>
+<li>
+Ensures that each functional dependency is represented in some individual relation
+
+<li>
+Desirable, but is some times sacrificed
+
+</ul>
+</ul>
+
+<div id="Normalization-Normal Forms"><h2 id="Normal Forms" class="header"><a href="#Normalization-Normal Forms">Normal Forms</a></h2></div>
+<table>
+<tr>
+<th colspan="2">
+Summary
+</th>
+</tr>
+<tr>
+<td>
+<a href="Normaliseringsteori.html#1NF">1NF</a>
+</td>
+<td>
+Atomic values
+</td>
+</tr>
+<tr>
+<td>
+<a href="Normaliseringsteori.html#2NF">2NF</a>
+</td>
+<td>
+No partial dependencies
+</td>
+</tr>
+<tr>
+<td>
+<a href="Normaliseringsteori.html#3NF">3NF</a>
+</td>
+<td>
+No transitive dependencies
+</td>
+</tr>
+<tr>
+<td>
+<a href="Normaliseringsteori.html#BCNF">BCNF</a>
+</td>
+<td>
+No redundancy from any functional dependency
+</td>
+</tr>
+</table>
+
+<div id="Normalization-Normal Forms-1NF"><h3 id="1NF" class="header"><a href="#Normalization-Normal Forms-1NF">1NF</a></h3></div>
+<p>
+First Normal Form (1NF):<br />
+</p>
+<ul>
+<li>
+Only atomic values (cells have single value).
+
+</ul>
+<p>
+Alternatively:<br />
+</p>
+<ul>
+<li>
+Disallows relations within relations.
+
+<li>
+Disallows relations as attribute values within tuples
+
+</ul>
+
+<p>
+Normalization:<br />
+</p>
+<ul>
+<li>
+Form new relations for each multivalued attribute or nested relation.
+
+</ul>
+
+<div id="Normalization-Normal Forms-2NF"><h3 id="2NF" class="header"><a href="#Normalization-Normal Forms-2NF">2NF</a></h3></div>
+<p>
+<span id="Normalization-Normal Forms-2NF-Full functional dependency"></span><strong id="Full functional dependency">Full functional dependency</strong>:<br />
+If removal of any attribute <em>A</em> from <em>X</em> causes <em>X</em> → <em>Y</em> to not hold anymore.<br />
+Otherwise it is a <span id="Normalization-Normal Forms-2NF-partial dependency"></span><strong id="partial dependency">partial dependency</strong><br />
+</p>
+
+<p>
+Second Normal Form (2NF):<br />
+</p>
+<ul>
+<li>
+No partial dependencies:
+
+<ul>
+<li>
+No nonprime attribute is functionally dependent on any proper subset of any candidate key of the relation.
+
+</ul>
+</ul>
+
+<pre>
+R = {X, Y, A, B}
+F = {X → A, XY → B}
+</pre>
+<p>
+This is not 2NF because:<br />
+</p>
+<ul>
+<li>
+Candidate key: XY
+
+<li>
+Non-prime attributes: {A, B}
+
+<li>
+X ⊂ XY and Y ⊂ XY (proper subsets)
+
+<li>
+X → A (functional dependent)
+
+<li>
+Y → B (functional dependent)
+
+</ul>
+<p>
+There are several non-prime attributes that is functionally dependent on proper subsets of the candidate key of the relation.<br />
+</p>
+
+<p>
+Normalization:<br />
+</p>
+<ul>
+<li>
+Decompose and set up a new relation for each partial key with its dependent attribute(s).
+
+<ul>
+<li>
+Keep a relation with the original primary key 
+
+<li>
+Keep a relation with any attributes that are fully functionally dependent on it.
+
+</ul>
+</ul>
+
+<p>
+Modified to be 2NF:<br />
+</p>
+<pre>
+R1 = {X, A}
+R2 = {X, Y, B}
+F1 = {X → A}
+F2 = {XY → B}
+</pre>
+
+<div id="Normalization-Normal Forms-3NF"><h3 id="3NF" class="header"><a href="#Normalization-Normal Forms-3NF">3NF</a></h3></div>
+<p>
+Third Normal Form (3NF):<br />
+</p>
+<ul>
+<li>
+Every nonprime attribute of <em>R</em> is non-transitively dependent of every key of <em>R</em>.
+
+</ul>
+<p>
+Alternatively:<br />
+</p>
+<ul>
+<li>
+iff For every X → A:
+
+<ul>
+<li>
+X is a superkey for the given table, or
+
+<li>
+A is prime attribute for the given table
+
+</ul>
+</ul>
+
+<pre>
+R = {X, A, B, C}
+F = {X → AB, B → C}
+</pre>
+<p>
+This is not 3NF because:<br />
+</p>
+<ul>
+<li>
+Non-prime attributes: {A, B, C}
+
+<li>
+X → B and B → C (Transitive dependency)
+
+</ul>
+<p>
+Alternatively:<br />
+</p>
+<ul>
+<li>
+X is not a superkey
+
+<li>
+neither A, B or C are prime attributes.
+
+</ul>
+
+<p>
+Normalization:<br />
+</p>
+<ul>
+<li>
+Decompose and set up a relation that includes the non-key attribute(s) that functionally determine(s) other non-key attribute(s).
+
+</ul>
+
+<p>
+Modified to be 3NF:<br />
+</p>
+<pre>
+R1 = {X, A, B}
+R2 = {B, C}
+F1 = {X → AB}
+F2 = {B → C}
+</pre>
+
+<div id="Normalization-Normal Forms-BCNF"><h3 id="BCNF" class="header"><a href="#Normalization-Normal Forms-BCNF">BCNF</a></h3></div>
+<p>
+Boyce-Codd Normal Form (BCNF or 3.5NF):<br />
+</p>
+<ul>
+<li>
+For every one of its dependencies X → Y, one of the following conditions hold true:
+
+<ul>
+<li>
+X → Y is a trivial functional dependency
+
+<li>
+X is a superkey
+
+</ul>
+</ul>
+
+<pre>
+R = {A, B, C}
+F = {AB → C, C → B}
+</pre>
+<p>
+This is not BCNF because:<br />
+</p>
+<ul>
+<li>
+In C → B, C is not a superkey
+
+</ul>
+
+<div id="Normalization-Normal Forms-4NF"><h3 id="4NF" class="header"><a href="#Normalization-Normal Forms-4NF">4NF</a></h3></div>
+<blockquote>
+A <span id="Normalization-Normal Forms-4NF-multivalued dependency"></span><strong id="multivalued dependency">multivalued dependency</strong> <em>X</em> → <em>Y</em> specified on relation schema <em>R</em>,
+where <em>X</em> and <em>Y</em> are both subsets of <em>R</em>,
+specifies the following constraint on any relation state <em>r</em> of <em>R</em>:
+If two tuples \( t_1 \) and \( t_2 \) exist in <em>r</em> such that \( t_1[X] = t_2[X] \),
+then two tuples \( t_3 \) and \( t_4 \) should also exist in <em>r</em> with the following properties,
+where we use <em>Z</em> to denote \( (R − (X \cup Y)) \):
+</blockquote>
+
+<ul>
+<li>
+\( t_3[X] = t_4[X] = t_1[X] = t_2[X] \)
+
+<li>
+\( t_3[Y] = t_1[Y] \) and \( t_4[Y] = t_2[Y] \)
+
+<li>
+\( t_3[Z] = t_2[Z] \) and \( t_4[Z] = t_1[Z] \)
+
+</ul>
+<blockquote>
+A relation schema <em>R</em> is in <span id="Normalization-Normal Forms-4NF-4NF"></span><strong id="4NF">4NF</strong> with respect to a set of dependencies F (that includes functional dependencies and multivalued dependencies)
+if, for every nontrivial multivalued dependency <em>X</em> →→ <em>Y</em> in \(F^{+}\), <em>X</em> is a superkey for <em>R</em>.
+</blockquote>
+
+        </div>
+        <p><small>Page created on 2020-09-02</small></p>
+    </body>
+</html>

@@ -1,0 +1,111 @@
+= Contents =
+    - [[#The Application Layer|The Application Layer]]
+        - [[#The Application Layer#Principles of Network Applications|Principles of Network Applications]]
+        - [[#The Application Layer#The Web and HTTP|The Web and HTTP]]
+        - [[#The Application Layer#Electronic Mail in the Internet|Electronic Mail in the Internet]]
+        - [[#The Application Layer#DNS The Internet's Directory Service|DNS The Internet's Directory Service]]
+            - [[#The Application Layer#DNS The Internet's Directory Service#Services Provided by DNS|Services Provided by DNS]]
+            - [[#The Application Layer#DNS The Internet's Directory Service#Overview of How DNS Works|Overview of How DNS Works]]
+                - [[#The Application Layer#DNS The Internet's Directory Service#Overview of How DNS Works#A Distributed, Hierarchical Database|A Distributed, Hierarchical Database]]
+                - [[#The Application Layer#DNS The Internet's Directory Service#Overview of How DNS Works#DNS Caching|DNS Caching]]
+            - [[#The Application Layer#DNS The Internet's Directory Service#DNS Records and Messages|DNS Records and Messages]]
+                - [[#The Application Layer#DNS The Internet's Directory Service#DNS Records and Messages#DNS Messages|DNS Messages]]
+        - [[#The Application Layer#Video Streaming and Content Distribution Networks|Video Streaming and Content Distribution Networks]]
+        - [[#The Application Layer#Socket Programming: Creating Network Applications|Socket Programming: Creating Network Applications]]
+
+= The Application Layer =
+
+== Principles of Network Applications ==
+
+== The Web and HTTP ==
+
+== Electronic Mail in the Internet ==
+
+== DNS The Internet's Directory Service ==
+*Hostname*
+
+=== Services Provided by DNS ===
+The Internet's *Domain name system (DNS)* is:
+* A distributed database
+* An application-layer protocol that allows hosts to query said database.
+
+Primary function: Translate hostnames to IP addresses.
+*DNS Servers* are typically UNIX machines running the Berkeley Internet Name Domain (BIND) software.
+The DNS protocol runs over UDP and uses port 53.
+
+DNS provides a few other important services:
+* *Host Aliasing*
+    - The real name is called the canonical name.
+* *Mail Server Aliasing*
+* *Load distribution*
+
+The DNS is specified in RFC 1034 and RFC 1035, and updated in several additional RFCs.
+
+=== Overview of How DNS Works ===
+
+Problems with a centralized design include:
+* *A single point of failure*
+* *Traffic volume*
+* *Distant centralized database*
+* *Maintenance*
+
+In summary a centralized database simply does not scale.
+
+==== A Distributed, Hierarchical Database ====
+No single DNS server has all the mappings for all the hosts in the Internet.
+
+Approximate Hierarchy:
+* root DNS servers
+    - provides the IP addresses of TLD DNS servers
+* top-level domain (TLD) DNS servers
+    - For each com, org, net, edu etc. there is a DNS server (or server cluster)
+* authoritative DNS servers
+    - Maintained by organizations with hosts
+    - Can also be outsourced
+
+*Local DNS servers* (aka default name servers)
+
+==== DNS Caching ====
+It is just what is sounds like.
+Improves delay performance and reduces the number of DNS messages sent through the Internet.
+
+=== DNS Records and Messages ===
+*Resource records (RRs)*:
+`(Name, Value, Type, TTL)`
+
+`TTL`: Time to live. Determines when the record should be removed from cache.
+The meaning of `Name` and `Value` depend on `Type`:
+* If `Type=A`, then `Name` is a hostname and `Value` is the IP address for the hostname.
+* If `Type=NS`, then `Name` is a domain and `Value` is the hostname of an authoritative DNS server that knows how to obtain the IP addresses of hosts in the domain.
+* If `Type=CNAME`, then `Value` is a canonical hostname for the alias hostname `Name`.
+* If `Type=MX`, then `Value` is the canonical name of a mail server that has alias hostname `Name`
+
+==== DNS Messages ====
+DNS message format:
+| Identification                                  | Flags                    | 12 bytes                                          |
+| Number of questions                             | Number of answer RRs     | \/                                                |
+| Number of authority RRs                         | Number of additional RRs | \/                                                |
+| Questions (Variable number of questions)        | >                        | Name, type fields for a query                     |
+| Answers (variable number of RRs)                | >                        | RRs in response to query                          |
+| Authority (variable number of RRs               | >                        | Records for authoritative servers                 |
+| Additional information (variable number of RRs) | >                        | Additional "helpful" information that may be used |
+
+* The first 12 bytes is the header section:
+    * Identification:
+        - 16-bit number that identifies the query
+        - It is copied into the reply message, allowing the client to match received replies with queries.
+    * Flags:
+        * 1-bit Query(0)/Reply(1)
+        * 1-bit Authoritative
+        * 1-bit recursion-desired flag
+    * Number-of fields
+* Question Section
+    - 
+* Answer section
+* Authority section
+* Additional section
+
+== Video Streaming and Content Distribution Networks ==
+
+== Socket Programming: Creating Network Applications ==
+

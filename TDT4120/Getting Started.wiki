@@ -1,0 +1,7 @@
+= Chapter 2 - Getting Started =
+
+== Insertion Sort ==
+
+== Analyzing Algorithms ==
+
+== Designing Algorithms ==

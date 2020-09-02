@@ -1,0 +1,10 @@
+= NTNU =
+* [[IT1901/index|IT19101]] - Informatikk Prosjekt I
+* [[IT2805/index|IT2805]] - Webteknologi
+* [[IT2810/index|IT2810]] - Webutvikling
+* [[TDT4120/index|TDT4120]] - Algoritmer og Datastrukturer
+* [[TDT4145/index|TDT4145]] - Datamodellering og databasesystemer
+* [[TDT4165/index|TDT4165]] - Programmeringsspråk
+* [[TTM4100/index|TTM4100]] - Kommunikasjon Tjenester og Nett
+
+%% vim:spelllang=nb

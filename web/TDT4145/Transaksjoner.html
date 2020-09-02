@@ -1,0 +1,743 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="Stylesheet" type="text/css" href="../style.css" />
+        <title>Transaksjoner</title>
+        <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    </head>
+    <body>
+        <div class="content">
+        
+<div id="Transactions"><h1 id="Transactions" class="header"><a href="#Transactions">Transactions</a></h1></div>
+
+<div id="Transactions-ACID"><h2 id="ACID" class="header"><a href="#Transactions-ACID">ACID</a></h2></div>
+
+<div id="Transactions-ACID-Atomicity"><h3 id="Atomicity" class="header"><a href="#Transactions-ACID-Atomicity">Atomicity</a></h3></div>
+<p>
+A transaction must either succeed completely or fail completely.<br />
+A transaction may contain multiple statements. If one of the statements in a transaction fails, all of the statements should fail.<br />
+</p>
+
+<div id="Transactions-ACID-Consistency"><h3 id="Consistency" class="header"><a href="#Transactions-ACID-Consistency">Consistency</a></h3></div>
+<p>
+Ensures that a transaction takes the database from one valid state to another valid state.<br />
+Must respect constraints etc.<br />
+</p>
+
+<div id="Transactions-ACID-Isolation"><h3 id="Isolation" class="header"><a href="#Transactions-ACID-Isolation">Isolation</a></h3></div>
+<p>
+A transaction is unaffected by other (simultaneous) transactions.<br />
+</p>
+
+<div id="Transactions-ACID-Durability"><h3 id="Durability" class="header"><a href="#Transactions-ACID-Durability">Durability</a></h3></div>
+<p>
+Once committed, a transaction stays committed.<br />
+</p>
+
+
+<div id="Transactions-Schedules"><h2 id="Schedules" class="header"><a href="#Transactions-Schedules">Schedules</a></h2></div>
+
+<p>
+A schedule <em>S</em> of <em>n</em> transactions T1, T2, …, Tn is an ordering of the operations of the transactions.<br />
+</p>
+
+<p>
+Operations:<br />
+</p>
+<ul>
+<li>
+b: begin
+
+<li>
+r: read
+
+<li>
+w: write
+
+<li>
+e: end
+
+<li>
+c: commit
+
+<li>
+a: abort
+
+</ul>
+
+<div id="Transactions-Schedules-Conflicting operations in a schedule"><h3 id="Conflicting operations in a schedule" class="header"><a href="#Transactions-Schedules-Conflicting operations in a schedule">Conflicting operations in a schedule</a></h3></div>
+<p>
+Two operations are said to conflict if they satisfy all of the following conditions:<br />
+</p>
+<ol>
+<li>
+They belong to different transactions
+
+<li>
+They access the same item
+
+<li>
+At least one of the operations is a write operation
+
+</ol>
+
+<p>
+Intuitively, two operations are conflicting if changing their order can result in a different outcome.<br />
+</p>
+
+<div id="Transactions-Schedules-Complete schedule"><h3 id="Complete schedule" class="header"><a href="#Transactions-Schedules-Complete schedule">Complete schedule</a></h3></div>
+<p>
+A schedule <em>S</em> of <em>n</em> transactions T1, T2, …, Tn is said to be a <span id="Transactions-Schedules-Complete schedule-complete schedule"></span><strong id="complete schedule">complete schedule</strong> if the following conditions hold:<br />
+</p>
+<ol>
+<li>
+The operations in <em>S</em> are exactly those operations in T1, T2, …, Tn including a commit or abort operation as the last operation for each transaction in the schedule.
+
+<li>
+For any pair of operations from the same transaction Ti, their relative order of appearance in <em>S</em> is the same as their order of appearance in Ti.
+
+<li>
+For any two conflicting operations, one of the two must occur before the other in the schedule.
+
+</ol>
+
+<p>
+Otherwise it is a <span id="Transactions-Schedules-Complete schedule-partial schedule"></span><strong id="partial schedule">partial schedule</strong><br />
+</p>
+
+<div id="Transactions-Schedules-Characterizing Schedules Based on Recoverability"><h3 id="Characterizing Schedules Based on Recoverability" class="header"><a href="#Transactions-Schedules-Characterizing Schedules Based on Recoverability">Characterizing Schedules Based on Recoverability</a></h3></div>
+<ul>
+<li>
+Nonrecoverable
+
+<ul>
+<li>
+Committed transactions may need to be rolled back.
+
+</ul>
+<li>
+Recoverable
+
+<ul>
+<li>
+A transaction may not commit reads of uncommitted writes from another transaction.
+
+<li>
+In a recoverable schedule, no committed transaction ever needs to be rolled back.
+
+<li>
+Uncommitted transactions may need to be rolled back.
+
+</ul>
+<li>
+ACA (Avoid Cascading Abort)
+
+<ul>
+<li>
+Transactions may only read from committed writes.
+
+</ul>
+<li>
+Strict
+
+<ul>
+<li>
+Transactions may not read from nor write to an item, X, until the last transaction that modified X is committed or aborted.
+
+</ul>
+</ul>
+
+<div id="Transactions-Schedules-Characterizing Schedules Based on Serializability"><h3 id="Characterizing Schedules Based on Serializability" class="header"><a href="#Transactions-Schedules-Characterizing Schedules Based on Serializability">Characterizing Schedules Based on Serializability</a></h3></div>
+<p>
+The concept of <span id="Transactions-Schedules-Characterizing Schedules Based on Serializability-serializability of schedules"></span><strong id="serializability of schedules">serializability of schedules</strong> is used to identify which schedules are correct when transaction executions have interleaving of their operations in the schedules.<br />
+</p>
+
+<div id="Transactions-Schedules-Serial, Nonserial and Conflict-Serializable Schedules"><h3 id="Serial, Nonserial and Conflict-Serializable Schedules" class="header"><a href="#Transactions-Schedules-Serial, Nonserial and Conflict-Serializable Schedules">Serial, Nonserial and Conflict-Serializable Schedules</a></h3></div>
+<ul>
+<li>
+Serial
+
+<ul>
+<li>
+No interleaving of operation between transactions.
+
+<li>
+Only one transaction is active at a given point.
+
+</ul>
+<li>
+Nonserial
+
+</ul>
+
+<ul>
+<li>
+Serializable
+
+<ul>
+<li>
+Equivalent to one or more serial schedules.
+
+</ul>
+</ul>
+
+<div id="Transactions-Schedules-Conflict Equivalence of Two Schedules"><h3 id="Conflict Equivalence of Two Schedules" class="header"><a href="#Transactions-Schedules-Conflict Equivalence of Two Schedules">Conflict Equivalence of Two Schedules</a></h3></div>
+<p>
+Two schedules are said to be <span id="Transactions-Schedules-Conflict Equivalence of Two Schedules-conflict equivalent"></span><strong id="conflict equivalent">conflict equivalent</strong> if the relative order of any two <a href="Transaksjoner.html#Conflicting operations in a schedule">conflicting operations</a> is the same in both schedules.<br />
+</p>
+
+<p>
+Using the notion of conflict equivalence, we define a schedule S to be <span id="Transactions-Schedules-Conflict Equivalence of Two Schedules-(conflict) serializable"></span><strong id="(conflict) serializable">(conflict) serializable</strong> if it is (conflict) equivalent to some serial schedule S′.<br />
+</p>
+
+<p>
+How to Precedence Graphs really good:<br />
+<img src="../../../magne/vimwikiNTNU/Precedence Graph.png" alt="Your Precedence Graph Here" /><br />
+</p>
+
+<div id="Transactions-Two-Phase Locking"><h2 id="Two-Phase Locking" class="header"><a href="#Transactions-Two-Phase Locking">Two-Phase Locking</a></h2></div>
+<p>
+Locks:<br />
+</p>
+<ul>
+<li>
+Read/Shared Lock
+
+<ul>
+<li>
+Multiple transactions
+
+</ul>
+<li>
+Write/Exclusive Lock
+
+<ul>
+<li>
+Only one transaction
+
+</ul>
+</ul>
+
+<p>
+Two-Phase Locking if all locking operations precede the first unlock operation in the transaction.<br />
+A growing phase before a shrinking phase.<br />
+</p>
+
+<p>
+It can be proved that, if every transaction in a schedule follows the two-phase locking protocol, the schedule is guaranteed to be serializable.<br />
+</p>
+
+<p>
+Although the two-phase locking protocol guarantees serializability, it does not permit all possible serializable schedules.<br />
+</p>
+
+<div id="Transactions-Two-Phase Locking-Basic, Conservative, Strict and Rigorous Two-Phase Locking"><h3 id="Basic, Conservative, Strict and Rigorous Two-Phase Locking" class="header"><a href="#Transactions-Two-Phase Locking-Basic, Conservative, Strict and Rigorous Two-Phase Locking">Basic, Conservative, Strict and Rigorous Two-Phase Locking</a></h3></div>
+<ul>
+<li>
+Basic
+
+<ul>
+<li>
+All locks before any unlocks
+
+</ul>
+<li>
+Conservative
+
+<ul>
+<li>
+Locks before the transaction begins
+
+<li>
+Deadlock-free
+
+</ul>
+<li>
+Strict
+
+<ul>
+<li>
+Does not release write locks until after it commits or aborts
+
+<li>
+Guarantees <a href="Transaksjoner.html#Characterizing Schedules Based on Recoverability">strict schedules</a>
+
+<li>
+Deadlock-free
+
+</ul>
+<li>
+Rigorous
+
+<ul>
+<li>
+Does not release any locks until after it commits or aborts
+
+<li>
+Guarantees <a href="Transaksjoner.html#Characterizing Schedules Based on Recoverability">strict schedules</a>
+
+</ul>
+</ul>
+
+<div id="Transactions-Two-Phase Locking-Dealing with Deadlock and Starvation"><h3 id="Dealing with Deadlock and Starvation" class="header"><a href="#Transactions-Two-Phase Locking-Dealing with Deadlock and Starvation">Dealing with Deadlock and Starvation</a></h3></div>
+<p>
+<span id="Transactions-Two-Phase Locking-Dealing with Deadlock and Starvation-Deadlock:"></span><strong id="Deadlock:">Deadlock:</strong> Two transactions waiting for each other indefinitely.<br />
+</p>
+
+<p>
+<span id="Transactions-Two-Phase Locking-Dealing with Deadlock and Starvation-Starvation:"></span><strong id="Starvation:">Starvation:</strong> A transaction cannot proceed for an indefinite period of time while other transactions continue normally.<br />
+</p>
+
+<div id="Transactions-Recovery"><h2 id="Recovery" class="header"><a href="#Transactions-Recovery">Recovery</a></h2></div>
+<div id="Transactions-Recovery-Recovery Algorithm Categorization"><h3 id="Recovery Algorithm Categorization" class="header"><a href="#Transactions-Recovery-Recovery Algorithm Categorization">Recovery Algorithm Categorization</a></h3></div>
+<ul>
+<li>
+Deferred Update
+
+<ul>
+<li>
+Does not write to disk until after a transaction commits
+
+<li>
+UNDO is not needed in recovery
+
+<li>
+NO-UNDO/REDO
+
+</ul>
+<li>
+Immediate Update
+
+<ul>
+<li>
+May write to disk before a transaction commits
+
+<li>
+Recorded in log before write
+
+<li>
+UNDO and REDO may be required in recovery
+
+<li>
+UNDO/REDO
+
+</ul>
+<li>
+Immediate Update Variation
+
+<ul>
+<li>
+All updates written to disk before commit
+
+<li>
+REDO is not needed
+
+<li>
+UNDO/NO-REDO
+
+</ul>
+</ul>
+
+<p>
+<span id="Transactions-Recovery-Recovery Algorithm Categorization-Impodent:"></span><strong id="Impodent:">Impodent:</strong> Executing an operation multiple times is equivalent to executing it just once.<br />
+</p>
+
+<div id="Transactions-Recovery-Caching of Disk Blocks"><h3 id="Caching of Disk Blocks" class="header"><a href="#Transactions-Recovery-Caching of Disk Blocks">Caching of Disk Blocks</a></h3></div>
+<p>
+Data is cashed in main memory buffers and updated there before written back to disk.<br />
+Operates on units of disk pages (blocks).<br />
+<span id="Transactions-Recovery-Caching of Disk Blocks-Flush"></span><strong id="Flush">Flush</strong> if the memory buffers are full.<br />
+</p>
+
+<p>
+<span id="Transactions-Recovery-Caching of Disk Blocks-Dirty Bit:"></span><strong id="Dirty Bit:">Dirty Bit:</strong> Indicates whether or not the buffer page has been modified with respect to data on disk.<br />
+</p>
+
+<p>
+<span id="Transactions-Recovery-Caching of Disk Blocks-Pin-unpin bit:"></span><strong id="Pin-unpin bit:">Pin-unpin bit:</strong> Cannot write buffer page to disk.<br />
+</p>
+
+<div id="Transactions-Recovery-Caching of Disk Blocks-Strategies for flushing cache"><h4 id="Strategies for flushing cache" class="header"><a href="#Transactions-Recovery-Caching of Disk Blocks-Strategies for flushing cache">Strategies for flushing cache</a></h4></div>
+<ul>
+<li>
+<span id="Transactions-Recovery-Caching of Disk Blocks-Strategies for flushing cache-In-place updating:"></span><strong id="In-place updating:">In-place updating:</strong>
+
+<ul>
+<li>
+Write to same original location/overwriting old values
+
+</ul>
+<li>
+<span id="Transactions-Recovery-Caching of Disk Blocks-Strategies for flushing cache-Shadowing:"></span><strong id="Shadowing:">Shadowing:</strong>
+
+<ul>
+<li>
+Writes an updated buffer at a different disk location
+
+<li>
+Maintains multiple versions of data items
+
+<li>
+Not strictly necessary to maintain a log for recovering
+
+</ul>
+</ul>
+
+<ul>
+<li>
+<span id="Transactions-Recovery-Caching of Disk Blocks-Strategies for flushing cache-BFIM:"></span><strong id="BFIM:">BFIM:</strong> Before image/old values
+
+<li>
+<span id="Transactions-Recovery-Caching of Disk Blocks-Strategies for flushing cache-AFIM:"></span><strong id="AFIM:">AFIM:</strong> After image/new values
+
+</ul>
+
+<div id="Transactions-Recovery-Write-Ahead Logging, Steal/No-Steal, and Force/No-Force"><h3 id="Write-Ahead Logging, Steal/No-Steal, and Force/No-Force" class="header"><a href="#Transactions-Recovery-Write-Ahead Logging, Steal/No-Steal, and Force/No-Force">Write-Ahead Logging, Steal/No-Steal, and Force/No-Force</a></h3></div>
+<ul>
+<li>
+Write-ahead logging
+
+<ul>
+<li>
+BFIM recorded in log before flush
+
+</ul>
+</ul>
+
+<ul>
+<li>
+REDO-type log entry
+
+<ul>
+<li>
+New value of the item written
+
+</ul>
+<li>
+UNDO-type log entry
+
+<ul>
+<li>
+Old value of the item written
+
+</ul>
+</ul>
+
+<ul>
+<li>
+Steal:
+
+<ul>
+<li>
+Buffer can be written to disk before commit
+
+<li>
+Needs less memory
+
+</ul>
+<li>
+No-steal:
+
+<ul>
+<li>
+Buffer cannot be written to disk before commit
+
+</ul>
+<li>
+Force:
+
+<ul>
+<li>
+Updates immediately written to disk before commit
+
+<li>
+REDO will never be needed during recovery
+
+</ul>
+<li>
+No-force:
+
+<ul>
+<li>
+Not Force
+
+</ul>
+</ul>
+
+<div id="Transactions-Recovery-Checkpoints in the log"><h3 id="Checkpoints in the log" class="header"><a href="#Transactions-Recovery-Checkpoints in the log">Checkpoints in the log</a></h3></div>
+<ol>
+<li>
+Suspend execution of transactions temporarily.
+
+<li>
+Force-write all main memory buffers that have been modified to disk.
+
+<li>
+Write a checkpoint record to the log, and force-write the log to disk.
+
+<li>
+Resume executing transactions.
+
+</ol>
+
+<p>
+<span id="Transactions-Recovery-Checkpoints in the log-Fuzzy Checkpointing:"></span><strong id="Fuzzy Checkpointing:">Fuzzy Checkpointing:</strong><br />
+</p>
+<ul>
+<li>
+Transactions may continue during checkpointing
+
+<li>
+The previous checkpoint remains valid until the current checkpoint is completed.
+
+</ul>
+
+<div id="Transactions-Recovery-ARIES"><h3 id="ARIES" class="header"><a href="#Transactions-Recovery-ARIES">ARIES</a></h3></div>
+<ul>
+<li>
+Steal/no-force
+
+<li>
+Write-ahead log
+
+<li>
+repeating history during redo
+
+<ul>
+<li>
+Retrace all actions prior to crash
+
+<li>
+Uncommitted transactions are undone
+
+</ul>
+<li>
+logging changes during undo
+
+<ul>
+<li>
+Prevents ARIES from repeating undo
+
+</ul>
+</ul>
+
+<p>
+Three main steps:<br />
+</p>
+<ul>
+<li>
+Analysis
+
+<ul>
+<li>
+Find dirty pages and uncommitted transactions
+
+<li>
+Find the appropriate point in the log where REDO should start
+
+</ul>
+<li>
+REDO
+
+<ul>
+<li>
+Down the log
+
+<li>
+Reconstruct the database up to the point of failure
+
+</ul>
+<li>
+UNDO
+
+<ul>
+<li>
+Up the log
+
+<li>
+Undo the uncommitted changes
+
+</ul>
+</ul>
+
+<p>
+Needs:<br />
+</p>
+<ul>
+<li>
+The log
+
+<li>
+The transaction table
+
+<li>
+Dirty page table
+
+</ul>
+
+<div id="Transactions-Recovery-ARIES-The Log"><h4 id="The Log" class="header"><a href="#Transactions-Recovery-ARIES-The Log">The Log</a></h4></div>
+<ul>
+<li>
+Log sequence number (LSN):
+
+<ul>
+<li>
+Address of the log record on disk
+
+<li>
+Each LSN corresponds to a specific change (action)
+
+</ul>
+</ul>
+
+<p>
+A log record is written for any of the following:<br />
+</p>
+<ul>
+<li>
+<code>write</code>
+
+<li>
+<code>commit</code>
+
+<li>
+<code>abort</code>
+
+<li>
+<code>undo</code>
+
+<ul>
+<li>
+recorded to avoid redoing the undo
+
+</ul>
+<li>
+<code>end</code>
+
+</ul>
+
+<p>
+Common fields for all log records:<br />
+</p>
+<ul>
+<li>
+previous LSN
+
+<li>
+transaction ID
+
+<li>
+type of log record
+
+</ul>
+
+<p>
+Additional fields for write:<br />
+</p>
+<ul>
+<li>
+page ID
+
+<li>
+length of updated item
+
+<li>
+offset from beginning of page
+
+<li>
+BFIM of the item
+
+<li>
+AFIM of the item
+
+</ul>
+
+<div id="Transactions-Recovery-ARIES-Transaction Table and Dirty Page Table"><h4 id="Transaction Table and Dirty Page Table" class="header"><a href="#Transactions-Recovery-ARIES-Transaction Table and Dirty Page Table">Transaction Table and Dirty Page Table</a></h4></div>
+<p>
+Rebuilt during analysis step<br />
+Transaction Table contains an entry for each uncommitted transaction:<br />
+</p>
+<ul>
+<li>
+Transaction ID
+
+<li>
+Transaction status
+
+<li>
+LSN of the mot recent log record
+
+</ul>
+
+<p>
+The Dirty Page Table contains an entry for each dirty page in the cache:<br />
+</p>
+<ul>
+<li>
+page ID
+
+<li>
+LSN corresponding to the earliest update to that page
+
+</ul>
+
+<div id="Transactions-Recovery-ARIES-Checkpoints"><h4 id="Checkpoints" class="header"><a href="#Transactions-Recovery-ARIES-Checkpoints">Checkpoints</a></h4></div>
+<p>
+ARIES uses Fuzzy Checkpointing<br />
+Logs:<br />
+</p>
+<ul>
+<li>
+write a <code>begin_checkpoint</code>
+
+<li>
+write an <code>end_checkpoint</code>
+
+<li>
+LSN of the <code>begin_checkpoint</code> record to a special file
+
+<li>
+Transaction Table and Dirty Page Table are appended to the end of the log
+
+</ul>
+
+<p>
+The cache does not have to be flushed during checkpointing.<br />
+</p>
+
+<div id="Transactions-Recovery-ARIES-Analysis Phase"><h4 id="Analysis Phase" class="header"><a href="#Transactions-Recovery-ARIES-Analysis Phase">Analysis Phase</a></h4></div>
+<p>
+Reads the log from the last valid checkpoint.<br />
+Reconstructs Transaction Table and Dirty Page Table:<br />
+</p>
+<ul>
+<li>
+If an <code>end</code> entry is found for a transaction, it is deleted form the transaction table (It is already committed).
+
+<li>
+If any other entry is found for a transaction, that transaction is added to the transaction table (untracked active transaction) and the last LSN field is modified.
+
+</ul>
+
+<div id="Transactions-Recovery-ARIES-REDO Phase"><h4 id="REDO Phase" class="header"><a href="#Transactions-Recovery-ARIES-REDO Phase">REDO Phase</a></h4></div>
+<p>
+Redo from the smallest (earliest/oldest) LSN of all the dirty pages to the end of the log.<br />
+</p>
+<ul>
+<li>
+If a change pertains a page <em>P</em> that is not int the Dirty Page Table, it is skipped (Not in dirty table == already written to disk)
+
+</ul>
+
+<div id="Transactions-Recovery-ARIES-UNDO Phase"><h4 id="UNDO Phase" class="header"><a href="#Transactions-Recovery-ARIES-UNDO Phase">UNDO Phase</a></h4></div>
+<p>
+Undo uncommitted actions.<br />
+</p>
+
+        </div>
+        <p><small>Page created on 2020-09-02</small></p>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+= Problems =
+* [X] 1 ER
+* [X] 2 ER
+* [X] 3 Relajsonsalgebra
+* [X] 4 SQL SELECT
+* [X] 5 SQL SELECT
+* [X] 6 SQL INSERT
+* [X] 7 Normalisering 2NF/3NF
+* [X] 8 
+* [X] 9
+* [X] 10 4NF
+* [X] 11 Extendible Hash
+* [X] 12 B+-Tree
+* [X] 13 Query processing
+* [ ] 14 Isolasjonsnivå?
+* [X] 15 Two Phase Locking
+* [X] 16 ARIES
+* [ ] 17 ARIES
+
+= Problem 1 =
+
+Each submitted paper gets a:
+* type:  e.g. “ordinary paper”, “short paper” and “poster”.
+* unique identifier
+* title
+* PDF file
+* type of paper.
+
+Author(s):
+* Name
+* email address to each author
+
+In order to evaluate the quality of the submitted papers,
+a program committee is formed with
+recognized researchers from the research community.
+Members of the program committee are registered with a
+* unique number
+* name
+* affiliation (University, Research organization, …)
+* email address
+
+Every paper is allocated to three members of the program committee.
+
+Each of these three program committee members is responsible for an independent review of the paper.
+
+A program committee member doesn’t necessarily perform the review of every paper herself.
+
+If another person does the review of a paper, this person’s name has to be registered.
+
+Each paper is evaluated in the
+categories:
+”originality”, ”significance”, ”technical quality”, ”relevance”, ”presentation” and ”overall rating”.
+
+For each category there exists:
+* a text that describes the category.
+In each category, the paper gets
+* a rating from 1 ("Strong reject") to 7 ("strong accept") from each reviewer.
+
+In addition, the reviewer can write
+* a comment to the authors and
+* a (secret) comment to the program committee.
+
+For each paper the reviewer has to state her competence (low/medium/high) in the specific topic covered by the paper.
+
+Each reviewer states the amount of rewriting (no/some/much) that she considers necessary before the paper can be accepted.
+
+When all papers have been evaluated, the program committee members meet and choose the papers that will be presented at the conference.
+
+The chosen papers changes status to "accepted", while the remaining papers become "rejected" papers.
+
+Finally, the decisions are sent to the authors by email together with copies of the reviews.
+
+== Solution ==
+
+ProgCommMember:
+No e-mail
+Nationality?
+
+ReviewCategory:
+
+= Problem 2 =
+== Solution ==
+A(a-1, a-3, a-4)
+C(b-1, a-1)
+C2(b-1, b-2)
+D(b-1, a-1)
+D2(b-1, b-2)
+
+E(e-1, e-2, e-3)
+S(s-1, e-1, b-1)

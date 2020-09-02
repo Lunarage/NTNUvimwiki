@@ -1,0 +1,271 @@
+= Contents =
+    - [[#The Link Layer|The Link Layer]]
+        - [[#The Link Layer#Services Provided by the Link Layer|Services Provided by the Link Layer]]
+        - [[#The Link Layer#Error Detection and Correction Techniques|Error Detection and Correction Techniques]]
+            - [[#The Link Layer#Error Detection and Correction Techniques#Parity Checks|Parity Checks]]
+            - [[#The Link Layer#Error Detection and Correction Techniques#Checksumming Methods|Checksumming Methods]]
+            - [[#The Link Layer#Error Detection and Correction Techniques#Cyclic Redundancy Check (CRC)|Cyclic Redundancy Check (CRC)]]
+        - [[#The Link Layer#Multiple Access Links and Protocols|Multiple Access Links and Protocols]]
+            - [[#The Link Layer#Multiple Access Links and Protocols#Channel partitioning protocols|Channel partitioning protocols]]
+                - [[#The Link Layer#Multiple Access Links and Protocols#Channel partitioning protocols#TDM|TDM]]
+                - [[#The Link Layer#Multiple Access Links and Protocols#Channel partitioning protocols#FDM|FDM]]
+                - [[#The Link Layer#Multiple Access Links and Protocols#Channel partitioning protocols#Code Division Multiple Access (CDMA)|Code Division Multiple Access (CDMA)]]
+            - [[#The Link Layer#Multiple Access Links and Protocols#Random Access Protocols|Random Access Protocols]]
+                - [[#The Link Layer#Multiple Access Links and Protocols#Random Access Protocols#Slotted ALOHA|Slotted ALOHA]]
+                - [[#The Link Layer#Multiple Access Links and Protocols#Random Access Protocols#ALOHA|ALOHA]]
+                - [[#The Link Layer#Multiple Access Links and Protocols#Random Access Protocols#Carrier Sense Multiple Access (CSMA)|Carrier Sense Multiple Access (CSMA)]]
+                - [[#The Link Layer#Multiple Access Links and Protocols#Random Access Protocols#Carrier Sense Multiple Access with Collision Detection (CSMA/CD)|Carrier Sense Multiple Access with Collision Detection (CSMA/CD)]]
+            - [[#The Link Layer#Multiple Access Links and Protocols#Taking-Turns Protocols|Taking-Turns Protocols]]
+        - [[#The Link Layer#Switched Local Area Networks|Switched Local Area Networks]]
+            - [[#The Link Layer#Switched Local Area Networks#Link-Layer Addressing and ARP|Link-Layer Addressing and ARP]]
+                - [[#The Link Layer#Switched Local Area Networks#Link-Layer Addressing and ARP#MAC Addresses|MAC Addresses]]
+                - [[#The Link Layer#Switched Local Area Networks#Link-Layer Addressing and ARP#ARP|ARP]]
+            - [[#The Link Layer#Switched Local Area Networks#Ethernet|Ethernet]]
+                - [[#The Link Layer#Switched Local Area Networks#Ethernet#Ethernet Frame Structure|Ethernet Frame Structure]]
+            - [[#The Link Layer#Switched Local Area Networks#Link-Layer Switches|Link-Layer Switches]]
+                - [[#The Link Layer#Switched Local Area Networks#Link-Layer Switches#Properties of Link-Layer Switching|Properties of Link-Layer Switching]]
+                - [[#The Link Layer#Switched Local Area Networks#Link-Layer Switches#Switches vs Routers|Switches vs Routers]]
+
+= The Link Layer =
+Implemented in hardware e.g. Network adapter
+
+== Services Provided by the Link Layer ==
+* Framing
+    - Data + header
+    - Transmits over a physical medium e.g.
+        * TP
+        * Coax
+        * Fibre
+        * Radio
+* Link access
+    - Coordinate link access of many nodes
+* Reliable delivery
+* Error detection and correction
+
+== Error Detection and Correction Techniques ==
+
+=== Parity Checks ===
+Simplest:
+* Use a single parity bit.
+* Can only detect odd number of bit-flips
+* No correction
+
+Two-dimensional parity:
+* Divide the data into rows and columns
+* Check the parity of the columns and rows
+* Can correct single bit errors in the data
+* Can correct single bit errors in the parity bits
+* Can detect (but not correct) any combination of two errors
+
+No Errors:
+|        | data | > | > | > | > | parity |
+| data   | 1    | 0 | 1 | 0 | 1 | 1      |
+| \/     | 1    | 1 | 1 | 1 | 0 | 0      |
+| \/     | 0    | 1 | 1 | 1 | 0 | 1      |
+| parity | 0    | 0 | 1 | 0 | 1 | 0      |
+
+Error on (2,2):
+|        | data | > | > | > | > | parity |
+| data   | 1    | 0 | 1 | 0 | 1 | 1      |
+| \/     | 1    | 0 | 1 | 1 | 0 | 0      |
+| \/     | 0    | 1 | 1 | 1 | 0 | 1      |
+| parity | 0    | 0 | 1 | 0 | 1 | 0      |
+
+*Forward Error Correction (FEC)*:
+* The ability of the receiver to both detect and correct errors.
+* Can decrease the number of sender transmissions required.
+
+=== Checksumming Methods ===
+Internet Checksum:
+* bytes of data are treated as 16-bit integers and summed
+* 1s complement of the sum is carried in the header
+* All 1's means no error
+
+Checksums have low overhead, but are weak.
+
+=== Cyclic Redundancy Check (CRC) ===
+d-bit piece of data D
+r-bit CRC-code R
+Sender and receiver agrees on a generator _G_:
+* r + 1 bit pattern
+* most significant bit must be 1
+* "Magic Number"
+
+D + G divisible by G:
+{{{
+D.append(R) % G == 0
+}}}
+
+Receiver divides D + R by G
+{{{
+If non-zero:
+    error
+else:
+    correct
+}}}
+
+The CRC-32 32-bit standard:
+$ G_{CRC-32} = 100000100110000010001110110110111 $
+
+Each of the CRC standards can detect burst error of fewer than _r_ + 1 bits.
+Under appropriate assumptions, a burst longer than _r_ + 1 is detected with probability $ 1-0.5^r $.
+
+== Multiple Access Links and Protocols ==
+Three categories:
+* Channel partitioning protocols
+* Random access protocols
+* Taking-turns protocols
+
+Desirable characteristics for a protocol on a channel of rate R
+* Only one node sends data: Throughput of R
+* M nodes: Average throughput R/M
+* Decentralized
+* Simple/Inexpensive to implement
+
+=== Channel partitioning protocols ===
+==== TDM ====
+Suppose a channel can support N nodes
+time frames devided into N time slots
+Round robin
+Pros:
+* Eliminates collitions
+* Is perfectly fair
+Cons:
+* A node is allways limited to an average rate of R/N
+
+==== FDM ====
+
+==== Code Division Multiple Access (CDMA) ====
+Assigns a different code to each node.
+
+=== Random Access Protocols ===
+All nodes transmit at full rate.
+Backs down on collision and waits a random delay before retransmission.
+Each node choose the delay independently.
+
+==== Slotted ALOHA ====
+* All frames consist of exactly _L_ bits.
+* Time is divided into slots of size _L_/_R_ seconds (One frame per slot).
+* Nodes start to transmit frames only at beginning of slots.
+* The nodes are synchronized so that each node knows when the slots begin.
+* If two or more frames collide, then all the nodes detect the collision before the slot ends.
+
+Let _p_ be a probability.
+If the frame collides on transmission, it retransmits the frame in the next slot with probability _p_.
+Transmit: $ p $
+Skip: $ (1-p) $
+
+Suppose _N_ nodes.
+Probabilities in the system:
+* A node transmits:  $ p $
+* The N-1 other nodes does not transmit: $ (1 - p)^{N-1} $
+* A given node has success: $ p(1-p)^{N-1} $
+* Any one of the nodes has success: $ Np(1-p)^{N-1} $
+
+Maximum efficiency: $ 1/e = 0.37 $
+Because math.
+
+==== ALOHA ====
+ALOHA but no slots.
+Maximum efficiency: $ 1/2e $
+
+==== Carrier Sense Multiple Access (CSMA) ====
+* Listen before speaking
+    - *Carrier Sensing*
+* If someone else begins talking at the same time, stop talking
+    - *Collision Detection*
+
+==== Carrier Sense Multiple Access with Collision Detection (CSMA/CD) ====
+*Binary Exponential Backoff*:
+When transmitting a frame that has already experienced _n_ collisions,
+node chooses a value of _K_ at random from $ \{0,1,2,\dots, 2^{n}-1\} $.
+For Ethernet:
+* $K*512 \text{bit time} $(The amount of time to transmit 512 bits)
+* _n_ capped at 10
+
+Efficiency:
+* Let $ d_{prop} $ denote the maximum time it takes a signal to propagate between two adapters.
+* Let $ d_{trans} $ be the time to transmit a maximum-size frame. (~1.2 msecs for 10 Mbps Ethernet)
+
+{{$
+    \text{Efficiency} = \frac{1}{1+5d_{prop}/d_{trans}}
+}}$
+
+=== Taking-Turns Protocols ===
+
+== Switched Local Area Networks ==
+=== Link-Layer Addressing and ARP ===
+
+==== MAC Addresses ====
+* 48-bit
+* HEX-Notation (XX:XX:XX:XX:XX:XX)
+* Unique for every adapter in the world
+* First 24 bits for companies
+
+Special address FF:FF:FF:FF:FF:FF goes to all nodes
+
+==== ARP ====
+IP to MAC
+Links network and link layer
+
+Each host and router has an *ARP Table*:
+* Mappings from IP to MAC
+* Time to live (TTL)
+
+*ARP Packet*:
+* Sending IP Address
+* Receiving IP Address
+* Sending MAC Address
+* Receiving MAC Address
+
+"Who has <ip>? Tell <ip>"
+
+=== Ethernet ===
+
+==== Ethernet Frame Structure ====
+| Preamble | Destination Address | Source Address | Type | Data | CRC |
+
+* Preamble:
+    - 8 bytes
+    - 7 bytes with value '10101010'
+    - 1 byte with value '10101011'
+    - Synchronization
+* Destination Address
+    - 6 bytes
+    - FF:FF:FF:FF:FF:FF is a special broadcast address that goes to all devices
+* Source Address
+    - 6 bytes
+* Type field
+    - 2 bytes
+    - What protocol is used in the layer above
+        * e.g. ARP: 0x0806
+* Data
+    - 46 to 1500 bytes
+    - if the data you want to transmit is less than 46 bytes, you have to add stuffing:
+        - The layer above removes the stuffing later
+* [[#Cyclic Redundancy Check (CRC)|CRC]]
+    - 4 bytes
+
+=== Link-Layer Switches ===
+
+Switch table entry:
+* MAC Address (Who)
+* Interface (Where)
+* Time (When)
+
+==== Properties of Link-Layer Switching ====
+
+Advantages over shared media and hubs:
+* Elimination of collisions
+    - In LANs built with switches, there are no collisions!
+* Heterogeneous links
+    - Because a switch isolates one link from another, the different links in the LAN can operate at different speeds and run on different media.
+* Management
+
+==== Switches vs Routers ====
+
+|                   | Hubs | Routers | Switches |
+|-------------------|------|---------|----------|
+| Traffic isolation | No   | Yes     | Yes      |
+| Plug and play     | Yes  | No      | Yes      |
+| Optimal routing   | No   | Yes     | No       |

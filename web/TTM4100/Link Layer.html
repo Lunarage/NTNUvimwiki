@@ -1,0 +1,942 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="Stylesheet" type="text/css" href="../style.css" />
+        <title>Link Layer</title>
+        <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    </head>
+    <body>
+        <div class="content">
+        
+<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<ul>
+<li>
+<a href="Link Layer.html#The Link Layer">The Link Layer</a>
+
+<ul>
+<li>
+<a href="Link Layer.html#The Link Layer-Services Provided by the Link Layer">Services Provided by the Link Layer</a>
+
+<li>
+<a href="Link Layer.html#The Link Layer-Error Detection and Correction Techniques">Error Detection and Correction Techniques</a>
+
+<ul>
+<li>
+<a href="Link Layer.html#The Link Layer-Error Detection and Correction Techniques-Parity Checks">Parity Checks</a>
+
+<li>
+<a href="Link Layer.html#The Link Layer-Error Detection and Correction Techniques-Checksumming Methods">Checksumming Methods</a>
+
+<li>
+<a href="Link Layer.html#The Link Layer-Error Detection and Correction Techniques-Cyclic Redundancy Check (CRC)">Cyclic Redundancy Check (CRC)</a>
+
+</ul>
+<li>
+<a href="Link Layer.html#The Link Layer-Multiple Access Links and Protocols">Multiple Access Links and Protocols</a>
+
+<ul>
+<li>
+<a href="Link Layer.html#The Link Layer-Multiple Access Links and Protocols-Channel partitioning protocols">Channel partitioning protocols</a>
+
+<ul>
+<li>
+<a href="Link Layer.html#The Link Layer-Multiple Access Links and Protocols-Channel partitioning protocols-TDM">TDM</a>
+
+<li>
+<a href="Link Layer.html#The Link Layer-Multiple Access Links and Protocols-Channel partitioning protocols-FDM">FDM</a>
+
+<li>
+<a href="Link Layer.html#The Link Layer-Multiple Access Links and Protocols-Channel partitioning protocols-Code Division Multiple Access (CDMA)">Code Division Multiple Access (CDMA)</a>
+
+</ul>
+<li>
+<a href="Link Layer.html#The Link Layer-Multiple Access Links and Protocols-Random Access Protocols">Random Access Protocols</a>
+
+<ul>
+<li>
+<a href="Link Layer.html#The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Slotted ALOHA">Slotted ALOHA</a>
+
+<li>
+<a href="Link Layer.html#The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-ALOHA">ALOHA</a>
+
+<li>
+<a href="Link Layer.html#The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Carrier Sense Multiple Access (CSMA)">Carrier Sense Multiple Access (CSMA)</a>
+
+<li>
+<a href="Link Layer.html#The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Carrier Sense Multiple Access with Collision Detection (CSMA/CD)">Carrier Sense Multiple Access with Collision Detection (CSMA/CD)</a>
+
+</ul>
+<li>
+<a href="Link Layer.html#The Link Layer-Multiple Access Links and Protocols-Taking-Turns Protocols">Taking-Turns Protocols</a>
+
+</ul>
+<li>
+<a href="Link Layer.html#The Link Layer-Switched Local Area Networks">Switched Local Area Networks</a>
+
+<ul>
+<li>
+<a href="Link Layer.html#The Link Layer-Switched Local Area Networks-Link-Layer Addressing and ARP">Link-Layer Addressing and ARP</a>
+
+<ul>
+<li>
+<a href="Link Layer.html#The Link Layer-Switched Local Area Networks-Link-Layer Addressing and ARP-MAC Addresses">MAC Addresses</a>
+
+<li>
+<a href="Link Layer.html#The Link Layer-Switched Local Area Networks-Link-Layer Addressing and ARP-ARP">ARP</a>
+
+</ul>
+<li>
+<a href="Link Layer.html#The Link Layer-Switched Local Area Networks-Ethernet">Ethernet</a>
+
+<ul>
+<li>
+<a href="Link Layer.html#The Link Layer-Switched Local Area Networks-Ethernet-Ethernet Frame Structure">Ethernet Frame Structure</a>
+
+</ul>
+<li>
+<a href="Link Layer.html#The Link Layer-Switched Local Area Networks-Link-Layer Switches">Link-Layer Switches</a>
+
+<ul>
+<li>
+<a href="Link Layer.html#The Link Layer-Switched Local Area Networks-Link-Layer Switches-Properties of Link-Layer Switching">Properties of Link-Layer Switching</a>
+
+<li>
+<a href="Link Layer.html#The Link Layer-Switched Local Area Networks-Link-Layer Switches-Switches vs Routers">Switches vs Routers</a>
+
+</ul>
+</ul>
+</ul>
+</ul>
+
+<div id="The Link Layer"><h1 id="The Link Layer" class="header"><a href="#The Link Layer">The Link Layer</a></h1></div>
+<p>
+Implemented in hardware e.g. Network adapter<br />
+</p>
+
+<div id="The Link Layer-Services Provided by the Link Layer"><h2 id="Services Provided by the Link Layer" class="header"><a href="#The Link Layer-Services Provided by the Link Layer">Services Provided by the Link Layer</a></h2></div>
+<ul>
+<li>
+Framing
+
+<ul>
+<li>
+Data + header
+
+<li>
+Transmits over a physical medium e.g.
+
+<ul>
+<li>
+TP
+
+<li>
+Coax
+
+<li>
+Fibre
+
+<li>
+Radio
+
+</ul>
+</ul>
+<li>
+Link access
+
+<ul>
+<li>
+Coordinate link access of many nodes
+
+</ul>
+<li>
+Reliable delivery
+
+<li>
+Error detection and correction
+
+</ul>
+
+<div id="The Link Layer-Error Detection and Correction Techniques"><h2 id="Error Detection and Correction Techniques" class="header"><a href="#The Link Layer-Error Detection and Correction Techniques">Error Detection and Correction Techniques</a></h2></div>
+
+<div id="The Link Layer-Error Detection and Correction Techniques-Parity Checks"><h3 id="Parity Checks" class="header"><a href="#The Link Layer-Error Detection and Correction Techniques-Parity Checks">Parity Checks</a></h3></div>
+<p>
+Simplest:<br />
+</p>
+<ul>
+<li>
+Use a single parity bit.
+
+<li>
+Can only detect odd number of bit-flips
+
+<li>
+No correction
+
+</ul>
+
+<p>
+Two-dimensional parity:<br />
+</p>
+<ul>
+<li>
+Divide the data into rows and columns
+
+<li>
+Check the parity of the columns and rows
+
+<li>
+Can correct single bit errors in the data
+
+<li>
+Can correct single bit errors in the parity bits
+
+<li>
+Can detect (but not correct) any combination of two errors
+
+</ul>
+
+<p>
+No Errors:<br />
+<table>
+<tr>
+<td>
+&nbsp;
+</td>
+<td colspan="5">
+data
+</td>
+<td>
+parity
+</td>
+</tr>
+<tr>
+<td rowspan="3">
+data
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+parity
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+Error on (2,2):<br />
+<table>
+<tr>
+<td>
+&nbsp;
+</td>
+<td colspan="5">
+data
+</td>
+<td>
+parity
+</td>
+</tr>
+<tr>
+<td rowspan="3">
+data
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+parity
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+<span id="The Link Layer-Error Detection and Correction Techniques-Parity Checks-Forward Error Correction (FEC)"></span><strong id="Forward Error Correction (FEC)">Forward Error Correction (FEC)</strong>:<br />
+</p>
+<ul>
+<li>
+The ability of the receiver to both detect and correct errors.
+
+<li>
+Can decrease the number of sender transmissions required.
+
+</ul>
+
+<div id="The Link Layer-Error Detection and Correction Techniques-Checksumming Methods"><h3 id="Checksumming Methods" class="header"><a href="#The Link Layer-Error Detection and Correction Techniques-Checksumming Methods">Checksumming Methods</a></h3></div>
+<p>
+Internet Checksum:<br />
+</p>
+<ul>
+<li>
+bytes of data are treated as 16-bit integers and summed
+
+<li>
+1s complement of the sum is carried in the header
+
+<li>
+All 1's means no error
+
+</ul>
+
+<p>
+Checksums have low overhead, but are weak.<br />
+</p>
+
+<div id="The Link Layer-Error Detection and Correction Techniques-Cyclic Redundancy Check (CRC)"><h3 id="Cyclic Redundancy Check (CRC)" class="header"><a href="#The Link Layer-Error Detection and Correction Techniques-Cyclic Redundancy Check (CRC)">Cyclic Redundancy Check (CRC)</a></h3></div>
+<p>
+d-bit piece of data D<br />
+r-bit CRC-code R<br />
+Sender and receiver agrees on a generator <em>G</em>:<br />
+</p>
+<ul>
+<li>
+r + 1 bit pattern
+
+<li>
+most significant bit must be 1
+
+<li>
+"Magic Number"
+
+</ul>
+
+<p>
+D + G divisible by G:<br />
+</p>
+<pre>
+D.append(R) % G == 0
+</pre>
+
+<p>
+Receiver divides D + R by G<br />
+</p>
+<pre>
+If non-zero:
+    error
+else:
+    correct
+</pre>
+
+<p>
+The CRC-32 32-bit standard:<br />
+\( G_{CRC-32} = 100000100110000010001110110110111 \)<br />
+</p>
+
+<p>
+Each of the CRC standards can detect burst error of fewer than <em>r</em> + 1 bits.<br />
+Under appropriate assumptions, a burst longer than <em>r</em> + 1 is detected with probability \( 1-0.5^r \).<br />
+</p>
+
+<div id="The Link Layer-Multiple Access Links and Protocols"><h2 id="Multiple Access Links and Protocols" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols">Multiple Access Links and Protocols</a></h2></div>
+<p>
+Three categories:<br />
+</p>
+<ul>
+<li>
+Channel partitioning protocols
+
+<li>
+Random access protocols
+
+<li>
+Taking-turns protocols
+
+</ul>
+
+<p>
+Desirable characteristics for a protocol on a channel of rate R<br />
+</p>
+<ul>
+<li>
+Only one node sends data: Throughput of R
+
+<li>
+M nodes: Average throughput R/M
+
+<li>
+Decentralized
+
+<li>
+Simple/Inexpensive to implement
+
+</ul>
+
+<div id="The Link Layer-Multiple Access Links and Protocols-Channel partitioning protocols"><h3 id="Channel partitioning protocols" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols-Channel partitioning protocols">Channel partitioning protocols</a></h3></div>
+<div id="The Link Layer-Multiple Access Links and Protocols-Channel partitioning protocols-TDM"><h4 id="TDM" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols-Channel partitioning protocols-TDM">TDM</a></h4></div>
+<p>
+Suppose a channel can support N nodes<br />
+time frames devided into N time slots<br />
+Round robin<br />
+Pros:<br />
+</p>
+<ul>
+<li>
+Eliminates collitions
+
+<li>
+Is perfectly fair
+
+</ul>
+<p>
+Cons:<br />
+</p>
+<ul>
+<li>
+A node is allways limited to an average rate of R/N
+
+</ul>
+
+<div id="The Link Layer-Multiple Access Links and Protocols-Channel partitioning protocols-FDM"><h4 id="FDM" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols-Channel partitioning protocols-FDM">FDM</a></h4></div>
+
+<div id="The Link Layer-Multiple Access Links and Protocols-Channel partitioning protocols-Code Division Multiple Access (CDMA)"><h4 id="Code Division Multiple Access (CDMA)" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols-Channel partitioning protocols-Code Division Multiple Access (CDMA)">Code Division Multiple Access (CDMA)</a></h4></div>
+<p>
+Assigns a different code to each node.<br />
+</p>
+
+<div id="The Link Layer-Multiple Access Links and Protocols-Random Access Protocols"><h3 id="Random Access Protocols" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols-Random Access Protocols">Random Access Protocols</a></h3></div>
+<p>
+All nodes transmit at full rate.<br />
+Backs down on collision and waits a random delay before retransmission.<br />
+Each node choose the delay independently.<br />
+</p>
+
+<div id="The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Slotted ALOHA"><h4 id="Slotted ALOHA" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Slotted ALOHA">Slotted ALOHA</a></h4></div>
+<ul>
+<li>
+All frames consist of exactly <em>L</em> bits.
+
+<li>
+Time is divided into slots of size <em>L</em>/<em>R</em> seconds (One frame per slot).
+
+<li>
+Nodes start to transmit frames only at beginning of slots.
+
+<li>
+The nodes are synchronized so that each node knows when the slots begin.
+
+<li>
+If two or more frames collide, then all the nodes detect the collision before the slot ends.
+
+</ul>
+
+<p>
+Let <em>p</em> be a probability.<br />
+If the frame collides on transmission, it retransmits the frame in the next slot with probability <em>p</em>.<br />
+Transmit: \( p \)<br />
+Skip: \( (1-p) \)<br />
+</p>
+
+<p>
+Suppose <em>N</em> nodes.<br />
+Probabilities in the system:<br />
+</p>
+<ul>
+<li>
+A node transmits:  \( p \)
+
+<li>
+The N-1 other nodes does not transmit: \( (1 - p)^{N-1} \)
+
+<li>
+A given node has success: \( p(1-p)^{N-1} \)
+
+<li>
+Any one of the nodes has success: \( Np(1-p)^{N-1} \)
+
+</ul>
+
+<p>
+Maximum efficiency: \( 1/e = 0.37 \)<br />
+Because math.<br />
+</p>
+
+<div id="The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-ALOHA"><h4 id="ALOHA" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-ALOHA">ALOHA</a></h4></div>
+<p>
+ALOHA but no slots.<br />
+Maximum efficiency: \( 1/2e \)<br />
+</p>
+
+<div id="The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Carrier Sense Multiple Access (CSMA)"><h4 id="Carrier Sense Multiple Access (CSMA)" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Carrier Sense Multiple Access (CSMA)">Carrier Sense Multiple Access (CSMA)</a></h4></div>
+<ul>
+<li>
+Listen before speaking
+
+<ul>
+<li>
+<span id="The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Carrier Sense Multiple Access (CSMA)-Carrier Sensing"></span><strong id="Carrier Sensing">Carrier Sensing</strong>
+
+</ul>
+<li>
+If someone else begins talking at the same time, stop talking
+
+<ul>
+<li>
+<span id="The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Carrier Sense Multiple Access (CSMA)-Collision Detection"></span><strong id="Collision Detection">Collision Detection</strong>
+
+</ul>
+</ul>
+
+<div id="The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Carrier Sense Multiple Access with Collision Detection (CSMA/CD)"><h4 id="Carrier Sense Multiple Access with Collision Detection (CSMA/CD)" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Carrier Sense Multiple Access with Collision Detection (CSMA/CD)">Carrier Sense Multiple Access with Collision Detection (CSMA/CD)</a></h4></div>
+<p>
+<span id="The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Carrier Sense Multiple Access with Collision Detection (CSMA/CD)-Binary Exponential Backoff"></span><strong id="Binary Exponential Backoff">Binary Exponential Backoff</strong>:<br />
+When transmitting a frame that has already experienced <em>n</em> collisions,<br />
+node chooses a value of <em>K</em> at random from \( \{0,1,2,\dots, 2^{n}-1\} \).<br />
+For Ethernet:<br />
+</p>
+<ul>
+<li>
+\(K*512 \text{bit time} \)(The amount of time to transmit 512 bits)
+
+<li>
+<em>n</em> capped at 10
+
+</ul>
+
+<p>
+Efficiency:<br />
+</p>
+<ul>
+<li>
+Let \( d_{prop} \) denote the maximum time it takes a signal to propagate between two adapters.
+
+<li>
+Let \( d_{trans} \) be the time to transmit a maximum-size frame. (~1.2 msecs for 10 Mbps Ethernet)
+
+</ul>
+
+\[
+    \text{Efficiency} = \frac{1}{1+5d_{prop}/d_{trans}}
+\]
+
+<div id="The Link Layer-Multiple Access Links and Protocols-Taking-Turns Protocols"><h3 id="Taking-Turns Protocols" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols-Taking-Turns Protocols">Taking-Turns Protocols</a></h3></div>
+
+<div id="The Link Layer-Switched Local Area Networks"><h2 id="Switched Local Area Networks" class="header"><a href="#The Link Layer-Switched Local Area Networks">Switched Local Area Networks</a></h2></div>
+<div id="The Link Layer-Switched Local Area Networks-Link-Layer Addressing and ARP"><h3 id="Link-Layer Addressing and ARP" class="header"><a href="#The Link Layer-Switched Local Area Networks-Link-Layer Addressing and ARP">Link-Layer Addressing and ARP</a></h3></div>
+
+<div id="The Link Layer-Switched Local Area Networks-Link-Layer Addressing and ARP-MAC Addresses"><h4 id="MAC Addresses" class="header"><a href="#The Link Layer-Switched Local Area Networks-Link-Layer Addressing and ARP-MAC Addresses">MAC Addresses</a></h4></div>
+<ul>
+<li>
+48-bit
+
+<li>
+HEX-Notation (XX:XX:XX:XX:XX:XX)
+
+<li>
+Unique for every adapter in the world
+
+<li>
+First 24 bits for companies
+
+</ul>
+
+<p>
+Special address FF:FF:FF:FF:FF:FF goes to all nodes<br />
+</p>
+
+<div id="The Link Layer-Switched Local Area Networks-Link-Layer Addressing and ARP-ARP"><h4 id="ARP" class="header"><a href="#The Link Layer-Switched Local Area Networks-Link-Layer Addressing and ARP-ARP">ARP</a></h4></div>
+<p>
+IP to MAC<br />
+Links network and link layer<br />
+</p>
+
+<p>
+Each host and router has an <span id="The Link Layer-Switched Local Area Networks-Link-Layer Addressing and ARP-ARP-ARP Table"></span><strong id="ARP Table">ARP Table</strong>:<br />
+</p>
+<ul>
+<li>
+Mappings from IP to MAC
+
+<li>
+Time to live (TTL)
+
+</ul>
+
+<p>
+<span id="The Link Layer-Switched Local Area Networks-Link-Layer Addressing and ARP-ARP-ARP Packet"></span><strong id="ARP Packet">ARP Packet</strong>:<br />
+</p>
+<ul>
+<li>
+Sending IP Address
+
+<li>
+Receiving IP Address
+
+<li>
+Sending MAC Address
+
+<li>
+Receiving MAC Address
+
+</ul>
+
+<p>
+"Who has &lt;ip&gt;? Tell &lt;ip&gt;"<br />
+</p>
+
+<div id="The Link Layer-Switched Local Area Networks-Ethernet"><h3 id="Ethernet" class="header"><a href="#The Link Layer-Switched Local Area Networks-Ethernet">Ethernet</a></h3></div>
+
+<div id="The Link Layer-Switched Local Area Networks-Ethernet-Ethernet Frame Structure"><h4 id="Ethernet Frame Structure" class="header"><a href="#The Link Layer-Switched Local Area Networks-Ethernet-Ethernet Frame Structure">Ethernet Frame Structure</a></h4></div>
+<table>
+<tr>
+<td>
+Preamble
+</td>
+<td>
+Destination Address
+</td>
+<td>
+Source Address
+</td>
+<td>
+Type
+</td>
+<td>
+Data
+</td>
+<td>
+CRC
+</td>
+</tr>
+</table>
+
+<ul>
+<li>
+Preamble:
+
+<ul>
+<li>
+8 bytes
+
+<li>
+7 bytes with value '10101010'
+
+<li>
+1 byte with value '10101011'
+
+<li>
+Synchronization
+
+</ul>
+<li>
+Destination Address
+
+<ul>
+<li>
+6 bytes
+
+<li>
+FF:FF:FF:FF:FF:FF is a special broadcast address that goes to all devices
+
+</ul>
+<li>
+Source Address
+
+<ul>
+<li>
+6 bytes
+
+</ul>
+<li>
+Type field
+
+<ul>
+<li>
+2 bytes
+
+<li>
+What protocol is used in the layer above
+
+<ul>
+<li>
+e.g. ARP: 0x0806
+
+</ul>
+</ul>
+<li>
+Data
+
+<ul>
+<li>
+46 to 1500 bytes
+
+<li>
+if the data you want to transmit is less than 46 bytes, you have to add stuffing:
+
+<ul>
+<li>
+The layer above removes the stuffing later
+
+</ul>
+</ul>
+<li>
+<a href="Link Layer.html#Cyclic Redundancy Check (CRC)">CRC</a>
+
+<ul>
+<li>
+4 bytes
+
+</ul>
+</ul>
+
+<div id="The Link Layer-Switched Local Area Networks-Link-Layer Switches"><h3 id="Link-Layer Switches" class="header"><a href="#The Link Layer-Switched Local Area Networks-Link-Layer Switches">Link-Layer Switches</a></h3></div>
+
+<p>
+Switch table entry:<br />
+</p>
+<ul>
+<li>
+MAC Address (Who)
+
+<li>
+Interface (Where)
+
+<li>
+Time (When)
+
+</ul>
+
+<div id="The Link Layer-Switched Local Area Networks-Link-Layer Switches-Properties of Link-Layer Switching"><h4 id="Properties of Link-Layer Switching" class="header"><a href="#The Link Layer-Switched Local Area Networks-Link-Layer Switches-Properties of Link-Layer Switching">Properties of Link-Layer Switching</a></h4></div>
+
+<p>
+Advantages over shared media and hubs:<br />
+</p>
+<ul>
+<li>
+Elimination of collisions
+
+<ul>
+<li>
+In LANs built with switches, there are no collisions!
+
+</ul>
+<li>
+Heterogeneous links
+
+<ul>
+<li>
+Because a switch isolates one link from another, the different links in the LAN can operate at different speeds and run on different media.
+
+</ul>
+<li>
+Management
+
+</ul>
+
+<div id="The Link Layer-Switched Local Area Networks-Link-Layer Switches-Switches vs Routers"><h4 id="Switches vs Routers" class="header"><a href="#The Link Layer-Switched Local Area Networks-Link-Layer Switches-Switches vs Routers">Switches vs Routers</a></h4></div>
+<table>
+<tr>
+<th>
+&nbsp;
+</th>
+<th>
+Hubs
+</th>
+<th>
+Routers
+</th>
+<th>
+Switches
+</th>
+</tr>
+<tr>
+<td>
+Traffic isolation
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+</tr>
+<tr>
+<td>
+Plug and play
+</td>
+<td>
+Yes
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+</tr>
+<tr>
+<td>
+Optimal routing
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+<td>
+No
+</td>
+</tr>
+</table>
+
+        </div>
+        <p><small>Page created on 2020-09-02</small></p>
+    </body>
+</html>

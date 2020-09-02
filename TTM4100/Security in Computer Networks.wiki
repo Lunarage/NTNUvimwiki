@@ -1,0 +1,68 @@
+= Contents =
+    - [[#Security in Computer Networks|Security in Computer Networks]]
+        - [[#Security in Computer Networks#What Is Network Security|What Is Network Security]]
+        - [[#Security in Computer Networks#Symmetric Key Cryptography|Symmetric Key Cryptography]]
+        - [[#Security in Computer Networks#Message Integrity and Digital Signatures|Message Integrity and Digital Signatures]]
+            - [[#Security in Computer Networks#Message Integrity and Digital Signatures#Cryptographic Hash Functions|Cryptographic Hash Functions]]
+            - [[#Security in Computer Networks#Message Integrity and Digital Signatures#Message Authentication Code (MAC)|Message Authentication Code (MAC)]]
+        - [[#Security in Computer Networks#Securing TCP Connections: SSL|Securing TCP Connections: SSL]]
+                - [[#Security in Computer Networks#Securing TCP Connections: SSL#Handshake|Handshake]]
+                - [[#Security in Computer Networks#Securing TCP Connections: SSL#Key Derivation|Key Derivation]]
+                - [[#Security in Computer Networks#Securing TCP Connections: SSL#Data Transfer|Data Transfer]]
+        - [[#Security in Computer Networks#Securing Wireless LANs|Securing Wireless LANs]]
+            - [[#Security in Computer Networks#Securing Wireless LANs#Wired Equivalent Privacy (WEP)|Wired Equivalent Privacy (WEP)]]
+
+= Security in Computer Networks =
+
+== What Is Network Security ==
+Desirable properties of *secure communication*:
+* Confidentiality
+    - Only sender and receiver should be able to understand the contents of the transmitted message.
+* Message integrity
+    - Content of communication is not altered.
+* End-point authentication
+    - Both the sender and receiver should be able to confirm the identity of the other party involved in the communication.
+* Operational security
+
+== Symmetric Key Cryptography ==
+
+
+* Ciphertext-only attack:
+* Known-plaintext attack:
+    - 
+* Chosen-plaintext attack:
+
+== Message Integrity and Digital Signatures ==
+=== Cryptographic Hash Functions ===
+A hash function takes an input _m_ and computes a string _H(m)_ known as a hash.
+A *cryptographic hash function* is required to have the following additional property:
+* It is computational infeasible to find any two different messages _x_ and _y_ such that _H(x)_ = _H(y)_.
+
+=== Message Authentication Code (MAC) ===
+
+== Securing TCP Connections: SSL ==
+*SSL: Secure Sockets Layer*
+*TLS: Transport Layer Security*
+
+Lives in the application layer.
+
+Three Phases:
+* Handshake
+* Key derivation
+* Data transfer
+
+==== Handshake ====
+
+==== Key Derivation ====
+
+==== Data Transfer ====
+
+== Securing Wireless LANs ==
+=== Wired Equivalent Privacy (WEP) ===
+
+1. A wireless host requests authentication by an access point
+2. The access point responds to the authentication request with a 128-byte nonce value.
+3. The wireless host encrypts the nonce using the symmetric key that it shares with the access point.
+4. The access point decrypts the host-encrypted nonce.
+
+WEP bad. Don't use.

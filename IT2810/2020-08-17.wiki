@@ -1,0 +1,18 @@
+= Emneansvarlig =
+* Trond Aalberg
+
+= Teknologier =
+* HTML, CSS, Javascript, Typescript
+* jQuery
+* CSS-grid, Flexbox
+* SVG, HTML canvas
+* Responsivt we besign
+* Node.js
+* React
+* Rest, GraphQL
+* Git
+* Dokumentasjon og testing
+* Oppsett og drift av web-løsninger
+
+
+%% vim:spelllang=nb

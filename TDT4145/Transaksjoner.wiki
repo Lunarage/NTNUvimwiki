@@ -1,0 +1,263 @@
+= Transactions =
+
+== ACID ==
+
+=== Atomicity ===
+A transaction must either succeed completely or fail completely.
+A transaction may contain multiple statements. If one of the statements in a transaction fails, all of the statements should fail.
+
+=== Consistency ===
+Ensures that a transaction takes the database from one valid state to another valid state.
+Must respect constraints etc.
+
+=== Isolation ===
+A transaction is unaffected by other (simultaneous) transactions.
+
+=== Durability ===
+Once committed, a transaction stays committed.
+
+
+== Schedules ==
+
+A schedule _S_ of _n_ transactions T1, T2, …, Tn is an ordering of the operations of the transactions.
+
+Operations:
+- b: begin
+- r: read
+- w: write
+- e: end
+- c: commit
+- a: abort
+
+=== Conflicting operations in a schedule ===
+Two operations are said to conflict if they satisfy all of the following conditions:
+1. They belong to different transactions
+2. They access the same item
+3. At least one of the operations is a write operation
+
+Intuitively, two operations are conflicting if changing their order can result in a different outcome.
+
+=== Complete schedule ===
+A schedule _S_ of _n_ transactions T1, T2, …, Tn is said to be a *complete schedule* if the following conditions hold:
+1. The operations in _S_ are exactly those operations in T1, T2, …, Tn including a commit or abort operation as the last operation for each transaction in the schedule.
+2. For any pair of operations from the same transaction Ti, their relative order of appearance in _S_ is the same as their order of appearance in Ti.
+3. For any two conflicting operations, one of the two must occur before the other in the schedule.
+
+Otherwise it is a *partial schedule*
+
+=== Characterizing Schedules Based on Recoverability ===
+* Nonrecoverable
+    - Committed transactions may need to be rolled back.
+* Recoverable
+    - A transaction may not commit reads of uncommitted writes from another transaction.
+    - In a recoverable schedule, no committed transaction ever needs to be rolled back.
+    - Uncommitted transactions may need to be rolled back.
+* ACA (Avoid Cascading Abort)
+    - Transactions may only read from committed writes.
+* Strict
+    - Transactions may not read from nor write to an item, X, until the last transaction that modified X is committed or aborted.
+
+=== Characterizing Schedules Based on Serializability ===
+The concept of *serializability of schedules* is used to identify which schedules are correct when transaction executions have interleaving of their operations in the schedules.
+
+=== Serial, Nonserial and Conflict-Serializable Schedules ===
+* Serial
+    - No interleaving of operation between transactions.
+    - Only one transaction is active at a given point.
+* Nonserial
+
+* Serializable
+    - Equivalent to one or more serial schedules.
+
+=== Conflict Equivalence of Two Schedules ===
+Two schedules are said to be *conflict equivalent* if the relative order of any two [[#Conflicting operations in a schedule| conflicting operations]] is the same in both schedules.
+
+Using the notion of conflict equivalence, we define a schedule S to be *(conflict) serializable* if it is (conflict) equivalent to some serial schedule S′.
+
+How to Precedence Graphs really good:
+{{local:Precedence Graph.png|Your Precedence Graph Here}}
+
+== Two-Phase Locking ==
+Locks:
+* Read/Shared Lock
+    - Multiple transactions
+* Write/Exclusive Lock
+    - Only one transaction
+
+Two-Phase Locking if all locking operations precede the first unlock operation in the transaction.
+A growing phase before a shrinking phase.
+
+It can be proved that, if every transaction in a schedule follows the two-phase locking protocol, the schedule is guaranteed to be serializable.
+
+Although the two-phase locking protocol guarantees serializability, it does not permit all possible serializable schedules.
+
+=== Basic, Conservative, Strict and Rigorous Two-Phase Locking ===
+* Basic
+    - All locks before any unlocks
+* Conservative
+    - Locks before the transaction begins
+    - Deadlock-free
+* Strict
+    - Does not release write locks until after it commits or aborts
+    - Guarantees [[#Characterizing Schedules Based on Recoverability|strict schedules]]
+    - Deadlock-free
+* Rigorous
+    - Does not release any locks until after it commits or aborts
+    - Guarantees [[#Characterizing Schedules Based on Recoverability|strict schedules]]
+
+=== Dealing with Deadlock and Starvation ===
+*Deadlock:* Two transactions waiting for each other indefinitely.
+
+*Starvation:* A transaction cannot proceed for an indefinite period of time while other transactions continue normally.
+
+== Recovery ==
+=== Recovery Algorithm Categorization ===
+* Deferred Update
+    - Does not write to disk until after a transaction commits
+    - UNDO is not needed in recovery
+    - NO-UNDO/REDO
+* Immediate Update
+    - May write to disk before a transaction commits
+    - Recorded in log before write
+    - UNDO and REDO may be required in recovery
+    - UNDO/REDO
+* Immediate Update Variation
+    - All updates written to disk before commit
+    - REDO is not needed
+    - UNDO/NO-REDO
+
+*Impodent:* Executing an operation multiple times is equivalent to executing it just once.
+
+=== Caching of Disk Blocks ===
+Data is cashed in main memory buffers and updated there before written back to disk.
+Operates on units of disk pages (blocks).
+*Flush* if the memory buffers are full.
+
+*Dirty Bit:* Indicates whether or not the buffer page has been modified with respect to data on disk.
+
+*Pin-unpin bit:* Cannot write buffer page to disk.
+
+==== Strategies for flushing cache ====
+* *In-place updating:*
+    - Write to same original location/overwriting old values
+* *Shadowing:*
+    - Writes an updated buffer at a different disk location
+    - Maintains multiple versions of data items
+    - Not strictly necessary to maintain a log for recovering
+
+* *BFIM:* Before image/old values
+* *AFIM:* After image/new values
+
+=== Write-Ahead Logging, Steal/No-Steal, and Force/No-Force ===
+* Write-ahead logging
+    - BFIM recorded in log before flush
+
+* REDO-type log entry
+    - New value of the item written
+* UNDO-type log entry
+    - Old value of the item written
+
+* Steal:
+    - Buffer can be written to disk before commit
+    - Needs less memory
+* No-steal:
+    - Buffer cannot be written to disk before commit
+* Force:
+    - Updates immediately written to disk before commit
+    - REDO will never be needed during recovery
+* No-force:
+    - Not Force
+
+=== Checkpoints in the log ===
+1. Suspend execution of transactions temporarily.
+2. Force-write all main memory buffers that have been modified to disk.
+3. Write a checkpoint record to the log, and force-write the log to disk.
+4. Resume executing transactions.
+
+*Fuzzy Checkpointing:*
+* Transactions may continue during checkpointing
+* The previous checkpoint remains valid until the current checkpoint is completed.
+
+=== ARIES ===
+* Steal/no-force
+* Write-ahead log
+* repeating history during redo
+    - Retrace all actions prior to crash
+    - Uncommitted transactions are undone
+* logging changes during undo
+    - Prevents ARIES from repeating undo
+
+Three main steps:
+* Analysis
+    - Find dirty pages and uncommitted transactions
+    - Find the appropriate point in the log where REDO should start
+* REDO
+    - Down the log
+    - Reconstruct the database up to the point of failure
+* UNDO
+    - Up the log
+    - Undo the uncommitted changes
+
+Needs:
+* The log
+* The transaction table
+* Dirty page table
+
+==== The Log ====
+* Log sequence number (LSN):
+    - Address of the log record on disk
+    - Each LSN corresponds to a specific change (action)
+
+A log record is written for any of the following:
+* `write`
+* `commit`
+* `abort`
+* `undo`
+    - recorded to avoid redoing the undo
+* `end`
+
+Common fields for all log records:
+* previous LSN
+* transaction ID
+* type of log record
+
+Additional fields for write:
+* page ID
+* length of updated item
+* offset from beginning of page
+* BFIM of the item
+* AFIM of the item
+
+==== Transaction Table and Dirty Page Table ====
+Rebuilt during analysis step
+Transaction Table contains an entry for each uncommitted transaction:
+* Transaction ID
+* Transaction status
+* LSN of the mot recent log record
+
+The Dirty Page Table contains an entry for each dirty page in the cache:
+* page ID
+* LSN corresponding to the earliest update to that page
+
+==== Checkpoints ====
+ARIES uses Fuzzy Checkpointing
+Logs:
+* write a `begin_checkpoint`
+* write an `end_checkpoint`
+* LSN of the `begin_checkpoint` record to a special file
+* Transaction Table and Dirty Page Table are appended to the end of the log
+
+The cache does not have to be flushed during checkpointing.
+
+==== Analysis Phase ====
+Reads the log from the last valid checkpoint.
+Reconstructs Transaction Table and Dirty Page Table:
+* If an `end` entry is found for a transaction, it is deleted form the transaction table (It is already committed).
+* If any other entry is found for a transaction, that transaction is added to the transaction table (untracked active transaction) and the last LSN field is modified.
+
+==== REDO Phase ====
+Redo from the smallest (earliest/oldest) LSN of all the dirty pages to the end of the log.
+* If a change pertains a page _P_ that is not int the Dirty Page Table, it is skipped (Not in dirty table == already written to disk)
+
+==== UNDO Phase ====
+Undo uncommitted actions.

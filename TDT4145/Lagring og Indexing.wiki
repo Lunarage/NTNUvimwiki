@@ -1,0 +1,84 @@
+= Contents =
+    - [[#Storage, Indexes and Query Processing|Storage, Indexes and Query Processing]]
+        - [[#Storage, Indexes and Query Processing#Storage|Storage]]
+            - [[#Storage, Indexes and Query Processing#Storage#Block Format|Block Format]]
+            - [[#Storage, Indexes and Query Processing#Storage#Database Buffer|Database Buffer]]
+            - [[#Storage, Indexes and Query Processing#Storage#Heap Files|Heap Files]]
+            - [[#Storage, Indexes and Query Processing#Storage#Static hashing|Static hashing]]
+            - [[#Storage, Indexes and Query Processing#Storage#Extendable hashing|Extendable hashing]]
+        - [[#Storage, Indexes and Query Processing#Indexes|Indexes]]
+            - [[#Storage, Indexes and Query Processing#Indexes#Indexing|Indexing]]
+            - [[#Storage, Indexes and Query Processing#Indexes#B+-tree|B+-tree]]
+        - [[#Storage, Indexes and Query Processing#Query Processing|Query Processing]]
+            - [[#Storage, Indexes and Query Processing#Query Processing#Queries and Storage Structures|Queries and Storage Structures]]
+
+= Storage, Indexes and Query Processing =
+
+== Storage ==
+=== Block Format ===
+A *block* is a basic storage unit used by the DBMS to store data in a database.
+The DBMS reads and writes from/to disk in units of blocks.
+
+A block is identified by a BlockId:
+* DeviceID
+* Index
+
+=== Database Buffer ===
+The buffer resides in memory.
+
+When a block is residing in the database buffer, it is also identified by the BlockId, and there exists a hash index to find the block in the buffer.
+
+=== Heap Files ===
+Most basic storage.
+Data is not ordered in any particular way, it is simply stored in the order it is inserted.
+
+Usually implemented with a liked list scheme.
+
+Heap files are mainly used to store tables when there is an index to the table, or it may be used to store records in temporary files during query processing.
+
+=== Static hashing ===
+The most basic form of hashed storage.
+* A file is composed of _N_ block.
+* Apply a hash function to the search key, this the blockID of the block the record is put in.
+* To retrieve a record, apply hash to search key. This is the blockID where your record is.
+
+A simple hash function:
+$ h(K) = K \bmod N $
+Where _K_ is the key and _N_ is the number of blocks in the file.
+
+If a block becomes full:
+* _Open addressing_: Store the record in the first successive block having free space.
+* _Separate overflow_: Special blocks storing overflow records. The overflow blocks may be shared among many blocks, or may be separate for each block needing overflow storage.
+* _Multiple hashing_: Use another hash function to calculate the block to store the record. This may be considered as _distributed overflow_.
+
+Not dynamic. Long overflow chains are bad for performance.
+
+=== Extendable hashing ===
+Extendible hashing is designed to allow for dynamic hash files.
+Uses a directory to point into the hash file.
+
+== Indexes  ==
+
+=== Indexing ===
+There are two reasons for doing indexing:
+1. Improve retrieval speed when accessing through the indexed field.
+2. Ensure uniqueness for the indexed field.
+
+*Index field*: Field/attribute of the record/row that is indexed.
+*Primary index*: An index structure which indexes the primary key of the records/rows.
+*Clustered index*: Index on table where the records are stored physically in the same order as the index records. In practice this is a B+-tree or hash index where the records of the table are stored within the index itself.
+*Secondary index*: An index which is not a primary index. (duh)
+
+=== B+-tree ===
+Some summarized concepts about B+-trees:
+* The indexed records are stored at the leaf level (level 0). The blocks above the leaf level are merely used to navigate to the leaf level.
+* The records/keys at one level are sorted.
+* The block should at least be 50% filled. On average a block will be 2/3 or 67% filled when inserting keys randomly. Some books operate with 69% (nice) fill degree (ln(2)).
+* The blocks have a size that fits the disk, typically, 4KB, 8KB, 16KB or 32KB.
+* Blocks are disk-oriented and are traditionally read into memory in disk format. However, it is also possible to convert the disk format to e.g. Java objects when reading in a block, and opposite when writing the block.
+* Search is performed from the root to the leaf level.
+* In comparison to LSM trees, B+-trees are regarded to have superior read performance, but LSM trees have superior write performance.
+
+
+== Query Processing ==
+=== Queries and Storage Structures ===

@@ -1,0 +1,749 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="Stylesheet" type="text/css" href="../style.css" />
+        <title>Transport Layer</title>
+        <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    </head>
+    <body>
+        <div class="content">
+        
+<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<ul>
+<li>
+<a href="Transport Layer.html#The Transport Layer">The Transport Layer</a>
+
+<ul>
+<li>
+<a href="Transport Layer.html#The Transport Layer-Introduction and Transport-Layer Services">Introduction and Transport-Layer Services</a>
+
+<ul>
+<li>
+<a href="Transport Layer.html#The Transport Layer-Introduction and Transport-Layer Services-Overview of the Transport Layer in the Internet">Overview of the Transport Layer in the Internet</a>
+
+</ul>
+<li>
+<a href="Transport Layer.html#The Transport Layer-Multiplexing and Demultiplexing">Multiplexing and Demultiplexing</a>
+
+<li>
+<a href="Transport Layer.html#The Transport Layer-Connectionless Transport: UDP">Connectionless Transport: UDP</a>
+
+<ul>
+<li>
+<a href="Transport Layer.html#The Transport Layer-Connectionless Transport: UDP-UDP Segment Structure">UDP Segment Structure</a>
+
+</ul>
+<li>
+<a href="Transport Layer.html#The Transport Layer-Principles of Reliable Data Transfer">Principles of Reliable Data Transfer</a>
+
+<ul>
+<li>
+<a href="Transport Layer.html#The Transport Layer-Principles of Reliable Data Transfer-Building a Reliable Data Transfer Protocol">Building a Reliable Data Transfer Protocol</a>
+
+<li>
+<a href="Transport Layer.html#The Transport Layer-Principles of Reliable Data Transfer-Pipelined Reliable Data Transfer Protocols">Pipelined Reliable Data Transfer Protocols</a>
+
+<li>
+<a href="Transport Layer.html#The Transport Layer-Principles of Reliable Data Transfer-Go-Back-N">Go-Back-N</a>
+
+<li>
+<a href="Transport Layer.html#The Transport Layer-Principles of Reliable Data Transfer-Selective Repeat">Selective Repeat</a>
+
+</ul>
+<li>
+<a href="Transport Layer.html#The Transport Layer-Connection-Oriented Transport: TCP">Connection-Oriented Transport: TCP</a>
+
+<ul>
+<li>
+<a href="Transport Layer.html#The Transport Layer-Connection-Oriented Transport: TCP-The TCP Connection">The TCP Connection</a>
+
+<li>
+<a href="Transport Layer.html#The Transport Layer-Connection-Oriented Transport: TCP-TCP Segment Structure">TCP Segment Structure</a>
+
+<ul>
+<li>
+<a href="Transport Layer.html#The Transport Layer-Connection-Oriented Transport: TCP-TCP Segment Structure-Sequence Number and Acknowledgement number">Sequence Number and Acknowledgement number</a>
+
+<li>
+<a href="Transport Layer.html#The Transport Layer-Connection-Oriented Transport: TCP-TCP Segment Structure-Receive Window">Receive Window</a>
+
+<li>
+<a href="Transport Layer.html#The Transport Layer-Connection-Oriented Transport: TCP-TCP Segment Structure-Header Length">Header Length</a>
+
+<li>
+<a href="Transport Layer.html#The Transport Layer-Connection-Oriented Transport: TCP-TCP Segment Structure-Options">Options</a>
+
+<li>
+<a href="Transport Layer.html#The Transport Layer-Connection-Oriented Transport: TCP-TCP Segment Structure-Flag Field">Flag Field</a>
+
+</ul>
+<li>
+<a href="Transport Layer.html#The Transport Layer-Connection-Oriented Transport: TCP-Flow Control">Flow Control</a>
+
+<li>
+<a href="Transport Layer.html#The Transport Layer-Connection-Oriented Transport: TCP-TCP Connection Management">TCP Connection Management</a>
+
+</ul>
+<li>
+<a href="Transport Layer.html#The Transport Layer-Principles of Congestion Control">Principles of Congestion Control</a>
+
+<li>
+<a href="Transport Layer.html#The Transport Layer-TCP Congestion Control">TCP Congestion Control</a>
+
+</ul>
+</ul>
+
+<div id="The Transport Layer"><h1 id="The Transport Layer" class="header"><a href="#The Transport Layer">The Transport Layer</a></h1></div>
+<div id="The Transport Layer-Introduction and Transport-Layer Services"><h2 id="Introduction and Transport-Layer Services" class="header"><a href="#The Transport Layer-Introduction and Transport-Layer Services">Introduction and Transport-Layer Services</a></h2></div>
+<p>
+A transport layer protocol provides logical communication between processes running on different hosts.<br />
+Transport-Layer packets: <span id="The Transport Layer-Introduction and Transport-Layer Services-Segments"></span><strong id="Segments">Segments</strong><br />
+</p>
+
+<div id="The Transport Layer-Introduction and Transport-Layer Services-Overview of the Transport Layer in the Internet"><h3 id="Overview of the Transport Layer in the Internet" class="header"><a href="#The Transport Layer-Introduction and Transport-Layer Services-Overview of the Transport Layer in the Internet">Overview of the Transport Layer in the Internet</a></h3></div>
+<ul>
+<li>
+<span id="The Transport Layer-Introduction and Transport-Layer Services-Overview of the Transport Layer in the Internet-UDP (User Datagram Protocol)"></span><strong id="UDP (User Datagram Protocol)">UDP (User Datagram Protocol)</strong>:
+
+<ul>
+<li>
+Unreliable
+
+<li>
+Connectionless
+
+<li>
+No congestion control
+
+</ul>
+<li>
+<span id="The Transport Layer-Introduction and Transport-Layer Services-Overview of the Transport Layer in the Internet-TCP (Transmission Control Protocol)"></span><strong id="TCP (Transmission Control Protocol)">TCP (Transmission Control Protocol)</strong>:
+
+<ul>
+<li>
+Reliable
+
+<li>
+Connection-oriented
+
+<li>
+Provides congestion control
+
+</ul>
+</ul>
+
+<p>
+Extending host-to-host delivery to process-to-process delivery is called <span id="The Transport Layer-Introduction and Transport-Layer Services-Overview of the Transport Layer in the Internet-transport-layer multiplexing"></span><strong id="transport-layer multiplexing">transport-layer multiplexing</strong> and <span id="The Transport Layer-Introduction and Transport-Layer Services-Overview of the Transport Layer in the Internet-demultiplexing"></span><strong id="demultiplexing">demultiplexing</strong>.<br />
+</p>
+
+<div id="The Transport Layer-Multiplexing and Demultiplexing"><h2 id="Multiplexing and Demultiplexing" class="header"><a href="#The Transport Layer-Multiplexing and Demultiplexing">Multiplexing and Demultiplexing</a></h2></div>
+<p>
+<span id="The Transport Layer-Multiplexing and Demultiplexing-Sockets"></span><strong id="Sockets">Sockets</strong>: Doors through which data passes from the network to the process and vice-versa.<br />
+<span id="The Transport Layer-Multiplexing and Demultiplexing-Port numbers"></span><strong id="Port numbers">Port numbers</strong>:<br />
+</p>
+<ul>
+<li>
+16-bit (0 - 65535)
+
+<li>
+0 to 1023 are well known e.g:
+
+<ul>
+<li>
+23: FTP
+
+<li>
+53: DNS
+
+<li>
+80: HTTP
+
+</ul>
+</ul>
+
+<p>
+Transport-layer segment:<br />
+<table>
+<tr>
+<th colspan="2">
+32 bits
+</th>
+</tr>
+<tr>
+<td>
+Source port #
+</td>
+<td>
+Destination port #
+</td>
+</tr>
+<tr>
+<td colspan="2">
+Other header fields
+</td>
+</tr>
+<tr>
+<td colspan="2">
+Application data (message)
+</td>
+</tr>
+</table>
+</p>
+
+<div id="The Transport Layer-Connectionless Transport: UDP"><h2 id="Connectionless Transport: UDP" class="header"><a href="#The Transport Layer-Connectionless Transport: UDP">Connectionless Transport: UDP</a></h2></div>
+
+<div id="The Transport Layer-Connectionless Transport: UDP-UDP Segment Structure"><h3 id="UDP Segment Structure" class="header"><a href="#The Transport Layer-Connectionless Transport: UDP-UDP Segment Structure">UDP Segment Structure</a></h3></div>
+<p>
+UDP segment:<br />
+<table>
+<tr>
+<th colspan="2">
+32 bits
+</th>
+</tr>
+<tr>
+<td>
+Source port #
+</td>
+<td>
+Destination port #
+</td>
+</tr>
+<tr>
+<td>
+Length
+</td>
+<td>
+Checksum
+</td>
+</tr>
+<tr>
+<td colspan="2">
+Application data (message)
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+Error detection:<br />
+</p>
+<ul>
+<li>
+1s complement of the sum of all the 16-bit words in the segment
+
+<li>
+Overflow wrapped around
+
+<li>
+No error recovery
+
+</ul>
+
+<div id="The Transport Layer-Principles of Reliable Data Transfer"><h2 id="Principles of Reliable Data Transfer" class="header"><a href="#The Transport Layer-Principles of Reliable Data Transfer">Principles of Reliable Data Transfer</a></h2></div>
+
+<div id="The Transport Layer-Principles of Reliable Data Transfer-Building a Reliable Data Transfer Protocol"><h3 id="Building a Reliable Data Transfer Protocol" class="header"><a href="#The Transport Layer-Principles of Reliable Data Transfer-Building a Reliable Data Transfer Protocol">Building a Reliable Data Transfer Protocol</a></h3></div>
+
+<div id="The Transport Layer-Principles of Reliable Data Transfer-Pipelined Reliable Data Transfer Protocols"><h3 id="Pipelined Reliable Data Transfer Protocols" class="header"><a href="#The Transport Layer-Principles of Reliable Data Transfer-Pipelined Reliable Data Transfer Protocols">Pipelined Reliable Data Transfer Protocols</a></h3></div>
+
+<div id="The Transport Layer-Principles of Reliable Data Transfer-Go-Back-N"><h3 id="Go-Back-N" class="header"><a href="#The Transport Layer-Principles of Reliable Data Transfer-Go-Back-N">Go-Back-N</a></h3></div>
+
+<div id="The Transport Layer-Principles of Reliable Data Transfer-Selective Repeat"><h3 id="Selective Repeat" class="header"><a href="#The Transport Layer-Principles of Reliable Data Transfer-Selective Repeat">Selective Repeat</a></h3></div>
+
+<div id="The Transport Layer-Principles of Reliable Data Transfer-Summary"><h3 id="Summary" class="header"><a href="#The Transport Layer-Principles of Reliable Data Transfer-Summary">Summary</a></h3></div>
+<table>
+<tr>
+<th>
+Mechanism
+</th>
+<th>
+Use, Comments
+</th>
+</tr>
+<tr>
+<td>
+Checksum
+</td>
+<td>
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+Timer
+</td>
+<td>
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+Sequence Number
+</td>
+<td>
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+Acknowledgement
+</td>
+<td>
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+Negative Acknowledgement
+</td>
+<td>
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+Window, pipelining
+</td>
+<td>
+&nbsp;
+</td>
+</tr>
+</table>
+
+<div id="The Transport Layer-Connection-Oriented Transport: TCP"><h2 id="Connection-Oriented Transport: TCP" class="header"><a href="#The Transport Layer-Connection-Oriented Transport: TCP">Connection-Oriented Transport: TCP</a></h2></div>
+
+<div id="The Transport Layer-Connection-Oriented Transport: TCP-The TCP Connection"><h3 id="The TCP Connection" class="header"><a href="#The Transport Layer-Connection-Oriented Transport: TCP-The TCP Connection">The TCP Connection</a></h3></div>
+<ul>
+<li>
+Connection-oriented
+
+<ul>
+<li>
+Handshakes
+
+</ul>
+<li>
+Full-duplex service
+
+<ul>
+<li>
+Data can flow both ways
+
+</ul>
+<li>
+Point-to-point
+
+<ul>
+<li>
+Between a single sender and a single receiver
+
+</ul>
+</ul>
+
+<p>
+Three-way handshake:<br />
+</p>
+<ul>
+<li>
+→ SYN (random sequence number, <em>A</em>)
+
+<li>
+← SYN-ACK (acknowledge number <em>A</em>++, random sequence number <em>B</em>) 
+
+<li>
+→ ACK (sequence number <em>A</em>++, acknowledge number <em>B</em>++)
+
+</ul>
+
+<div id="The Transport Layer-Connection-Oriented Transport: TCP-TCP Segment Structure"><h3 id="TCP Segment Structure" class="header"><a href="#The Transport Layer-Connection-Oriented Transport: TCP-TCP Segment Structure">TCP Segment Structure</a></h3></div>
+<p>
+TCP segment:<br />
+<table>
+<tr>
+<th colspan="11">
+32 bits
+</th>
+</tr>
+<tr>
+<td colspan="10">
+Source port #
+</td>
+<td>
+Destination port #
+</td>
+</tr>
+<tr>
+<td colspan="11">
+Sequence number
+</td>
+</tr>
+<tr>
+<td colspan="11">
+Acknowledgement number
+</td>
+</tr>
+<tr>
+<td>
+Header Length
+</td>
+<td>
+Unused
+</td>
+<td>
+CWR
+</td>
+<td>
+ECE
+</td>
+<td>
+URG
+</td>
+<td>
+ACK
+</td>
+<td>
+PSH
+</td>
+<td>
+RST
+</td>
+<td>
+SYN
+</td>
+<td>
+FIN
+</td>
+<td>
+Receive Window
+</td>
+</tr>
+<tr>
+<td colspan="10">
+Internet checksum
+</td>
+<td>
+Urgent data pointer
+</td>
+</tr>
+<tr>
+<td colspan="11">
+Options
+</td>
+</tr>
+<tr>
+<td colspan="11">
+Data
+</td>
+</tr>
+</table>
+</p>
+
+<div id="The Transport Layer-Connection-Oriented Transport: TCP-TCP Segment Structure-Sequence Number and Acknowledgement number"><h4 id="Sequence Number and Acknowledgement number" class="header"><a href="#The Transport Layer-Connection-Oriented Transport: TCP-TCP Segment Structure-Sequence Number and Acknowledgement number">Sequence Number and Acknowledgement number</a></h4></div>
+<ul>
+<li>
+32 bits
+
+<li>
+Used to implement reliable data transfer
+
+</ul>
+
+<div id="The Transport Layer-Connection-Oriented Transport: TCP-TCP Segment Structure-Receive Window"><h4 id="Receive Window" class="header"><a href="#The Transport Layer-Connection-Oriented Transport: TCP-TCP Segment Structure-Receive Window">Receive Window</a></h4></div>
+<ul>
+<li>
+16 bits
+
+<li>
+Used for <a href="Transport Layer.html#Flow Control">flow control</a>
+
+</ul>
+
+<div id="The Transport Layer-Connection-Oriented Transport: TCP-TCP Segment Structure-Header Length"><h4 id="Header Length" class="header"><a href="#The Transport Layer-Connection-Oriented Transport: TCP-TCP Segment Structure-Header Length">Header Length</a></h4></div>
+<ul>
+<li>
+4 bits
+
+<li>
+Length in 32-bit words
+
+<li>
+Typical TCP header is 20 bytes
+
+</ul>
+
+<div id="The Transport Layer-Connection-Oriented Transport: TCP-TCP Segment Structure-Options"><h4 id="Options" class="header"><a href="#The Transport Layer-Connection-Oriented Transport: TCP-TCP Segment Structure-Options">Options</a></h4></div>
+<ul>
+<li>
+Variable length
+
+<li>
+Used to:
+
+<ul>
+<li>
+Negotiate the maximum segment size (MMS)
+
+<li>
+Window scaling factor
+
+<li>
+A time-stamping option is also available (<a href="https://tools.ietf.org/html/rfc854">RFC 854</a> and <a href="https://tools.ietf.org/html/rfc1323">RFC 1323</a>)
+
+</ul>
+</ul>
+
+<div id="The Transport Layer-Connection-Oriented Transport: TCP-TCP Segment Structure-Flag Field"><h4 id="Flag Field" class="header"><a href="#The Transport Layer-Connection-Oriented Transport: TCP-TCP Segment Structure-Flag Field">Flag Field</a></h4></div>
+<p>
+Six bits:<br />
+</p>
+<ul>
+<li>
+CWR and ECE:
+
+<ul>
+<li>
+Explicit congestion notification
+
+</ul>
+<li>
+URG:
+
+<ul>
+<li>
+Urgent?
+
+<li>
+The location of the last byte of this urgent data is indicated by the Urgent data pointer field
+
+</ul>
+<li>
+ACK:
+
+<ul>
+<li>
+The value in the Acknowledgement field is valid
+
+</ul>
+<li>
+PSH:
+
+<ul>
+<li>
+Pass the data to the upper layer immediately
+
+</ul>
+<li>
+RST, SYN and FIN:
+
+<ul>
+<li>
+Used for connection setup and teardown.
+
+</ul>
+</ul>
+
+<div id="The Transport Layer-Connection-Oriented Transport: TCP-Flow Control"><h3 id="Flow Control" class="header"><a href="#The Transport Layer-Connection-Oriented Transport: TCP-Flow Control">Flow Control</a></h3></div>
+<p>
+Flow-control service:<br />
+</p>
+<ul>
+<li>
+Eliminate the possibility of the sender overflowing the receiver's buffer
+
+</ul>
+
+<p>
+Sender maintains a variable called <span id="The Transport Layer-Connection-Oriented Transport: TCP-Flow Control-receive window"></span><strong id="receive window">receive window</strong>.<br />
+</p>
+<ul>
+<li>
+Used to give the sender an idea of how much free buffer space is available at the receiver.
+
+</ul>
+
+<p>
+Receiver:<br />
+</p>
+<ul>
+<li>
+RcvBuffer: Allocated receive buffer.
+
+<li>
+LastByteRead: Number of the last byte in the data stream read from the buffer.
+
+<li>
+LastByteRcvd: Number of the last byte in the data stream that has arrived and placed in the buffer.
+
+</ul>
+
+<pre>
+    LastByteRcvd - LastByteRead ≤ RcvBuffer
+</pre>
+<p>
+and<br />
+</p>
+<pre>
+    ReceiveWindow = RcvBuffer - (LastByteRcvd - LastByteRead)
+</pre>
+
+<table>
+<tr>
+<th colspan="2">
+RcvBuffer
+</th>
+</tr>
+<tr>
+<th>
+ReceiveWindow
+</th>
+<th>
+&nbsp;
+</th>
+</tr>
+<tr>
+<td>
+Spare Room
+</td>
+<td>
+TCP data in buffer
+</td>
+</tr>
+</table>
+
+<p>
+Sender:<br />
+</p>
+<ul>
+<li>
+LastByteSent
+
+<li>
+LastByteAcked
+
+</ul>
+<p>
+Maintains<br />
+</p>
+<pre>
+    LastByteSent - LastByteAcked ≤ ReceiveWindow
+</pre>
+
+<div id="The Transport Layer-Connection-Oriented Transport: TCP-TCP Connection Management"><h3 id="TCP Connection Management" class="header"><a href="#The Transport Layer-Connection-Oriented Transport: TCP-TCP Connection Management">TCP Connection Management</a></h3></div>
+<p>
+How to TCP connection really good:<br />
+</p>
+<ol>
+<li>
+Client sends a segment with:
+
+<ul>
+<li>
+No data 
+
+<li>
+SYN = 1
+
+<li>
+Random sequence number (<em>A</em>)
+
+</ul>
+<li>
+Server allocates TCP buffer and responds with a segment:
+
+<ul>
+<li>
+with no data
+
+<li>
+SYN = 1
+
+<li>
+ACK = 1
+
+<li>
+Acknowledgement Number = <em>A</em> + 1
+
+<li>
+Random sequence number (<em>B</em>)
+
+<li>
+"I received your SYN packet to start a connection with your initial sequence number, <em>A</em>. I agree to establish this connection. My own initial sequence number is <em>B</em>.
+
+</ul>
+<li>
+Client allocates TCP buffer and sends the server another segment:
+
+<ul>
+<li>
+Acknowledgement number = <em>B</em> + 1
+
+<li>
+ACK = 1
+
+<li>
+SYN = 0
+
+</ul>
+</ol>
+
+<p>
+How to close a TCP connection really good:<br />
+</p>
+<ol>
+<li>
+Client sends a segment with:
+
+<ul>
+<li>
+FIN = 1
+
+</ul>
+<li>
+Server responds with a segment:
+
+<ul>
+<li>
+ACK = 1
+
+</ul>
+<li>
+Server sends another segment:
+
+<ul>
+<li>
+FIN = 1
+
+</ul>
+<li>
+Client responds with a segment:
+
+<ul>
+<li>
+ACK = 1
+
+</ul>
+</ol>
+
+<p>
+<span id="The Transport Layer-Connection-Oriented Transport: TCP-TCP Connection Management-TCP States"></span><strong id="TCP States">TCP States</strong>:<br />
+<img src="../../../magne/vimwikiNTNU/Tcp_state_diagram.png" alt=" Your TCP Sate Diagram here" /><br />
+<a href="https://commons.wikimedia.org/w/index.php?curid=30810617">By Scil100, CC BY-SA 3.0</a><br />
+</p>
+
+<div id="The Transport Layer-Principles of Congestion Control"><h2 id="Principles of Congestion Control" class="header"><a href="#The Transport Layer-Principles of Congestion Control">Principles of Congestion Control</a></h2></div>
+
+<div id="The Transport Layer-TCP Congestion Control"><h2 id="TCP Congestion Control" class="header"><a href="#The Transport Layer-TCP Congestion Control">TCP Congestion Control</a></h2></div>
+<p>
+For congestion control the sender keeps track of an additional variable, the <span id="The Transport Layer-TCP Congestion Control-congestion window"></span><strong id="congestion window">congestion window</strong> such that:<br />
+</p>
+<pre>
+LastByteSent - LastByteAcked ≤ min{CongestionWindow, ReceiveWindow}
+</pre>
+
+        </div>
+        <p><small>Page created on 2020-09-02</small></p>
+    </body>
+</html>

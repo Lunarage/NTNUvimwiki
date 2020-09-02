@@ -1,0 +1,181 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="Stylesheet" type="text/css" href="../style.css" />
+        <title>Multimedia Networking</title>
+        <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    </head>
+    <body>
+        <div class="content">
+        
+<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<ul>
+<li>
+<a href="Multimedia Networking.html#Multimedia Networking">Multimedia Networking</a>
+
+<ul>
+<li>
+<a href="Multimedia Networking.html#Multimedia Networking-Multimedia Networking Applications">Multimedia Networking Applications</a>
+
+<li>
+<a href="Multimedia Networking.html#Multimedia Networking-Streaming Stored Video">Streaming Stored Video</a>
+
+<li>
+<a href="Multimedia Networking.html#Multimedia Networking-Voice-Over-IP">Voice-Over-IP</a>
+
+<ul>
+<li>
+<a href="Multimedia Networking.html#Multimedia Networking-Voice-Over-IP-Recovering from Packet Loss">Recovering from Packet Loss</a>
+
+<ul>
+<li>
+<a href="Multimedia Networking.html#Multimedia Networking-Voice-Over-IP-Recovering from Packet Loss-Forward Error Correction (FEC)">Forward Error Correction (FEC)</a>
+
+<li>
+<a href="Multimedia Networking.html#Multimedia Networking-Voice-Over-IP-Recovering from Packet Loss-Interleaving">Interleaving</a>
+
+</ul>
+</ul>
+<li>
+<a href="Multimedia Networking.html#Multimedia Networking-Protocols for Real-Time Conversational Applications">Protocols for Real-Time Conversational Applications</a>
+
+<ul>
+<li>
+<a href="Multimedia Networking.html#Multimedia Networking-Protocols for Real-Time Conversational Applications-RTP (Real-Time Transport Protocol)">RTP (Real-Time Transport Protocol)</a>
+
+<ul>
+<li>
+<a href="Multimedia Networking.html#Multimedia Networking-Protocols for Real-Time Conversational Applications-RTP (Real-Time Transport Protocol)-RTP Packet Header Fields">RTP Packet Header Fields</a>
+
+<ul>
+<li>
+<a href="Multimedia Networking.html#Multimedia Networking-Protocols for Real-Time Conversational Applications-RTP (Real-Time Transport Protocol)-RTP Packet Header Fields-Payload type">Payload type</a>
+
+<li>
+<a href="Multimedia Networking.html#Multimedia Networking-Protocols for Real-Time Conversational Applications-RTP (Real-Time Transport Protocol)-RTP Packet Header Fields-Sequence number">Sequence number</a>
+
+<li>
+<a href="Multimedia Networking.html#Multimedia Networking-Protocols for Real-Time Conversational Applications-RTP (Real-Time Transport Protocol)-RTP Packet Header Fields-Timestamp">Timestamp</a>
+
+<li>
+<a href="Multimedia Networking.html#Multimedia Networking-Protocols for Real-Time Conversational Applications-RTP (Real-Time Transport Protocol)-RTP Packet Header Fields-Synchronization source identifier (SSRC)">Synchronization source identifier (SSRC)</a>
+
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+
+<div id="Multimedia Networking"><h1 id="Multimedia Networking" class="header"><a href="#Multimedia Networking">Multimedia Networking</a></h1></div>
+
+<div id="Multimedia Networking-Multimedia Networking Applications"><h2 id="Multimedia Networking Applications" class="header"><a href="#Multimedia Networking-Multimedia Networking Applications">Multimedia Networking Applications</a></h2></div>
+
+<div id="Multimedia Networking-Streaming Stored Video"><h2 id="Streaming Stored Video" class="header"><a href="#Multimedia Networking-Streaming Stored Video">Streaming Stored Video</a></h2></div>
+
+<div id="Multimedia Networking-Voice-Over-IP"><h2 id="Voice-Over-IP" class="header"><a href="#Multimedia Networking-Voice-Over-IP">Voice-Over-IP</a></h2></div>
+<p>
+VoIP<br />
+</p>
+
+<div id="Multimedia Networking-Voice-Over-IP-Recovering from Packet Loss"><h3 id="Recovering from Packet Loss" class="header"><a href="#Multimedia Networking-Voice-Over-IP-Recovering from Packet Loss">Recovering from Packet Loss</a></h3></div>
+
+<div id="Multimedia Networking-Voice-Over-IP-Recovering from Packet Loss-Forward Error Correction (FEC)"><h4 id="Forward Error Correction (FEC)" class="header"><a href="#Multimedia Networking-Voice-Over-IP-Recovering from Packet Loss-Forward Error Correction (FEC)">Forward Error Correction (FEC)</a></h4></div>
+<p>
+The basic idea of FEC is to include redundant information to the original packet stream.<br />
+</p>
+
+<div id="Multimedia Networking-Voice-Over-IP-Recovering from Packet Loss-Interleaving"><h4 id="Interleaving" class="header"><a href="#Multimedia Networking-Voice-Over-IP-Recovering from Packet Loss-Interleaving">Interleaving</a></h4></div>
+<p>
+Shuffle.<br />
+Does not increase overhead.<br />
+Increases latency.<br />
+</p>
+
+<div id="Multimedia Networking-Voice-Over-IP-Recovering from Packet Loss-Error Concealment"><h4 id="Error Concealment" class="header"><a href="#Multimedia Networking-Voice-Over-IP-Recovering from Packet Loss-Error Concealment">Error Concealment</a></h4></div>
+<p>
+Nothing is really wrong, i swear. Listen to the audio, it works.<br />
+</p>
+
+
+<div id="Multimedia Networking-Protocols for Real-Time Conversational Applications"><h2 id="Protocols for Real-Time Conversational Applications" class="header"><a href="#Multimedia Networking-Protocols for Real-Time Conversational Applications">Protocols for Real-Time Conversational Applications</a></h2></div>
+
+<div id="Multimedia Networking-Protocols for Real-Time Conversational Applications-RTP (Real-Time Transport Protocol)"><h3 id="RTP (Real-Time Transport Protocol)" class="header"><a href="#Multimedia Networking-Protocols for Real-Time Conversational Applications-RTP (Real-Time Transport Protocol)">RTP (Real-Time Transport Protocol)</a></h3></div>
+<p>
+RTP typically runs on top of UDP.<br />
+</p>
+
+<div id="Multimedia Networking-Protocols for Real-Time Conversational Applications-RTP (Real-Time Transport Protocol)-RTP Packet Header Fields"><h4 id="RTP Packet Header Fields" class="header"><a href="#Multimedia Networking-Protocols for Real-Time Conversational Applications-RTP (Real-Time Transport Protocol)-RTP Packet Header Fields">RTP Packet Header Fields</a></h4></div>
+
+<table>
+<tr>
+<td>
+Payload type
+</td>
+<td>
+Sequence number
+</td>
+<td>
+Timestamp
+</td>
+<td>
+Synchronization source identifier
+</td>
+<td>
+Miscellaneous fields
+</td>
+</tr>
+</table>
+
+<div id="Multimedia Networking-Protocols for Real-Time Conversational Applications-RTP (Real-Time Transport Protocol)-RTP Packet Header Fields-Payload type"><h5 id="Payload type" class="header"><a href="#Multimedia Networking-Protocols for Real-Time Conversational Applications-RTP (Real-Time Transport Protocol)-RTP Packet Header Fields-Payload type">Payload type</a></h5></div>
+<ul>
+<li>
+7 bits
+
+<li>
+What encoding is used
+
+<li>
+Sender can change encoding on the fly
+
+</ul>
+
+<div id="Multimedia Networking-Protocols for Real-Time Conversational Applications-RTP (Real-Time Transport Protocol)-RTP Packet Header Fields-Sequence number"><h5 id="Sequence number" class="header"><a href="#Multimedia Networking-Protocols for Real-Time Conversational Applications-RTP (Real-Time Transport Protocol)-RTP Packet Header Fields-Sequence number">Sequence number</a></h5></div>
+<ul>
+<li>
+16 bit
+
+<li>
+Increments by one for each packet sent
+
+</ul>
+
+<div id="Multimedia Networking-Protocols for Real-Time Conversational Applications-RTP (Real-Time Transport Protocol)-RTP Packet Header Fields-Timestamp"><h5 id="Timestamp" class="header"><a href="#Multimedia Networking-Protocols for Real-Time Conversational Applications-RTP (Real-Time Transport Protocol)-RTP Packet Header Fields-Timestamp">Timestamp</a></h5></div>
+<ul>
+<li>
+32 bits
+
+<li>
+Can be used to reduce jitter
+
+</ul>
+
+<div id="Multimedia Networking-Protocols for Real-Time Conversational Applications-RTP (Real-Time Transport Protocol)-RTP Packet Header Fields-Synchronization source identifier (SSRC)"><h5 id="Synchronization source identifier (SSRC)" class="header"><a href="#Multimedia Networking-Protocols for Real-Time Conversational Applications-RTP (Real-Time Transport Protocol)-RTP Packet Header Fields-Synchronization source identifier (SSRC)">Synchronization source identifier (SSRC)</a></h5></div>
+<ul>
+<li>
+32 bits
+
+<li>
+Identifies the source of the stream
+
+<li>
+Randomly chosen by the sender
+
+</ul>
+
+        </div>
+        <p><small>Page created on 2020-09-02</small></p>
+    </body>
+</html>

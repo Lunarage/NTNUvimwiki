@@ -1,0 +1,164 @@
+= Contents =
+    - [[#Normalization|Normalization]]
+        - [[#Normalization#Some Definitions|Some Definitions]]
+        - [[#Normalization#Functional Dependencies|Functional Dependencies]]
+            - [[#Normalization#Functional Dependencies#Inference Rules|Inference Rules]]
+        - [[#Normalization#Keys|Keys]]
+        - [[#Normalization#Decomposition|Decomposition]]
+        - [[#Normalization#Normal Forms|Normal Forms]]
+            - [[#Normalization#Normal Forms#1NF|1NF]]
+            - [[#Normalization#Normal Forms#2NF|2NF]]
+            - [[#Normalization#Normal Forms#3NF|3NF]]
+            - [[#Normalization#Normal Forms#BCNF|BCNF]]
+            - [[#Normalization#Normal Forms#4NF|4NF]]
+
+= Normalization =
+
+== Some Definitions ==
+*Database Schema*: The description of a database.
+Formally:
+    The formal definition of a database schema is a set of formulas (sentences) called integrity constraints imposed on a database.
+    
+
+The implicit goals of the design activity are information preservation and minimum redundancy.
+
+== Functional Dependencies ==
+A functional dependency (FD) is a constraint between two sets of attributes.
+Formally:
+    A *functional dependency*, denoted by _X_ → _Y_, between two sets of attributes _X_ and _Y_ that are subsets of _R_ specifies a _constraint_ on the possible tuples that can form a relation state _r_ of _R_.
+    The constraint is that, for any two tuples $ t_1 $ and $ t_2 $ in _r_ that have $ t_1[X] = t_2[X] $, they must also have $ t_1[Y] = t_2[Y] $.
+
+=== Inference Rules ===
+| # | Name             | if              | then    |
+|---|------------------|-----------------|---------|
+| 1 | Reflexive        | X ⊆ Y           | X → Y   |
+| 2 | Augmentation     | {X → Y}         | XZ → YZ |
+| 3 | Transitive       | {X → Y, Y → Z}  | X → Z   |
+| 4 | Decomposition    | {X → YZ}        | X → Y   |
+| 5 | Additive         | {X → Y, X → Z}  | X → YZ  |
+| 6 | Pseudotransitive | {X → Y, WY → Z} | WX → Z  |
+
+== Keys ==
+    A *superkey* of a relation schema $ R = \{A_1, A_2, \dots, A_n\} $ is a set of attributes _S_ ⊆ _R_ with the property that no two tuples $t_1$ and $t_2$ in any legal relation state _r_ of _R_ will have $t_1[S] = t_2[S]$.
+    A *key* _K_ is a superkey with the additional property that removal of any attribute from _K_ will cause _K_ not to be a superkey anymore.
+
+    An attribute of relation schema _R_ is called a *prime attribute* of _R_ if it is a member of _some candidate key_ of _R_.
+    An attribute is called nonprime if it is not a prime attribute—that is, if it is not a member of any candidate key.
+
+== Decomposition ==
+* The *non-additive join or lossless join property*
+    - No spurious tuple generation
+    - Must be achieved at any cost
+* The *dependency preservation property*
+    - Ensures that each functional dependency is represented in some individual relation
+    - Desirable, but is some times sacrificed
+
+== Normal Forms ==
+| Summary        | >                                            |
+|----------------|----------------------------------------------|
+| [[#1NF|1NF]]   | Atomic values                                |
+| [[#2NF|2NF]]   | No partial dependencies                      |
+| [[#3NF|3NF]]   | No transitive dependencies                   |
+| [[#BCNF|BCNF]] | No redundancy from any functional dependency |
+
+=== 1NF ===
+First Normal Form (1NF):
+* Only atomic values (cells have single value).
+Alternatively:
+* Disallows relations within relations.
+* Disallows relations as attribute values within tuples
+
+Normalization:
+* Form new relations for each multivalued attribute or nested relation.
+
+=== 2NF ===
+*Full functional dependency*:
+If removal of any attribute _A_ from _X_ causes _X_ → _Y_ to not hold anymore.
+Otherwise it is a *partial dependency*
+
+Second Normal Form (2NF):
+* No partial dependencies:
+    - No nonprime attribute is functionally dependent on any proper subset of any candidate key of the relation.
+
+{{{
+R = {X, Y, A, B}
+F = {X → A, XY → B}
+}}}
+This is not 2NF because:
+* Candidate key: XY
+* Non-prime attributes: {A, B}
+* X ⊂ XY and Y ⊂ XY (proper subsets)
+* X → A (functional dependent)
+* Y → B (functional dependent)
+There are several non-prime attributes that is functionally dependent on proper subsets of the candidate key of the relation.
+
+Normalization:
+* Decompose and set up a new relation for each partial key with its dependent attribute(s).
+    - Keep a relation with the original primary key 
+    - Keep a relation with any attributes that are fully functionally dependent on it.
+
+Modified to be 2NF:
+{{{
+R1 = {X, A}
+R2 = {X, Y, B}
+F1 = {X → A}
+F2 = {XY → B}
+}}}
+
+=== 3NF ===
+Third Normal Form (3NF):
+* Every nonprime attribute of _R_ is non-transitively dependent of every key of _R_.
+Alternatively:
+* iff For every X → A:
+    - X is a superkey for the given table, or
+    - A is prime attribute for the given table
+
+{{{
+R = {X, A, B, C}
+F = {X → AB, B → C}
+}}}
+This is not 3NF because:
+* Non-prime attributes: {A, B, C}
+* X → B and B → C (Transitive dependency)
+Alternatively:
+* X is not a superkey
+* neither A, B or C are prime attributes.
+
+Normalization:
+* Decompose and set up a relation that includes the non-key attribute(s) that functionally determine(s) other non-key attribute(s).
+
+Modified to be 3NF:
+{{{
+R1 = {X, A, B}
+R2 = {B, C}
+F1 = {X → AB}
+F2 = {B → C}
+}}}
+
+=== BCNF ===
+Boyce-Codd Normal Form (BCNF or 3.5NF):
+* For every one of its dependencies X → Y, one of the following conditions hold true:
+    * X → Y is a trivial functional dependency
+    * X is a superkey
+
+{{{
+R = {A, B, C}
+F = {AB → C, C → B}
+}}}
+This is not BCNF because:
+* In C → B, C is not a superkey
+
+=== 4NF ===
+    A *multivalued dependency* _X_ → _Y_ specified on relation schema _R_,
+    where _X_ and _Y_ are both subsets of _R_,
+    specifies the following constraint on any relation state _r_ of _R_:
+    If two tuples $ t_1 $ and $ t_2 $ exist in _r_ such that $ t_1[X] = t_2[X] $,
+    then two tuples $ t_3 $ and $ t_4 $ should also exist in _r_ with the following properties,
+    where we use _Z_ to denote $ (R − (X \cup Y)) $:
+
+* $ t_3[X] = t_4[X] = t_1[X] = t_2[X] $
+* $ t_3[Y] = t_1[Y] $ and $ t_4[Y] = t_2[Y] $
+* $ t_3[Z] = t_2[Z] $ and $ t_4[Z] = t_1[Z] $
+
+    A relation schema _R_ is in *4NF* with respect to a set of dependencies F (that includes functional dependencies and multivalued dependencies)
+    if, for every nontrivial multivalued dependency _X_ →→ _Y_ in $F^{+}$, _X_ is a superkey for _R_.

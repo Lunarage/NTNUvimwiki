@@ -1,0 +1,18 @@
+= Chapter 1 - The Role of Algorithms in Computing =
+
+== Algorithms ==
+
+Informally, an *algorithm* is any well-defined computational procedure that takes some value, or set of values, as *input* and produces some value, or set of values, as *output*.
+
+Here is how we formally define the *sorting problem*:
+{{$
+    \textbf{Input:} \text{A sequence of } n \text{ numbers} \langle a_1, a_2, \dots, a_m \rangle
+    \\
+    \textbf{Output:} \text{A permutation (reordering) } \langle a'_1, a'_2, \dots, a'_n \rangle
+}}$
+
+An algorithm is said to be *correct* if, for every input instance, it halts with the correct output.
+We say that a correct algorithm *solves* the given computational problem.
+
+== Algorithms as a Technology ==
+

@@ -1,0 +1,309 @@
+= Contents =
+    - [[#Wireless and Mobile Networks|Wireless and Mobile Networks]]
+        - [[#Wireless and Mobile Networks#Introduction|Introduction]]
+        - [[#Wireless and Mobile Networks#Wireless Links and Networks Characteristics|Wireless Links and Networks Characteristics]]
+        - [[#Wireless and Mobile Networks#802.11: 802.11 Wireless LANs|802.11: 802.11 Wireless LANs]]
+            - [[#Wireless and Mobile Networks#802.11: 802.11 Wireless LANs#The 802.11 Architecture|The 802.11 Architecture]]
+                - [[#Wireless and Mobile Networks#802.11: 802.11 Wireless LANs#The 802.11 Architecture#Channels and Associations|Channels and Associations]]
+            - [[#Wireless and Mobile Networks#802.11: 802.11 Wireless LANs#The 802.11 MAC Protocol|The 802.11 MAC Protocol]]
+                - [[#Wireless and Mobile Networks#802.11: 802.11 Wireless LANs#The 802.11 MAC Protocol#Link-layer acknowledgement scheme|Link-layer acknowledgement scheme]]
+                - [[#Wireless and Mobile Networks#802.11: 802.11 Wireless LANs#The 802.11 MAC Protocol#CSMA/CA|CSMA/CA]]
+                - [[#Wireless and Mobile Networks#802.11: 802.11 Wireless LANs#The 802.11 MAC Protocol#Dealing with Hidden Terminals: RTS and CTS|Dealing with Hidden Terminals: RTS and CTS]]
+                - [[#Wireless and Mobile Networks#802.11: 802.11 Wireless LANs#The 802.11 MAC Protocol#Using 802.11 as a Point-to-Point Link|Using 802.11 as a Point-to-Point Link]]
+            - [[#Wireless and Mobile Networks#802.11: 802.11 Wireless LANs#The IEEE 802.11 Frame|The IEEE 802.11 Frame]]
+                - [[#Wireless and Mobile Networks#802.11: 802.11 Wireless LANs#The IEEE 802.11 Frame#Payload and CRC Fields|Payload and CRC Fields]]
+                - [[#Wireless and Mobile Networks#802.11: 802.11 Wireless LANs#The IEEE 802.11 Frame#Address Fields|Address Fields]]
+                - [[#Wireless and Mobile Networks#802.11: 802.11 Wireless LANs#The IEEE 802.11 Frame#Sequence Number, Duration and Frame Control Fields|Sequence Number, Duration and Frame Control Fields]]
+            - [[#Wireless and Mobile Networks#802.11: 802.11 Wireless LANs#Mobility in the Same IP Subnet|Mobility in the Same IP Subnet]]
+            - [[#Wireless and Mobile Networks#802.11: 802.11 Wireless LANs#Advanced Features in 802.11|Advanced Features in 802.11]]
+                - [[#Wireless and Mobile Networks#802.11: 802.11 Wireless LANs#Advanced Features in 802.11#802.11 Rate Adaption|802.11 Rate Adaption]]
+                - [[#Wireless and Mobile Networks#802.11: 802.11 Wireless LANs#Advanced Features in 802.11#Power Management|Power Management]]
+        - [[#Wireless and Mobile Networks#Cellular Internet Access|Cellular Internet Access]]
+            - [[#Wireless and Mobile Networks#Cellular Internet Access#An Overview of Cellular Network Architecture|An Overview of Cellular Network Architecture]]
+            - [[#Wireless and Mobile Networks#Cellular Internet Access#Cellular Network Architecture, 2G: Voice Connections to the Telephone Network|Cellular Network Architecture, 2G: Voice Connections to the Telephone Network]]
+            - [[#Wireless and Mobile Networks#Cellular Internet Access#3G Cellular Data Networks: Extending the Internet to Cellular Subscribers|3G Cellular Data Networks: Extending the Internet to Cellular Subscribers]]
+                - [[#Wireless and Mobile Networks#Cellular Internet Access#3G Cellular Data Networks: Extending the Internet to Cellular Subscribers#3G Core Network|3G Core Network]]
+                - [[#Wireless and Mobile Networks#Cellular Internet Access#3G Cellular Data Networks: Extending the Internet to Cellular Subscribers#3G Radio Access Network: The Wireless Edge|3G Radio Access Network: The Wireless Edge]]
+            - [[#Wireless and Mobile Networks#Cellular Internet Access#On to 4G: LTE|On to 4G: LTE]]
+                - [[#Wireless and Mobile Networks#Cellular Internet Access#On to 4G: LTE#4G System Architecture: An All-IP Core Network|4G System Architecture: An All-IP Core Network]]
+                - [[#Wireless and Mobile Networks#Cellular Internet Access#On to 4G: LTE#LTE Radio Access Network|LTE Radio Access Network]]
+
+= Wireless and Mobile Networks =
+== Introduction ==
+Elements in a wireless network:
+* Wireless host:
+    - Laptop, Tablet, Phone etc.
+* Wireless links:
+    - Two key characteristics:
+        * Coverage Area
+        * Link Rate
+* Base station:
+    - Cell Towers, access points
+    - A host is associated with a base station when
+        1. The host is within the wireless communication distance of the base station
+        2. The host uses that base station to relay data between it and the larger network
+    - Handoff: When a host changes base station
+* Network infrastructure:
+    - The larger network with which a wireless host may wish to communicate
+
+We can classify wireless networks according to two criteria: Single-/Multiple-Hop and Infrastructure-based/Infrastructure-less:
+* Single-hop, Infrastructure-based:
+    - 802.11, 4G etc
+    - Majority of wireless networks we use in our daily lives
+* Single-hop, Infrastructure-less:
+    - Bluetooth, ad hoc 802.11 networks
+* Multi-hop, Infrastructure-based:
+    - Wireless mesh networks
+* Multi-hop, Infrastructure-less:
+    - mobile ad hoc networks (MANETs), vehicular ad hoc network (VANET)
+
+== Wireless Links and Networks Characteristics ==
+Differences between wireless and wired links:
+* Decreasing signal strength:
+    - Electromagnetic radiation attenuates as it passes through matter.
+* Interference from other sources:
+    - Microwave ovens use 2.4GHz :(
+* Multipath propagation:
+    - Reflections cause the same signal to take more paths
+
+*Signal-to-noise ratio (SNR)*:
+* Relative measurement of the strength of the received signal and noise.
+* Usually measured in dB
+* Big SNR Good, Small SNR Bad
+
+Bit error rate (BER):
+* The probability that a transmitted bit is received in error at the receiver.
+
+Physical-layer characteristics that are important to understand:
+* For a given modulation scheme, the higher the SNR , the lower the BER.
+    - Less relative noise → Fewer errors
+* For a given SNR, a modulation technique with a higher bit transmission rate (whether in error or not) will have a higher BER.
+* Dynamic selection of the physical-layer modulation technique can be used to adapt the modulation technique to channel conditions.
+    - Adaptive modulation and coding are used in 802.11 and 4G.
+
+
+== 802.11: 802.11 Wireless LANs ==
+*IEEE 802.11 wireless LAN* aka *WiFi*
+
+| Standard | Frequency Range        | Data Rate       | Alternative name | Year |
+|----------|------------------------|-----------------|------------------|------|
+| 802.11b  | 2.4 GHz                | up to 11 Mbps   | "WiFi 1"         | 1999 |
+| 802.11a  | 5 GHz                  | up to 54 Mbps   | "WiFi 2"         | 1999 |
+| 802.11g  | 2.4 GHz                | up to 54 Mbps   | "WiFi 3"         | 2003 |
+| 802.11n  | 2.4 GHz and 5 GHz      | up to 450 Mbps  | "WiFi 4"         | 2009 |
+| 802.11ac | 5 GHz                  | up to 1300 Mbps | "WiFi 5"         | 2013 |
+| 802.11ax | 1 - 6 GHz              | up to 11 Gbps   | "WiFi 6"         | 2016 |
+| 802.11be | 2.4 GHz, 5GHz and 6GHz | ?               | "WiFi 7" maybe   | ?    |
+
+=== The 802.11 Architecture ===
+*Basic Service Set (BSS)*:
+* Contains one or more wireless stations and a central base station known as an *access point (AP)*.
+
+==== Channels and Associations ====
+*Service Set Identifier (SSID)*
+*WiFi Jungle*:
+* Basically alle bygårder i Trondheim.
+*Beacon Frames*:
+* An AP periodically send a beacon frame with the MAC address and SSID.
+*Passive Scanning*:
+* Listening for beacon frames.
+*Active Scanning*;
+* Broadcast a probe frame to all APs within range
+* APs respond to the probe request frame with a probe response frame
+
+How to connect to WiFi really good:
+0. Scan
+1. After selecting an AP, send an association request frame to the AP
+2. The AP responds with an association response frame.
+
+=== The 802.11 MAC Protocol ===
+[[Link Layer#Carrier Sense Multiple Access (CSMA)|CSMA]] with collision avoidance (CSMA/CA)
+Link-layer acknowledgement/retransmission (ARQ)
+
+The 802.11 MAC Protocol does not implement collision detection for two important reason:
+* The ability to detect collisions requires the ability to send and receive at the same time.
+* More importantly, even if the adapter could transmit and receive at the same time, the adapter would still not be able to detect all collisions, due to the hidden terminal problem and fading.
+
+A frame is always transmitted in its entirety.
+
+==== Link-layer acknowledgement scheme ====
+When a destination receives a frame that passes  [[Link Layer#Cyclic Redundancy Check (CRC)|CRC]] it waits a short period of time, Short Inter-frame Spacing (SIFS), and then sends back an acknowledgement frame.
+If no acknowledgement is received, the frame is retransmitted using CSMA/CA.
+If an acknowledgement is not received after some fixed number of retransmissions, the frame is discarded.
+
+==== CSMA/CA ====
+Suppose that a station has a frame to transmit:
+1. If initially the station senses the channel idle, it transmits its frame after a short period of time, *Distributed Inter-frame Space (DIFS)*
+2. Otherwise, the station chooses a random backoff value using binary exponential backoff and counts down this value after DIFS when the channel is sensed idle. While the channel is sensed busy, the counter value remains frozen.
+3. When the counter reaches zero, the station transmits the entire frame and then waits for an acknowledgement.
+4. If an acknowledgement is received, start with a new frame, else backoff and retransmit.
+
+{{{class="python"
+while(has_frame()):
+    if channel_idle():
+        wait(DIFS)
+        transmit_frame()
+        if(wait_for(ack)):
+            break
+        else:
+            n += 1
+            backoff()
+    else:
+        backoff()
+
+def backoff():
+    counter = choose(binary_exponential(n))
+    while(counter > 0):
+        if channel_idle():
+            wait(DIFS)
+            counter -= 1
+}}}
+
+==== Dealing with Hidden Terminals: RTS and CTS ====
+*Hidden Terminal Problem*:
+A can only see B, B can see A and C, C can only see B.
+
+*Request to Send (RTS)* and *Clear to Send (CTS)* are _short_ control frames.
+The protocol goes something like this:
+* H1: May I speak? I it takes this amount of time. (RTS)
+* AP: Everyone shut up for this amount of time, someone wants to speak. (CTS)
+* H1: Speaks (DATA is transmitted)
+* AP: Ack
+
+==== Using 802.11 as a Point-to-Point Link ====
+1. Directional antennas
+2. 802.11 Protocol
+3. ???
+4. Profit?
+
+Pros:
+* 802.11 hardware is cheap
+* Range 10s of kilometers
+
+=== The IEEE 802.11 Frame ===
+The 802.11 frame:
+| Bytes | 2             | 2        | 6         | 6         | 6         | 2           | 6         | 0-2312  | 4   |
+|-------|---------------|----------|-----------|-----------|-----------|-------------|-----------|---------|-----|
+| Field | Frame Control | Duration | Address 1 | Address 2 | Address 3 | Seq control | Address 4 | Payload | CRC |
+
+Frame Control Field:
+| Bits  | 2                | 2    | 4       | 1     | 1       | 1         | 1     | 1         | 1         | 1   | 1    |
+|-------|------------------|------|---------|-------|---------|-----------|-------|-----------|-----------|-----|------|
+| Field | Protocol Version | Type | Subtype | To AP | From AP | More frag | Retry | Power mgt | More data | WEP | Rsvd |
+
+==== Payload and CRC Fields ====
+* Payload can be up to 2312 bytes, but is typically 1500 bytes.
+* Usually holds an IP datagram or an ARP packet.
+
+* 32-bit CRC
+
+==== Address Fields ====
+Four address fields:
+1. MAC address of the wireless station that is to receive the frame.
+2. MAC address of the wireless station that transmits the frame.
+3. MAC address of the router interface.
+4. Is used when APs forward frames to each other in ad hoc mode.
+
+Since APs essentially are wireless link layer switches and don't speak IP, address 3 is required.
+
+==== Sequence Number, Duration and Frame Control Fields ====
+* Sequence Number: Allows the receiver to distinguish between newly transmitted frames and retransmitted ones.
+* Duration is used for [[#Dealing with Hidden Terminals: RTS and CTS|RTS and CTS]]
+* Type and subtype are used to distinguish between association, RTS, CTS, ACK and data frames.
+* To and from define the meaning of the address fields. Their meaning changes depending on the mode (ad hoc or infrastructure) and whether an AP or a station is sending the frame.
+* WEP indicates whether encryption is used or not.
+
+=== Mobility in the Same IP Subnet ===
+How do wireless stations seamlessly move from one BSS to another wile maintaining ongoing TCP sessions?
+
+=== Advanced Features in 802.11 ===
+
+==== 802.11 Rate Adaption ====
+Conditions good (May ACKs)? Increase rate
+Conditions bad (Lack of ACKs)? Decrease rate
+
+==== Power Management ====
+A node can be asleep 99% of the time if nothing happens.
+
+== Cellular Internet Access ==
+=== An Overview of Cellular Network Architecture ===
+Global System for Mobile Communication (GSM) standards.
+
+=== Cellular Network Architecture, 2G: Voice Connections to the Telephone Network ===
+The term _cellular_ refers to the fact that the region covered by a cellular network is partitioned into a number of geographic coverage areas, known as *cells*.
+
+Each cell contains a *base transceiver station (BTS)* 
+
+A GSM network's *base station controller (BSC)* will typically service several tens of BTSs.
+The role of the BSC is to:
+* Allocate BTS radio channels to mobile subscribers.
+* Perform *paging* (finding the cell in which a mobile user is resident).
+* Perform handoff of mobile users.
+
+The BSC and BTSs collectively constitutes a GSM *base station subsystem (BBS)*.
+
+The *mobile switching center (MSC)* plays a central role in:
+* User authorization and accounting
+* Call establishment
+* Teardown
+* Handoff
+
+A single MSC will typically contain up to five BSCs, resulting in approximately 200K subscribers.
+
+A cellular provider's network will have a number of MSCs, with special MSCs known as gateways MSCs connecting the provider's cellular network to the larger public telephone network.
+
+=== 3G Cellular Data Networks: Extending the Internet to Cellular Subscribers ===
+UMTS (Universal Mobile Telecommunication Service) 3G and 4G standards developed by the 3rd Generation Partnership project (3GPP).
+
+==== 3G Core Network ====
+The approach taken by the designers of 3G:
+Leave the existing core GSM cellular voice network untouched, adding additional cellular data functionality in parallel to the existing cellular voice network.
+
+Generalized Packet Radio Service (GPRS) is an early cellular data service in 2G networks.
+
+There are two types of nodes in the 3G core network:
+* *Serving GPRS Support Nodes (SGSNs)*
+    - Is responsible for for delivering datagrams to/from the mobile nodes in the radio access network.
+    - Interacts with the cellular voice network's MSC for that area, providing:
+        * User authorization and handoff
+        * Maintaining location (cell) information about active mobile nodes
+        * Performing datagram forwarding between mobile nodes in the radio access network and a GGSN
+* *Gateway GPRS Support Nodes (GGSNs)*
+    - Acts as a gateway, connecting multiple SGSNs into the larger internet.
+    - The last piece of 3G infrastructure that a datagram originating at a mobile node encounters before entering the larger Internet.
+    - Looks like any other gateway router to the outside world.
+
+==== 3G Radio Access Network: The Wireless Edge ====
+The *Radio Network Controller (RNC)* typically controls several cell BTSs similar to the base stations in 2G systems.
+The RNC connects to both:
+* The circuit-switched cellular voice network via an MSC
+* The packet-switched Internet via an SGSN
+
+A significant change in 3G UMTS over 2G networks is that rather than using GSM's FDMA/TDMA scheme,
+UMTS uses a [[Link Layer#Code Division Multiple Access (CDMA)|CDMA]] technique known as Direct Sequence Wideband CDMA (DS-WCDMA)
+
+=== On to 4G: LTE ===
+The 4G Long-Term Evolution (LTE) standard has two important innovations over 3G systems:
+* An all-IP core network
+* An enhanced radio access network
+
+==== 4G System Architecture: An All-IP Core Network ====
+Master of acronyms!
+*User Equipment (UE)*
+
+There are two important observations about the 4G architecture:
+* A unified, all-IP network architecture.
+    - Both voice and data are carried in IP datagrams to/from the wireless device.
+    - All is now IP.
+* A clear separation of the 4G data plane and 4G control plane.
+* A clear separation between the radio access network, and the all-IP-core network.
+
+The principal components of the 4G architecture:
+* The *eNodeB*
+* The *Packet Data Network Gateway (P-GW)*
+* The *Serving Gateway (S-GW)*
+* The *Mobility Management Entity (MME)*
+* The *Home Subscriber Server (HHS)*
+
+==== LTE Radio Access Network ====
+LTE uses a combination of frequency division multiplexing and time division multiplexing on the downstream channel, known as *orthogonal frequency division multiplexing (OFDM)*.
