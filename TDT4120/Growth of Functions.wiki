@@ -2,3 +2,90 @@
 
 == Asymptotic Notation ==
 
+===== *Θ-notation* =====
+
+For a given function $g(n)$, we denote by $\Theta(g(n))$ the _set of functions_
+{{$
+    \Theta(g(n)) = 
+    \{f(n): \text{there exists positive constants }
+    c_1,c_2\text{and }n_0\text{ such that }
+    \\ 0 \leq c_1 g(n) \leq f(n) \leq c_2 g(n) \text{ for all } n \geq n_0 \}.
+}}$
+A function $f(n)$ belongs to the set $\Theta(g(n))$ if there exists positive constants
+$c_1$ and $c_2$ such that it can be "sandwiched" between $c_1 g(n)$ and $c_2 g(n)$
+for sufficiently large $n$.
+
+We say that $g(n)$ is *asymptotically tight bound* for $f(n)$.
+
+===== *_O_-notation* =====
+
+When we only have an *asymptotic upper bound*, we use _O_-notation.
+
+For a given function $g(n)$, we denote by $O(g(n))$ the set of functions
+{{$
+    O(g(n)) = 
+    \{f(n): \text{there exists positive constants }
+    c_1\text{and }n_0\text{ such that }
+    \\ 0 \leq f(n) \leq c g(n) \text{ for all } n \geq n_0 \}.
+}}$
+We use _O_-notation to give an upper bound on a function, to within a constant factor.
+
+===== *Ω-notation* =====
+
+When we only have an *asymptotic lower bound*, we use Ω-notation.
+
+For a given function $g(n)$, we denote by $\Omega(g(n))$ the set of functions
+{{$
+    \Omega(g(n)) = 
+    \{f(n): \text{there exists positive constants }
+    c_1\text{and }n_0\text{ such that }
+    \\ 0 \leq c g(n) \leq f(n) \text{ for all } n \geq n_0 \}.
+}}$
+We use Ω-notation to give an lower bound on a function, to within a constant factor.
+
+===== _o_-notation =====
+
+{{$
+    o(g(n)) = 
+    \{f(n): \text{for any positive constant } c > 0 \text{, there exists a constant }
+    \\ n_0 > 0 \text{ such that } 0 \leq f(n) < cg(n) \text{ for all } n \geq n_0 \}.
+}}$
+
+===== ω-notation =====
+
+{{$
+    \omega(g(n)) = 
+    \{f(n): \text{for any positive constant } c > 0 \text{, there exists a constant }
+    \\ n_0 > 0 \text{ such that } 0 \leq cg(n) < f(n) \text{ for all } n \geq n_0 \}.
+}}$
+
+===== Comparing functions =====
+
+Many of the relational properties of real number apply to asymptotic comparisons as well.
+For the following, assume that $f(n)$ and $g(n)$ are asymptotically positive.
+
+====== Transitivity: ======
+{{$
+  f(n)\;=\;\Theta(g(n))\;=\;\Theta(h(n))\;\text{imply}\;f(n)\;=\;\Theta(h(n))\;.
+\\  f(n)\;=\;O(g(n))\;=\;O(h(n))\;\text{imply}\;f(n)\;=\;O(h(n))\;.
+\\  f(n)\;=\;\Omega(g(n))\;=\;\Omega(h(n))\;\text{imply}\;f(n)\;=\;\Omega(h(n))\;.
+\\  f(n)\;=\;o(g(n))\;=\;o(h(n))\;\text{imply}\;f(n)\;=\;o(h(n))\;.
+\\  f(n)\;=\;\omega(g(n))\;=\;\omega(h(n))\;\text{imply}\;f(n)\;=\;\omega(h(n))\;.
+}}$
+
+====== Reflexivity: ======
+{{$
+    f(n)\;=\;\Theta(f(n))\;.
+\\  f(n)\;=\;O(f(n))\;.
+\\  f(n)\;=\;\Omega(f(n))\;.
+}}$
+
+====== Symmetry: ======
+{{$
+    f(n) = \Theta(g(n)) \;\text{if and only if}\; g(n) = \Theta(f(n))
+}}$
+
+====== Transpose Symmetry: ======
+{{$
+    
+}}$

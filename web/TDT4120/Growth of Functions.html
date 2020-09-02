@@ -14,6 +14,109 @@
 
 <div id="Chapter 3 - Growth of Functions-Asymptotic Notation"><h2 id="Asymptotic Notation" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation">Asymptotic Notation</a></h2></div>
 
+<div id="Chapter 3 - Growth of Functions-Asymptotic Notation-*Θ-notation*"><h5 id="*Θ-notation*" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-*Θ-notation*"><span id="Chapter 3 - Growth of Functions-Asymptotic Notation-*Θ-notation*-Θ-notation"></span><strong id="Θ-notation">Θ-notation</strong></a></h5></div>
+
+<p>
+For a given function \(g(n)\), we denote by \(\Theta(g(n))\) the <em>set of functions</em><br />
+</p>
+\[
+    \Theta(g(n)) = 
+    \{f(n): \text{there exists positive constants }
+    c_1,c_2\text{and }n_0\text{ such that }
+    \\ 0 \leq c_1 g(n) \leq f(n) \leq c_2 g(n) \text{ for all } n \geq n_0 \}.
+\]
+<p>
+A function \(f(n)\) belongs to the set \(\Theta(g(n))\) if there exists positive constants<br />
+\(c_1\) and \(c_2\) such that it can be "sandwiched" between \(c_1 g(n)\) and \(c_2 g(n)\)<br />
+for sufficiently large \(n\).<br />
+</p>
+
+<p>
+We say that \(g(n)\) is <span id="Chapter 3 - Growth of Functions-Asymptotic Notation-*Θ-notation*-asymptotically tight bound"></span><strong id="asymptotically tight bound">asymptotically tight bound</strong> for \(f(n)\).<br />
+</p>
+
+<div id="Chapter 3 - Growth of Functions-Asymptotic Notation-*_O_-notation*"><h5 id="*_O_-notation*" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-*_O_-notation*"><span id="Chapter 3 - Growth of Functions-Asymptotic Notation-*_O_-notation*-<em>O</em>-notation"></span><strong id="<em>O</em>-notation"><em>O</em>-notation</strong></a></h5></div>
+
+<p>
+When we only have an <span id="Chapter 3 - Growth of Functions-Asymptotic Notation-*_O_-notation*-asymptotic upper bound"></span><strong id="asymptotic upper bound">asymptotic upper bound</strong>, we use <em>O</em>-notation.<br />
+</p>
+
+<p>
+For a given function \(g(n)\), we denote by \(O(g(n))\) the set of functions<br />
+</p>
+\[
+    O(g(n)) = 
+    \{f(n): \text{there exists positive constants }
+    c_1\text{and }n_0\text{ such that }
+    \\ 0 \leq f(n) \leq c g(n) \text{ for all } n \geq n_0 \}.
+\]
+<p>
+We use <em>O</em>-notation to give an upper bound on a function, to within a constant factor.<br />
+</p>
+
+<div id="Chapter 3 - Growth of Functions-Asymptotic Notation-*Ω-notation*"><h5 id="*Ω-notation*" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-*Ω-notation*"><span id="Chapter 3 - Growth of Functions-Asymptotic Notation-*Ω-notation*-Ω-notation"></span><strong id="Ω-notation">Ω-notation</strong></a></h5></div>
+
+<p>
+When we only have an <span id="Chapter 3 - Growth of Functions-Asymptotic Notation-*Ω-notation*-asymptotic lower bound"></span><strong id="asymptotic lower bound">asymptotic lower bound</strong>, we use Ω-notation.<br />
+</p>
+
+<p>
+For a given function \(g(n)\), we denote by \(\Omega(g(n))\) the set of functions<br />
+</p>
+\[
+    \Omega(g(n)) = 
+    \{f(n): \text{there exists positive constants }
+    c_1\text{and }n_0\text{ such that }
+    \\ 0 \leq c g(n) \leq f(n) \text{ for all } n \geq n_0 \}.
+\]
+<p>
+We use Ω-notation to give an lower bound on a function, to within a constant factor.<br />
+</p>
+
+<div id="Chapter 3 - Growth of Functions-Asymptotic Notation-_o_-notation"><h5 id="_o_-notation" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-_o_-notation"><em>o</em>-notation</a></h5></div>
+
+\[
+    o(g(n)) = 
+    \{f(n): \text{for any positive constant } c &gt; 0 \text{, there exists a constant }
+    \\ n_0 &gt; 0 \text{ such that } 0 \leq f(n) &lt; cg(n) \text{ for all } n \geq n_0 \}.
+\]
+
+<div id="Chapter 3 - Growth of Functions-Asymptotic Notation-ω-notation"><h5 id="ω-notation" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-ω-notation">ω-notation</a></h5></div>
+
+\[
+    \omega(g(n)) = 
+    \{f(n): \text{for any positive constant } c &gt; 0 \text{, there exists a constant }
+    \\ n_0 &gt; 0 \text{ such that } 0 \leq cg(n) &lt; f(n) \text{ for all } n \geq n_0 \}.
+\]
+
+<div id="Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions"><h5 id="Comparing functions" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions">Comparing functions</a></h5></div>
+
+<p>
+Many of the relational properties of real number apply to asymptotic comparisons as well.<br />
+For the following, assume that \(f(n)\) and \(g(n)\) are asymptotically positive.<br />
+</p>
+
+<div id="Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions-Transitivity:"><h6 id="Transitivity:" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions-Transitivity:">Transitivity:</a></h6></div>
+\[
+  f(n)\;=\;\Theta(g(n))\;=\;\Theta(h(n))\;\text{imply}\;f(n)\;=\;\Theta(h(n))\;.
+\\  f(n)\;=\;O(g(n))\;=\;O(h(n))\;\text{imply}\;f(n)\;=\;O(h(n))\;.
+\\  f(n)\;=\;\Omega(g(n))\;=\;\Omega(h(n))\;\text{imply}\;f(n)\;=\;\Omega(h(n))\;.
+\\  f(n)\;=\;o(g(n))\;=\;o(h(n))\;\text{imply}\;f(n)\;=\;o(h(n))\;.
+\\  f(n)\;=\;\omega(g(n))\;=\;\omega(h(n))\;\text{imply}\;f(n)\;=\;\omega(h(n))\;.
+\]
+
+<div id="Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions-Reflexivity:"><h6 id="Reflexivity:" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions-Reflexivity:">Reflexivity:</a></h6></div>
+\[
+    f(n)\;=\;\Theta(f(n))\;.
+\\  f(n)\;=\;O(f(n))\;.
+\\  f(n)\;=\;\Omega(f(n))\;.
+\]
+
+<div id="Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions-Symmetry:"><h6 id="Symmetry:" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions-Symmetry:">Symmetry:</a></h6></div>
+\[
+    f(n) = \Theta(g(n)) \;\text{if and only if}\; g(n) = \Theta(f(n))
+\]
+
     </div>
     <p><small>Page created on 2020-09-02</small></p>
   </body>
