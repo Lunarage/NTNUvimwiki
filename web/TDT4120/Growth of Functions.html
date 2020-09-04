@@ -75,6 +75,10 @@ We use Ω-notation to give an lower bound on a function, to within a constant fa
 
 <div id="Chapter 3 - Growth of Functions-Asymptotic Notation-_o_-notation"><h5 id="_o_-notation" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-_o_-notation"><em>o</em>-notation</a></h5></div>
 
+<p>
+Strict <em>O</em>.<br />
+</p>
+
 \[
     o(g(n)) = 
     \{f(n): \text{for any positive constant } c &gt; 0 \text{, there exists a constant }
@@ -82,6 +86,10 @@ We use Ω-notation to give an lower bound on a function, to within a constant fa
 \]
 
 <div id="Chapter 3 - Growth of Functions-Asymptotic Notation-ω-notation"><h5 id="ω-notation" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-ω-notation">ω-notation</a></h5></div>
+
+<p>
+Strict Ω.<br />
+</p>
 
 \[
     \omega(g(n)) = 
@@ -114,10 +122,76 @@ For the following, assume that \(f(n)\) and \(g(n)\) are asymptotically positive
 
 <div id="Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions-Symmetry:"><h6 id="Symmetry:" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions-Symmetry:">Symmetry:</a></h6></div>
 \[
-    f(n) = \Theta(g(n)) \;\text{if and only if}\; g(n) = \Theta(f(n))
+    f(n) = \Theta(g(n)) \;\text{if and only if}\; g(n) = \Theta(f(n))\;.
 \]
 
+<div id="Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions-Transpose Symmetry:"><h6 id="Transpose Symmetry:" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions-Transpose Symmetry:">Transpose Symmetry:</a></h6></div>
+\[
+    f(n)\;=\;O(g(n))\;\text{if and only if}\;g(n)\;=\;\Omega(f(n))\;.
+\\  f(n)\;=\;o(g(n))\;\text{if and only if}\;g(n)\;=\;\omega(f(n))\;.
+\]
+
+<div id="Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions-Analogy With Comparison"><h6 id="Analogy With Comparison" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions-Analogy With Comparison">Analogy With Comparison</a></h6></div>
+
+
+<table>
+<tr>
+<th>
+Asymptotic
+</th>
+<th>
+Comparison
+</th>
+</tr>
+<tr>
+<td>
+\(f(n) = \Omega(g(n))\)
+</td>
+<td>
+\(a \geq b\)
+</td>
+</tr>
+<tr>
+<td>
+\(f(n) = \omega(g(n))\)
+</td>
+<td>
+\(a &gt; b\)
+</td>
+</tr>
+<tr>
+<td>
+\(f(n) = \Theta(g(n))\)
+</td>
+<td>
+\(a = b\)
+</td>
+</tr>
+<tr>
+<td>
+\(f(n) = o(g(n))\)
+</td>
+<td>
+\(a &lt; b\)
+</td>
+</tr>
+<tr>
+<td>
+\(f(n) = O(g(n))\)
+</td>
+<td>
+\(a \leq b\)
+</td>
+</tr>
+</table>
+
+<div id="Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions-Asymptotic Notation In Equations and Inequalities"><h6 id="Asymptotic Notation In Equations and Inequalities" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions-Asymptotic Notation In Equations and Inequalities">Asymptotic Notation In Equations and Inequalities</a></h6></div>
+<blockquote>
+No matter how the anonymous functions are chosen on the left side of the equal sign,
+there is a way to choose the anonymous functions on the right hand of the equation to make the equation valid.
+</blockquote>
+
     </div>
-    <p><small>Page created on 2020-09-02</small></p>
+    <p><small>Page created on 2020-09-04</small></p>
   </body>
 </html>

@@ -45,6 +45,8 @@ We use Ω-notation to give an lower bound on a function, to within a constant fa
 
 ===== _o_-notation =====
 
+Strict _O_.
+
 {{$
     o(g(n)) = 
     \{f(n): \text{for any positive constant } c > 0 \text{, there exists a constant }
@@ -52,6 +54,8 @@ We use Ω-notation to give an lower bound on a function, to within a constant fa
 }}$
 
 ===== ω-notation =====
+
+Strict Ω.
 
 {{$
     \omega(g(n)) = 
@@ -82,10 +86,27 @@ For the following, assume that $f(n)$ and $g(n)$ are asymptotically positive.
 
 ====== Symmetry: ======
 {{$
-    f(n) = \Theta(g(n)) \;\text{if and only if}\; g(n) = \Theta(f(n))
+    f(n) = \Theta(g(n)) \;\text{if and only if}\; g(n) = \Theta(f(n))\;.
 }}$
 
 ====== Transpose Symmetry: ======
 {{$
-    
+    f(n)\;=\;O(g(n))\;\text{if and only if}\;g(n)\;=\;\Omega(f(n))\;.
+\\  f(n)\;=\;o(g(n))\;\text{if and only if}\;g(n)\;=\;\omega(f(n))\;.
 }}$
+
+====== Analogy With Comparison ======
+
+
+| Asymptotic            | Comparison |
+|-----------------------|------------|
+| $f(n) = \Omega(g(n))$ | $a \geq b$ |
+| $f(n) = \omega(g(n))$ | $a > b$    |
+| $f(n) = \Theta(g(n))$ | $a = b$    |
+| $f(n) = o(g(n))$      | $a < b$    |
+| $f(n) = O(g(n))$      | $a \leq b$ |
+
+====== Asymptotic Notation In Equations and Inequalities ======
+
+    No matter how the anonymous functions are chosen on the left side of the equal sign,
+    there is a way to choose the anonymous functions on the right hand of the equation to make the equation valid.
