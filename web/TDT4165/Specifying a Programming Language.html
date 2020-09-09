@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <title>Specifying a Programming Language</title>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+  <body>
+    <div class="content">
+      
+<div id="Specifying a Programming Language"><h1 id="Specifying a Programming Language" class="header"><a href="#Specifying a Programming Language">Specifying a Programming Language</a></h1></div>
+<p>
+Syntax vs. Semantics<br />
+</p>
+
+<dl>
+<dt>Syntax</dt>
+<dd>Definition of the <span id="Specifying a Programming Language-form"></span><strong id="form">form</strong> of programs in a language.</dd>
+<dd>Specifies which sequences of symbols are <span id="Specifying a Programming Language-valid"></span><strong id="valid">valid</strong> (are programs), and which are not.</dd>
+<dt>Semantics</dt>
+<dd>Definition of the <span id="Specifying a Programming Language-meaning"></span><strong id="meaning">meaning</strong> of programs in a language.</dd>
+<dd>Specifies what the computer has to <span id="Specifying a Programming Language-do"></span><strong id="do">do</strong> during an execution of a program.</dd>
+</dl>
+
+<div id="Specifying a Programming Language-Formal Languages"><h2 id="Formal Languages" class="header"><a href="#Specifying a Programming Language-Formal Languages">Formal Languages</a></h2></div>
+
+<p>
+A <span id="Specifying a Programming Language-Formal Languages-formal language"></span><strong id="formal language">formal language</strong> \(\mathcal{L}\) is as set of strings (sequences) of symbols from a finite alphabet \(\mathcal{A}\) :<br />
+<dl>
+<dd>\(\mathcal{A} = \{s_1, s_2,\dots,s_n\}\)</dd>
+<dd>\(\mathcal{L} = \{s^{(1)} s^{(2)} \dots s^{(m)} \: | \:  m \geqslant 0, s^{(i)} \in \mathcal{A} \}\)</dd>
+</dl>
+</p>
+
+<div id="Specifying a Programming Language-Formal Grammars"><h2 id="Formal Grammars" class="header"><a href="#Specifying a Programming Language-Formal Grammars">Formal Grammars</a></h2></div>
+
+<div id="Specifying a Programming Language-Backus-Naur Form"><h2 id="Backus-Naur Form" class="header"><a href="#Specifying a Programming Language-Backus-Naur Form">Backus-Naur Form</a></h2></div>
+
+<dl>
+<dt>Terminals are distinguished from non-terminals by some typographical convention, for example: </dt>
+<dd>non-terminals are written in <em>italics</em>, using angle brackets etc.;</dd>
+<dd>terminals are written in a monotype font, enclosed in quotation marks, etc.</dd>
+<dt>Rules are written as strings which contain: </dt>
+<dd>a non-terminal,</dd>
+<dd>a special symbol (typically, \(::=\)),</dd>
+<dd>a sequence of terminals an non-terminals, or the symbol \(\epsilon\)</dd>
+</dl>
+
+<p>
+The Backus-Naur form for a grammar that produces signed integers is:<br />
+</p>
+\[
+    \langle signed\:integer \rangle ::= \langle sign \rangle\langle integer \rangle
+\\  \langle sign \rangle ::= +\,|\,-
+\\  \langle integer \rangle := \langle digit \rangle | \langle digit \rangle\langle integer \rangle
+\\  \langle digit \rangle ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+\]
+
+<div id="Specifying a Programming Language-Classification of Grammars"><h2 id="Classification of Grammars" class="header"><a href="#Specifying a Programming Language-Classification of Grammars">Classification of Grammars</a></h2></div>
+
+    </div>
+    <p><small>Page created on 2020-09-07</small></p>
+  </body>
+</html>

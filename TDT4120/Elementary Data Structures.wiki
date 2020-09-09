@@ -1,1 +1,25 @@
 = Chapter 10 - Elementary Data Structures =
+
+== Stacks and Queues ==
+
+`DELETE` operation:
+
+    The *stack* implements _last-in, first-out_, or *LIFO*, policy.
+    The *queue* implements _first-in, last-out_, or *FIFO*, policy.
+
+=== Stacks ===
+
+`INSERT` operation is often called `PUSH` and the `DELETE` operation is often called `POP`.
+
+We can implement a stack of at most _n_ elements with an array $S[1 \dots n]$.
+The array has an attribute $S.top$ that indexes the most recently inserted element.
+
+=== Queue ===
+
+`INSERT` operation is called `ENQUEUE` and `DELETE` operation is called `DEQUEUE`.
+
+== Linked Lists ==
+
+== Implementing Pointers and Objects ==
+
+== Representing Rooted Trees ==

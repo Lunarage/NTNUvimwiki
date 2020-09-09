@@ -1,0 +1,37 @@
+= Specifying a Programming Language =
+Syntax vs. Semantics
+
+Syntax::
+:: Definition of the *form* of programs in a language.
+:: Specifies which sequences of symbols are *valid* (are programs), and which are not.
+Semantics::
+:: Definition of the *meaning* of programs in a language.
+:: Specifies what the computer has to *do* during an execution of a program.
+
+== Formal Languages ==
+
+A *formal language* $\mathcal{L}$ is as set of strings (sequences) of symbols from a finite alphabet $\mathcal{A}$ :
+:: $\mathcal{A} = \{s_1, s_2,\dots,s_n\}$
+:: $\mathcal{L} = \{s^{(1)} s^{(2)} \dots s^{(m)} \: | \:  m \geqslant 0, s^{(i)} \in \mathcal{A} \}$
+
+== Formal Grammars ==
+
+== Backus-Naur Form ==
+
+Terminals are distinguished from non-terminals by some typographical convention, for example: ::
+:: non-terminals are written in _italics_, using angle brackets etc.;
+:: terminals are written in a monotype font, enclosed in quotation marks, etc.
+Rules are written as strings which contain: ::
+:: a non-terminal,
+:: a special symbol (typically, $::=$),
+:: a sequence of terminals an non-terminals, or the symbol $\epsilon$
+
+The Backus-Naur form for a grammar that produces signed integers is:
+{{$
+    \langle signed\:integer \rangle ::= \langle sign \rangle\langle integer \rangle
+\\  \langle sign \rangle ::= +\,|\,-
+\\  \langle integer \rangle ::= \langle digit \rangle | \langle digit \rangle\langle integer \rangle
+\\  \langle digit \rangle ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+}}$
+
+== Classification of Grammars ==
