@@ -10,12 +10,12 @@
 * Accumulate occurrences in given list
 * The position is now given by the accumulative list
 
-{{{ python
+{{{python
 def counting_sort(A, k):
     # Output list
     B = [0]*len(A)
     # List of k zeros
-    C = [0]*k
+    C = [-1]*k
     # Count occurrences of values in A
     for j in range(len(A)):
         C[A[j]] = C[A[j]] + 1
