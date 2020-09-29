@@ -3,5 +3,8 @@
 == Insertion Sort ==
 
 == Analyzing Algorithms ==
+{{$
+    T(n)
+}}$
 
 == Designing Algorithms ==

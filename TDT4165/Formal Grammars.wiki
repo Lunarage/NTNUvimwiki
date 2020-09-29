@@ -1,0 +1,5 @@
+A formal gramma $\Gamma$ is a 4-tuple $(\mathcal{V,S,R,v_s})$, where:
+* $\mathcal{V} = \{v_1,v_2,\dots,v_{n_v}\}$ is a finite set of variables (non-terminals)
+* $\mathcal{S} = \{s_1,s_2,\dots,s_{n_s}\}$ is a finite set of symbols (terminals)
+* $\mathcal{R} = \{(v,t^{ (1) }t^{ (2) } \dots t^{ (m) })| v \in \mathcal{V}, m \geq 0, t^{(i)} \in \mathcal{V} \cup \mathcal{S} \}$ is a finite set of rules (productions)
+* $v_s \in \mathcal{V}$ is the start variable (root, top)

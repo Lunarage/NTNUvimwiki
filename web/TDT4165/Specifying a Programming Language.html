@@ -36,6 +36,24 @@ A <span id="Specifying a Programming Language-Formal Languages-formal language">
 
 <div id="Specifying a Programming Language-Formal Grammars"><h2 id="Formal Grammars" class="header"><a href="#Specifying a Programming Language-Formal Grammars">Formal Grammars</a></h2></div>
 
+<p>
+A formal grammar \(\Gamma\) is a 4-tuple \((\mathcal{V,S,R,v_s})\), where:<br />
+</p>
+<ul>
+<li>
+\(\mathcal{V} = \{v_1,v_2,\dots,v_{n_v}\}\) is a finite set of variables (non-terminals)
+
+<li>
+\(\mathcal{S} = \{s_1,s_2,\dots,s_{n_s}\}\) is a finite set of symbols (terminals)
+
+<li>
+\(\mathcal{R} = \{(v,t^{ (1) }t^{ (2) } \dots t^{ (m) })| v \in \mathcal{V}, m \geqslant 0, t^{(i)} \in \mathcal{V} \cup \mathcal{S} \}\) is a finite set of rules (productions)
+
+<li>
+\(v_s \in \mathcal{V}\) is the start variable (root, top)
+
+</ul>
+
 <div id="Specifying a Programming Language-Backus-Naur Form"><h2 id="Backus-Naur Form" class="header"><a href="#Specifying a Programming Language-Backus-Naur Form">Backus-Naur Form</a></h2></div>
 
 <dl>
@@ -54,13 +72,55 @@ The Backus-Naur form for a grammar that produces signed integers is:<br />
 \[
     \langle signed\:integer \rangle ::= \langle sign \rangle\langle integer \rangle
 \\  \langle sign \rangle ::= +\,|\,-
-\\  \langle integer \rangle := \langle digit \rangle | \langle digit \rangle\langle integer \rangle
+\\  \langle integer \rangle ::= \langle digit \rangle | \langle digit \rangle\langle integer \rangle
 \\  \langle digit \rangle ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 \]
 
 <div id="Specifying a Programming Language-Classification of Grammars"><h2 id="Classification of Grammars" class="header"><a href="#Specifying a Programming Language-Classification of Grammars">Classification of Grammars</a></h2></div>
 
+<div id="Specifying a Programming Language-Classification of Grammars-Regular Languages"><h3 id="Regular Languages" class="header"><a href="#Specifying a Programming Language-Classification of Grammars-Regular Languages">Regular Languages</a></h3></div>
+<p>
+In a <span id="Specifying a Programming Language-Classification of Grammars-Regular Languages-Regular grammar"></span><strong id="Regular grammar">Regular grammar</strong>, all rules are of one of the forms:<br />
+</p>
+<ul>
+<li>
+\( \mathcal{v} ::= \mathcal{s}\;\mathcal{w} \)
+
+<li>
+\( v ::= s \)
+
+<li>
+\( v ::= \epsilon \)
+
+</ul>
+<p>
+where \(\mathcal{v, w}\) are any variables in \(\mathcal{V}\) and \(\mathcal{s}\) is<br />
+any symbol \(\mathcal{S}\).<br />
+</p>
+
+<div id="Specifying a Programming Language-Classification of Grammars-Context-free Languages"><h3 id="Context-free Languages" class="header"><a href="#Specifying a Programming Language-Classification of Grammars-Context-free Languages">Context-free Languages</a></h3></div>
+<p>
+In a context-free grammar, all rules are of the form:<br />
+</p>
+<ul>
+<li>
+\(\mathcal{v ::= \gamma}\)
+
+</ul>
+<p>
+where \(\mathcal{v}\) is a variable in \(\mathcal{V}\) and \(\gamma\) is any sequence<br />
+of variables and symbols from \(\mathcal{V} \cup \mathcal{S}\).<br />
+</p>
+
+<p>
+Recursive regular expressions.<br />
+</p>
+
+<div id="Specifying a Programming Language-Classification of Grammars-Context-sensitive Languages"><h3 id="Context-sensitive Languages" class="header"><a href="#Specifying a Programming Language-Classification of Grammars-Context-sensitive Languages">Context-sensitive Languages</a></h3></div>
+
+<div id="Specifying a Programming Language-Classification of Grammars-Recursively Enumerable (Unrestricted) Languages"><h3 id="Recursively Enumerable (Unrestricted) Languages" class="header"><a href="#Specifying a Programming Language-Classification of Grammars-Recursively Enumerable (Unrestricted) Languages">Recursively Enumerable (Unrestricted) Languages</a></h3></div>
+
     </div>
-    <p><small>Page created on 2020-09-07</small></p>
+    <p><small>Page created on 2020-09-25</small></p>
   </body>
 </html>

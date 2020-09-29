@@ -16,6 +16,12 @@ A *formal language* $\mathcal{L}$ is as set of strings (sequences) of symbols fr
 
 == Formal Grammars ==
 
+A formal grammar $\Gamma$ is a 4-tuple $(\mathcal{V,S,R,v_s})$, where:
+* $\mathcal{V} = \{v_1,v_2,\dots,v_{n_v}\}$ is a finite set of variables (non-terminals)
+* $\mathcal{S} = \{s_1,s_2,\dots,s_{n_s}\}$ is a finite set of symbols (terminals)
+* $\mathcal{R} = \{(v,t^{ (1) }t^{ (2) } \dots t^{ (m) })| v \in \mathcal{V}, m \geqslant 0, t^{(i)} \in \mathcal{V} \cup \mathcal{S} \}$ is a finite set of rules (productions)
+* $v_s \in \mathcal{V}$ is the start variable (root, top)
+
 == Backus-Naur Form ==
 
 Terminals are distinguished from non-terminals by some typographical convention, for example: ::
@@ -35,3 +41,24 @@ The Backus-Naur form for a grammar that produces signed integers is:
 }}$
 
 == Classification of Grammars ==
+
+=== Regular Languages ===
+In a *Regular grammar*, all rules are of one of the forms:
+* $ \mathcal{v} ::= \mathcal{s}\;\mathcal{w} $
+* $ v ::= s $
+* $ v ::= \epsilon $
+where $\mathcal{v, w}$ are any variables in $\mathcal{V}$ and $\mathcal{s}$ is
+any symbol $\mathcal{S}$.
+
+=== Context-free Languages ===
+In a context-free grammar, all rules are of the form:
+* $\mathcal{v ::= \gamma}$
+where $\mathcal{v}$ is a variable in $\mathcal{V}$ and $\gamma$ is any sequence
+of variables and symbols from $\mathcal{V} \cup \mathcal{S}$.
+
+Recursive regular expressions.
+
+=== Context-sensitive Languages ===
+
+=== Recursively Enumerable (Unrestricted) Languages ===
+
