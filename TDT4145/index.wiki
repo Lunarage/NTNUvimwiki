@@ -1,7 +1,10 @@
-= TDT4145 Database =
-[[SQL]]
-[[Normaliseringsteori]]
-[[Lagring og Indexing]]
-[[Transaksjoner]]
+= TDT4145 Datamodellering og Databasesystemer =
 
-[[EksamenV2020]]
+== Notes ==
+* [[SQL]]
+* [[Normaliseringsteori]]
+* [[Lagring og Indexing]]
+* [[Transaksjoner]]
+
+== Exams ==
+* [[EksamenV2020]]

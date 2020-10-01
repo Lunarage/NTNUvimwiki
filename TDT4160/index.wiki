@@ -1,0 +1,4 @@
+= TDT4160 Datamaskiner og Digitalteknik =
+
+== GitHub ==
+[[https://github.com/Lunarage/TDT4160-Assignments|GitHub Repository]]

@@ -1,2 +1,4 @@
-= Forelesninger =
+= IT1901 Informatikkprosjekt I =
+
+== Forelesninger ==
 * [[IT1901-2020-08-17]]

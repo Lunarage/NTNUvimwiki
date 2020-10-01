@@ -1,6 +1,9 @@
 = TDT4120 Algoritmer og Datastrukturer =
 
-== Cirriculum ==
+== GitHub ==
+[[https://github.com/Lunarage/TDT4120|GitHub Repository]]
+
+== Curriculum ==
 Book: _Introduction to Algorithms_ by CLRS
 | Chapter | Title                                   | Curriculum                       |
 |---------|-----------------------------------------|----------------------------------|

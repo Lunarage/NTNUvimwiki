@@ -1,8 +1,8 @@
-= TTM4100 KTN =
-== Forelesninger ==
+= TTM4100 Kommunikasjon - Tjenester og Nett =
+== Lectures ==
 * [[Forelesning 2020-03-19]]
 
-== Notater ==
+== Notes ==
 [[Intro]]
 [[Application Layer]]
 [[Transport Layer]]
@@ -12,6 +12,6 @@
 [[Security in Computer Networks]]
 [[Multimedia Networking]]
 
-== Eksamener ==
+== Exams ==
 [[2017 Vår]]
 [[2020 Vår]]

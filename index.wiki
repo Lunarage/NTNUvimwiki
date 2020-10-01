@@ -1,10 +1,15 @@
 = NTNU =
+This is a site where i keep most of my notes from courses i took at NTNU (Norwegian University of Technology and Science).
+
+== GitHub ==
+[[https://github.com/Lunarage/NTNUvimwiki|GitHub Repository]] containing the source code of this web site.
+
+== Courses ==
 * [[IT1901/index|IT19101]] - Informatikk Prosjekt I
 * [[IT2805/index|IT2805]] - Webteknologi
 * [[IT2810/index|IT2810]] - Webutvikling
 * [[TDT4120/index|TDT4120]] - Algoritmer og Datastrukturer
 * [[TDT4145/index|TDT4145]] - Datamodellering og databasesystemer
+* [[TDT4160/index|TDT4160]] - Datamaskiner og Digitalteknikk
 * [[TDT4165/index|TDT4165]] - Programmeringsspråk
 * [[TTM4100/index|TTM4100]] - Kommunikasjon Tjenester og Nett
-
-%% vim:spelllang=nb
