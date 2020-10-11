@@ -87,6 +87,11 @@ dt {
   font-weight: bold;
 }
 
+dd {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
 img {
   border: none;
   max-width: 95vw;
