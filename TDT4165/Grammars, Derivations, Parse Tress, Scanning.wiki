@@ -1,0 +1,52 @@
+= Syntactic Analysis of Programs =
+
+== How are programs processed? ==
+
+* The initial input is linear—it is a sequence of symbols from the alphabet of characters.
+* A *lexical analyzer* (scanner, lexer, tokenizer)
+  reads the sequence of characters and output a sequence of tokens.
+* A *parser* reads a sequence of tokens
+  and outputs a structured (typically non-linear) internal representation of the program—a *syntax tree* (parse tree)
+* The syntax tree is further processed, e.g., by an *interpreter* or by a *compiler*.
+
+== Derivations ==
+We can *derive* sentences in the language $\mathcal{L}(\Gamma)$
+specified by a grammar $\Gamma$ in a sequence of steps.
+* In each step we transform one *sentential form*
+  (a sequence of terminals and/or non-terminals)
+  into another sentential form by replacing one non-terminal
+  with the right-hand side of a matching rule.
+* The first sentential form is the start variable $\mathcal{v_s}$ alone.
+* The last sentential form is a valid sentence, composed of only terminals.
+
+Given a start variable $\mathcal{v}$ and a sequence s of terminals, there can be
+* *no* derivation of $\mathcal{s}$ from $\mathcal{v}$ (if s is not valid in the defined language;
+* *exactly one* derivation of $\mathcal{s}$ from $\mathcal{v}$;
+* *more than one* derivation.
+
+== Syntax Trees ==
+A *parse tree* (a syntax tree) is a structured representation of a program.
+* Parse trees are generated in the process of *parsing* programs.
+* A *parser* is a function (a program) that takes as input a sequence of tokens
+  and returns a nested data structure corresponding to a parse tree.
+
+== Ambiguity ==
+A grammar is *ambiguous* if a sentence can be parsed in more than one way:
+* the program has *more than one parse tree*, that is,
+* the program has *more than one leftmost derivation*.
+
+
+== Avoiding Ambiguity ==
+
+== Scanning ==
+Scanning is the process of translating programs from the *string-of-characters*
+input format into the *sequence-of-tokens* intermediate format.
+
+Building a scanner requires a number of steps:
+1. Specification of the *microsyntax* (the lexical structure) of the language,
+   typically using *regular expressions* (regexes).
+2. Based on the regexes, a *nondeterministic finite automaton* (NFA) is built
+   that recognizes lexemes of the language.
+3. A *deterministic finite automaton* (DFA) equivalent to the NFA is built.
+4. The DFA is implemented using a *nested control structure* that processes
+   the input one character at a time.

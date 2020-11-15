@@ -3,6 +3,13 @@
 == GitHub ==
 [[https://github.com/Lunarage/TDT4165|GitHub Repository]]
 
-
 == Notes ==
  * [[Specifying a Programming Language]]
+ * [[Grammars, Derivations, Parse Tress, Scanning]]
+ * [[The Declarative Sequential Kernel Language]]
+
+== CTMCP ==
+ * [[Introduction to Programming Concepts]]
+ * [[Declarative Computation Model]]
+ * [[Declarative Programming Techniques]]
+ * [[Declarative Concurrency]]

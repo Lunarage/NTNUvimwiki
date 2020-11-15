@@ -1,0 +1,17 @@
+= Declarative Concurrency =
+
+Some programs are best written as a set of activities that execute independently.
+Such programs are called concurrent.
+Concurrency is essential for programs that interact with their environment,
+e.g. for agents, graphical user interface (GUI) programming, operating system (OS) interaction.
+Concurrency also lets a program be organized in parts
+that execute independently and interact only when needed,
+i.e., client/server and producer/consumer programs.
+
+== Programming with treads ==
+
+=== Treads ===
+
+=== Streams ===
+
+== Lazy execution ==

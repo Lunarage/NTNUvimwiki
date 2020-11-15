@@ -1,0 +1,21 @@
+= Declarative Programming Techniques =
+
+== What is declarativeness? ==
+
+=== A classification of declarative programming ===
+
+== Iterative computation ==
+
+== Recursive computation ==
+
+== Programming with recursion ==
+
+== Time and space efficiency ==
+
+== Higher-order programming ==
+
+== Abstract data types ==
+
+== Nondeclarative needs ==
+
+== Program design in the small ==

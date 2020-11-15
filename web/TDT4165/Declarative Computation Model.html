@@ -1,0 +1,631 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
+    <title>Declarative Computation Model</title>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+  <body>
+    <div class="content">
+      
+<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<ul>
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model">Declarative Computation Model</a>
+
+<ul>
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-The single-assignment store">The single-assignment store</a>
+
+<ul>
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-The single-assignment store-Declarative Variables">Declarative Variables</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-The single-assignment store-Value store">Value store</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-The single-assignment store-Variable identifiers">Variable identifiers</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-The single-assignment store-Value creation with identifiers">Value creation with identifiers</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-The single-assignment store-Partial values">Partial values</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-The single-assignment store-Variable-variable binding">Variable-variable binding</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-The single-assignment store-Dataflow variables">Dataflow variables</a>
+
+</ul>
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Kernel language">Kernel language</a>
+
+<ul>
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Kernel language-Syntax">Syntax</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Kernel language-Values and types">Values and types</a>
+
+<ul>
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Kernel language-Values and types-Basic types">Basic types</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Kernel language-Values and types-Dynamic typing">Dynamic typing</a>
+
+</ul>
+</ul>
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Kernel language semantics">Kernel language semantics</a>
+
+<ul>
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Kernel language semantics-Basic concepts">Basic concepts</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Kernel language semantics-The abstract machine">The abstract machine</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Kernel language semantics-Nonsuspendable statements">Nonsuspendable statements</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Kernel language semantics-Suspendable statements">Suspendable statements</a>
+
+</ul>
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Memory Management">Memory Management</a>
+
+<ul>
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Memory Management-Last call optimization">Last call optimization</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Memory Management-Memory life cycle">Memory life cycle</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Memory Management-Garbage collection">Garbage collection</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Memory Management-Garbage collection is not magic">Garbage collection is not magic</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Memory Management-The Mozart garbage collector">The Mozart garbage collector</a>
+
+</ul>
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-From kernel language to practical language">From kernel language to practical language</a>
+
+<ul>
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-From kernel language to practical language-Syntactic conveniences">Syntactic conveniences</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-From kernel language to practical language-Functions">Functions</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-From kernel language to practical language-Interactive interface (the declare statement)">Interactive interface (the declare statement)</a>
+
+</ul>
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Exceptions">Exceptions</a>
+
+<ul>
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Exceptions-Motivation and basic concepts">Motivation and basic concepts</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Exceptions-The declarative model with exceptions">The declarative model with exceptions</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Exceptions-Full syntax">Full syntax</a>
+
+</ul>
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Advanced topics">Advanced topics</a>
+
+<ul>
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Advanced topics-Functional programming languages">Functional programming languages</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Advanced topics-Unification and entailment">Unification and entailment</a>
+
+<li>
+<a href="Declarative Computation Model.html#Declarative Computation Model-Advanced topics-Dynamic and static typing">Dynamic and static typing</a>
+
+</ul>
+</ul>
+</ul>
+
+<div id="Declarative Computation Model"><h1 id="Declarative Computation Model" class="header"><a href="#Declarative Computation Model">Declarative Computation Model</a></h1></div>
+
+<div id="Declarative Computation Model-The single-assignment store"><h2 id="The single-assignment store" class="header"><a href="#Declarative Computation Model-The single-assignment store">The single-assignment store</a></h2></div>
+
+<p>
+The single-assignment store is a set of variables that are initially unbound
+and that can be bound to one value.
+</p>
+
+<div id="Declarative Computation Model-The single-assignment store-Declarative Variables"><h3 id="Declarative Variables" class="header"><a href="#Declarative Computation Model-The single-assignment store-Declarative Variables">Declarative Variables</a></h3></div>
+
+<p>
+Variables in the single-assignment store are called <span id="Declarative Computation Model-The single-assignment store-Declarative Variables-<em>declarative variables</em>"></span><strong id="<em>declarative variables</em>"><em>declarative variables</em></strong>.
+Once bound, a declarative variable stays bound throughout the computation
+and is indistinguishable from its value.
+</p>
+
+<div id="Declarative Computation Model-The single-assignment store-Value store"><h3 id="Value store" class="header"><a href="#Declarative Computation Model-The single-assignment store-Value store">Value store</a></h3></div>
+
+<p>
+A store where all variables are bound to values is called a value store.
+That is, a persistent mapping from variables to values.
+</p>
+
+<p>
+Why? Here are some reasons:
+</p>
+<ol>
+<li>
+We want to compute with partial values.
+
+<li>
+Declarative concurrency.
+
+<li>
+A single-assignment store is needed for relational (logic) programming
+  and constraint programming.
+
+</ol>
+
+<div id="Declarative Computation Model-The single-assignment store-Variable identifiers"><h3 id="Variable identifiers" class="header"><a href="#Declarative Computation Model-The single-assignment store-Variable identifiers">Variable identifiers</a></h3></div>
+
+<p>
+A variable identifier is a textual name that refers to a store entity from outside the store.
+The mapping from variable identifiers to store entities is called an <span id="Declarative Computation Model-The single-assignment store-Variable identifiers-<em>environment</em>"></span><strong id="<em>environment</em>"><em>environment</em></strong>.
+</p>
+
+<p>
+This is an environment:
+</p>
+
+<p>
+\(\{\text{X} -&gt; x_1\}\)
+</p>
+
+<p>
+The identifier X refers to the store variable \(x_1\).
+</p>
+
+<div id="Declarative Computation Model-The single-assignment store-Value creation with identifiers"><h3 id="Value creation with identifiers" class="header"><a href="#Declarative Computation Model-The single-assignment store-Value creation with identifiers">Value creation with identifiers</a></h3></div>
+
+<p>
+Once bound, a variable is indistinguishable from its value.
+Following the links of bound variables to get the value is called <span id="Declarative Computation Model-The single-assignment store-Value creation with identifiers-<em>dereferencing</em>"></span><strong id="<em>dereferencing</em>"><em>dereferencing</em></strong>.
+It is invisible to the programmer.
+</p>
+
+<div id="Declarative Computation Model-The single-assignment store-Partial values"><h3 id="Partial values" class="header"><a href="#Declarative Computation Model-The single-assignment store-Partial values">Partial values</a></h3></div>
+
+<p>
+A partial value is a data structure that may contain unbound variables.
+</p>
+
+<p>
+A declarative variable can be bound to several partial values,
+as long as they are compatible with each other.
+We say  a set of partial values is compatible
+if the unbound variables in them can be bound in such a way as to make them all equal.
+</p>
+
+<div id="Declarative Computation Model-The single-assignment store-Variable-variable binding"><h3 id="Variable-variable binding" class="header"><a href="#Declarative Computation Model-The single-assignment store-Variable-variable binding">Variable-variable binding</a></h3></div>
+
+<p>
+Variables can be bound to variables.
+</p>
+
+<p>
+Consider two unbound variables \(x_1\) and \(x_2\) referred to by the identifiers X and Y.
+After doing the bind X=Y the two variables \(x_1\) and \(x_2\) are equal to each other.
+We say that \(\{x_1, x_2\}\) form an equivalence set. We also write this as \(x_1=x_2\).
+</p>
+
+<div id="Declarative Computation Model-The single-assignment store-Dataflow variables"><h3 id="Dataflow variables" class="header"><a href="#Declarative Computation Model-The single-assignment store-Dataflow variables">Dataflow variables</a></h3></div>
+
+<p>
+In the declarative model, creating a variable and binding it are done separately.
+What happens if we try to use the variable before it is bound?
+We call this a variable use error.
+</p>
+
+<p>
+We have the following possibilities when there is a use error:
+</p>
+<ol>
+<li>
+Execution continues and no error message is given.
+  The variable's content is undefined, i.e. it is "garbage": whatever is found in memory.
+  This is what C++ does.
+
+<li>
+Execution continues and no error message is given.
+  The variable is initialized to a default value when it is declared, e.g., to 0 for an integer.
+  This is what Java does for fields in objects and data structures, such as arrays.
+  The default value depends on the type.
+
+<li>
+Execution stops with an error message (or an exception is raised).
+  This is what Prolog does for arithmetic operations.
+
+<li>
+Execution is not possible because the compiler detects that there is an execution path to the variable's use that does not initialize it.
+  This is what Java does for local variables.
+
+<li>
+Execution awaits until the variable is bound then continues.
+  This is what Oz does, to support dataflow programming.
+
+</ol>
+
+<p>
+Declarative variables that cause the program to wait until they are bound
+are called <span id="Declarative Computation Model-The single-assignment store-Dataflow variables-<em>dataflow variables</em>"></span><strong id="<em>dataflow variables</em>"><em>dataflow variables</em></strong>.
+They are tremendously useful in concurrent programming,
+i.e., for programs with activities that run independently.
+</p>
+
+<div id="Declarative Computation Model-Kernel language"><h2 id="Kernel language" class="header"><a href="#Declarative Computation Model-Kernel language">Kernel language</a></h2></div>
+
+<p>
+The declarative model defines a simple kernel language.
+All programs in the model can be expressed in this language.
+</p>
+
+<div id="Declarative Computation Model-Kernel language-Syntax"><h3 id="Syntax" class="header"><a href="#Declarative Computation Model-Kernel language-Syntax">Syntax</a></h3></div>
+
+<p>
+The declarative kernel language
+<table>
+<tr>
+<td>
+⟨s⟩ ::=
+</td>
+<td>
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+<span id="Declarative Computation Model-Kernel language-Syntax-skip"></span><strong id="skip">skip</strong>
+</td>
+<td>
+Empty statement
+</td>
+</tr>
+<tr>
+<td>
+⟨s⟩<sub><small>1</small></sub> ⟨s⟩<sub><small>2</small></sub>
+</td>
+<td>
+Statement sequence
+</td>
+</tr>
+<tr>
+<td>
+<span id="Declarative Computation Model-Kernel language-Syntax-local"></span><strong id="local">local</strong> ⟨x⟩ <span id="Declarative Computation Model-Kernel language-Syntax-in"></span><strong id="in">in</strong> ⟨s⟩ <span id="Declarative Computation Model-Kernel language-Syntax-end"></span><strong id="end">end</strong>
+</td>
+<td>
+Variable creation
+</td>
+</tr>
+<tr>
+<td>
+⟨x⟩<sub><small>1</small></sub> = ⟨x⟩<sub><small>2</small></sub>
+</td>
+<td>
+Variable-variable binding
+</td>
+</tr>
+<tr>
+<td>
+⟨x⟩ = ⟨v⟩
+</td>
+<td>
+Value creation
+</td>
+</tr>
+<tr>
+<td>
+<span id="Declarative Computation Model-Kernel language-Syntax-if"></span><strong id="if">if</strong> ⟨x⟩ <span id="Declarative Computation Model-Kernel language-Syntax-then"></span><strong id="then">then</strong> ⟨s⟩<sub><small>1</small></sub> <span id="Declarative Computation Model-Kernel language-Syntax-else"></span><strong id="else">else</strong> ⟨s⟩<sub><small>2</small></sub> <span id="Declarative Computation Model-Kernel language-Syntax-end"></span><strong id="end">end</strong>
+</td>
+<td>
+Conditional
+</td>
+</tr>
+<tr>
+<td>
+<span id="Declarative Computation Model-Kernel language-Syntax-case"></span><strong id="case">case</strong> ⟨x⟩ <span id="Declarative Computation Model-Kernel language-Syntax-of"></span><strong id="of">of</strong> ⟨pattern⟩ <span id="Declarative Computation Model-Kernel language-Syntax-then"></span><strong id="then">then</strong> ⟨s⟩<sub><small>1</small></sub> <span id="Declarative Computation Model-Kernel language-Syntax-else"></span><strong id="else">else</strong> ⟨s⟩<sub><small>2</small></sub> <span id="Declarative Computation Model-Kernel language-Syntax-end"></span><strong id="end">end</strong>
+</td>
+<td>
+Pattern matching
+</td>
+</tr>
+<tr>
+<td>
+{ ⟨x⟩ ⟨y⟩<sub><small>1</small></sub> … ⟨y⟩<sub><small>n</small></sub> }
+</td>
+<td>
+Procedure application
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+Where ⟨s⟩ is a statement, ⟨x⟩ and ⟨y⟩ are identifiers, ⟨v⟩ is a value.
+</p>
+
+<p>
+Value expressions in the declarative kernel language
+<table>
+<tr>
+<td>
+⟨v⟩
+</td>
+<td>
+::=
+</td>
+<td>
+⟨number⟩ │ ⟨record⟩ │ ⟨procedure⟩
+</td>
+</tr>
+<tr>
+<td>
+⟨number⟩
+</td>
+<td>
+::=
+</td>
+<td>
+⟨int⟩ │ ⟨float⟩
+</td>
+</tr>
+<tr>
+<td>
+⟨record⟩, ⟨pattern⟩
+</td>
+<td>
+::=
+</td>
+<td>
+⟨literal⟩
+</td>
+</tr>
+<tr>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+│ ⟨literal⟩(⟨feature⟩<sub><small>1</small></sub>: ⟨x⟩<sub><small>1</small></sub> … ⟨feature⟩<sub><small>n</small></sub>: ⟨x⟩<sub><small>n</small></sub>)
+</td>
+</tr>
+<tr>
+<td>
+⟨procedure⟩
+</td>
+<td>
+::=
+</td>
+<td>
+<span id="Declarative Computation Model-Kernel language-Syntax-proc"></span><strong id="proc">proc</strong> { $ ⟨x⟩<sub><small>1</small></sub> … ⟨x⟩<sub><small>n</small></sub> } ⟨s⟩ <span id="Declarative Computation Model-Kernel language-Syntax-end"></span><strong id="end">end</strong>
+</td>
+</tr>
+<tr>
+<td>
+⟨literal⟩
+</td>
+<td>
+::=
+</td>
+<td>
+⟨atom⟩ │ ⟨bool⟩
+</td>
+</tr>
+<tr>
+<td>
+⟨feature⟩
+</td>
+<td>
+::=
+</td>
+<td>
+⟨atom⟩ │ ⟨bool⟩ │ ⟨int⟩
+</td>
+</tr>
+<tr>
+<td>
+⟨bool⟩
+</td>
+<td>
+::=
+</td>
+<td>
+<span id="Declarative Computation Model-Kernel language-Syntax-true"></span><strong id="true">true</strong> │ <span id="Declarative Computation Model-Kernel language-Syntax-false"></span><strong id="false">false</strong>
+</td>
+</tr>
+</table>
+</p>
+
+<div id="Declarative Computation Model-Kernel language-Values and types"><h3 id="Values and types" class="header"><a href="#Declarative Computation Model-Kernel language-Values and types">Values and types</a></h3></div>
+
+<p>
+A type or data type is a set of values together with a set of operations on those values.
+A value is "of a type" if it is in the type's set.
+</p>
+
+<div id="Declarative Computation Model-Kernel language-Values and types-Basic types"><h4 id="Basic types" class="header"><a href="#Declarative Computation Model-Kernel language-Values and types-Basic types">Basic types</a></h4></div>
+
+<p>
+The basic types of the declarative model are
+numbers (integers and floats),
+records (including atoms, booleans, tuples, lists, and strings),
+and procedures.
+</p>
+
+<div id="Declarative Computation Model-Kernel language-Values and types-Dynamic typing"><h4 id="Dynamic typing" class="header"><a href="#Declarative Computation Model-Kernel language-Values and types-Dynamic typing">Dynamic typing</a></h4></div>
+
+<p>
+There are two basic approaches to typing, dynamic typing and static typing.
+In static typing, all variable types are known at compile time.
+In dynamic typing, the variable type is known only when the variable is bound.
+The declarative model is dynamically typed.
+</p>
+
+<div id="Declarative Computation Model-Kernel language-Basic types"><h3 id="Basic types" class="header"><a href="#Declarative Computation Model-Kernel language-Basic types">Basic types</a></h3></div>
+
+<div id="Declarative Computation Model-Kernel language-Records an procedures"><h3 id="Records an procedures" class="header"><a href="#Declarative Computation Model-Kernel language-Records an procedures">Records an procedures</a></h3></div>
+
+<div id="Declarative Computation Model-Kernel language-Basic Operations"><h3 id="Basic Operations" class="header"><a href="#Declarative Computation Model-Kernel language-Basic Operations">Basic Operations</a></h3></div>
+
+<div id="Declarative Computation Model-Kernel language semantics"><h2 id="Kernel language semantics" class="header"><a href="#Declarative Computation Model-Kernel language semantics">Kernel language semantics</a></h2></div>
+
+<p>
+The kernel language execution consists in evaluating functions over partial values.
+</p>
+
+<div id="Declarative Computation Model-Kernel language semantics-Basic concepts"><h3 id="Basic concepts" class="header"><a href="#Declarative Computation Model-Kernel language semantics-Basic concepts">Basic concepts</a></h3></div>
+
+<div id="Declarative Computation Model-Kernel language semantics-Basic concepts-Variable identifiers and static scoping"><h4 id="Variable identifiers and static scoping" class="header"><a href="#Declarative Computation Model-Kernel language semantics-Basic concepts-Variable identifiers and static scoping">Variable identifiers and static scoping</a></h4></div>
+
+<p>
+The program region in which an identifier refers to a particular variable
+is called the <span id="Declarative Computation Model-Kernel language semantics-Basic concepts-Variable identifiers and static scoping-<em>scope</em>"></span><strong id="<em>scope</em>"><em>scope</em></strong> of the identifier.
+Outside the scope, the identifier does not mean the same thing.
+The meaning of an identifier is determined by the innermost <span id="Declarative Computation Model-Kernel language semantics-Basic concepts-Variable identifiers and static scoping-local"></span><strong id="local">local</strong> statement that declares it.
+This scoping rule is called lexical scoping or static scoping.
+</p>
+
+<div id="Declarative Computation Model-Kernel language semantics-Basic concepts-Procedures"><h4 id="Procedures" class="header"><a href="#Declarative Computation Model-Kernel language semantics-Basic concepts-Procedures">Procedures</a></h4></div>
+
+<p>
+Procedures are one of the most important basic building blocks of any language.
+Procedures output results by being passed references to unbound variables,
+which are bound inside the procedure.
+</p>
+
+<div id="Declarative Computation Model-Kernel language semantics-Basic concepts-Dynamic scoping versus static scoping"><h4 id="Dynamic scoping versus static scoping" class="header"><a href="#Declarative Computation Model-Kernel language semantics-Basic concepts-Dynamic scoping versus static scoping">Dynamic scoping versus static scoping</a></h4></div>
+
+<ul>
+<li>
+<span id="Declarative Computation Model-Kernel language semantics-Basic concepts-Dynamic scoping versus static scoping-<em>Static scope</em>"></span><strong id="<em>Static scope</em>"><em>Static scope</em></strong>. The variable corresponding to an identifier occurrence is the one defined in the textually innermost declaration surrounding the occurrence in the source program.
+
+<li>
+<span id="Declarative Computation Model-Kernel language semantics-Basic concepts-Dynamic scoping versus static scoping-<em>Dynamic scope</em>"></span><strong id="<em>Dynamic scope</em>"><em>Dynamic scope</em></strong>. The variable corresponding to an identifier occurrence is the one in the most-recent declaration seen during the execution leading up to the current statement.
+
+</ul>
+
+<div id="Declarative Computation Model-Kernel language semantics-Basic concepts-Procedural abstraction"><h4 id="Procedural abstraction" class="header"><a href="#Declarative Computation Model-Kernel language semantics-Basic concepts-Procedural abstraction">Procedural abstraction</a></h4></div>
+
+<ol>
+<li>
+<span id="Declarative Computation Model-Kernel language semantics-Basic concepts-Procedural abstraction-Procedural abstraction"></span><strong id="Procedural abstraction">Procedural abstraction</strong>. Any statement van be made into a procedure by putting it inside a procedure declaration.
+  This is called procedural abstraction.
+  We also say that the statement is abstracted into a procedure.
+
+<li>
+<span id="Declarative Computation Model-Kernel language semantics-Basic concepts-Procedural abstraction-Free identifiers"></span><strong id="Free identifiers">Free identifiers</strong>. A free identifier in a statement is an identifier that is not defined in that statement.
+  It might be defined in an enclosing statement.
+
+<li>
+<span id="Declarative Computation Model-Kernel language semantics-Basic concepts-Procedural abstraction-Static scoping"></span><strong id="Static scoping">Static scoping</strong>. A procedure can have external references,
+  which are free identifiers in the procedure body that are not declared as argument.
+  The value of an external reference is its value when the procedure is defined.
+  This is the consequence of static scoping.
+
+</ol>
+
+<div id="Declarative Computation Model-Kernel language semantics-The abstract machine"><h3 id="The abstract machine" class="header"><a href="#Declarative Computation Model-Kernel language semantics-The abstract machine">The abstract machine</a></h3></div>
+
+<div id="Declarative Computation Model-Kernel language semantics-The abstract machine-Definitions"><h4 id="Definitions" class="header"><a href="#Declarative Computation Model-Kernel language semantics-The abstract machine-Definitions">Definitions</a></h4></div>
+
+<ul>
+<li>
+A <em>single-assignment store σ</em> is a set of store variables.
+  These variables are partitioned into
+
+<ol>
+<li>
+sets of variables that are equal but unbound
+
+<li>
+variables that are bound to a number, record, or procedure.
+  For example, in the store \({x_1,x_2 = x_3, x_4 = a|x_2}\)
+  \(x_1\) is unbound,
+  \(x_2\) and \(x_3\) are equal and unbound,
+  and \(x_4\) is bound to the partial value a|\(x_2\).
+  A store variable bound to a value is indistinguishable from that value.
+  This is why a store variable is sometimes called a store entity.
+
+</ol>
+<li>
+An <em>environment</em> \(E\) is a mapping from variable identifiers to entities in <em>σ</em>.
+  We will write \(E\) as a set of pairs,
+  e.g., \(\mathtt{X} \rightarrow x, \mathtt{Y} \rightarrow y\),
+  where \(\mathtt{X},\mathtt{Y}\) are identifiers and \(x, y\) refer to store entities.
+
+</ul>
+
+<div id="Declarative Computation Model-Kernel language semantics-Nonsuspendable statements"><h3 id="Nonsuspendable statements" class="header"><a href="#Declarative Computation Model-Kernel language semantics-Nonsuspendable statements">Nonsuspendable statements</a></h3></div>
+
+<div id="Declarative Computation Model-Kernel language semantics-Suspendable statements"><h3 id="Suspendable statements" class="header"><a href="#Declarative Computation Model-Kernel language semantics-Suspendable statements">Suspendable statements</a></h3></div>
+
+<div id="Declarative Computation Model-Memory Management"><h2 id="Memory Management" class="header"><a href="#Declarative Computation Model-Memory Management">Memory Management</a></h2></div>
+
+<div id="Declarative Computation Model-Memory Management-Last call optimization"><h3 id="Last call optimization" class="header"><a href="#Declarative Computation Model-Memory Management-Last call optimization">Last call optimization</a></h3></div>
+
+<div id="Declarative Computation Model-Memory Management-Memory life cycle"><h3 id="Memory life cycle" class="header"><a href="#Declarative Computation Model-Memory Management-Memory life cycle">Memory life cycle</a></h3></div>
+
+<div id="Declarative Computation Model-Memory Management-Garbage collection"><h3 id="Garbage collection" class="header"><a href="#Declarative Computation Model-Memory Management-Garbage collection">Garbage collection</a></h3></div>
+
+<div id="Declarative Computation Model-Memory Management-Garbage collection is not magic"><h3 id="Garbage collection is not magic" class="header"><a href="#Declarative Computation Model-Memory Management-Garbage collection is not magic">Garbage collection is not magic</a></h3></div>
+
+<div id="Declarative Computation Model-Memory Management-The Mozart garbage collector"><h3 id="The Mozart garbage collector" class="header"><a href="#Declarative Computation Model-Memory Management-The Mozart garbage collector">The Mozart garbage collector</a></h3></div>
+
+<div id="Declarative Computation Model-From kernel language to practical language"><h2 id="From kernel language to practical language" class="header"><a href="#Declarative Computation Model-From kernel language to practical language">From kernel language to practical language</a></h2></div>
+
+<div id="Declarative Computation Model-From kernel language to practical language-Syntactic conveniences"><h3 id="Syntactic conveniences" class="header"><a href="#Declarative Computation Model-From kernel language to practical language-Syntactic conveniences">Syntactic conveniences</a></h3></div>
+
+<div id="Declarative Computation Model-From kernel language to practical language-Functions"><h3 id="Functions" class="header"><a href="#Declarative Computation Model-From kernel language to practical language-Functions">Functions</a></h3></div>
+
+<div id="Declarative Computation Model-From kernel language to practical language-Interactive interface (the declare statement)"><h3 id="Interactive interface (the declare statement)" class="header"><a href="#Declarative Computation Model-From kernel language to practical language-Interactive interface (the declare statement)">Interactive interface (the declare statement)</a></h3></div>
+
+<div id="Declarative Computation Model-Exceptions"><h2 id="Exceptions" class="header"><a href="#Declarative Computation Model-Exceptions">Exceptions</a></h2></div>
+
+<div id="Declarative Computation Model-Exceptions-Motivation and basic concepts"><h3 id="Motivation and basic concepts" class="header"><a href="#Declarative Computation Model-Exceptions-Motivation and basic concepts">Motivation and basic concepts</a></h3></div>
+
+<div id="Declarative Computation Model-Exceptions-The declarative model with exceptions"><h3 id="The declarative model with exceptions" class="header"><a href="#Declarative Computation Model-Exceptions-The declarative model with exceptions">The declarative model with exceptions</a></h3></div>
+
+<div id="Declarative Computation Model-Exceptions-Full syntax"><h3 id="Full syntax" class="header"><a href="#Declarative Computation Model-Exceptions-Full syntax">Full syntax</a></h3></div>
+
+<div id="Declarative Computation Model-Advanced topics"><h2 id="Advanced topics" class="header"><a href="#Declarative Computation Model-Advanced topics">Advanced topics</a></h2></div>
+
+<div id="Declarative Computation Model-Advanced topics-Functional programming languages"><h3 id="Functional programming languages" class="header"><a href="#Declarative Computation Model-Advanced topics-Functional programming languages">Functional programming languages</a></h3></div>
+
+<div id="Declarative Computation Model-Advanced topics-Unification and entailment"><h3 id="Unification and entailment" class="header"><a href="#Declarative Computation Model-Advanced topics-Unification and entailment">Unification and entailment</a></h3></div>
+
+<div id="Declarative Computation Model-Advanced topics-Dynamic and static typing"><h3 id="Dynamic and static typing" class="header"><a href="#Declarative Computation Model-Advanced topics-Dynamic and static typing">Dynamic and static typing</a></h3></div>
+
+    </div>
+    <p><small>Page created on 2020-11-15</small></p>
+    <script src="../prism.js"></script>
+  </body>
+</html>

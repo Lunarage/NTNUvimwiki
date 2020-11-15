@@ -5,11 +5,25 @@ This is a site where i keep most of my notes from courses i took at NTNU (Norweg
 [[https://github.com/Lunarage/NTNUvimwiki|GitHub Repository]] containing the source code of this web site.
 
 == Courses ==
-* [[IT1901/index|IT19101]] - Informatikk Prosjekt I
-* [[IT2805/index|IT2805]] - Webteknologi
-* [[IT2810/index|IT2810]] - Webutvikling
-* [[TDT4120/index|TDT4120]] - Algoritmer og Datastrukturer
-* [[TDT4145/index|TDT4145]] - Datamodellering og databasesystemer
-* [[TDT4160/index|TDT4160]] - Datamaskiner og Digitalteknikk
-* [[TDT4165/index|TDT4165]] - Programmeringsspråk
-* [[TTM4100/index|TTM4100]] - Kommunikasjon Tjenester og Nett
+| Emnekode                  | Navn                                        | Semester |
+|---------------------------|---------------------------------------------|----------|
+| EXPH0001                  | Filisofi of vitenskapsteori                 | H12      |
+| FRA0501                   | Fransk 1                                    | V15      |
+| [[IT1901/index|IT1901]]   | Informatikk prosjektarbeid I                | H20      |
+| [[IT2805/index|IT2805]]   | Webteknologi                                | H19      |
+| [[IT2810/index|IT2810]]   | Webutvikling                                | H20      |
+| MA0001                    | Brukerkurs i matematikk A                   | H19      |
+| TDT4102                   | Prosedyre- og objektorientert programmering | V13      |
+| TDT4110                   | Informasjonsteknologi, grunnkurs            | H12      |
+| [[TDT4120/index|TDT4120]] | Algoritmer og datastrukturer                | H20      |
+| [[TDT4145/index|TDT4145]] | Datamodellering og databasesystemer         | V20      |
+| [[TDT4160/index|TDT4160]] | Datamaskiner og digitalteknikk              | H19      |
+| [[TDT4165/index|TDT4165]] | Programmeringsspråk                         | H20      |
+| TDT4180                   | Menneskemaskin-interaskjon                  | V20      |
+| TFE4100                   | Kretsteknikk                                | H12      |
+| TMA4115                   | Matematikk 3                                | V14      |
+| TMA4140                   | Diskret matematikk                          | H19      |
+| TMA4245                   | Statistikk                                  | V14      |
+| TTK4100                   | Kybernetikk, introduskjon                   | V14      |
+| TTK4125                   | Datastyring                                 | V14      |
+| [[TTM4100/index|TTM4100]] | Kommunikasjon - Tjenester og nett           | V20      |

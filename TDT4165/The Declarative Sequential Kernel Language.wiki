@@ -1,0 +1,20 @@
+= The Declarative Sequential Kernel Language =
+
+== Types and Type Checking ==
+A type is a *set of values* together with a *set of operations* on these values.
+
+*Type checking* is validation of programs
+aimed at detecting illegal application of operations
+(application of operations not supported for a specific type of types).
+
+== The Practical Language - Extensions ==
+
+We can define the practical language on top of the kernel language by:
+* adding *syntactic sugar* - syntactic conveniences
+  that allow for more concise and readable syntax without introducing abstractions;
+* adding *linguistic abstractions* - syntactic conveniences
+  that not only allow for more concise programs,
+  but also introduce new programming structures,
+  without extending the model of computation.
+
+=== Syntactic Sugar ===

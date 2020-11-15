@@ -1,0 +1,275 @@
+= Contents =
+  - [[#Declarative Computation Model|Declarative Computation Model]]
+    - [[#Declarative Computation Model#The single-assignment store|The single-assignment store]]
+      - [[#Declarative Computation Model#The single-assignment store#Declarative Variables|Declarative Variables]]
+      - [[#Declarative Computation Model#The single-assignment store#Value store|Value store]]
+      - [[#Declarative Computation Model#The single-assignment store#Variable identifiers|Variable identifiers]]
+      - [[#Declarative Computation Model#The single-assignment store#Value creation with identifiers|Value creation with identifiers]]
+      - [[#Declarative Computation Model#The single-assignment store#Partial values|Partial values]]
+      - [[#Declarative Computation Model#The single-assignment store#Variable-variable binding|Variable-variable binding]]
+      - [[#Declarative Computation Model#The single-assignment store#Dataflow variables|Dataflow variables]]
+    - [[#Declarative Computation Model#Kernel language|Kernel language]]
+      - [[#Declarative Computation Model#Kernel language#Syntax|Syntax]]
+      - [[#Declarative Computation Model#Kernel language#Values and types|Values and types]]
+        - [[#Declarative Computation Model#Kernel language#Values and types#Basic types|Basic types]]
+        - [[#Declarative Computation Model#Kernel language#Values and types#Dynamic typing|Dynamic typing]]
+    - [[#Declarative Computation Model#Kernel language semantics|Kernel language semantics]]
+      - [[#Declarative Computation Model#Kernel language semantics#Basic concepts|Basic concepts]]
+      - [[#Declarative Computation Model#Kernel language semantics#The abstract machine|The abstract machine]]
+      - [[#Declarative Computation Model#Kernel language semantics#Nonsuspendable statements|Nonsuspendable statements]]
+      - [[#Declarative Computation Model#Kernel language semantics#Suspendable statements|Suspendable statements]]
+    - [[#Declarative Computation Model#Memory Management|Memory Management]]
+      - [[#Declarative Computation Model#Memory Management#Last call optimization|Last call optimization]]
+      - [[#Declarative Computation Model#Memory Management#Memory life cycle|Memory life cycle]]
+      - [[#Declarative Computation Model#Memory Management#Garbage collection|Garbage collection]]
+      - [[#Declarative Computation Model#Memory Management#Garbage collection is not magic|Garbage collection is not magic]]
+      - [[#Declarative Computation Model#Memory Management#The Mozart garbage collector|The Mozart garbage collector]]
+    - [[#Declarative Computation Model#From kernel language to practical language|From kernel language to practical language]]
+      - [[#Declarative Computation Model#From kernel language to practical language#Syntactic conveniences|Syntactic conveniences]]
+      - [[#Declarative Computation Model#From kernel language to practical language#Functions|Functions]]
+      - [[#Declarative Computation Model#From kernel language to practical language#Interactive interface (the declare statement)|Interactive interface (the declare statement)]]
+    - [[#Declarative Computation Model#Exceptions|Exceptions]]
+      - [[#Declarative Computation Model#Exceptions#Motivation and basic concepts|Motivation and basic concepts]]
+      - [[#Declarative Computation Model#Exceptions#The declarative model with exceptions|The declarative model with exceptions]]
+      - [[#Declarative Computation Model#Exceptions#Full syntax|Full syntax]]
+    - [[#Declarative Computation Model#Advanced topics|Advanced topics]]
+      - [[#Declarative Computation Model#Advanced topics#Functional programming languages|Functional programming languages]]
+      - [[#Declarative Computation Model#Advanced topics#Unification and entailment|Unification and entailment]]
+      - [[#Declarative Computation Model#Advanced topics#Dynamic and static typing|Dynamic and static typing]]
+
+= Declarative Computation Model =
+
+== The single-assignment store ==
+
+The single-assignment store is a set of variables that are initially unbound
+and that can be bound to one value.
+
+=== Declarative Variables ===
+
+Variables in the single-assignment store are called *_declarative variables_*.
+Once bound, a declarative variable stays bound throughout the computation
+and is indistinguishable from its value.
+
+=== Value store ===
+
+A store where all variables are bound to values is called a value store.
+That is, a persistent mapping from variables to values.
+
+Why? Here are some reasons:
+1. We want to compute with partial values.
+2. Declarative concurrency.
+3. A single-assignment store is needed for relational (logic) programming
+  and constraint programming.
+
+=== Variable identifiers ===
+
+A variable identifier is a textual name that refers to a store entity from outside the store.
+The mapping from variable identifiers to store entities is called an *_environment_*.
+
+This is an environment:
+
+$\{\text{X} -> x_1\}$
+
+The identifier X refers to the store variable $x_1$.
+
+=== Value creation with identifiers ===
+
+Once bound, a variable is indistinguishable from its value.
+Following the links of bound variables to get the value is called *_dereferencing_*.
+It is invisible to the programmer.
+
+=== Partial values ===
+
+A partial value is a data structure that may contain unbound variables.
+
+A declarative variable can be bound to several partial values,
+as long as they are compatible with each other.
+We say  a set of partial values is compatible
+if the unbound variables in them can be bound in such a way as to make them all equal.
+
+=== Variable-variable binding ===
+
+Variables can be bound to variables.
+
+Consider two unbound variables $x_1$ and $x_2$ referred to by the identifiers X and Y.
+After doing the bind X=Y the two variables $x_1$ and $x_2$ are equal to each other.
+We say that $\{x_1, x_2\}$ form an equivalence set. We also write this as $x_1=x_2$.
+
+=== Dataflow variables ===
+
+In the declarative model, creating a variable and binding it are done separately.
+What happens if we try to use the variable before it is bound?
+We call this a variable use error.
+
+We have the following possibilities when there is a use error:
+1. Execution continues and no error message is given.
+  The variable's content is undefined, i.e. it is "garbage": whatever is found in memory.
+  This is what C++ does.
+2. Execution continues and no error message is given.
+  The variable is initialized to a default value when it is declared, e.g., to 0 for an integer.
+  This is what Java does for fields in objects and data structures, such as arrays.
+  The default value depends on the type.
+3. Execution stops with an error message (or an exception is raised).
+  This is what Prolog does for arithmetic operations.
+4. Execution is not possible because the compiler detects that there is an execution path to the variable's use that does not initialize it.
+  This is what Java does for local variables.
+5. Execution awaits until the variable is bound then continues.
+  This is what Oz does, to support dataflow programming.
+
+Declarative variables that cause the program to wait until they are bound
+are called *_dataflow variables_*.
+They are tremendously useful in concurrent programming,
+i.e., for programs with activities that run independently.
+
+== Kernel language ==
+
+The declarative model defines a simple kernel language.
+All programs in the model can be expressed in this language.
+
+=== Syntax ===
+
+The declarative kernel language
+| ⟨s⟩ ::=                                                         |                           |
+| *skip*                                                          | Empty statement           |
+| ⟨s⟩,,1,, ⟨s⟩,,2,,                                               | Statement sequence        |
+| *local* ⟨x⟩ *in* ⟨s⟩ *end*                                      | Variable creation         |
+| ⟨x⟩,,1,, = ⟨x⟩,,2,,                                             | Variable-variable binding |
+| ⟨x⟩ = ⟨v⟩                                                       | Value creation            |
+| *if* ⟨x⟩ *then* ⟨s⟩,,1,, *else* ⟨s⟩,,2,, *end*                  | Conditional               |
+| *case* ⟨x⟩ *of* ⟨pattern⟩ *then* ⟨s⟩,,1,, *else* ⟨s⟩,,2,, *end* | Pattern matching          |
+| { ⟨x⟩ ⟨y⟩,,1,, … ⟨y⟩,,n,, }                                     | Procedure application     |
+
+Where ⟨s⟩ is a statement, ⟨x⟩ and ⟨y⟩ are identifiers, ⟨v⟩ is a value.
+
+Value expressions in the declarative kernel language
+| ⟨v⟩                 | ::= | ⟨number⟩ │ ⟨record⟩ │ ⟨procedure⟩                                |
+| ⟨number⟩            | ::= | ⟨int⟩ │ ⟨float⟩                                                  |
+| ⟨record⟩, ⟨pattern⟩ | ::= | ⟨literal⟩                                                        |
+|                     |     | │ ⟨literal⟩(⟨feature⟩,,1,,: ⟨x⟩,,1,, … ⟨feature⟩,,n,,: ⟨x⟩,,n,,) |
+| ⟨procedure⟩         | ::= | *proc* { $ ⟨x⟩,,1,, … ⟨x⟩,,n,, } ⟨s⟩ *end*                       |
+| ⟨literal⟩           | ::= | ⟨atom⟩ │ ⟨bool⟩                                                  |
+| ⟨feature⟩           | ::= | ⟨atom⟩ │ ⟨bool⟩ │ ⟨int⟩                                          |
+| ⟨bool⟩              | ::= | *true* │ *false*                                                 |
+
+=== Values and types ===
+
+A type or data type is a set of values together with a set of operations on those values.
+A value is "of a type" if it is in the type's set.
+
+==== Basic types ====
+
+The basic types of the declarative model are
+numbers (integers and floats),
+records (including atoms, booleans, tuples, lists, and strings),
+and procedures.
+
+==== Dynamic typing ====
+
+There are two basic approaches to typing, dynamic typing and static typing.
+In static typing, all variable types are known at compile time.
+In dynamic typing, the variable type is known only when the variable is bound.
+The declarative model is dynamically typed.
+
+=== Basic types ===
+
+=== Records an procedures ===
+
+=== Basic Operations ===
+
+== Kernel language semantics ==
+
+The kernel language execution consists in evaluating functions over partial values.
+
+=== Basic concepts ===
+
+==== Variable identifiers and static scoping ====
+
+The program region in which an identifier refers to a particular variable
+is called the *_scope_* of the identifier.
+Outside the scope, the identifier does not mean the same thing.
+The meaning of an identifier is determined by the innermost *local* statement that declares it.
+This scoping rule is called lexical scoping or static scoping.
+
+==== Procedures ====
+
+Procedures are one of the most important basic building blocks of any language.
+Procedures output results by being passed references to unbound variables,
+which are bound inside the procedure.
+
+==== Dynamic scoping versus static scoping ====
+
+* *_Static scope_*. The variable corresponding to an identifier occurrence is the one defined in the textually innermost declaration surrounding the occurrence in the source program.
+* *_Dynamic scope_*. The variable corresponding to an identifier occurrence is the one in the most-recent declaration seen during the execution leading up to the current statement.
+
+==== Procedural abstraction ====
+
+1. *Procedural abstraction*. Any statement van be made into a procedure by putting it inside a procedure declaration.
+  This is called procedural abstraction.
+  We also say that the statement is abstracted into a procedure.
+2. *Free identifiers*. A free identifier in a statement is an identifier that is not defined in that statement.
+  It might be defined in an enclosing statement.
+3. *Static scoping*. A procedure can have external references,
+  which are free identifiers in the procedure body that are not declared as argument.
+  The value of an external reference is its value when the procedure is defined.
+  This is the consequence of static scoping.
+
+=== The abstract machine ===
+
+==== Definitions ====
+
+* A _single-assignment store σ_ is a set of store variables.
+  These variables are partitioned into
+  1. sets of variables that are equal but unbound
+  2. variables that are bound to a number, record, or procedure.
+  
+  For example, in the store ${x_1,x_2 = x_3, x_4 = a|x_2}$
+  $x_1$ is unbound,
+  $x_2$ and $x_3$ are equal and unbound,
+  and $x_4$ is bound to the partial value a|$x_2$.
+  A store variable bound to a value is indistinguishable from that value.
+  This is why a store variable is sometimes called a store entity.
+* An _environment_ $E$ is a mapping from variable identifiers to entities in _σ_.
+  We will write $E$ as a set of pairs,
+  e.g., $\mathtt{X} \rightarrow x, \mathtt{Y} \rightarrow y$,
+  where $\mathtt{X},\mathtt{Y}$ are identifiers and $x, y$ refer to store entities.
+
+=== Nonsuspendable statements ===
+
+=== Suspendable statements ===
+
+== Memory Management ==
+
+=== Last call optimization ===
+
+=== Memory life cycle ===
+
+=== Garbage collection ===
+
+=== Garbage collection is not magic ===
+
+=== The Mozart garbage collector ===
+
+== From kernel language to practical language ==
+
+=== Syntactic conveniences ===
+
+=== Functions ===
+
+=== Interactive interface (the declare statement) ===
+
+== Exceptions ==
+
+=== Motivation and basic concepts ===
+
+=== The declarative model with exceptions ===
+
+=== Full syntax ===
+
+== Advanced topics ==
+
+=== Functional programming languages ===
+
+=== Unification and entailment ===
+
+=== Dynamic and static typing ===
+

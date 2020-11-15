@@ -1,0 +1,131 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
+    <title>Grammars, Derivations, Parse Tress, Scanning</title>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+  <body>
+    <div class="content">
+      
+<div id="Syntactic Analysis of Programs"><h1 id="Syntactic Analysis of Programs" class="header"><a href="#Syntactic Analysis of Programs">Syntactic Analysis of Programs</a></h1></div>
+
+<div id="Syntactic Analysis of Programs-How are programs processed?"><h2 id="How are programs processed?" class="header"><a href="#Syntactic Analysis of Programs-How are programs processed?">How are programs processed?</a></h2></div>
+
+<ul>
+<li>
+The initial input is linear—it is a sequence of symbols from the alphabet of characters.
+
+<li>
+A <span id="Syntactic Analysis of Programs-How are programs processed?-lexical analyzer"></span><strong id="lexical analyzer">lexical analyzer</strong> (scanner, lexer, tokenizer)
+  reads the sequence of characters and output a sequence of tokens.
+
+<li>
+A <span id="Syntactic Analysis of Programs-How are programs processed?-parser"></span><strong id="parser">parser</strong> reads a sequence of tokens
+  and outputs a structured (typically non-linear) internal representation of the program—a <span id="Syntactic Analysis of Programs-How are programs processed?-syntax tree"></span><strong id="syntax tree">syntax tree</strong> (parse tree)
+
+<li>
+The syntax tree is further processed, e.g., by an <span id="Syntactic Analysis of Programs-How are programs processed?-interpreter"></span><strong id="interpreter">interpreter</strong> or by a <span id="Syntactic Analysis of Programs-How are programs processed?-compiler"></span><strong id="compiler">compiler</strong>.
+
+</ul>
+
+<div id="Syntactic Analysis of Programs-Derivations"><h2 id="Derivations" class="header"><a href="#Syntactic Analysis of Programs-Derivations">Derivations</a></h2></div>
+<p>
+We can <span id="Syntactic Analysis of Programs-Derivations-derive"></span><strong id="derive">derive</strong> sentences in the language \(\mathcal{L}(\Gamma)\)
+specified by a grammar \(\Gamma\) in a sequence of steps.
+</p>
+<ul>
+<li>
+In each step we transform one <span id="Syntactic Analysis of Programs-Derivations-sentential form"></span><strong id="sentential form">sentential form</strong>
+  (a sequence of terminals and/or non-terminals)
+  into another sentential form by replacing one non-terminal
+  with the right-hand side of a matching rule.
+
+<li>
+The first sentential form is the start variable \(\mathcal{v_s}\) alone.
+
+<li>
+The last sentential form is a valid sentence, composed of only terminals.
+
+</ul>
+
+<p>
+Given a start variable \(\mathcal{v}\) and a sequence s of terminals, there can be
+</p>
+<ul>
+<li>
+<span id="Syntactic Analysis of Programs-Derivations-no"></span><strong id="no">no</strong> derivation of \(\mathcal{s}\) from \(\mathcal{v}\) (if s is not valid in the defined language;
+
+<li>
+<span id="Syntactic Analysis of Programs-Derivations-exactly one"></span><strong id="exactly one">exactly one</strong> derivation of \(\mathcal{s}\) from \(\mathcal{v}\);
+
+<li>
+<span id="Syntactic Analysis of Programs-Derivations-more than one"></span><strong id="more than one">more than one</strong> derivation.
+
+</ul>
+
+<div id="Syntactic Analysis of Programs-Syntax Trees"><h2 id="Syntax Trees" class="header"><a href="#Syntactic Analysis of Programs-Syntax Trees">Syntax Trees</a></h2></div>
+<p>
+A <span id="Syntactic Analysis of Programs-Syntax Trees-parse tree"></span><strong id="parse tree">parse tree</strong> (a syntax tree) is a structured representation of a program.
+</p>
+<ul>
+<li>
+Parse trees are generated in the process of <span id="Syntactic Analysis of Programs-Syntax Trees-parsing"></span><strong id="parsing">parsing</strong> programs.
+
+<li>
+A <span id="Syntactic Analysis of Programs-Syntax Trees-parser"></span><strong id="parser">parser</strong> is a function (a program) that takes as input a sequence of tokens
+  and returns a nested data structure corresponding to a parse tree.
+
+</ul>
+
+<div id="Syntactic Analysis of Programs-Ambiguity"><h2 id="Ambiguity" class="header"><a href="#Syntactic Analysis of Programs-Ambiguity">Ambiguity</a></h2></div>
+<p>
+A grammar is <span id="Syntactic Analysis of Programs-Ambiguity-ambiguous"></span><strong id="ambiguous">ambiguous</strong> if a sentence can be parsed in more than one way:
+</p>
+<ul>
+<li>
+the program has <span id="Syntactic Analysis of Programs-Ambiguity-more than one parse tree"></span><strong id="more than one parse tree">more than one parse tree</strong>, that is,
+
+<li>
+the program has <span id="Syntactic Analysis of Programs-Ambiguity-more than one leftmost derivation"></span><strong id="more than one leftmost derivation">more than one leftmost derivation</strong>.
+
+</ul>
+
+
+<div id="Syntactic Analysis of Programs-Avoiding Ambiguity"><h2 id="Avoiding Ambiguity" class="header"><a href="#Syntactic Analysis of Programs-Avoiding Ambiguity">Avoiding Ambiguity</a></h2></div>
+
+<div id="Syntactic Analysis of Programs-Scanning"><h2 id="Scanning" class="header"><a href="#Syntactic Analysis of Programs-Scanning">Scanning</a></h2></div>
+<p>
+Scanning is the process of translating programs from the <span id="Syntactic Analysis of Programs-Scanning-string-of-characters"></span><strong id="string-of-characters">string-of-characters</strong>
+input format into the <span id="Syntactic Analysis of Programs-Scanning-sequence-of-tokens"></span><strong id="sequence-of-tokens">sequence-of-tokens</strong> intermediate format.
+</p>
+
+<p>
+Building a scanner requires a number of steps:
+</p>
+<ol>
+<li>
+Specification of the <span id="Syntactic Analysis of Programs-Scanning-microsyntax"></span><strong id="microsyntax">microsyntax</strong> (the lexical structure) of the language,
+   typically using <span id="Syntactic Analysis of Programs-Scanning-regular expressions"></span><strong id="regular expressions">regular expressions</strong> (regexes).
+
+<li>
+Based on the regexes, a <span id="Syntactic Analysis of Programs-Scanning-nondeterministic finite automaton"></span><strong id="nondeterministic finite automaton">nondeterministic finite automaton</strong> (NFA) is built
+   that recognizes lexemes of the language.
+
+<li>
+A <span id="Syntactic Analysis of Programs-Scanning-deterministic finite automaton"></span><strong id="deterministic finite automaton">deterministic finite automaton</strong> (DFA) equivalent to the NFA is built.
+
+<li>
+The DFA is implemented using a <span id="Syntactic Analysis of Programs-Scanning-nested control structure"></span><strong id="nested control structure">nested control structure</strong> that processes
+   the input one character at a time.
+
+</ol>
+
+    </div>
+    <p><small>Page created on 2020-10-12</small></p>
+    <script src="../prism.js"></script>
+  </body>
+</html>

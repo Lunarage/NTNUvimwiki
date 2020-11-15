@@ -1,1 +1,24 @@
 = Chapter 16 - Greedy Algorithms =
+
+A greedy algorithm always make the choice that looks best locally.
+
+== An activity-selection problem ==
+
+== Elements of the greedy strategy ==
+
+=== Greedy-choice property ===
+
+We can assemble a globally optimal solution by making locally optimal (greedy) choices.
+
+=== Optimal Substructure ===
+
+A problem exhibits _*optimal substructure*_ if an optimal solution to the problem
+contains within it optimal solutions to subproblems.
+
+=== Greedy versus dynamic programming ===
+
+== Huffman codes ==
+
+=== Prefix codes ===
+
+=== Constructing a Huffman code ===
