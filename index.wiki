@@ -9,6 +9,7 @@ This is a site where i keep most of my notes from courses i took at NTNU (Norweg
 |---------------------------|---------------------------------------------|----------|
 | EXPH0001                  | Filisofi of vitenskapsteori                 | H12      |
 | FRA0501                   | Fransk 1                                    | V15      |
+| [[FY0001/index|FY0001]]   | Brukerkurs i fysikk                         | V21      |
 | [[IT1901/index|IT1901]]   | Informatikk prosjektarbeid I                | H20      |
 | [[IT2805/index|IT2805]]   | Webteknologi                                | H19      |
 | [[IT2810/index|IT2810]]   | Webutvikling                                | H20      |
@@ -16,6 +17,7 @@ This is a site where i keep most of my notes from courses i took at NTNU (Norweg
 | TDT4102                   | Prosedyre- og objektorientert programmering | V13      |
 | TDT4110                   | Informasjonsteknologi, grunnkurs            | H12      |
 | [[TDT4120/index|TDT4120]] | Algoritmer og datastrukturer                | H20      |
+| [[TDT4140/index|TDT4140]] | Programvareutvikling                        | H21      |
 | [[TDT4145/index|TDT4145]] | Datamodellering og databasesystemer         | V20      |
 | [[TDT4160/index|TDT4160]] | Datamaskiner og digitalteknikk              | H19      |
 | [[TDT4165/index|TDT4165]] | Programmeringsspråk                         | H20      |
@@ -27,3 +29,5 @@ This is a site where i keep most of my notes from courses i took at NTNU (Norweg
 | TTK4100                   | Kybernetikk, introduskjon                   | V14      |
 | TTK4125                   | Datastyring                                 | V14      |
 | [[TTM4100/index|TTM4100]] | Kommunikasjon - Tjenester og nett           | V20      |
+
+%% vim: spelllang=nb

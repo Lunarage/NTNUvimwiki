@@ -1,1 +1,9 @@
 = Chapter 23 - Minimum Spanning Trees =
+
+== Growing a minimum spanning tree ==
+
+== The algorithms of Kruskal and Prim ==
+
+=== Kurskal's algorithm ===
+
+=== Prim's algorithm ===

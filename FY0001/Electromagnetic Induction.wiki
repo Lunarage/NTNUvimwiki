@@ -1,0 +1,7 @@
+= Electromagnetic Induction =
+
+== Motional Emf ==
+
+== Faraday's Law ==
+
+== Some Examples; Lenz' Law ==

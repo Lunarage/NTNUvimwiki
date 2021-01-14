@@ -16,6 +16,3 @@ We say that a correct algorithm *solves* the given computational problem.
 
 == Algorithms as a Technology ==
 
-
-
-

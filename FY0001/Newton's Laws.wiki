@@ -1,0 +1,47 @@
+= Newton's Laws =
+
+== Newton's First Law ==
+
+    A body at rest remains at rest, and a body in motion continues to move at constant velocity
+    unless acted upon by a force.
+
+== Newton's Second Law ==
+
+{{$
+\Sigma F = ma
+}}$
+
+== The Combination of Forces ==
+
+{{$
+a = \frac{1}{m}\Sigma F
+}}$
+
+== Newton's Third Law ==
+
+    Whenever a body exerts a force on another body,
+    the latter exerts a force of equal magnitude and opposite direction on the former.
+
+== Kinds of Forces; Weight and Normal Force ==
+
+== Motion With a Constant Force ==
+
+== Friction ==
+
+{{$
+f_k = \mu_k N
+}}$
+
+== Restoring Force of a Spring ==
+
+{{$
+F = -kx
+}}$
+
+== Force for Uniform Circular Motion ==
+
+Centripetal Force
+
+{{$
+F = ma = \frac{mv^2}{r} = m\omega^2r
+}}$

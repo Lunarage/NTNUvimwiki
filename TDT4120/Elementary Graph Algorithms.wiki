@@ -1,1 +1,95 @@
 = Chapter 22 - Elementary Graph Algorithms =
+
+== Representations of graphs ==
+
+A graph $G = (V,E)$ can be represented in two standard ways:
+1. As a collection of adjacency lists.
+2. As an adjacency matrix.
+
+== Breadth-first search ==
+
+Given a graph $G=(V,E)$ and a distinguished _*source*_ vertex _s_,
+breadth-first search systematically explores the edges of _G_
+to "discover" every vertex that is reachable from _s_.
+
+It computes the distance (smallest number of edges) from _s_ to each reachable vertex.
+
+It also produces a "breadth-first tree" with root _s_
+that contains all reachable vertices.
+
+{{{python
+def BFS(G,s):                 # Breadth-first search (Graph, root vertex)
+  for u in G.V - {s}:         # Set all vertices to initial state
+    u.color = WHITE           # Mark vertex as unvisited
+    u.d = ∞                   # Distance to root vertex
+    u.π = None                # No parent (yet)
+  s.color = GRAY              # Root is visited
+  s.d = 0                     # Distance to itself is 0
+  s.π = None                  # Root has no parent
+  Q = Queue()                 # Create empty queue
+  Q.put(s)                    # Put root vertex in queue
+  while not Q.empty():        # Loop trough vertices
+    u = Q.get()               # Dequeue a vertex
+    for v in G.Adj[u]:        # For all adjacent vertecies
+      if v.color == WHITE:    # Unvisited vertex
+        v.color = GRAY        # Mark as visited
+        v.d = u.d + 1         # Distance is 1 more than parent
+        v.π = u               # Set vertex parent
+        Q.put(v)              # Put vertex in queue
+    u.color = BLACK           # Mark vertex as completed
+}}}
+
+=== Analysis ===
+
+_O_(_V_ + _E_).
+
+The breadth-first search runs in time linear in the size of the adjacency-list representation of _G_.
+
+=== Shortest paths ===
+
+=== Breadth-first trees ===
+
+== Depth-first search ==
+
+{{{python
+def DFS(G):
+  for vertex u in G.V:
+    u.color = WHITE
+    u.π = None
+  time = 0
+  for vertex u in G.V:
+    if u.color == WHITE:
+      DFS-Visit(G,u)
+
+def DFS-Visit(G,u):
+  time = time + 1
+  u.d = time
+  u.color = GRAY
+  for v in G.Adj[u]
+    if v.color == WHITE
+      v.π = u
+      DFS-Visit(G,v)
+  u.color = Black
+  time = time + 1
+  u.f = time
+}}}
+
+=== Properties of depth-first search ===
+
+=== Classification of edges ===
+
+1. _*Tree edges*_ are edges in the depth-first forest $G_π$.
+   Edge $(u,v)$ is a tree edge if _v_ was discovered by exploring edge $(u,v)$.
+2. _*Back edges*_ are those edges $(u,v)$ connecting a vertex _u_ to an ancestor _v_ in a depth-first tree.
+   We consider self-loops, which may occur in directed graphs, to be back edges.
+3. _*Forward edges*_ are those nontree edges $(u,v)$ connecting a vertex _u_ to a descendant _v_ in a depth-first tree.
+4. _*Cross edges*_ are all the other edges.
+   They can go between vertices in the same depth-first tree,
+   as long as one vertex is not an ancestor of the other,
+   or they can go between vertices in different depth-first trees.
+
+== Topological sort ==
+
+A _*topological sort*_ of a dag $G=(V,E)$ is a linear ordering of all its vertices
+such that if _G_ contains an edge $(u,v)$,
+then $u$ appears before $v$ in the ordering.

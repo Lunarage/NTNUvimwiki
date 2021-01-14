@@ -219,10 +219,9 @@ which are bound inside the procedure.
 
 * A _single-assignment store σ_ is a set of store variables.
   These variables are partitioned into
-  1. sets of variables that are equal but unbound
-  2. variables that are bound to a number, record, or procedure.
-  
-  For example, in the store ${x_1,x_2 = x_3, x_4 = a|x_2}$
+  (1) sets of variables that are equal but unbound
+  (2) variables that are bound to a number, record, or procedure.
+  For example, in the store $\{x_1,x_2 = x_3, x_4 = a|x_2\}$
   $x_1$ is unbound,
   $x_2$ and $x_3$ are equal and unbound,
   and $x_4$ is bound to the partial value a|$x_2$.
@@ -230,16 +229,223 @@ which are bound inside the procedure.
   This is why a store variable is sometimes called a store entity.
 * An _environment_ $E$ is a mapping from variable identifiers to entities in _σ_.
   We will write $E$ as a set of pairs,
-  e.g., $\mathtt{X} \rightarrow x, \mathtt{Y} \rightarrow y$,
+  e.g., $\{\mathtt{X} \rightarrow x, \mathtt{Y} \rightarrow y\}$,
   where $\mathtt{X},\mathtt{Y}$ are identifiers and $x, y$ refer to store entities.
+* A _semantic statement_ is a pair (⟨s⟩, $E$)
+  where ⟨s⟩ is a statement and $E$ is an environment.
+  The semantic statement relates a statement to what it references in the store.
+* An _execution state_ is a pair $(ST,\sigma)$
+  where $ST$ is a stack of semantic statements and $\sigma$ is a single-assignment store.
+* A _computation_ is a sequence of execution states starting from an initial state:
+  $(ST_0,\sigma_0) \rightarrow (ST_1,\sigma_1) \rightarrow (ST_2,\sigma_2) \rightarrow \dots$.
+
+A single transition in a computation is called a computation step.
+A computation step is atomic, i.e., there are no visible intermediates states.
+
+==== Program execution ====
+
+A program is simply a statement ⟨s⟩.
+
+* The initial execution state is: 
+{{{
+([(⟨s⟩,∅)],∅)
+(
+  [
+    (⟨s⟩,∅)
+  ],
+  ∅
+)
+}}}
+  That is, the initial store is empty (no variables, empty set ∅)
+  and the initial execution state has just one semantic statement (⟨s⟩,∅) in the stack $ST$.
+  The semantic statement contains ⟨s⟩ and an empty environment (∅).
+  We use brackets […] to denote the stack.
+* At each step, the first element of $ST$ is popped
+  and execution proceeds according to the form of the element.
+* The final execution state (if there is one) is a state in which the semantic stack is empty.
+
+A semantic stack $ST$ can be in one of the three run-time states:
+* Runnable: $ST$ can do a computation step.
+* Terminated: $ST$ is empty.
+* Suspended: $ST$ is not empty, but cannot do any computation step.
+
+==== Calculating with environments ====
+
+The notation $E$(⟨x⟩) retrieves the entity associated with the identifier ⟨x⟩ from the store.
+To define the semantics of the abstract machine instructions,
+we need two common operations on environments,
+namely _adjunction_ and _restriction_.
+
+_Adjunction_ defines a new environment by adding a mapping to an existing one.
+
+The notation
+    $E + \{\langle \mathtt{x} \rangle \rightarrow x\}$
+denotes a new environment $E'$ constructed from $E$
+by adding the mapping $\{\langle \mathtt{x} \rangle \rightarrow x\}$
+This mapping overrides any other mapping from the identifier ⟨x⟩.
+
+_Restriction_ defines a new environment whose domain is a subset of an existing one.
+
+The notation
+    $E|_{\{\langle\mathtt{x}\rangle_1,\dots,\langle\mathtt{x}\rangle_n\}}$
+denotes a new environment $E'$ such that
+$\mathrm{dom}(E') = \mathrm{dom}(E)\cap\{\langle \mathtt{x} \rangle_1,\dots,\langle\mathtt{x}\rangle_n\}$
+and $E'(\langle\mathtt{x}\rangle) = E(\langle\mathtt{x}\rangle)$
+for all $\langle\mathtt{x}\rangle \in \mathrm{dom}(E')$.
+That is, the new environment does not contain any identifiers other than those mentioned in the set.
 
 === Nonsuspendable statements ===
 
+==== The `skip` statement ====
+
+The semantic statement is:
+{{$
+(\mathtt{skip}, E)
+}}$
+
+Execution is complete after this pair is popped from the semantic stack.
+
+==== Sequential composition ====
+
+The semantic statement is:
+{{$
+(\langle\mathtt{s}\rangle_1 \langle\mathtt{s}\rangle_2, E)
+}}$
+
+Execution consists of the following actions:
+* Push $(\langle\mathtt{s}\rangle_2, E)$ on the stack.
+* Push $(\langle\mathtt{s}\rangle_1, E)$ on the stack.
+
+==== Variable declaration (the `local` statement) ====
+
+The semantic statement is:
+{{$
+(\mathtt{local}\:\langle\mathtt{x}\rangle\:\mathtt{in}\:\langle\mathtt{s}\rangle\:\mathtt{end},E)
+}}$
+
+Execution consists of the following actions:
+* Create a new variable $x$ in the store.
+* Let $E'$ be $E + \{\langle \mathtt{x} \rangle \rightarrow x \}$
+* Push $(\langle\mathtt{s}\rangle, E')$ on the stack.
+
+==== Variable-variable binding ====
+
+The semantic statement is:
+{{$
+(\langle\mathtt{x}\rangle_1 = \langle\mathtt{x}\rangle_2, E)
+}}$
+
+Execution consists of the following action:
+* Bind $E(\langle\mathtt{x}\rangle_1)$ and $E(\langle\mathtt{x}\rangle_2)$ in the store.
+
+==== Value creation ====
+
+The semantic statement is:
+{{$
+(\langle\mathtt{x}\rangle = \langle\mathtt{v}\rangle, E)
+}}$
+
+where $\langle\mathtt{v}\rangle$ is a partially constructed value
+that is either a record, number, or procedure.
+
+Execution consists of the following actions:
+* Create a new variable $x$ in the store.
+* Construct the value represented by $\langle\mathtt{v}\rangle$ in the store
+  and let $x$ refer to it.
+  All identifiers in $\langle\mathtt{v}\rangle$ are replaced by their store contents
+  as given by $E$.
+* Bind $E(\langle\mathtt{x}\rangle)$ and $x$ in the store.
+
+==== Free and bound identifier occurrences ====
+
+Here is an example with both free and bound occurrences:
+{{{oz
+local A B in
+   A=1
+   B=2
+   Res=A+B
+end
+}}}
+This cannot run. `Res` is a free identifier with respect to the scope.
+
+This can:
+{{{oz
+local Res in
+  local A B in
+     A=1
+     B=2
+     Res=A+B
+  end
+end
+}}}
+This can run since it has no free identifier occurrences.
+
+==== Procedure values (closures) ====
+
+{{{oz
+proc {LowerBound X ?Z}
+   if X>=Y then Z=X else Z=Y end
+end
+}}}
+
+The `if` statement has three free variables, `X`, `Y`, `Z`.
+Two of them, `X` and `Z` are also formal parameters.
+The third, `Y`, is not a formal parameter.
+It has to be defined by the environment where the procedure is declared.
+
+In general, a procedure expression is written as:
+{{$
+(\mathtt{proc} \{\:$\:\langle\mathtt{y}\rangle_1\dots\langle\mathtt{y}\rangle_n\}\:\langle\mathtt{s}\rangle\:\mathtt{end},\:CE)
+}}$
+Here $CE$ (the contextual environment) is $E|_{\{\langle\mathtt{z}\rangle_1,\dots,\langle{z}_n\}$,
+where $E$ is the environment when the procedure is declared.
+
+Because it contains an environment as well as a procedure definition,
+a procedure value is often called a closure or a lexically scoped closure.
+
 === Suspendable statements ===
+
+==== Conditional (the `if` statement) ====
+
+==== Procedure application ====
+
+==== Pattern matching (the `case` statement) ====
 
 == Memory Management ==
 
 === Last call optimization ===
+
+Consider the following procedure:
+{{{oz
+proc {Loop10 I}
+   if I==10 then skip
+   else
+     {Browse I}
+     {Loop10 I+1}
+   end
+end
+}}}
+* The initial execution state is:
+  {{$
+  ([(\{\mathtt{Loop10\:0}\}, E_0)],
+  \sigma)
+  }}$
+  where $E_0$ is the environment at the call and $\sigma$ the initial store.
+* After executing the `if` statement, then becomes:
+  {{$
+  ([(\{\mathtt{Browse\:I}\},\{\mathtt{I} \rightarrow i_0\})\:(\{\mathtt{Loop10\:I+1}\},\{\mathtt{I} \rightarrow i_0\})],
+  \{i_0 = 0\} \cup \sigma)
+  }}$
+* After executing the `Browse`, we get to the first recursive call:
+  {{$
+  ([(\{\mathtt{Loop10\:I+1}\},\{\mathtt{I} \rightarrow i_0\})],
+  \{i_0 = 0\} \cup \sigma)
+  }}$
+* After executing the `if` statement in the recursive call, this becomes:
+  {{$
+  ([(\{\mathtt{Browse\:I}\},\{\mathtt{I} \rightarrow i_1\})\:(\{\mathtt{Loop10\:I+1}\},\{\mathtt{I} \rightarrow i_1\})],
+  \{i_0 = 0,i_1 = 1\} \cup \sigma)
+  }}$
 
 === Memory life cycle ===
 

@@ -1,0 +1,28 @@
+= FY0001 - Brukerkurs i fysikk =
+
+== Syllabus ==
+
+Ohanian, Principles of Physics
+| Chapter | Title                                  | Syllabus             |   |
+|---------|----------------------------------------|----------------------|---|
+| 1       | [[Motion Along a Straight Line]]       | All                  |   |
+| 2       | [[Motion in a Plane]]                  | 2.1-2.7              |   |
+| 3       | [[Newton's Laws]]                      | All                  |   |
+| 4       | [[Work and Energy]]                    | All                  |   |
+| 5       | [[Gravitation]]                        | 5.1-5.3, 5.5         |   |
+| 6       | [[Momentum and Collisions]]            | All                  |   |
+| 9       | [[Oscillations]]                       | 9.1-9.4              |   |
+| 10      | [[Waves]]                              | All                  |   |
+| 11      | [[Sound]]                              | 11.1-11.4            |   |
+| 16      | [[Electric Force and Electric Charge]] | All                  |   |
+| 17      | [[The Electric Field]]                 | 17.1-17.2            |   |
+| 18      | [[Electrostatic Potential and Energy]] | 18.1-18.6            |   |
+| 19      | [[Currents and Ohm's Law]]             | All                  |   |
+| 20      | [[DC Circuits]]                        | 20.1-20.3, 20.5-20.7 |   |
+| 21      | [[Magnetic Force and Field]]           | 21.1-21.3, 21.5      |   |
+| 22      | [[Electromagnetic Induction]]          | 22.1-22.3            |   |
+| 25      | [[Reflection, Refraction and Optics]]  | 25.1-25.3, 25.5      |   |
+| 26      | [[Interference and Diffraction]]       | 26.1, 26.3           |   |
+| 28      | [[Quanta of Light]]                    | 28.1-28.3, 28.5      |   |
+| 29      | [[Spectral Lines and Bohr's Theory]]   | 29.1-29.4            |   |
+| 31      | [[Nuclei]]                             | 31.1-31.4            |   |

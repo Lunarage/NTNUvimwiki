@@ -1,0 +1,134 @@
+= Motion Along a Straight Line =
+
+== Measurement of Space and Time; Units ==
+
+| Freedom Units | SI Units                   |
+|---------------|----------------------------|
+| mile          | 1 mi = 5280 ft = 1609.38 m |
+| yard          | 1 yd = 3 ft = 0.9144 m     |
+| foot          | 1 ft = 0.3048 m            |
+| inch          | 1 in. = 1/12 ft = 2.540 cm |
+
+== Average Speed ==
+
+{{$
+\bar{v} = \frac{d}{t}
+}}$
+
+== Average Velocity for Motion Along a Straight Line ==
+
+{{$
+\bar{v} = \frac{x_2 - x_1}{t_2 - t_1}
+}}$
+
+aka
+
+{{$
+\bar{v} = \frac{\Delta x}{\Delta t}
+}}$
+
+== Instantaneous Velocity ==
+
+{{$
+v = \frac{\Delta x}{\Delta t} \text{ with extremely small } \Delta t
+}}$
+
+aka
+
+{{$
+v = \lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t}
+}}$
+
+== Acceleration ==
+
+Average Acceleration
+
+{{$
+\bar{a} = \frac{v_2 - v_1}{t_2 - t_1}
+}}$
+
+aka
+
+{{$
+\bar{a} = \frac{\Delta v}{\Delta t}
+}}$
+
+Instantaneous Acceleration
+
+{{$
+v = \frac{\Delta v}{\Delta t} \text{ with extremely small } \Delta t
+}}$
+
+aka
+
+{{$
+v = \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t}
+}}$
+
+== Motion with Constant Acceleration ==
+
+Velocity
+
+{{$
+v = v_0 + at
+}}$
+
+Distance
+
+{{$
+x = x_0 + v_0t + \frac{1}{2}at^2
+}}$
+
+{{$
+x - x_0 = v_0t + \frac{1}{2}at^2
+}}$
+
+Timeless equation
+
+{{$
+\begin{aligned}
+t & = \frac{v-v_0}{a} \\
+x-x_0 & = v_0(\frac{v-v_0}{a}) + \frac{1}{2}a(\frac{v-v_0}{a})^2 \\
+& = \frac{v_0v - v_0^2}{a} + \frac{\frac{1}{2}(v^2-2vv_0 + v_0^2)}{a} \\
+& = \frac{\frac{1}{2}(v^2-v_0^2)}{a}
+\end{aligned}
+}}$
+
+{{$
+a(x - x_0) = \frac{1}{2}(v^2 - v_0^2)
+}}$
+
+For velocity
+
+{{$
+v^2 - v_0^2 = 2a(x - x_0)
+}}$
+
+
+For distance
+
+{{$
+x - x_0 = \frac{v^2 - v_0^2}{2a}
+}}$
+
+== The Acceleration of Free Fall ==
+
+Average gravitational acceleration at the surface of the earth
+
+{{$
+g \simeq 9.81 \mathrm{ms}^{-2}
+}}$
+
+Free fall (positive direction upwards)
+
+{{$
+v = v_0 - gt
+}}$
+
+{{$
+x = x_0 + v_0t - \frac{1}{2}gt^2
+}}$
+
+{{$
+-g(x - x_0) = \frac{1}{2}(v^2 - v_0^2)
+}}$

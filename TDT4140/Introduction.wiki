@@ -1,0 +1,35 @@
+= Introduction =
+
+== Professional Software Development ==
+
+General set of attributes that are essential characteristics of a professional software system:
+
+    *Acceptability* Software must be acceptable to the type of users which it is designed.
+    This means that it must be understandable, usable, and compatible
+    with other systems that they use.
+
+    *Dependability and security* Software Dependability includes a range of characteristics
+    including reliability, security and safety.
+    Dependable software should not cause physical or economic damage in the event of system failure.
+    Software has to be secure so that malicious users cannot access or damage the system.
+
+    *Efficiency* Software should not make wasteful use of system resources
+    such as memory and processor cycles.
+    Efficiency therefore includes responsiveness, processing time, resource utilization etc.
+
+    *Maintainability* Software should be written in such a way that
+    it can evolve to meet the changing needs of customers.
+    This is a critical attribute because
+    software change is an inevitable requirement of a changing business environment.
+
+Four fundamental activities are common to all software processes:
+1. Software specification, where customers and engineers define the software that is to be produced
+   and the constraints on its operation.
+2. Software development, where the software is designed and programmed.
+3. Software validation, where software is checked to ensure that it is what the customer requires.
+4. Software evolution, where the software is modified
+   to reflect changing customer and market requirements.
+
+== Software Engineering Ethics ==
+
+== Case Studies ==

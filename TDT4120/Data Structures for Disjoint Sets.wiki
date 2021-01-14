@@ -1,1 +1,25 @@
 = Chapter 21 - Data Structures for Disjoint Sets =
+
+== Disjoint-set operations ==
+
+A _*disjoint-set data structure*_ maintains a collection $S = \{S_1, S_2,\dots,S_k\}$ of disjoint dynamic sets.
+We can identify each set by a _*representative*_, which is some member of the set.
+
+Letting _x_ denote an object, we wish to support the following operations:
+
+    Make-Set(x) creates a new set whose only member (an thus representative) is _x_.
+    Since the sets are disjoint, we require that _x_ not already be in some other set.
+
+    Union(x,y) unites the dynamic sets that contain _x_ and _y_,
+    say $S_x$ and $S_y$, into a new set that is the union of these to sets.
+
+    Find-Set(x) returns a pointer to the representative of the (unique) set containing _x_.
+
+== Disjoint-set forests ==
+
+We perform the three disjoint-set operations as follows.
+A Make-Set operation simply creates a tree with just one node.
+We perform a Find-Set operation by following parent pointers
+until we find the root of the tree.
+The nodes visited on this simple path toward the root constitute the _*find path*_.
+A Union operation causes the root of one tree to point to the root of the other.

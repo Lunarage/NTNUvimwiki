@@ -1,0 +1,77 @@
+= Motion in a Plane =
+
+== Components of Velocity and Acceleration ==
+
+Speed
+
+Magnitude
+
+{{$
+v = \sqrt{v_x^2 + v_y^2}
+}}$
+
+Components
+
+{{$
+v_x = v \mathrm{cos}\theta
+}}$
+
+{{$
+v_y = v \mathrm{sin}\theta
+}}$
+
+== Motion with Constant Acceleration ==
+
+== The Motion of Projectiles ==
+
+Horizontal Motion
+
+{{$
+v_x = v_{0x}
+}}$
+
+{{$
+x = v_{0x}t
+}}$
+
+Vertical Motion
+
+{{$
+v_y = v_{0y} - gt
+}}$
+
+{{$
+y = v_{0y}t - \frac{1}{2}gt^2
+}}$
+
+== Vectors ==
+
+== Vector Addition and Subtraction ==
+
+== The Position, Velocity, and Acceleration Vectors ==
+
+== Uniform Circular Motion ==
+
+Angular Velocity
+
+{{$
+\omega = \frac{v}{r}
+}}$
+
+{{$
+\omega = \frac{\theta}{t}
+}}$
+
+{{$
+\omega = \frac{2\pi}{T}
+}}$
+
+Centripetal acceleration
+
+{{$
+a = \frac{v^2}{r}
+}}$
+
+{{$
+a = \frac{(\omega r)^2}{r} = \omega^2 r
+}}$

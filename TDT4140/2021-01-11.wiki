@@ -1,0 +1,24 @@
+= Introduksjon =
+
+== Øvelese ==
+
+1 Råd:
+Begynn med å modellere problemet:
+* Kravspesifikasjon og brukerhistorier.
+* Lag diagrammer (EER, UML).
+Bestem teknologier som egner seg for løsningen.
+Møt jevnlig og gå gjennom fremgang og hvilke problemer man har.
+
+2 Erfaring:
+* IT1901 - Java, Git
+* IT2805 - HTML/JS, Git
+* IT2810 - TS, React, Node, Git
+* TDT4102 - C++
+* TDT4110 - Python
+* TDT4145 - EER, SQL
+* TDT4180 - UX
+* TTK4125 - UML, C
+
+3 Forventninger:
+* Få karakter og studiepoeng
+* Lære SCRUM

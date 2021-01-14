@@ -6,9 +6,13 @@
     <link rel="Stylesheet" type="text/css" href="../prism.css" />
     <title>Declarative Computation Model</title>
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+      MathJax.Hub.Config({
+        jax: ["input/TeX","output/HTML-CSS"],
+        displayAlign: "left"
+      });
     </script>
   </head>
-  <body>
+  <body class="line-numbers match-braces">
     <div class="content">
       
 <div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
@@ -561,36 +565,359 @@ which are bound inside the procedure.
 <li>
 A <em>single-assignment store σ</em> is a set of store variables.
   These variables are partitioned into
-
-<ol>
-<li>
-sets of variables that are equal but unbound
-
-<li>
-variables that are bound to a number, record, or procedure.
-  For example, in the store \({x_1,x_2 = x_3, x_4 = a|x_2}\)
+  (1) sets of variables that are equal but unbound
+  (2) variables that are bound to a number, record, or procedure.
+  For example, in the store \(\{x_1,x_2 = x_3, x_4 = a|x_2\}\)
   \(x_1\) is unbound,
   \(x_2\) and \(x_3\) are equal and unbound,
   and \(x_4\) is bound to the partial value a|\(x_2\).
   A store variable bound to a value is indistinguishable from that value.
   This is why a store variable is sometimes called a store entity.
 
-</ol>
 <li>
 An <em>environment</em> \(E\) is a mapping from variable identifiers to entities in <em>σ</em>.
   We will write \(E\) as a set of pairs,
-  e.g., \(\mathtt{X} \rightarrow x, \mathtt{Y} \rightarrow y\),
+  e.g., \(\{\mathtt{X} \rightarrow x, \mathtt{Y} \rightarrow y\}\),
   where \(\mathtt{X},\mathtt{Y}\) are identifiers and \(x, y\) refer to store entities.
+
+<li>
+A <em>semantic statement</em> is a pair (⟨s⟩, \(E\))
+  where ⟨s⟩ is a statement and \(E\) is an environment.
+  The semantic statement relates a statement to what it references in the store.
+
+<li>
+An <em>execution state</em> is a pair \((ST,\sigma)\)
+  where \(ST\) is a stack of semantic statements and \(\sigma\) is a single-assignment store.
+
+<li>
+A <em>computation</em> is a sequence of execution states starting from an initial state:
+  \((ST_0,\sigma_0) \rightarrow (ST_1,\sigma_1) \rightarrow (ST_2,\sigma_2) \rightarrow \dots\).
 
 </ul>
 
+<p>
+A single transition in a computation is called a computation step.
+A computation step is atomic, i.e., there are no visible intermediates states.
+</p>
+
+<div id="Declarative Computation Model-Kernel language semantics-The abstract machine-Program execution"><h4 id="Program execution" class="header"><a href="#Declarative Computation Model-Kernel language semantics-The abstract machine-Program execution">Program execution</a></h4></div>
+
+<p>
+A program is simply a statement ⟨s⟩.
+</p>
+
+<ul>
+<li>
+The initial execution state is: 
+<pre><code>
+([(⟨s⟩,∅)],∅)
+(
+  [
+    (⟨s⟩,∅)
+  ],
+  ∅
+)
+</code></pre>
+  That is, the initial store is empty (no variables, empty set ∅)
+  and the initial execution state has just one semantic statement (⟨s⟩,∅) in the stack \(ST\).
+  The semantic statement contains ⟨s⟩ and an empty environment (∅).
+  We use brackets […] to denote the stack.
+
+<li>
+At each step, the first element of \(ST\) is popped
+  and execution proceeds according to the form of the element.
+
+<li>
+The final execution state (if there is one) is a state in which the semantic stack is empty.
+
+</ul>
+
+<p>
+A semantic stack \(ST\) can be in one of the three run-time states:
+</p>
+<ul>
+<li>
+Runnable: \(ST\) can do a computation step.
+
+<li>
+Terminated: \(ST\) is empty.
+
+<li>
+Suspended: \(ST\) is not empty, but cannot do any computation step.
+
+</ul>
+
+<div id="Declarative Computation Model-Kernel language semantics-The abstract machine-Calculating with environments"><h4 id="Calculating with environments" class="header"><a href="#Declarative Computation Model-Kernel language semantics-The abstract machine-Calculating with environments">Calculating with environments</a></h4></div>
+
+<p>
+The notation \(E\)(⟨x⟩) retrieves the entity associated with the identifier ⟨x⟩ from the store.
+To define the semantics of the abstract machine instructions,
+we need two common operations on environments,
+namely <em>adjunction</em> and <em>restriction</em>.
+</p>
+
+<p>
+<em>Adjunction</em> defines a new environment by adding a mapping to an existing one.
+</p>
+
+<p>
+The notation
+</p>
+<blockquote>
+\(E + \{\langle \mathtt{x} \rangle \rightarrow x\}\)
+</blockquote>
+<p>
+denotes a new environment \(E'\) constructed from \(E\)
+by adding the mapping \(\{\langle \mathtt{x} \rangle \rightarrow x\}\)
+This mapping overrides any other mapping from the identifier ⟨x⟩.
+</p>
+
+<p>
+<em>Restriction</em> defines a new environment whose domain is a subset of an existing one.
+</p>
+
+<p>
+The notation
+</p>
+<blockquote>
+\(E|_{\{\langle\mathtt{x}\rangle_1,\dots,\langle\mathtt{x}\rangle_n\}}\)
+</blockquote>
+<p>
+denotes a new environment \(E'\) such that
+\(\mathrm{dom}(E') = \mathrm{dom}(E)\cap\{\langle \mathtt{x} \rangle_1,\dots,\langle\mathtt{x}\rangle_n\}\)
+and \(E'(\langle\mathtt{x}\rangle) = E(\langle\mathtt{x}\rangle)\)
+for all \(\langle\mathtt{x}\rangle \in \mathrm{dom}(E')\).
+That is, the new environment does not contain any identifiers other than those mentioned in the set.
+</p>
+
 <div id="Declarative Computation Model-Kernel language semantics-Nonsuspendable statements"><h3 id="Nonsuspendable statements" class="header"><a href="#Declarative Computation Model-Kernel language semantics-Nonsuspendable statements">Nonsuspendable statements</a></h3></div>
 
+<div id="Declarative Computation Model-Kernel language semantics-Nonsuspendable statements-The `skip` statement"><h4 id="The `skip` statement" class="header"><a href="#Declarative Computation Model-Kernel language semantics-Nonsuspendable statements-The `skip` statement">The <code>skip</code> statement</a></h4></div>
+
+<p>
+The semantic statement is:
+</p>
+\[
+(\mathtt{skip}, E)
+\]
+
+<p>
+Execution is complete after this pair is popped from the semantic stack.
+</p>
+
+<div id="Declarative Computation Model-Kernel language semantics-Nonsuspendable statements-Sequential composition"><h4 id="Sequential composition" class="header"><a href="#Declarative Computation Model-Kernel language semantics-Nonsuspendable statements-Sequential composition">Sequential composition</a></h4></div>
+
+<p>
+The semantic statement is:
+</p>
+\[
+(\langle\mathtt{s}\rangle_1 \langle\mathtt{s}\rangle_2, E)
+\]
+
+<p>
+Execution consists of the following actions:
+</p>
+<ul>
+<li>
+Push \((\langle\mathtt{s}\rangle_2, E)\) on the stack.
+
+<li>
+Push \((\langle\mathtt{s}\rangle_1, E)\) on the stack.
+
+</ul>
+
+<div id="Declarative Computation Model-Kernel language semantics-Nonsuspendable statements-Variable declaration (the `local` statement)"><h4 id="Variable declaration (the `local` statement)" class="header"><a href="#Declarative Computation Model-Kernel language semantics-Nonsuspendable statements-Variable declaration (the `local` statement)">Variable declaration (the <code>local</code> statement)</a></h4></div>
+
+<p>
+The semantic statement is:
+</p>
+\[
+(\mathtt{local}\:\langle\mathtt{x}\rangle\:\mathtt{in}\:\langle\mathtt{s}\rangle\:\mathtt{end},E)
+\]
+
+<p>
+Execution consists of the following actions:
+</p>
+<ul>
+<li>
+Create a new variable \(x\) in the store.
+
+<li>
+Let \(E'\) be \(E + \{\langle \mathtt{x} \rangle \rightarrow x \}\)
+
+<li>
+Push \((\langle\mathtt{s}\rangle, E')\) on the stack.
+
+</ul>
+
+<div id="Declarative Computation Model-Kernel language semantics-Nonsuspendable statements-Variable-variable binding"><h4 id="Variable-variable binding" class="header"><a href="#Declarative Computation Model-Kernel language semantics-Nonsuspendable statements-Variable-variable binding">Variable-variable binding</a></h4></div>
+
+<p>
+The semantic statement is:
+</p>
+\[
+(\langle\mathtt{x}\rangle_1 = \langle\mathtt{x}\rangle_2, E)
+\]
+
+<p>
+Execution consists of the following action:
+</p>
+<ul>
+<li>
+Bind \(E(\langle\mathtt{x}\rangle_1)\) and \(E(\langle\mathtt{x}\rangle_2)\) in the store.
+
+</ul>
+
+<div id="Declarative Computation Model-Kernel language semantics-Nonsuspendable statements-Value creation"><h4 id="Value creation" class="header"><a href="#Declarative Computation Model-Kernel language semantics-Nonsuspendable statements-Value creation">Value creation</a></h4></div>
+
+<p>
+The semantic statement is:
+</p>
+\[
+(\langle\mathtt{x}\rangle = \langle\mathtt{v}\rangle, E)
+\]
+
+<p>
+where \(\langle\mathtt{v}\rangle\) is a partially constructed value
+that is either a record, number, or procedure.
+</p>
+
+<p>
+Execution consists of the following actions:
+</p>
+<ul>
+<li>
+Create a new variable \(x\) in the store.
+
+<li>
+Construct the value represented by \(\langle\mathtt{v}\rangle\) in the store
+  and let \(x\) refer to it.
+  All identifiers in \(\langle\mathtt{v}\rangle\) are replaced by their store contents
+  as given by \(E\).
+
+<li>
+Bind \(E(\langle\mathtt{x}\rangle)\) and \(x\) in the store.
+
+</ul>
+
+<div id="Declarative Computation Model-Kernel language semantics-Nonsuspendable statements-Free and bound identifier occurrences"><h4 id="Free and bound identifier occurrences" class="header"><a href="#Declarative Computation Model-Kernel language semantics-Nonsuspendable statements-Free and bound identifier occurrences">Free and bound identifier occurrences</a></h4></div>
+
+<p>
+Here is an example with both free and bound occurrences:
+</p>
+<pre><code class="language-oz">
+local A B in
+   A=1
+   B=2
+   Res=A+B
+end
+</code></pre>
+<p>
+This cannot run. <code>Res</code> is a free identifier with respect to the scope.
+</p>
+
+<p>
+This can:
+</p>
+<pre><code class="language-oz">
+local Res in
+  local A B in
+     A=1
+     B=2
+     Res=A+B
+  end
+end
+</code></pre>
+<p>
+This can run since it has no free identifier occurrences.
+</p>
+
+<div id="Declarative Computation Model-Kernel language semantics-Nonsuspendable statements-Procedure values (closures)"><h4 id="Procedure values (closures)" class="header"><a href="#Declarative Computation Model-Kernel language semantics-Nonsuspendable statements-Procedure values (closures)">Procedure values (closures)</a></h4></div>
+
+<pre><code class="language-oz">
+proc {LowerBound X ?Z}
+   if X&gt;=Y then Z=X else Z=Y end
+end
+</code></pre>
+
+<p>
+The <code>if</code> statement has three free variables, <code>X</code>, <code>Y</code>, <code>Z</code>.
+Two of them, <code>X</code> and <code>Z</code> are also formal parameters.
+The third, <code>Y</code>, is not a formal parameter.
+It has to be defined by the environment where the procedure is declared.
+</p>
+
+<p>
+In general, a procedure expression is written as:
+</p>
+\[
+(\mathtt{proc} \{\:$\:\langle\mathtt{y}\rangle_1\dots\langle\mathtt{y}\rangle_n\}\:\langle\mathtt{s}\rangle\:\mathtt{end},\:CE)
+\]
+<p>
+Here \(CE\) (the contextual environment) is \(E|_{\{\langle\mathtt{z}\rangle_1,\dots,\langle{z}_n\}\),
+where \(E\) is the environment when the procedure is declared.
+</p>
+
+<p>
+Because it contains an environment as well as a procedure definition,
+a procedure value is often called a closure or a lexically scoped closure.
+</p>
+
 <div id="Declarative Computation Model-Kernel language semantics-Suspendable statements"><h3 id="Suspendable statements" class="header"><a href="#Declarative Computation Model-Kernel language semantics-Suspendable statements">Suspendable statements</a></h3></div>
+
+<div id="Declarative Computation Model-Kernel language semantics-Suspendable statements-Conditional (the `if` statement)"><h4 id="Conditional (the `if` statement)" class="header"><a href="#Declarative Computation Model-Kernel language semantics-Suspendable statements-Conditional (the `if` statement)">Conditional (the <code>if</code> statement)</a></h4></div>
+
+<div id="Declarative Computation Model-Kernel language semantics-Suspendable statements-Procedure application"><h4 id="Procedure application" class="header"><a href="#Declarative Computation Model-Kernel language semantics-Suspendable statements-Procedure application">Procedure application</a></h4></div>
+
+<div id="Declarative Computation Model-Kernel language semantics-Suspendable statements-Pattern matching (the `case` statement)"><h4 id="Pattern matching (the `case` statement)" class="header"><a href="#Declarative Computation Model-Kernel language semantics-Suspendable statements-Pattern matching (the `case` statement)">Pattern matching (the <code>case</code> statement)</a></h4></div>
 
 <div id="Declarative Computation Model-Memory Management"><h2 id="Memory Management" class="header"><a href="#Declarative Computation Model-Memory Management">Memory Management</a></h2></div>
 
 <div id="Declarative Computation Model-Memory Management-Last call optimization"><h3 id="Last call optimization" class="header"><a href="#Declarative Computation Model-Memory Management-Last call optimization">Last call optimization</a></h3></div>
+
+<p>
+Consider the following procedure:
+</p>
+<pre><code class="language-oz">
+proc {Loop10 I}
+   if I==10 then skip
+   else
+     {Browse I}
+     {Loop10 I+1}
+   end
+end
+</code></pre>
+<ul>
+<li>
+The initial execution state is:
+\[
+([(\{\mathtt{Loop10\:0}\}, E_0)],
+\sigma)
+\]
+  where \(E_0\) is the environment at the call and \(\sigma\) the initial store.
+
+<li>
+After executing the <code>if</code> statement, then becomes:
+\[
+([(\{\mathtt{Browse\:I}\},\{\mathtt{I} \rightarrow i_0\})\:(\{\mathtt{Loop10\:I+1}\},\{\mathtt{I} \rightarrow i_0\})],
+\{i_0 = 0\} \cup \sigma)
+\]
+
+<li>
+After executing the <code>Browse</code>, we get to the first recursive call:
+\[
+([(\{\mathtt{Loop10\:I+1}\},\{\mathtt{I} \rightarrow i_0\})],
+\{i_0 = 0\} \cup \sigma)
+\]
+
+<li>
+After executing the <code>if</code> statement in the recursive call, this becomes:
+\[
+([(\{\mathtt{Browse\:I}\},\{\mathtt{I} \rightarrow i_0\})\:(\{\mathtt{Loop10\:I+1}\})],
+\{i_0 = 0\} \cup \sigma)
+\]
+
+</ul>
 
 <div id="Declarative Computation Model-Memory Management-Memory life cycle"><h3 id="Memory life cycle" class="header"><a href="#Declarative Computation Model-Memory Management-Memory life cycle">Memory life cycle</a></h3></div>
 

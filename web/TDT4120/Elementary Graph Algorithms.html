@@ -3,16 +3,146 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
     <title>Elementary Graph Algorithms</title>
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+      MathJax.Hub.Config({
+        jax: ["input/TeX","output/HTML-CSS"],
+        displayAlign: "left"
+      });
     </script>
   </head>
-  <body>
+  <body class="line-numbers match-braces">
     <div class="content">
       
 <div id="Chapter 22 - Elementary Graph Algorithms"><h1 id="Chapter 22 - Elementary Graph Algorithms" class="header"><a href="#Chapter 22 - Elementary Graph Algorithms">Chapter 22 - Elementary Graph Algorithms</a></h1></div>
 
+<div id="Chapter 22 - Elementary Graph Algorithms-Representations of graphs"><h2 id="Representations of graphs" class="header"><a href="#Chapter 22 - Elementary Graph Algorithms-Representations of graphs">Representations of graphs</a></h2></div>
+
+<p>
+A graph \(G = (V,E)\) can be represented in two standard ways:
+</p>
+<ol>
+<li>
+As a collection of adjacency lists.
+
+<li>
+As an adjacency matrix.
+
+</ol>
+
+<div id="Chapter 22 - Elementary Graph Algorithms-Breadth-first search"><h2 id="Breadth-first search" class="header"><a href="#Chapter 22 - Elementary Graph Algorithms-Breadth-first search">Breadth-first search</a></h2></div>
+
+<p>
+Given a graph \(G=(V,E)\) and a distinguished <em><span id="Chapter 22 - Elementary Graph Algorithms-Breadth-first search-source"></span><strong id="source">source</strong></em> vertex <em>s</em>,
+breadth-first search systematically explores the edges of <em>G</em>
+to "discover" every vertex that is reachable from <em>s</em>.
+</p>
+
+<p>
+It computes the distance (smallest number of edges) from <em>s</em> to each reachable vertex.
+</p>
+
+<p>
+It also produces a "breadth-first tree" with root <em>s</em>
+that contains all reachable vertices.
+</p>
+
+<pre><code class="language-python">
+def BFS(G,s):                 # Breadth-first search (Graph, root vertex)
+  for u in G.V - {s}:         # Set all vertices to initial state
+    u.color = WHITE           # Mark vertex as unvisited
+    u.d = ∞                   # Distance to root vertex
+    u.π = None                # No parent (yet)
+  s.color = GRAY              # Root is visited
+  s.d = 0                     # Distance to itself is 0
+  s.π = None                  # Root has no parent
+  Q = Queue()                 # Create empty queue
+  Q.put(s)                    # Put root vertex in queue
+  while not Q.empty():        # Loop trough vertices
+    u = Q.get()               # Dequeue a vertex
+    for v in G.Adj[u]:        # For all adjacent vertecies
+      if v.color == WHITE:    # Unvisited vertex
+        v.color = GRAY        # Mark as visited
+        v.d = u.d + 1         # Distance is 1 more than parent
+        v.π = u               # Set vertex parent
+        Q.put(v)              # Put vertex in queue
+    u.color = BLACK           # Mark vertex as completed
+</code></pre>
+
+<div id="Chapter 22 - Elementary Graph Algorithms-Breadth-first search-Analysis"><h3 id="Analysis" class="header"><a href="#Chapter 22 - Elementary Graph Algorithms-Breadth-first search-Analysis">Analysis</a></h3></div>
+
+<p>
+<em>O</em>(<em>V</em> + <em>E</em>).
+</p>
+
+<p>
+The breadth-first search runs in time linear in the size of the adjacency-list representation of <em>G</em>.
+</p>
+
+<div id="Chapter 22 - Elementary Graph Algorithms-Breadth-first search-Shortest paths"><h3 id="Shortest paths" class="header"><a href="#Chapter 22 - Elementary Graph Algorithms-Breadth-first search-Shortest paths">Shortest paths</a></h3></div>
+
+<div id="Chapter 22 - Elementary Graph Algorithms-Breadth-first search-Breadth-first trees"><h3 id="Breadth-first trees" class="header"><a href="#Chapter 22 - Elementary Graph Algorithms-Breadth-first search-Breadth-first trees">Breadth-first trees</a></h3></div>
+
+<div id="Chapter 22 - Elementary Graph Algorithms-Depth-first search"><h2 id="Depth-first search" class="header"><a href="#Chapter 22 - Elementary Graph Algorithms-Depth-first search">Depth-first search</a></h2></div>
+
+<pre><code class="language-python">
+def DFS(G):
+  for vertex u in G.V:
+    u.color = WHITE
+    u.π = None
+  time = 0
+  for vertex u in G.V:
+    if u.color == WHITE:
+      DFS-Visit(G,u)
+
+def DFS-Visit(G,u):
+  time = time + 1
+  u.d = time
+  u.color = GRAY
+  for v in G.Adj[u]
+    if v.color == WHITE
+      v.π = u
+      DFS-Visit(G,v)
+  u.color = Black
+  time = time + 1
+  u.f = time
+</code></pre>
+
+<div id="Chapter 22 - Elementary Graph Algorithms-Depth-first search-Properties of depth-first search"><h3 id="Properties of depth-first search" class="header"><a href="#Chapter 22 - Elementary Graph Algorithms-Depth-first search-Properties of depth-first search">Properties of depth-first search</a></h3></div>
+
+<div id="Chapter 22 - Elementary Graph Algorithms-Depth-first search-Classification of edges"><h3 id="Classification of edges" class="header"><a href="#Chapter 22 - Elementary Graph Algorithms-Depth-first search-Classification of edges">Classification of edges</a></h3></div>
+
+<ol>
+<li>
+<em><span id="Chapter 22 - Elementary Graph Algorithms-Depth-first search-Classification of edges-Tree edges"></span><strong id="Tree edges">Tree edges</strong></em> are edges in the depth-first forest \(G_π\).
+   Edge \((u,v)\) is a tree edge if <em>v</em> was discovered by exploring edge \((u,v)\).
+
+<li>
+<em><span id="Chapter 22 - Elementary Graph Algorithms-Depth-first search-Classification of edges-Back edges"></span><strong id="Back edges">Back edges</strong></em> are those edges \((u,v)\) connecting a vertex <em>u</em> to an ancestor <em>v</em> in a depth-first tree.
+   We consider self-loops, which may occur in directed graphs, to be back edges.
+
+<li>
+<em><span id="Chapter 22 - Elementary Graph Algorithms-Depth-first search-Classification of edges-Forward edges"></span><strong id="Forward edges">Forward edges</strong></em> are those nontree edges \((u,v)\) connecting a vertex <em>u</em> to a descendant <em>v</em> in a depth-first tree.
+
+<li>
+<em><span id="Chapter 22 - Elementary Graph Algorithms-Depth-first search-Classification of edges-Cross edges"></span><strong id="Cross edges">Cross edges</strong></em> are all the other edges.
+   They can go between vertices in the same depth-first tree,
+   as long as one vertex is not an ancestor of the other,
+   or they can go between vertices in different depth-first trees.
+
+</ol>
+
+<div id="Chapter 22 - Elementary Graph Algorithms-Topological sort"><h2 id="Topological sort" class="header"><a href="#Chapter 22 - Elementary Graph Algorithms-Topological sort">Topological sort</a></h2></div>
+
+<p>
+A <em><span id="Chapter 22 - Elementary Graph Algorithms-Topological sort-topological sort"></span><strong id="topological sort">topological sort</strong></em> of a dag \(G=(V,E)\) is a linear ordering of all its vertices
+such that if <em>G</em> contains an edge \((u,v)\),
+then \(u\) appears before \(v\) in the ordering.
+</p>
+
     </div>
-    <p><small>Page created on 2020-09-02</small></p>
+    <p><small>Page created on 2020-11-22</small></p>
+    <script src="../prism.js"></script>
   </body>
 </html>

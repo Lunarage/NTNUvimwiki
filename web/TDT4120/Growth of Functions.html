@@ -3,11 +3,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
     <title>Growth of Functions</title>
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+      MathJax.Hub.Config({
+        jax: ["input/TeX","output/HTML-CSS"],
+        displayAlign: "left"
+      });
     </script>
   </head>
-  <body>
+  <body class="line-numbers match-braces">
     <div class="content">
       
 <div id="Chapter 3 - Growth of Functions"><h1 id="Chapter 3 - Growth of Functions" class="header"><a href="#Chapter 3 - Growth of Functions">Chapter 3 - Growth of Functions</a></h1></div>
@@ -17,7 +22,7 @@
 <div id="Chapter 3 - Growth of Functions-Asymptotic Notation-*Θ-notation*"><h5 id="*Θ-notation*" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-*Θ-notation*"><span id="Chapter 3 - Growth of Functions-Asymptotic Notation-*Θ-notation*-Θ-notation"></span><strong id="Θ-notation">Θ-notation</strong></a></h5></div>
 
 <p>
-For a given function \(g(n)\), we denote by \(\Theta(g(n))\) the <em>set of functions</em><br />
+For a given function \(g(n)\), we denote by \(\Theta(g(n))\) the <em>set of functions</em>
 </p>
 \[
     \Theta(g(n)) = 
@@ -26,23 +31,23 @@ For a given function \(g(n)\), we denote by \(\Theta(g(n))\) the <em>set of func
     \\ 0 \leq c_1 g(n) \leq f(n) \leq c_2 g(n) \text{ for all } n \geq n_0 \}.
 \]
 <p>
-A function \(f(n)\) belongs to the set \(\Theta(g(n))\) if there exists positive constants<br />
-\(c_1\) and \(c_2\) such that it can be "sandwiched" between \(c_1 g(n)\) and \(c_2 g(n)\)<br />
-for sufficiently large \(n\).<br />
+A function \(f(n)\) belongs to the set \(\Theta(g(n))\) if there exists positive constants
+\(c_1\) and \(c_2\) such that it can be "sandwiched" between \(c_1 g(n)\) and \(c_2 g(n)\)
+for sufficiently large \(n\).
 </p>
 
 <p>
-We say that \(g(n)\) is <span id="Chapter 3 - Growth of Functions-Asymptotic Notation-*Θ-notation*-asymptotically tight bound"></span><strong id="asymptotically tight bound">asymptotically tight bound</strong> for \(f(n)\).<br />
+We say that \(g(n)\) is <span id="Chapter 3 - Growth of Functions-Asymptotic Notation-*Θ-notation*-asymptotically tight bound"></span><strong id="asymptotically tight bound">asymptotically tight bound</strong> for \(f(n)\).
 </p>
 
 <div id="Chapter 3 - Growth of Functions-Asymptotic Notation-*_O_-notation*"><h5 id="*_O_-notation*" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-*_O_-notation*"><span id="Chapter 3 - Growth of Functions-Asymptotic Notation-*_O_-notation*-<em>O</em>-notation"></span><strong id="<em>O</em>-notation"><em>O</em>-notation</strong></a></h5></div>
 
 <p>
-When we only have an <span id="Chapter 3 - Growth of Functions-Asymptotic Notation-*_O_-notation*-asymptotic upper bound"></span><strong id="asymptotic upper bound">asymptotic upper bound</strong>, we use <em>O</em>-notation.<br />
+When we only have an <span id="Chapter 3 - Growth of Functions-Asymptotic Notation-*_O_-notation*-asymptotic upper bound"></span><strong id="asymptotic upper bound">asymptotic upper bound</strong>, we use <em>O</em>-notation.
 </p>
 
 <p>
-For a given function \(g(n)\), we denote by \(O(g(n))\) the set of functions<br />
+For a given function \(g(n)\), we denote by \(O(g(n))\) the set of functions
 </p>
 \[
     O(g(n)) = 
@@ -51,17 +56,17 @@ For a given function \(g(n)\), we denote by \(O(g(n))\) the set of functions<br 
     \\ 0 \leq f(n) \leq c g(n) \text{ for all } n \geq n_0 \}.
 \]
 <p>
-We use <em>O</em>-notation to give an upper bound on a function, to within a constant factor.<br />
+We use <em>O</em>-notation to give an upper bound on a function, to within a constant factor.
 </p>
 
 <div id="Chapter 3 - Growth of Functions-Asymptotic Notation-*Ω-notation*"><h5 id="*Ω-notation*" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-*Ω-notation*"><span id="Chapter 3 - Growth of Functions-Asymptotic Notation-*Ω-notation*-Ω-notation"></span><strong id="Ω-notation">Ω-notation</strong></a></h5></div>
 
 <p>
-When we only have an <span id="Chapter 3 - Growth of Functions-Asymptotic Notation-*Ω-notation*-asymptotic lower bound"></span><strong id="asymptotic lower bound">asymptotic lower bound</strong>, we use Ω-notation.<br />
+When we only have an <span id="Chapter 3 - Growth of Functions-Asymptotic Notation-*Ω-notation*-asymptotic lower bound"></span><strong id="asymptotic lower bound">asymptotic lower bound</strong>, we use Ω-notation.
 </p>
 
 <p>
-For a given function \(g(n)\), we denote by \(\Omega(g(n))\) the set of functions<br />
+For a given function \(g(n)\), we denote by \(\Omega(g(n))\) the set of functions
 </p>
 \[
     \Omega(g(n)) = 
@@ -70,13 +75,13 @@ For a given function \(g(n)\), we denote by \(\Omega(g(n))\) the set of function
     \\ 0 \leq c g(n) \leq f(n) \text{ for all } n \geq n_0 \}.
 \]
 <p>
-We use Ω-notation to give an lower bound on a function, to within a constant factor.<br />
+We use Ω-notation to give an lower bound on a function, to within a constant factor.
 </p>
 
 <div id="Chapter 3 - Growth of Functions-Asymptotic Notation-_o_-notation"><h5 id="_o_-notation" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-_o_-notation"><em>o</em>-notation</a></h5></div>
 
 <p>
-Strict <em>O</em>.<br />
+Strict <em>O</em>.
 </p>
 
 \[
@@ -88,7 +93,7 @@ Strict <em>O</em>.<br />
 <div id="Chapter 3 - Growth of Functions-Asymptotic Notation-ω-notation"><h5 id="ω-notation" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-ω-notation">ω-notation</a></h5></div>
 
 <p>
-Strict Ω.<br />
+Strict Ω.
 </p>
 
 \[
@@ -100,8 +105,8 @@ Strict Ω.<br />
 <div id="Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions"><h5 id="Comparing functions" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions">Comparing functions</a></h5></div>
 
 <p>
-Many of the relational properties of real number apply to asymptotic comparisons as well.<br />
-For the following, assume that \(f(n)\) and \(g(n)\) are asymptotically positive.<br />
+Many of the relational properties of real number apply to asymptotic comparisons as well.
+For the following, assume that \(f(n)\) and \(g(n)\) are asymptotically positive.
 </p>
 
 <div id="Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions-Transitivity:"><h6 id="Transitivity:" class="header"><a href="#Chapter 3 - Growth of Functions-Asymptotic Notation-Comparing functions-Transitivity:">Transitivity:</a></h6></div>
@@ -190,12 +195,9 @@ Comparison
 No matter how the anonymous functions are chosen on the left side of the equal sign,
 there is a way to choose the anonymous functions on the right hand of the equation to make the equation valid.
 </blockquote>
-    
-<p>
-This is hard!<br />
-</p>
 
     </div>
-    <p><small>Page created on 2020-09-04</small></p>
+    <p><small>Page created on 2020-11-21</small></p>
+    <script src="../prism.js"></script>
   </body>
 </html>

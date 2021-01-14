@@ -1,0 +1,33 @@
+= Forelesninger =
+[[2021-01-11]]
+
+= Syllabus =
+* SCRUM and XP From The Trenches, Kniberg
+* <title>, Sommerville
+
+== Kniberg ==
+* Part Two: How we do product backlogs
+* Part Three: How we prepare for sprint planning
+* Part Four: How we do sprint planning
+* Part Five: How we communicate sprints
+* Part Six: How we do sprint backlogs
+* Part Seven: How we arragne the team room
+* Part Eight: How we do daily scrums
+* Part Nine: How we do sprint demos
+* Part Ten: How we do sprint retrospectives
+* Part Thirteen: How we combine Scrum with XP
+* Part Fourteen: How we do testing
+* Part Sixteen: How we handle geographically distributed teams
+
+== Sommerville ==
+
+| Chapter | Title                                    | Syllabus         |
+|---------|------------------------------------------|------------------|
+| 1       | [[Introduction]]                         | All              |
+| 2       | [[Software Process]]                     | All              |
+| 3       | Agile Software Development               | All except 3.4   |
+| 6       | Architectural Design                     | All              |
+| 8       | Release testing                          | All except 8.3.3 |
+| 22      | Teamwork                                 | All              |
+| 23.4    | Agile Planning                           | All              |
+| 24.4    | Quality Management and Agile Development | All              |

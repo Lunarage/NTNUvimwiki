@@ -1,0 +1,219 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
+    <title>Motion Along a Straight Line</title>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+      MathJax.Hub.Config({
+        jax: ["input/TeX","output/HTML-CSS"],
+        displayAlign: "left"
+      });
+    </script>
+  </head>
+  <body class="line-numbers match-braces">
+    <div class="content">
+      
+<div id="Motion Along a Straight Line"><h1 id="Motion Along a Straight Line" class="header"><a href="#Motion Along a Straight Line">Motion Along a Straight Line</a></h1></div>
+
+<div id="Motion Along a Straight Line-Measurement of Space and Time; Units"><h2 id="Measurement of Space and Time; Units" class="header"><a href="#Motion Along a Straight Line-Measurement of Space and Time; Units">Measurement of Space and Time; Units</a></h2></div>
+
+<table>
+<tr>
+<th>
+Freedom Units
+</th>
+<th>
+SI Units
+</th>
+</tr>
+<tr>
+<td>
+mile
+</td>
+<td>
+1 mi = 5280 ft = 1609.38 m
+</td>
+</tr>
+<tr>
+<td>
+yard
+</td>
+<td>
+1 yd = 3 ft = 0.9144 m
+</td>
+</tr>
+<tr>
+<td>
+foot
+</td>
+<td>
+1 ft = 0.3048 m
+</td>
+</tr>
+<tr>
+<td>
+inch
+</td>
+<td>
+1 in. = 1/12 ft = 2.540 cm
+</td>
+</tr>
+</table>
+
+<div id="Motion Along a Straight Line-Average Speed"><h2 id="Average Speed" class="header"><a href="#Motion Along a Straight Line-Average Speed">Average Speed</a></h2></div>
+
+\[
+\bar{v} = \frac{d}{t}
+\]
+
+<div id="Motion Along a Straight Line-Average Velocity for Motion Along a Straight Line"><h2 id="Average Velocity for Motion Along a Straight Line" class="header"><a href="#Motion Along a Straight Line-Average Velocity for Motion Along a Straight Line">Average Velocity for Motion Along a Straight Line</a></h2></div>
+
+\[
+\bar{v} = \frac{x_2 - x_1}{t_2 - t_1}
+\]
+
+<p>
+aka
+</p>
+
+\[
+\bar{v} = \frac{\Delta x}{\Delta t}
+\]
+
+<div id="Motion Along a Straight Line-Instantaneous Velocity"><h2 id="Instantaneous Velocity" class="header"><a href="#Motion Along a Straight Line-Instantaneous Velocity">Instantaneous Velocity</a></h2></div>
+
+\[
+v = \frac{\Delta x}{\Delta t} \text{ with extremely small } \Delta t
+\]
+
+<p>
+aka
+</p>
+
+\[
+v = \lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t}
+\]
+
+<div id="Motion Along a Straight Line-Acceleration"><h2 id="Acceleration" class="header"><a href="#Motion Along a Straight Line-Acceleration">Acceleration</a></h2></div>
+
+<p>
+Average Acceleration
+</p>
+
+\[
+\bar{a} = \frac{v_2 - v_1}{t_2 - t_1}
+\]
+
+<p>
+aka
+</p>
+
+\[
+\bar{a} = \frac{\Delta v}{\Delta t}
+\]
+
+<p>
+Instantaneous Acceleration
+</p>
+
+\[
+v = \frac{\Delta v}{\Delta t} \text{ with extremely small } \Delta t
+\]
+
+<p>
+aka
+</p>
+
+\[
+v = \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t}
+\]
+
+<div id="Motion Along a Straight Line-Motion with Constant Acceleration"><h2 id="Motion with Constant Acceleration" class="header"><a href="#Motion Along a Straight Line-Motion with Constant Acceleration">Motion with Constant Acceleration</a></h2></div>
+
+<p>
+Velocity
+</p>
+
+\[
+v = v_0 + at
+\]
+
+<p>
+Distance
+</p>
+
+\[
+x = x_0 + v_0t + \frac{1}{2}at^2
+\]
+
+\[
+x - x_0 = v_0t + \frac{1}{2}at^2
+\]
+
+<p>
+Timeless equation
+</p>
+
+\[
+\begin{aligned}
+t &amp; = \frac{v-v_0}{a} \\
+x-x_0 &amp; = v_0(\frac{v-v_0}{a}) + \frac{1}{2}a(\frac{v-v_0}{a})^2 \\
+&amp; = \frac{v_0v - v_0^2}{a} + \frac{\frac{1}{2}(v^2-2vv_0 + v_0^2)}{a} \\
+&amp; = \frac{\frac{1}{2}(v^2-v_0^2)}{a}
+\end{aligned}
+\]
+
+\[
+a(x - x_0) = \frac{1}{2}(v^2 - v_0^2)
+\]
+
+<p>
+For velocity
+</p>
+
+\[
+v^2 - v_0^2 = 2a(x - x_0)
+\]
+
+
+<p>
+For distance
+</p>
+
+\[
+x - x_0 = \frac{v^2 - v_0^2}{2a}
+\]
+
+<div id="Motion Along a Straight Line-The Acceleration of Free Fall"><h2 id="The Acceleration of Free Fall" class="header"><a href="#Motion Along a Straight Line-The Acceleration of Free Fall">The Acceleration of Free Fall</a></h2></div>
+
+<p>
+Average gravitational acceleration at the surface of the earth
+</p>
+
+\[
+g \simeq 9.81 \mathrm{ms}^{-2}
+\]
+
+<p>
+Free fall (positive direction upwards)
+</p>
+
+\[
+v = v_0 - gt
+\]
+
+\[
+x = x_0 + v_0t - \frac{1}{2}gt^2
+\]
+
+\[
+-g(x - x_0) = \frac{1}{2}(v^2 - v_0^2)
+\]
+
+    </div>
+    <p><small>Page created on 2021-01-13</small></p>
+    <script src="../prism.js"></script>
+  </body>
+</html>
