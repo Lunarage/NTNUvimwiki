@@ -2,14 +2,78 @@
 
 == Work ==
 
+{{$
+W = \vec{F} \cdot \vec{\Delta x}
+}}$
+
 == Work as a Variable Force ==
+
+Work done by a variable force
+
+{{$
+W = \bar{\vec{F}} \cdot \vec{\Delta x}
+}}$
 
 == Kinetic Energy ==
 
+Kinetic energy
+
+{{$
+K = \frac{1}{2}mv^2
+}}$
+
+Work-energy theorem
+
+{{$
+\Delta K = W
+}}$
+
 == Potential Energy ==
 
+Potential energy in a gravitational field
+
+{{$
+U = mgh
+}}$
+
+Mechanical energy
+
+{{$
+E = K + U
+}}$
+
+Conservation of mechanical energy
+
+{{$
+E = K + U = [constant]
+}}$
+
 == Potential Energy of a Conservative Force ==
+
+Potential energy of a spring
+
+{{$
+U = \int kx \,dx = \frac{1}{2}kx^2
+}}$
 
 == Other Forms of Energy ==
 
 == Power ==
+
+Average power
+
+{{$
+\bar{P} = \frac{W}{\Delta t}
+}}$
+
+Instantaneous power
+
+{{$
+P = \lim_{\Delta t \to 0} \frac{W}{\Delta t}
+}}$
+
+Power delivered by a force
+
+{{$
+P = \vec{F} \cdot \vec{v}
+}}$

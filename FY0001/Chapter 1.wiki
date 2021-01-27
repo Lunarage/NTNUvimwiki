@@ -1,0 +1,69 @@
+= Chapter 1 Problems =
+
+== 8 ==
+The Earth is approximately a sphere of radius $6.37 \times 10^6\:\mathrm{m}$.
+Calculate the distance from the pole to the equator, measured along the surface of the Earth.
+
+== 10 ==
+As seen from the Earth, the Sun has an angular diameter of $0.53°$.
+The distance between the Earth and the Sun is $1.5\times10^{11}\:\mathrm{m}$.
+From this, calculate the radius of the Sun.
+
+== 20 ==
+How many cubic feet are there in a cubic meter?
+
+== 28 ==
+The world record for the 100-yard run is 0.9 seconds.
+What is the corresponding average speed in km per hour?
+
+== 36 ==
+You travel in your car for 30 minutes at 35 km/h, and then for another 30 minutes at 85 km/h.
+* (a) What distance do you cover in the first 30 minutes?
+  In the second 30 minutes?
+* (b) What is your average speed for the entire trip?
+
+== 42 ==
+The fastest land animal is the cheetah, which runs at a speed of up to 28 m/s.
+The second fastest is the antelope, which runs at a speed of up to 24 m/s.
+* (a) Suppose that the cheetah begins to chase the antelope.
+  If the antelope has a head start of 50 m, how long does it take the cheetah to catch the antelope?
+  How far will the cheetah have traveled by this time?
+* (b) The cheetah can only maintain its top speed for about 20 s (and then has to rest,
+  whereas the antelope can do it for a considerably longer time.
+  What is the maximum head start the cheetah can allow the antelope?
+
+== 62 ==
+The driver of an automobile traveling at 95 km/h perceives an obstacle on the road and slams on the brakes.
+* (a) Calculate the total stopping distance (in meters).
+  Assume that the reaction time of the driver is 0.75 s
+  (so there is a time interval of 0.75 s during which the automobile continues at constant speed while the driver gets ready to apply the brakes)
+  and that the deceleration of the automobile is $7.8\:\mathrm{m/s^2}$ when the brakes are applied.
+* (b) Repeat the calculation of part (a) for initial speeds of 15, 30, 45, 60, and 75 km/h.
+  Make a plot of stopping distance vs initial speed.
+
+== 68 ==
+Cats are known for their ability to survive falls from buildings several floors high.
+If a cat falls three floors down, a distance of 8.7 m, what is its speed when it hits the ground?
+
+
+= Answers =
+
+== 8 ==
+* Radius of the Earth: $r=6.37\times10^6\:\mathrm{m}$
+* The circumference of a circle: $C=2 \pi r$
+
+The distance from a pole to the equator is a quarter of the circle going trough the poles and the equator:
+
+{{$
+d = \frac{C}{4}
+= \pi \frac{r}{2}
+= \pi\frac{6.37\times10^6\:\mathrm{m}}{2}
+= 1.00 \times 10^7 \: \mathrm{m}
+}}$
+    Fun fact: The metre was at one point in time defined to be a ten-millionth of the distance between the North Pole and the equator along the meridian through Paris.
+
+== 10 ==
+* Angular diameter: $\theta = 0.53°$
+* Distance from the Earth to the Sun: $r = 1.5 \times 10^{11} \: \mathrm{m}$
+
+Imagine a circle with the Earth at the center and the Sun at the periphery.

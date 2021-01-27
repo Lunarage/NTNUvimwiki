@@ -1,5 +1,6 @@
 = Forelesninger =
 [[2021-01-11]]
+[[2021-01-14]]
 
 = Syllabus =
 * SCRUM and XP From The Trenches, Kniberg

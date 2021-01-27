@@ -12,8 +12,10 @@
 == Average Speed ==
 
 {{$
-\bar{v} = \frac{d}{t}
+\bar{v} = \frac{x}{t}
 }}$
+
+Where _x_ is the distance and _t_ is the time.
 
 == Average Velocity for Motion Along a Straight Line ==
 
@@ -56,13 +58,13 @@ aka
 Instantaneous Acceleration
 
 {{$
-v = \frac{\Delta v}{\Delta t} \text{ with extremely small } \Delta t
+a = \frac{\Delta v}{\Delta t} \text{ with extremely small } \Delta t
 }}$
 
 aka
 
 {{$
-v = \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t}
+a = \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t}
 }}$
 
 == Motion with Constant Acceleration ==

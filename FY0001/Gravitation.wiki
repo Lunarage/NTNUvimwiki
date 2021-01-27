@@ -2,16 +2,40 @@
 
 == Newton's Law of Universal Gravitation ==
 
+Law of universal gravitation
+
 {{$
   F = G\frac{m_1 m_2}{r^2}
 }}$
 
+Where $m_1$ and $m_2$ are the masses of two particles and $r$ is the distance between them.
+
+Gravitational constant
+
 {{$
-  G = 6.67 \times 10^{-11} Nm^2/kg^2
+  G = 6.67 \times 10^{-11} \mathrm{Nm^2kg^{-2}}
 }}$
 
 == The Measurement of G ==
 
 == Circular Orbits ==
 
+Linear velocity in a circular orbit around an object with mass $M$ at distance $r$ from the center of that mass.
+
+{{$
+v^2 = \frac{GM}{r}
+}}$
+
 == Gravitational Potential Energy ==
+
+Gravitational potential energy
+
+{{$
+U = -\frac{GMm}{r}
+}}$
+
+Total mechanical energy
+
+{{$
+E = \frac{1}{2}mv^2 - \frac{GMm}{r}
+}}$
