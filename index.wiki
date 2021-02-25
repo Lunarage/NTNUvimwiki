@@ -14,6 +14,7 @@ This is a site where i keep most of my notes from courses i took at NTNU (Norweg
 | [[IT2805/index|IT2805]]   | Webteknologi                                | H19      |
 | [[IT2810/index|IT2810]]   | Webutvikling                                | H20      |
 | MA0001                    | Brukerkurs i matematikk A                   | H19      |
+| [[MA0002/index|MA0002]]   | Brukerkurs i matematikk B                   | V21      |
 | TDT4102                   | Prosedyre- og objektorientert programmering | V13      |
 | TDT4110                   | Informasjonsteknologi, grunnkurs            | H12      |
 | [[TDT4120/index|TDT4120]] | Algoritmer og datastrukturer                | H20      |

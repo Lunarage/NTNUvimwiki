@@ -1,0 +1,76 @@
+= Differential Equations =
+
+Separable differential equations
+{{$
+\frac{dy}{dx} = f(x)g(y)
+}}$
+
+== Solving Differential Equations ==
+
+=== Pure-Time Differential Equations ===
+
+{{$
+\frac{dy}{dx} = f(x)
+}}$
+
+{{$
+y(x) = \int f(x) \,dx
+}}$
+
+=== Autonomous Differential Equations ===
+
+==== Cases ====
+
+{{$
+\frac{dy}{dx} = k(y-a)
+}}$
+
+{{$
+y(x) = Ce^{kx} + a
+}}$
+
+*Exponential Population Growth*
+
+{{$
+\frac{dN}{dt} = rN\text{, where } N(0) = N_0
+}}$
+
+{{$
+N(t) = Ce^{rt} = N_0e^{rt}
+}}$
+
+*Restricted Growth*
+
+{{$
+\frac{dL}{dt} = k(A-L)
+}}$
+
+{{$
+L(t) = A\left[1-\left(1-\frac{L_0}{A}\right)e^{-kt}\right]
+}}$
+
+*The Logistic Equation*
+
+{{$
+\frac{dN}{dt} = rN\left(1-\frac{N}{K}\right)\text{ with } N(0) = N_0
+}}$
+
+The quantity $K$ is called the *carrying capacity*, and $r$ is the growth rate.
+
+== Equilibria and Their Stability ==
+
+If $\hat{y}$ satisfies
+
+$g(\hat{y})=0$
+
+then $\hat{y}$ is an equilibrium of
+
+$\frac{dy}{dx}=g(y)$
+
+*Stability Criterion*
+
+$\frac{dy}{dx} = g(y)$
+
+$\hat{y}$ is locally stable if $g'(\hat{y}) < 0$
+
+$\hat{y}$ is unstable if $g'(\hat{y}) > 0$

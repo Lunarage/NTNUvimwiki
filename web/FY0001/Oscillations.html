@@ -1,0 +1,148 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
+    <title>Oscillations</title>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+      MathJax.Hub.Config({
+        jax: ["input/TeX","output/HTML-CSS"],
+        displayAlign: "left"
+      });
+    </script>
+  </head>
+  <body class="line-numbers match-braces">
+    <div class="content">
+      
+<div id="Oscillations"><h1 id="Oscillations" class="header"><a href="#Oscillations">Oscillations</a></h1></div>
+
+<div id="Oscillations-Simple Harmonic Motion"><h2 id="Simple Harmonic Motion" class="header"><a href="#Oscillations-Simple Harmonic Motion">Simple Harmonic Motion</a></h2></div>
+
+\[
+x = A\,\mathrm{cos}(\omega t)
+\]
+
+<p>
+Where \(A\) is the amplitude and \(\omega\) is the angular frequency.
+</p>
+
+<p>
+<span id="Oscillations-Simple Harmonic Motion-Period"></span><strong id="Period">Period</strong>
+</p>
+\[
+T = \frac{2\pi}{\omega}
+\]
+
+<p>
+<span id="Oscillations-Simple Harmonic Motion-Frequency"></span><strong id="Frequency">Frequency</strong>
+</p>
+\[
+f = \frac{1}{T} = \frac{\omega}{2\pi}
+\]
+
+\[
+a = -\omega^2x
+\]
+
+<div id="Oscillations-The Simple Harmonic Oscillator"><h2 id="The Simple Harmonic Oscillator" class="header"><a href="#Oscillations-The Simple Harmonic Oscillator">The Simple Harmonic Oscillator</a></h2></div>
+
+<p>
+Mass on a spring
+</p>
+
+\[
+ma = -kx
+\]
+
+\[
+\omega^2 = \frac{k}{m}
+\]
+
+\[
+\omega = \sqrt{\frac{k}{m}}
+\]
+
+\[
+f = \frac{\omega}{2\pi} = \frac{1}{2\pi} \sqrt{\frac{k}{m}}
+\]
+
+\[
+T = \frac{1}{f} = 2\pi \sqrt{\frac{m}{k}}
+\]
+
+\[
+x = A\,\mathrm{cos}\left(\sqrt{\frac{m}{k}}t\right)
+\]
+
+\[
+v = -\omega A\,\mathrm{sin}(\omega t)
+\]
+
+<div id="Oscillations-Kinetic Energy and Potential Energy"><h2 id="Kinetic Energy and Potential Energy" class="header"><a href="#Oscillations-Kinetic Energy and Potential Energy">Kinetic Energy and Potential Energy</a></h2></div>
+
+\[
+K = \frac{1}{2}mv^2 = \frac{1}{2}m[-\omega A\,\mathrm{sin}(\omega t)]^2 = \frac{1}{2}m\omega^2A^2\mathrm{sin}^2(\omega t)
+\]
+
+\[
+m\omega^2 = k
+\]
+
+\[
+K = \frac{1}{2}kA^2\mathrm{sin}^2(\omega t)
+\]
+
+\[
+U = \frac{1}{2}kx^2 = \frac{1}{2}k[A\,\mathrm{cos}(\omega t)]^2 = \frac{1}{2}kA^2\mathrm{cos}^2(\omega t)
+\]
+
+\[
+K + U = \frac{1}{2}kA^2\mathrm{sin}^2(\omega t) + \frac{1}{2}kA^2\mathrm{cos}^2(\omega t) = \frac{1}{2}kA^2(\mathrm{cos}^2(\omega t)+\mathrm{sin}^2(\omega t))
+\]
+
+<p>
+<span id="Oscillations-Kinetic Energy and Potential Energy-Energy of a simple harmonic oscillator"></span><strong id="Energy of a simple harmonic oscillator">Energy of a simple harmonic oscillator</strong>
+</p>
+
+\[
+E = K + U = \frac{1}{2}kA^2
+\]
+
+<div id="Oscillations-The Simple Pendulum"><h2 id="The Simple Pendulum" class="header"><a href="#Oscillations-The Simple Pendulum">The Simple Pendulum</a></h2></div>
+
+\[
+I\alpha = \tau
+\]
+<p>
+Where \(I\) is the moment of inertia and \(\tau\) is the torque.
+</p>
+
+\[
+\tau = -mgl\,\mathrm{sin}\theta
+\]
+<p>
+Where \(l\) is the length of the pendulum.
+</p>
+
+\[
+I = ml^2
+\]
+
+\[
+l\alpha = -g\,\mathrm{sin}\theta
+\]
+
+\[
+\omega = \sqrt{\frac{g}{l}}
+\]
+
+\[
+f = \frac{\omega}{2\pi} = \frac{1}{2\pi}\sqrt{\frac{g}{l}}
+\]
+
+    </div>
+    <p><small>Page created on 2021-02-24</small></p>
+    <script src="../prism.js"></script>
+  </body>
+</html>

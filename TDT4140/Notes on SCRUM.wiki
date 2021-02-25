@@ -1,0 +1,39 @@
+= SCRUM =
+
+== Product backlog ==
+
+Prioritized list of requirements/stories.
+
+* *ID*
+* *Name*
+  Short descriptive name of the story.
+  2-10 words.
+* *Importance*
+* *Initial estimate*
+* *How to demo*
+* *Notes*
+
+
+| ID | Name                             | Imp | Est | How to demo                                                                                                    | Notes                                                                    |
+|----|----------------------------------|-----|-----|----------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| 1  | Deposit                          | 30  | 5   | Log in, open deposit page, deposit 10 units, go to my balance page and check that it has increased by 10 units | Need a UML sequence diagram. No need to worry about encryption for now.  |
+|   | See your own transaction history | 10  | 8   | Log in, click on "transactions". Do a deposit. Go back to transactions, check that the new deposit shows up.   | Use paging to avoid large DB queries. Design similar to view users page. |
+
+=== Additional story fields ===
+
+* *Track*
+  Basically labeling
+* *Components*
+* *Requestor*
+* *Bug tracking ID*
+  Issue number
+
+== Sprint Planning ==
+
+
+
+= User Stories =
+
+= SCRUM Master =
+
+= Sprints =

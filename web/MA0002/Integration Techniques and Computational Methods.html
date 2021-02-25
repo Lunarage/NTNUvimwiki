@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
+    <title>Integration Techniques and Computational Methods</title>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+      MathJax.Hub.Config({
+        jax: ["input/TeX","output/HTML-CSS"],
+        displayAlign: "left"
+      });
+    </script>
+  </head>
+  <body class="line-numbers match-braces">
+    <div class="content">
+      
+<div id="Integration Techniques and Computational Methods"><h1 id="Integration Techniques and Computational Methods" class="header"><a href="#Integration Techniques and Computational Methods">Integration Techniques and Computational Methods</a></h1></div>
+
+<div id="Integration Techniques and Computational Methods-The Substitution Rule"><h2 id="The Substitution Rule" class="header"><a href="#Integration Techniques and Computational Methods-The Substitution Rule">The Substitution Rule</a></h2></div>
+<div id="Integration Techniques and Computational Methods-The Substitution Rule-Indefinite Integrals"><h3 id="Indefinite Integrals" class="header"><a href="#Integration Techniques and Computational Methods-The Substitution Rule-Indefinite Integrals">Indefinite Integrals</a></h3></div>
+
+<p>
+Reverse Chain Rule
+</p>
+
+<p>
+If \(u=g(x)\), then
+</p>
+\[
+\int f[g(x)]g'(x) \,dx = \int f(u) \,du
+\]
+
+<div id="Integration Techniques and Computational Methods-The Substitution Rule-Definite Integrals"><h3 id="Definite Integrals" class="header"><a href="#Integration Techniques and Computational Methods-The Substitution Rule-Definite Integrals">Definite Integrals</a></h3></div>
+
+<p>
+If \(u=g(x)\), then
+</p>
+\[
+\int_{a}^{b} f[g(x)]g'(x) \,dx = \int_{g(a)}^{g(b)} f(u) \,du
+\]
+
+<div id="Integration Techniques and Computational Methods-Integration by Parts and Practicing Integration"><h2 id="Integration by Parts and Practicing Integration" class="header"><a href="#Integration Techniques and Computational Methods-Integration by Parts and Practicing Integration">Integration by Parts and Practicing Integration</a></h2></div>
+
+<div id="Integration Techniques and Computational Methods-Integration by Parts and Practicing Integration-Integration by Parts"><h3 id="Integration by Parts" class="header"><a href="#Integration Techniques and Computational Methods-Integration by Parts and Practicing Integration-Integration by Parts">Integration by Parts</a></h3></div>
+
+<p>
+Reverse Product Rule
+</p>
+
+<p>
+If \(u(x)\) and \(v(x)\) are differentiable functions, then
+</p>
+\[
+\int u(x)v'(x) \,dx = u(x)v(x) - \int u'(x)v(x) \, dx
+\]
+<p>
+or, in short form,
+</p>
+\[
+\int u \,dv = uv - \int v \,du
+\]
+
+<div id="Integration Techniques and Computational Methods-Rational Functions and Partial Fractions"><h2 id="Rational Functions and Partial Fractions" class="header"><a href="#Integration Techniques and Computational Methods-Rational Functions and Partial Fractions">Rational Functions and Partial Fractions</a></h2></div>
+
+<p>
+A rational function is
+</p>
+\[
+  f(x)=\frac{P(x)}{Q(x)}
+\]
+<p>
+where \(P(x)\) and \(Q(x)\) are polynomials.
+</p>
+
+<div id="Integration Techniques and Computational Methods-Rational Functions and Partial Fractions-Proper Rational Functions"><h3 id="Proper Rational Functions" class="header"><a href="#Integration Techniques and Computational Methods-Rational Functions and Partial Fractions-Proper Rational Functions">Proper Rational Functions</a></h3></div>
+
+    </div>
+    <p><small>Page created on 2021-01-31</small></p>
+    <script src="../prism.js"></script>
+  </body>
+</html>

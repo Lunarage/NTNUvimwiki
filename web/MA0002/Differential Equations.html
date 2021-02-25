@@ -1,0 +1,125 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
+    <title>Differential Equations</title>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+      MathJax.Hub.Config({
+        jax: ["input/TeX","output/HTML-CSS"],
+        displayAlign: "left"
+      });
+    </script>
+  </head>
+  <body class="line-numbers match-braces">
+    <div class="content">
+      
+<div id="Differential Equations"><h1 id="Differential Equations" class="header"><a href="#Differential Equations">Differential Equations</a></h1></div>
+
+<p>
+Separable differential equations
+</p>
+\[
+\frac{dy}{dx} = f(x)g(y)
+\]
+
+<div id="Differential Equations-Solving Differential Equations"><h2 id="Solving Differential Equations" class="header"><a href="#Differential Equations-Solving Differential Equations">Solving Differential Equations</a></h2></div>
+
+<div id="Differential Equations-Solving Differential Equations-Pure-Time Differential Equations"><h3 id="Pure-Time Differential Equations" class="header"><a href="#Differential Equations-Solving Differential Equations-Pure-Time Differential Equations">Pure-Time Differential Equations</a></h3></div>
+
+\[
+\frac{dy}{dx} = f(x)
+\]
+
+\[
+y(x) = \int f(x) \,dx
+\]
+
+<div id="Differential Equations-Solving Differential Equations-Autonomous Differential Equations"><h3 id="Autonomous Differential Equations" class="header"><a href="#Differential Equations-Solving Differential Equations-Autonomous Differential Equations">Autonomous Differential Equations</a></h3></div>
+
+<div id="Differential Equations-Solving Differential Equations-Autonomous Differential Equations-Cases"><h4 id="Cases" class="header"><a href="#Differential Equations-Solving Differential Equations-Autonomous Differential Equations-Cases">Cases</a></h4></div>
+
+\[
+\frac{dy}{dx} = k(y-a)
+\]
+
+\[
+y(x) = Ce^{kx} + a
+\]
+
+<p>
+<span id="Differential Equations-Solving Differential Equations-Autonomous Differential Equations-Cases-Exponential Population Growth"></span><strong id="Exponential Population Growth">Exponential Population Growth</strong>
+</p>
+
+\[
+\frac{dN}{dt} = rN\text{, where } N(0) = N_0
+\]
+
+\[
+N(t) = Ce^{rt} = N_0e^{rt}
+\]
+
+<p>
+<span id="Differential Equations-Solving Differential Equations-Autonomous Differential Equations-Cases-Restricted Growth"></span><strong id="Restricted Growth">Restricted Growth</strong>
+</p>
+
+\[
+\frac{dL}{dt} = k(A-L)
+\]
+
+\[
+L(t) = A\left[1-\left(1-\frac{L_0}{A}\right)e^{-kt}\right]
+\]
+
+<p>
+<span id="Differential Equations-Solving Differential Equations-Autonomous Differential Equations-Cases-The Logistic Equation"></span><strong id="The Logistic Equation">The Logistic Equation</strong>
+</p>
+
+\[
+\frac{dN}{dt} = rN\left(1-\frac{N}{K}\right)\text{ with } N(0) = N_0
+\]
+
+<p>
+The quantity \(K\) is called the <span id="Differential Equations-Solving Differential Equations-Autonomous Differential Equations-Cases-carrying capacity"></span><strong id="carrying capacity">carrying capacity</strong>, and \(r\) is the growth rate.
+</p>
+
+<div id="Differential Equations-Equilibria and Their Stability"><h2 id="Equilibria and Their Stability" class="header"><a href="#Differential Equations-Equilibria and Their Stability">Equilibria and Their Stability</a></h2></div>
+
+<p>
+If \(\hat{y}\) satisfies
+</p>
+
+<p>
+\(g(\hat{y})=0\)
+</p>
+
+<p>
+then \(\hat{y}\) is an equilibrium of
+</p>
+
+<p>
+\(\frac{dy}{dx}=g(y)\)
+</p>
+
+<p>
+<span id="Differential Equations-Equilibria and Their Stability-Stability Criterion"></span><strong id="Stability Criterion">Stability Criterion</strong>
+</p>
+
+<p>
+\(\frac{dy}{dx} = g(y)\)
+</p>
+
+<p>
+\(\hat{y}\) is locally stable if \(g'(\hat{y}) &lt; 0\)
+</p>
+
+<p>
+\(\hat{y}\) is unstable if \(g'(\hat{y}) &gt; 0\)
+</p>
+
+    </div>
+    <p><small>Page created on 2021-02-14</small></p>
+    <script src="../prism.js"></script>
+  </body>
+</html>

@@ -14,12 +14,72 @@
 \Sigma \vec{p} = [constant]
 }}$
 
+{{$
+\frac{\Delta \vec{P}}{\Delta t} = \vec{F}_{\mathrm{ext}}
+}}$
+
 == Center of Mass ==
+
+{{$
+x_{CM} = \frac{\Sigma m_n x_n}{\Sigma m_n}
+}}$
+
+*Gravitational potential energy*
+{{$
+U = Mgy_{CM}
+}}$
+Where $M$ is the total mass and $y_{CM}$ is the center of mass along the y-axis.
 
 == The Motion of the Center of Mass ==
 
+{{$
+\vec{P} = M\vec{v}_{CM}
+}}$
+
+{{$
+\vec{F}_{\mathrm{ext}} = M\vec{a}_{CM}
+}}$
+
+*Kinetic energy of a system*
+{{$
+K = \Sigma \frac{1}{2}m_n v_n^2
+}}$
+Simply the sum of of the kinetic energy
+
 == Collisions ==
+
+*Average force*
+{{$
+\bar{\vec{F}} = \frac{\vec{p}' - \vec{p}}{\Delta t}
+}}$
+Where $\vec{p}$ is the initial momentum, and $\vec{p}'$ is the final momentum.
+
+*Elastic collision*
+
+A collision in which the kinetic energy before and after is the same is called elastic.
 
 == Elastic Collisions On a Straight Line ==
 
+In an elastic collision of two particles moving along a straight line,
+the laws of conservation of momentum and energy
+completely determine the final velocities in terms of the initial velocities.
+
+{{$
+m_1v_1 + m_2+v_2 = m_1v_1' + m_2+v_2'
+}}$
+and
+{{$
+\frac{1}{2} m_1 v_1^2 + \frac{1}{2} m_2 v_2^2 = \frac{1}{2} m_1 v_1^{2\prime} + \frac{1}{2} m_2 v_2^{2\prime}
+}}$
+
 == Inelastic Collisions On a Straight Line ==
+
+*Totally inelastic collision*
+
+If the collision is totally inelastic, so a maximum of kinetic energy is lost,
+then the conservation of momentum suffices
+to determine the velocities of both particles after the collision.
+
+{{$
+v_1' = v_2' = v_{CM} = \frac{m_1v_1}{m_1+m_2}
+}}$

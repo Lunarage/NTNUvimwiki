@@ -1,0 +1,9 @@
+= MA0002 - Brukerkurs i matematikk B =
+
+== Syllabus ==
+
+Nehauser, _Calculus for Biology and Medicine_
+| Chapter | Title                                                | Syllabus |
+|---------|------------------------------------------------------|----------|
+| 7       | [[Integration Techniques and Computational Methods]] |          |
+| 8       | [[Differential Equations]]                           |          |

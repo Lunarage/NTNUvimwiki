@@ -2,6 +2,9 @@
 [[2021-01-11]]
 [[2021-01-14]]
 
+= Notes =
+[[Notes on SCRUM]]
+
 = Syllabus =
 * SCRUM and XP From The Trenches, Kniberg
 * <title>, Sommerville

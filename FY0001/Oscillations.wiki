@@ -2,8 +2,110 @@
 
 == Simple Harmonic Motion ==
 
+{{$
+x = A\,\mathrm{cos}(\omega t)
+}}$
+
+Where $A$ is the amplitude and $\omega$ is the angular frequency.
+
+*Period*
+{{$
+T = \frac{2\pi}{\omega}
+}}$
+
+*Frequency*
+{{$
+f = \frac{1}{T} = \frac{\omega}{2\pi}
+}}$
+
+{{$
+a = -\omega^2x
+}}$
+
 == The Simple Harmonic Oscillator ==
+
+Mass on a spring
+
+{{$
+ma = -kx
+}}$
+
+{{$
+\omega^2 = \frac{k}{m}
+}}$
+
+{{$
+\omega = \sqrt{\frac{k}{m}}
+}}$
+
+{{$
+f = \frac{\omega}{2\pi} = \frac{1}{2\pi} \sqrt{\frac{k}{m}}
+}}$
+
+{{$
+T = \frac{1}{f} = 2\pi \sqrt{\frac{m}{k}}
+}}$
+
+{{$
+x = A\,\mathrm{cos}\left(\sqrt{\frac{m}{k}}t\right)
+}}$
+
+{{$
+v = -\omega A\,\mathrm{sin}(\omega t)
+}}$
 
 == Kinetic Energy and Potential Energy ==
 
+{{$
+K = \frac{1}{2}mv^2 = \frac{1}{2}m[-\omega A\,\mathrm{sin}(\omega t)]^2 = \frac{1}{2}m\omega^2A^2\mathrm{sin}^2(\omega t)
+}}$
+
+{{$
+m\omega^2 = k
+}}$
+
+{{$
+K = \frac{1}{2}kA^2\mathrm{sin}^2(\omega t)
+}}$
+
+{{$
+U = \frac{1}{2}kx^2 = \frac{1}{2}k[A\,\mathrm{cos}(\omega t)]^2 = \frac{1}{2}kA^2\mathrm{cos}^2(\omega t)
+}}$
+
+{{$
+K + U = \frac{1}{2}kA^2\mathrm{sin}^2(\omega t) + \frac{1}{2}kA^2\mathrm{cos}^2(\omega t) = \frac{1}{2}kA^2(\mathrm{cos}^2(\omega t)+\mathrm{sin}^2(\omega t))
+}}$
+
+*Energy of a simple harmonic oscillator*
+
+{{$
+E = K + U = \frac{1}{2}kA^2
+}}$
+
 == The Simple Pendulum ==
+
+{{$
+I\alpha = \tau
+}}$
+Where $I$ is the moment of inertia and $\tau$ is the torque.
+
+{{$
+\tau = -mgl\,\mathrm{sin}\theta
+}}$
+Where $l$ is the length of the pendulum.
+
+{{$
+I = ml^2
+}}$
+
+{{$
+l\alpha = -g\,\mathrm{sin}\theta
+}}$
+
+{{$
+\omega = \sqrt{\frac{g}{l}}
+}}$
+
+{{$
+f = \frac{\omega}{2\pi} = \frac{1}{2\pi}\sqrt{\frac{g}{l}}
+}}$

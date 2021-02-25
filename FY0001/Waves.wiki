@@ -4,7 +4,28 @@
 
 == Periodic Waves ==
 
+*Wavelength*
+
+{{$
+\frac{\lambda}{T} = v
+}}$
+
+*Speed of wave on a string*
+
+{{$
+v = \sqrt{\frac{F}{M/L}}
+}}$
+Where $F$ is the tension and $M/L$ is mass per length.
+
 == The Superposition of Waves ==
 
+Waves sum.
+
 == Standing Waves ==
+
+That cool thing string instruments do.
+
+{{$
+\lambda_n = \frac{2L}{n}
+}}$
 
