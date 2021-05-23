@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
+    <title>Linear Algebra and Analytic Geometry</title>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+      MathJax.Hub.Config({
+        jax: ["input/TeX","output/HTML-CSS"],
+        displayAlign: "left"
+      });
+    </script>
+  </head>
+  <body class="line-numbers match-braces">
+    <div class="content">
+      
+<div id="Linear Algebra and Analytic Geometry"><h1 id="Linear Algebra and Analytic Geometry" class="header"><a href="#Linear Algebra and Analytic Geometry">Linear Algebra and Analytic Geometry</a></h1></div>
+
+<div id="Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues"><h2 id="Linear Maps, Eigenvectors and Eigenvalues" class="header"><a href="#Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues">Linear Maps, Eigenvectors and Eigenvalues</a></h2></div>
+
+<div id="Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors"><h3 id="Eigenvalues and Eigenvectors" class="header"><a href="#Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors">Eigenvalues and Eigenvectors</a></h3></div>
+
+<p>
+If \(A\) is a square matrix,
+</p>
+
+\[
+\vec{x} \neq \vec{0}
+\]
+
+<p>
+and
+</p>
+
+\[
+A \vec{x} = \lambda \vec{x}
+\]
+
+<p>
+then \(\vec{x}\) is an eigenvector of \(A\) and \(\lambda\) is an eigenvalue of \(A\).
+</p>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors-Finding Eigenvalues"></span><strong id="Finding Eigenvalues">Finding Eigenvalues</strong>
+</p>
+
+\[
+A = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}
+\]
+
+\[
+A \vec{x} - \lambda \vec{x} = \vec{0}
+\]
+
+\[
+A \vec{x} - \lambda I \vec{x} = \vec{0}
+\]
+
+\[
+(A - \lambda I) \vec{x} = \vec{0}
+\]
+
+<p>
+The matrix \(A - \lambda I\) must be non-invertible for this equation to have a non-trivial solution.
+</p>
+
+\[
+|A - \lambda I| = 0
+\]
+
+\[
+\begin{vmatrix} a - \lambda &amp; b \\ c &amp; d - \lambda \end{vmatrix} = \lambda^2 - (a + d)\lambda + ad - bc  =0
+\]
+
+<p>
+Solving this quadratic equation yields the eigenvalues of the matrix.
+</p>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors-Finding Eigenvectors"></span><strong id="Finding Eigenvectors">Finding Eigenvectors</strong>
+</p>
+
+<p>
+For each eigenvalue \(\lambda\), solve
+</p>
+
+\[
+A \begin{bmatrix}x_1\\x_2\end{bmatrix} = \lambda \begin{bmatrix}x_1\\x_2\end{bmatrix}
+\]
+
+    </div>
+    <p><small>Page created on 2021-03-05</small></p>
+    <script src="../prism.js"></script>
+  </body>
+</html>

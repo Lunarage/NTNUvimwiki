@@ -2,6 +2,11 @@
 
 == The Electrostatic Potential ==
 
+{{$
+V = U/q
+}}$
+where $V$ is the electrostatic potential, $U$ is the electric potential energy, and $q$ is the electric charge.
+
 == Equipotentials ==
 
 == Energy of a System of Point Charges ==

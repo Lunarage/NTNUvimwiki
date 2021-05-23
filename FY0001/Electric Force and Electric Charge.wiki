@@ -2,6 +2,10 @@
 
 == Electric Charge ==
 
+{{$
+e = 1.60 \times 10^{-19}\,\mathrm{C}
+}}$
+
 == Coulomb's Law ==
 
 {{$

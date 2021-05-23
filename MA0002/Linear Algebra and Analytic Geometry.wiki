@@ -1,0 +1,57 @@
+= Linear Algebra and Analytic Geometry =
+
+== Linear Maps, Eigenvectors and Eigenvalues ==
+
+=== Eigenvalues and Eigenvectors ===
+
+If $A$ is a square matrix,
+
+{{$
+\vec{x} \neq \vec{0}
+}}$
+
+and
+
+{{$
+A \vec{x} = \lambda \vec{x}
+}}$
+
+then $\vec{x}$ is an eigenvector of $A$ and $\lambda$ is an eigenvalue of $A$.
+
+*Finding Eigenvalues*
+
+{{$
+A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}
+}}$
+
+{{$
+A \vec{x} - \lambda \vec{x} = \vec{0}
+}}$
+
+{{$
+A \vec{x} - \lambda I \vec{x} = \vec{0}
+}}$
+
+{{$
+(A - \lambda I) \vec{x} = \vec{0}
+}}$
+
+The matrix $A - \lambda I$ must be non-invertible for this equation to have a non-trivial solution.
+
+{{$
+|A - \lambda I| = 0
+}}$
+
+{{$
+\begin{vmatrix} a - \lambda & b \\ c & d - \lambda \end{vmatrix} = \lambda^2 - (a + d)\lambda + ad - bc  =0
+}}$
+
+Solving this quadratic equation yields the eigenvalues of the matrix.
+
+*Finding Eigenvectors*
+
+For each eigenvalue $\lambda$, solve
+
+{{$
+A \begin{bmatrix}x_1\\x_2\end{bmatrix} = \lambda \begin{bmatrix}x_1\\x_2\end{bmatrix}
+}}$
