@@ -1,13 +1,36 @@
 = Derivation =
 
+| $f(x)$              | $\frac{df}{dx}$                                                                    |            |
+|---------------------|------------------------------------------------------------------------------------|------------|
+| $x^n $              | $nx^{n-1}$                                                                         | $n \neq 0$ |
+| $\mathrm{sin}(ax)$  | $a\;\mathrm{cos}(ax)$                                                              |            |
+| $\mathrm{cos}(ax)$  | $-a\;\mathrm{sin}(ax)$                                                             |            |
+| $\mathrm{tan}(ax)$  | $a\;\mathrm{sec}^2(ax) = \frac{a}{\mathrm{cos}^2(ax)} = a + a\;\mathrm{tan}^2(ax)$ |            |
+| $e^x$               | $e^x$                                                                              |            |
+| $a^x$               | $(\mathrm{ln}\; a)a^x$                                                             |            |
+| $\mathrm{ln}\;x$    | $\frac{1}{x}$                                                                      |            |
+| $\mathrm{ln}\;f(x)$ | $\frac{f'(x)}{f(x)}$                                                               |            |
+| $\mathrm{log}_a\,x$ | $\frac{1}{(\mathrm{ln}\; a)\,x}$                                                   |            |
 
-| $f$                 | $\frac{df}{dx}$                   |            |
-|---------------------|-----------------------------------|------------|
-| $x^n $              | $nx^{n-1}$                        | $n \neq 0$ |
-| $\mathrm{sin}(ax)$  | $a\;\mathrm{cos}(ax)$             |            |
-| $\mathrm{cos}(ax)$  | $-a\;\mathrm{sin}(ax)$            |            |
-| $e^x$               | $e^x$                             |            |
-| $a^x$               | $(\mathrm{ln}\; a)a^x$            |            |
-| $\mathrm{ln}\;x$    | $\frac{1}{x}$                     |            |
-| $\mathrm{ln}\;f(x)$ | $\frac{f'(x)}{f(x)}$              |            |
-| $\mathrm{log}_a\,x$ | $\frac{1}{(\mathrm{ln}\; a)\,x}$  |            |
+= Integration =
+
+| $f(x)$        | $\int f(x)\,dx$                |             |
+|---------------|--------------------------------|-------------|
+| $x^n$         | $\frac{x^{n+1}}{n+1}$          | $n \neq -1$ |
+| $\frac{1}{x}$ | $\mathrm{ln}\;\lvert x \rvert$ |             |
+
+= Trigonometry =
+
+== Exact values ==
+
+| Radians         | Degrees | sin                  | cos                  |
+|-----------------|---------|----------------------|----------------------|
+| 0               | 0       | 0                    | 1                    |
+| $\frac{\pi}{6}$ | 30      | $\frac{1}{2}$        | $\frac{\sqrt{3}}{2}$ |
+| $\frac{\pi}{4}$ | 45      | $\frac{\sqrt{2}}{2}$ | $\frac{\sqrt{2}}{2}$ |
+| $\frac{\pi}{3}$ | 60      | $\frac{\sqrt{3}}{2}$ | $\frac{1}{2}$        |
+| $\frac{\pi}{2}$ | 90      | 1                    | 0                    |
+
+== Identities ==
+
+$\mathrm{sec}\;x = \frac{1}{\mathrm{cos}\;x}$
