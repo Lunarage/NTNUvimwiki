@@ -84,6 +84,26 @@ L(t) = A\left[1-\left(1-\frac{L_0}{A}\right)e^{-kt}\right]
 The quantity \(K\) is called the <span id="Differential Equations-Solving Differential Equations-Autonomous Differential Equations-Cases-carrying capacity"></span><strong id="carrying capacity">carrying capacity</strong>, and \(r\) is the growth rate.
 </p>
 
+\[
+N(t) = \frac
+  {K}
+  {1-e^{-rt}/C}
+\]
+
+\[
+C = \frac
+  {N_0}
+  {N_0-K}
+\]
+
+\[
+N(t) = \frac{K}{1+(\frac{K}{N_0}-1)e^{-rt}}
+\]
+
+\[
+\lim_{t \to \infty} N(t) = K
+\]
+
 <div id="Differential Equations-Equilibria and Their Stability"><h2 id="Equilibria and Their Stability" class="header"><a href="#Differential Equations-Equilibria and Their Stability">Equilibria and Their Stability</a></h2></div>
 
 <p>
@@ -119,7 +139,7 @@ then \(\hat{y}\) is an equilibrium of
 </p>
 
     </div>
-    <p><small>Page created on 2021-02-14</small></p>
+    <p><small>Page created on 2021-05-25</small></p>
     <script src="../prism.js"></script>
   </body>
 </html>

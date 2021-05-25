@@ -1,5 +1,190 @@
 = Linear Algebra and Analytic Geometry =
 
+== Matrices ==
+
+=== Basic Matrix Operations ===
+
+Let $A$ be an $m \times n$ matrix:
+
+{{$
+A = \begin{bmatrix}
+  a_{11} & a_{12} & \ldots & a_{1n} \\
+  a_{21} & a_{22} & \ldots & a_{2n} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  a_{m1} & a_{m2} & \ldots & a_{mn}
+\end{bmatrix}
+}}$
+
+The matrix with all its entries equal to zero is called the *zero matrix* and is denoted by *0*.
+
+*Equality*
+
+$A = B$ iff. $a_{ij} = b_{ij}$ for all $1 \leq i \leq m$ and $1 \leq j \leq n$.
+
+_All corresponding entries must be equal_
+
+*Addition*
+
+$C = A + B$ with entries $c_{ij} = a_{ij} + b_{ij}$ for $1 \leq i \leq m, 1 \leq j \leq n$.
+
+_Add corresponding entries_
+
+*Scalar Multiplication*
+
+Let $c$ be a scalar.
+
+$cA$ with entries $ca_{ij}$ for $1 \leq i \leq m$ and $1 \leq j \leq n$.
+
+_Multiply every entry by the scalar_
+
+*Transposition*
+
+$A^{T} or A'$ with entries $a'_{ij} = a_{ji}$.
+
+_Flip along the diagonal_
+
+=== Matrix Multiplication ===
+
+If $A$ is an $m \times l$ matrix and $B$ is an $l \times n$ matrix,
+
+then $C = AB$ is an $m \times n$ matrix with entries
+{{$
+c_{ij} = \sum_{k=1}^{l}a_{ik}b_{kj}
+}}$
+for $1 \leq i \leq m$ and $1 \leq j \leq n$.
+
+Entry $c_{ij}$ is the sum of the products of the $i$th row of $A$ and the $j$th column of $B$.
+
+_How to multiply:_
+
+{{$
+A = \begin{bmatrix}
+  a & b & c \\
+  d & e & f
+\end{bmatrix}
+}}$
+{{$
+B = \begin{bmatrix}
+  g & h \\
+  i & j \\
+  k & l
+\end{bmatrix}
+}}$
+
+_Chop columns_
+{{$
+A_1 = \begin{bmatrix} a \\ d \end{bmatrix},
+A_2 = \begin{bmatrix} b \\ e \end{bmatrix},
+A_3 = \begin{bmatrix} c \\ f \end{bmatrix}
+}}$
+
+{{$
+B_1 = \begin{bmatrix} g \\ i \\ k \end{bmatrix},
+B_2 = \begin{bmatrix} h \\ j \\ l \end{bmatrix}
+}}$
+
+Rotate $B$'s columns:
+
+{{$
+B_1' = \begin{bmatrix} g & i & k \end{bmatrix},
+B_2' = \begin{bmatrix} h & j & l \end{bmatrix}
+}}$
+
+Now multiply entries from $B_i'$ with the vectors $A_i$:
+
+{{$
+\begin{align}
+C & = \begin{bmatrix} gA_1 + iA_2 + kA_3 & hA_1 + jA_2 + lA_3 \end{bmatrix} \\
+& = \begin{bmatrix}
+  g\begin{bmatrix} a \\ d \end{bmatrix} + i\begin{bmatrix} b \\ e \end{bmatrix} + k\begin{bmatrix} c \\ f \end{bmatrix}
+  & h\begin{bmatrix} a \\ d \end{bmatrix} + j\begin{bmatrix} b \\ e \end{bmatrix} + l\begin{bmatrix} c \\ f \end{bmatrix}
+\end{bmatrix} \\
+& = \begin{bmatrix}
+  ga + ib + kc & ha + jb + lc \\
+  gd + ie + kf & hd + je + lf
+\end{bmatrix}
+\end{align}
+}}$
+
+For the product $AB$ to be defined, the number of columns in $A$ must equal the number of rows in $B$.
+
+In general $AB \neq BA$.
+
+*Some properties*
+
+1. $(A+B)C = AC + BC$
+2. $A(B+C) = AB + AC$
+3. $(AB)C = A(BC)$
+4. $A\mathbf{0} = \mathbf{0}A = \mathbf{0}$
+
+The *identity matrix*:
+
+{{$
+I = \begin{bmatrix}
+  1 & 0 & 0 & \ldots & 0 \\
+  0 & 1 & 0 & \ldots & 0 \\
+  \vdots & \vdots & \vdots & \ddots & \vdots \\
+  0 & 0 & 0 &\ldots & 1
+\end{bmatrix}
+}}$
+
+$I_n$ is a matrix with the diagonal entries equal to 1 while all the others are 0.
+
+If $A$ is an $m \times n$ matrix, then
+
+$AI_n = I_mA = A$
+
+=== Inverse Matrices ===
+
+Let $A$ be an $n \times n$ square matrix. If there exists an $n \times n$ square matrix $B$ such that
+
+$AB = BA = I_n$
+
+then $B$ is called the inverse matrix of $A$ and is denoted $A^{-1}$.
+
+If $A$ has an inverse matrix, $A$ is called *invertible* or *nonsingular*;
+if $A$ does not have an inverse matrix, $A$ is called *singular*.
+The inverse matrix, if it exists, is unique: If $B = A^{-1}$ and $C = A^{-1}$ then $B = C$.
+
+
+*Applications*
+
+A system of linear equations can be represented as:
+
+$AX = B$
+
+then
+
+$X = A^{-1}B$
+
+=== The Determinant ===
+
+_It determines stuff!_
+
+For an $2 \times 2$ matrix:
+
+$\mathrm{det}\;A = \begin{vmatrix}a & b \\ c & d\end{vmatrix} = ad - bc$
+
+For any square matrix, $A$ is invertible iff $\mathrm{det}\;A \neq 0$.
+
+For a $2 \times 2$ matrix $A = \begin{bmatrix}a & b \\ c & d\end{bmatrix}$:
+
+$A^{-1} = \frac{1}{\mathrm{det}\;A} \begin{bmatrix}d & -b \\ -c & a\end{bmatrix}$
+
+=== Properties of Invertible Matrices ===
+
+If $A$ and $B$ are invertible matrices and $\mathbf{x}$ and $\mathbf{y}$ are vectors:
+1. $(A^{-1})^{-1} = A$
+2. $(AB)^{-1} = B^{-1}A^{-1}$
+3. The equation $A\mathbf{x} = 0$ has only the trivial solution.
+4. The columns of $A$ form a linearly independent set.
+5. The equation $A\mathbf{x} = \mathbf{y}$ has at least one solution.
+6. $A^T$ is an invertible matrix.
+7. The number $0$ is not an eigenvalue of $A$.
+8. $\mathrm{det}\;A \neq 0$
+
+=== The Leslie Matrix ===
+
 == Linear Maps, Eigenvectors and Eigenvalues ==
 
 === Eigenvalues and Eigenvectors ===

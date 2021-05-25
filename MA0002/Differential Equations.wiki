@@ -57,6 +57,26 @@ L(t) = A\left[1-\left(1-\frac{L_0}{A}\right)e^{-kt}\right]
 
 The quantity $K$ is called the *carrying capacity*, and $r$ is the growth rate.
 
+{{$
+N(t) = \frac
+  {K}
+  {1-e^{-rt}/C}
+}}$
+
+{{$
+C = \frac
+  {N_0}
+  {N_0-K}
+}}$
+
+{{$
+N(t) = \frac{K}{1+(\frac{K}{N_0}-1)e^{-rt}}
+}}$
+
+{{$
+\lim_{t \to \infty} N(t) = K
+}}$
+
 == Equilibria and Their Stability ==
 
 If $\hat{y}$ satisfies

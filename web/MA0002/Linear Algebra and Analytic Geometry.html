@@ -17,6 +17,311 @@
       
 <div id="Linear Algebra and Analytic Geometry"><h1 id="Linear Algebra and Analytic Geometry" class="header"><a href="#Linear Algebra and Analytic Geometry">Linear Algebra and Analytic Geometry</a></h1></div>
 
+<div id="Linear Algebra and Analytic Geometry-Matrices"><h2 id="Matrices" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices">Matrices</a></h2></div>
+
+<div id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations"><h3 id="Basic Matrix Operations" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations">Basic Matrix Operations</a></h3></div>
+
+<p>
+Let \(A\) be an \(m \times n\) matrix:
+</p>
+
+\[
+A = \begin{bmatrix}
+  a_{11} &amp; a_{12} &amp; \ldots &amp; a_{1n} \\
+  a_{21} &amp; a_{22} &amp; \ldots &amp; a_{2n} \\
+  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+  a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn}
+\end{bmatrix}
+\]
+
+<p>
+The matrix with all its entries equal to zero is called the <span id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations-zero matrix"></span><strong id="zero matrix">zero matrix</strong> and is denoted by <span id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations-0"></span><strong id="0">0</strong>.
+</p>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations-Equality"></span><strong id="Equality">Equality</strong>
+</p>
+
+<p>
+\(A = B\) iff. \(a_{ij} = b_{ij}\) for all \(1 \leq i \leq m\) and \(1 \leq j \leq n\).
+</p>
+
+<p>
+<em>All corresponding entries must be equal</em>
+</p>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations-Addition"></span><strong id="Addition">Addition</strong>
+</p>
+
+<p>
+\(C = A + B\) with entries \(c_{ij} = a_{ij} + b_{ij}\) for \(1 \leq i \leq m, 1 \leq j \leq n\).
+</p>
+
+<p>
+<em>Add corresponding entries</em>
+</p>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations-Scalar Multiplication"></span><strong id="Scalar Multiplication">Scalar Multiplication</strong>
+</p>
+
+<p>
+Let \(c\) be a scalar.
+</p>
+
+<p>
+\(cA\) with entries \(ca_{ij}\) for \(1 \leq i \leq m\) and \(1 \leq j \leq n\).
+</p>
+
+<p>
+<em>Multiply every entry by the scalar</em>
+</p>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations-Transposition"></span><strong id="Transposition">Transposition</strong>
+</p>
+
+<p>
+\(A^{T} or A'\) with entries \(a'_{ij} = a_{ji}\).
+</p>
+
+<p>
+<em>Flip along the diagonal</em>
+</p>
+
+<div id="Linear Algebra and Analytic Geometry-Matrices-Matrix Multiplication"><h3 id="Matrix Multiplication" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-Matrix Multiplication">Matrix Multiplication</a></h3></div>
+
+<p>
+If \(A\) is an \(m \times l\) matrix and \(B\) is an \(l \times n\) matrix,
+</p>
+
+<p>
+then \(C = AB\) is an \(m \times n\) matrix with entries
+</p>
+\[
+c_{ij} = \sum_{k=1}^{l}a_{ik}b_{kj}
+\]
+<p>
+for \(1 \leq i \leq m\) and \(1 \leq j \leq n\).
+</p>
+
+<p>
+Entry \(c_{ij}\) is the sum of the products of the \(i\)th row of \(A\) and the \(j\)th column of \(B\).
+</p>
+
+<p>
+<em>How to multiply:</em>
+</p>
+
+\[
+A = \begin{bmatrix}
+  a &amp; b &amp; c \\
+  d &amp; e &amp; f
+\end{bmatrix}
+\]
+\[
+B = \begin{bmatrix}
+  g &amp; h \\
+  i &amp; j \\
+  k &amp; l
+\end{bmatrix}
+\]
+
+<p>
+<em>Chop columns</em>
+</p>
+\[
+A_1 = \begin{bmatrix} a \\ d \end{bmatrix},
+A_2 = \begin{bmatrix} b \\ e \end{bmatrix},
+A_3 = \begin{bmatrix} c \\ f \end{bmatrix}
+\]
+
+\[
+B_1 = \begin{bmatrix} g \\ i \\ k \end{bmatrix},
+B_2 = \begin{bmatrix} h \\ j \\ l \end{bmatrix}
+\]
+
+<p>
+Rotate \(B\)'s columns:
+</p>
+
+\[
+B_1' = \begin{bmatrix} g &amp; i &amp; k \end{bmatrix},
+B_2' = \begin{bmatrix} h &amp; j &amp; l \end{bmatrix}
+\]
+
+<p>
+Now multiply entries from \(B_i'\) with the vectors \(A_i\):
+</p>
+
+\[
+\begin{align}
+C &amp; = \begin{bmatrix} gA_1 + iA_2 + kA_3 &amp; hA_1 + jA_2 + lA_3 \end{bmatrix} \\
+&amp; = \begin{bmatrix}
+  g\begin{bmatrix} a \\ d \end{bmatrix} + i\begin{bmatrix} b \\ e \end{bmatrix} + k\begin{bmatrix} c \\ f \end{bmatrix}
+  &amp; h\begin{bmatrix} a \\ d \end{bmatrix} + j\begin{bmatrix} b \\ e \end{bmatrix} + l\begin{bmatrix} c \\ f \end{bmatrix}
+\end{bmatrix} \\
+&amp; = \begin{bmatrix}
+  ga + ib + kc &amp; ha + jb + lc \\
+  gd + ie + kf &amp; hd + je + lf
+\end{bmatrix}
+\end{align}
+\]
+
+<p>
+For the product \(AB\) to be defined, the number of columns in \(A\) must equal the number of rows in \(B\).
+</p>
+
+<p>
+In general \(AB \neq BA\).
+</p>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Matrices-Matrix Multiplication-Some properties"></span><strong id="Some properties">Some properties</strong>
+</p>
+
+<ol>
+<li>
+\((A+B)C = AC + BC\)
+
+<li>
+\(A(B+C) = AB + AC\)
+
+<li>
+\((AB)C = A(BC)\)
+
+<li>
+\(A\mathbf{0} = \mathbf{0}A = \mathbf{0}\)
+
+</ol>
+
+<p>
+The <span id="Linear Algebra and Analytic Geometry-Matrices-Matrix Multiplication-identity matrix"></span><strong id="identity matrix">identity matrix</strong>:
+</p>
+
+\[
+I = \begin{bmatrix}
+  1 &amp; 0 &amp; 0 &amp; \ldots &amp; 0 \\
+  0 &amp; 1 &amp; 0 &amp; \ldots &amp; 0 \\
+  \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+  0 &amp; 0 &amp; 0 &amp;\ldots &amp; 1
+\end{bmatrix}
+\]
+
+<p>
+\(I_n\) is a matrix with the diagonal entries equal to 1 while all the others are 0.
+</p>
+
+<p>
+If \(A\) is an \(m \times n\) matrix, then
+</p>
+
+<p>
+\(AI_n = I_mA = A\)
+</p>
+
+<div id="Linear Algebra and Analytic Geometry-Matrices-Inverse Matrices"><h3 id="Inverse Matrices" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-Inverse Matrices">Inverse Matrices</a></h3></div>
+
+<p>
+Let \(A\) be an \(n \times n\) square matrix. If there exists an \(n \times n\) square matrix \(B\) such that
+</p>
+
+<p>
+\(AB = BA = I_n\)
+</p>
+
+<p>
+then \(B\) is called the inverse matrix of \(A\) and is denoted \(A^{-1}\).
+</p>
+
+<p>
+If \(A\) has an inverse matrix, \(A\) is called <span id="Linear Algebra and Analytic Geometry-Matrices-Inverse Matrices-invertible"></span><strong id="invertible">invertible</strong> or <span id="Linear Algebra and Analytic Geometry-Matrices-Inverse Matrices-nonsingular"></span><strong id="nonsingular">nonsingular</strong>;
+if \(A\) does not have an inverse matrix, \(A\) is called <span id="Linear Algebra and Analytic Geometry-Matrices-Inverse Matrices-singular"></span><strong id="singular">singular</strong>.
+The inverse matrix, if it exists, is unique: If \(B = A^{-1}\) and \(C = A^{-1}\) then \(B = C\).
+</p>
+
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Matrices-Inverse Matrices-Applications"></span><strong id="Applications">Applications</strong>
+</p>
+
+<p>
+A system of linear equations can be represented as:
+</p>
+
+<p>
+\(AX = B\)
+</p>
+
+<p>
+then
+</p>
+
+<p>
+\(X = A^{-1}B\)
+</p>
+
+<div id="Linear Algebra and Analytic Geometry-Matrices-The Determinant"><h3 id="The Determinant" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-The Determinant">The Determinant</a></h3></div>
+
+<p>
+<em>It determines stuff!</em>
+</p>
+
+<p>
+For an \(2 \times 2\) matrix:
+</p>
+
+<p>
+\(\mathrm{det}\;A = \begin{vmatrix}a &amp; b \\ c &amp; d\end{vmatrix} = ad - bc\)
+</p>
+
+<p>
+For any square matrix, \(A\) is invertible iff \(\mathrm{det}\;A \neq 0\).
+</p>
+
+<p>
+For a \(2 \times 2\) matrix \(A = \begin{bmatrix}a &amp; b \\ c &amp; d\end{bmatrix}\):
+</p>
+
+<p>
+\(A^{-1} = \frac{1}{\mathrm{det}\;A} \begin{bmatrix}d &amp; -b \\ -c &amp; a\end{bmatrix}\)
+</p>
+
+<div id="Linear Algebra and Analytic Geometry-Matrices-Properties of Invertible Matrices"><h3 id="Properties of Invertible Matrices" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-Properties of Invertible Matrices">Properties of Invertible Matrices</a></h3></div>
+
+<p>
+If \(A\) and \(B\) are invertible matrices and \(\mathbf{x}\) and \(\mathbf{y}\) are vectors:
+</p>
+<ol>
+<li>
+\((A^{-1})^{-1} = A\)
+
+<li>
+\((AB)^{-1} = B^{-1}A^{-1}\)
+
+<li>
+The equation \(A\mathbf{x} = 0\) has only the trivial solution.
+
+<li>
+The columns of \(A\) form a linearly independent set.
+
+<li>
+The equation \(A\mathbf{x} = \mathbf{y}\) has at least one solution.
+
+<li>
+\(A^T\) is an invertible matrix.
+
+<li>
+The number \(0\) is not an eigenvalue of \(A\).
+
+<li>
+\(\mathrm{det}\;A \neq 0\)
+
+</ol>
+
+<div id="Linear Algebra and Analytic Geometry-Matrices-The Leslie Matrix"><h3 id="The Leslie Matrix" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-The Leslie Matrix">The Leslie Matrix</a></h3></div>
+
 <div id="Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues"><h2 id="Linear Maps, Eigenvectors and Eigenvalues" class="header"><a href="#Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues">Linear Maps, Eigenvectors and Eigenvalues</a></h2></div>
 
 <div id="Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors"><h3 id="Eigenvalues and Eigenvectors" class="header"><a href="#Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors">Eigenvalues and Eigenvectors</a></h3></div>
@@ -90,7 +395,7 @@ A \begin{bmatrix}x_1\\x_2\end{bmatrix} = \lambda \begin{bmatrix}x_1\\x_2\end{bma
 \]
 
     </div>
-    <p><small>Page created on 2021-03-05</small></p>
+    <p><small>Page created on 2021-05-25</small></p>
     <script src="../prism.js"></script>
   </body>
 </html>
