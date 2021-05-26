@@ -1,8 +1,98 @@
-= Linear Algebra and Analytic Geometry =
+= Contents =
+  - [[#Linear Algebra|Linear Algebra]]
+    - [[#Linear Algebra#Linear Systems|Linear Systems]]
+    - [[#Linear Algebra#Matrices|Matrices]]
+      - [[#Linear Algebra#Matrices#Basic Matrix Operations|Basic Matrix Operations]]
+      - [[#Linear Algebra#Matrices#Matrix Multiplication|Matrix Multiplication]]
+      - [[#Linear Algebra#Matrices#The Identity Matrix™|The Identity Matrix™]]
+      - [[#Linear Algebra#Matrices#Inverse Matrices|Inverse Matrices]]
+      - [[#Linear Algebra#Matrices#The Determinant|The Determinant]]
+      - [[#Linear Algebra#Matrices#Properties of Invertible Matrices|Properties of Invertible Matrices]]
+      - [[#Linear Algebra#Matrices#Solving Systems of Linear Equations|Solving Systems of Linear Equations]]
+      - [[#Linear Algebra#Matrices#An Application: The Leslie Matrix|An Application: The Leslie Matrix]]
+    - [[#Linear Algebra#Linear Maps, Eigenvectors and Eigenvalues|Linear Maps, Eigenvectors and Eigenvalues]]
+      - [[#Linear Algebra#Linear Maps, Eigenvectors and Eigenvalues#Linear Maps|Linear Maps]]
+      - [[#Linear Algebra#Linear Maps, Eigenvectors and Eigenvalues#Eigenvalues and Eigenvectors|Eigenvalues and Eigenvectors]]
+
+= Linear Algebra =
+
+== Linear Systems ==
+
+A system of $m$ equations and $n$ variables:
+
+{{$
+\begin{align}
+  a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n & = b_1 \\
+  a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n & = b_2 \\
+  \vdots \\
+  a_{m1}x_1 + a_{m2}x_2 + \dots + a_{mn}x_n & = b_m
+\end{align}
+}}$
+
+We want to transform the system to an equivalent system in upper triangular form
+with three basic operations:
+1. Multiply an equation by a nonzero constant.
+2. Adding one equation to another.
+3. Rearranging the order of equations.
+
+{{$
+\begin{align}
+  a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n & = b_1 \\
+  a_{22}x_2 + \dots + a_{2n}x_n & = b_2 \\
+  \vdots \\
+  a_{mn}x_n & = b_m
+\end{align}
+}}$
+
+This method is also called *Gaussian elimination*.
+
+A general system may have (2d graphical representation):
+1. Exactly one solution. (Lines crossing)
+2. No solutions. (Parallel lines)
+3. Infinitely many solutions. (Coinciding lines)
+
+* When a system has no solutions, we say that the system is *inconsistent*.
+* When a system has fewer equations that variables, we say the system is *underdetermined*.
+* When a system has more equations than variables, we say the system is *overdetermined*.
+
+Overdetermined systems are often inconsistent.
+
+*Shorthand Notation: The Matrix™*
+
+{{$
+A = \begin{bmatrix}
+  a_{11} & a_{12} & \ldots & a_{1n} \\
+  a_{21} & a_{22} & \ldots & a_{2n} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  a_{m1} & a_{m2} & \ldots & a_{mn}
+\end{bmatrix}
+}}$
+
+The matrix $A$ can represent the coefficients of a system of equations, a.k.a the *coefficient matrix*.
+
+The augmented matrix, describing entire the system,
+
+{{$
+\begin{bmatrix}
+  a_{11} & a_{12} & \ldots & a_{1n} & b_1 \\
+  a_{21} & a_{22} & \ldots & a_{2n} & b_2 \\
+  \vdots & \vdots & \ddots & \vdots & \vdots \\
+  a_{m1} & a_{m2} & \ldots & a_{mn} & b_m
+\end{bmatrix}
+}}$
+
+is a compact way of describing it.
 
 == Matrices ==
 
+*Notation*
+* Matrices: $A$.
+* (Column) Vectors: $\vec{x}$
+* Scalars: $c$
+
 === Basic Matrix Operations ===
+
+TL;DR: [[https://numpy.org/doc/stable/reference/routines.linalg.html|Use a computer]]
 
 Let $A$ be an $m \times n$ matrix:
 
@@ -117,7 +207,7 @@ In general $AB \neq BA$.
 3. $(AB)C = A(BC)$
 4. $A\mathbf{0} = \mathbf{0}A = \mathbf{0}$
 
-The *identity matrix*:
+=== The Identity Matrix™ ===
 
 {{$
 I = \begin{bmatrix}
@@ -171,21 +261,251 @@ For a $2 \times 2$ matrix $A = \begin{bmatrix}a & b \\ c & d\end{bmatrix}$:
 
 $A^{-1} = \frac{1}{\mathrm{det}\;A} \begin{bmatrix}d & -b \\ -c & a\end{bmatrix}$
 
+For $3 \times 3$ matrices it is a bit more complicated:
+
+{{$
+A =
+\begin{bmatrix}
+a & b & c \\
+d & e & f \\
+g & h & i
+\end{bmatrix}
+}}$
+
+TL;DR: $aei + bfg + cdh - ceg - bdi - afh$
+
+*A short sidetrack*
+
+If $A$ is a square matrix, then the _minor_, $M_{ij}$, of the entry in the $i$th row and $j$th column
+is the determinant of the submatrix formed by deleting the $i$th row and $j$th column.
+
+{{$
+\begin{align}
+  M_{1,1} & =
+  \begin{vmatrix}
+    ❌ & ❌ & ❌ \\
+    ❌ & e & f \\
+    ❌ & h & i
+  \end{vmatrix}
+  =
+  \begin{vmatrix}
+    e & f \\
+    h & i
+  \end{vmatrix}
+  = ei - fh \\
+
+  M_{1,2} & =
+  \begin{vmatrix}
+    ❌ & ❌ & ❌ \\
+    d & ❌ & f \\
+    g & ❌ & i
+  \end{vmatrix}
+  =
+  \begin{vmatrix}
+    d & f \\
+    g & i
+  \end{vmatrix}
+  = di - fg \\
+
+  M_{1,3} & =
+  \begin{vmatrix}
+    ❌ & ❌ & ❌ \\
+    d & e & ❌ \\
+    g & h & ❌
+  \end{vmatrix}
+  =
+  \begin{vmatrix}
+    d & e \\
+    g & h
+  \end{vmatrix}
+  = dh - eg
+\end{align}
+}}$
+
+The _cofactor_, $C_{i,j}$, is obtained by multiplying the minor by $(-1)^{i+j}$:
+
+{{$
+\begin{bmatrix}
++ & - & + \\
+- & + & - \\
++ & - & +
+\end{bmatrix}
+}}$
+
+{{$
+\begin{align}
+  C_{1,1} = M_{1,1}(-1)^{1+1} & = ei - fh \\
+  C_{1,2} = M_{1,2}(-1)^{1+2} & = -(di - fg) \\
+  C_{1,3} = M_{1,3}(-1)^{1+3} & = dh - eg
+\end{align}
+}}$
+
+Finally, the determinant of a $3 \times 3$ matrix (with visual aid):
+{{$
+  \begin{bmatrix}
+    a & ❌ & ❌ \\
+    ❌ & e & f \\
+    ❌ & h & i
+  \end{bmatrix}
+  \begin{bmatrix}
+    ❌ & b & ❌ \\
+    d & ❌ & f \\
+    g & ❌ & i
+  \end{bmatrix}
+  \begin{bmatrix}
+    ❌ & ❌ & c \\
+    d & e & ❌ \\
+    g & h & ❌
+  \end{bmatrix}
+}}$
+{{$
+\begin{align}
+  & aC_{1,1} + bC_{1,2} + cC{1,3} = \\
+  & aM_{1,1} - bM_{1,2} + cM{1,3} = \\
+  & a\begin{vmatrix}
+      e & f \\
+      h & i
+    \end{vmatrix}
+    -b\begin{vmatrix}
+      d & f \\
+      g & i
+    \end{vmatrix}
+    c\begin{vmatrix}
+      d & e \\
+      g & h
+    \end{vmatrix}
+    = \\
+  & a(ei-fh) - b(di-fg) + c(dh-eg) = \\
+  & aei + bfg + cdh - afh - bdi - ceg
+\end{align}
+}}$
+
+To make the computation easier, try to making of $a,b,c$ 0 with row operations.
+
+Or, [[https://numpy.org/doc/stable/reference/generated/numpy.linalg.det.html| just use a computer]]
+
+*Row Operations and Determinants*
+
+(As used in Gaussian elimination)
+
+Let $A$ be a square matrix.
+1. If a multiple of one row of $A$ is added to another row to produce matrix B, then $\mathrm{det}\;B = \mathrm{det}\;A$.
+2. If two rows of $A$ are interchanged to produce $B$, then $\mathrm{det}\;B = -\mathrm{det}\;A$.
+3. If one row of $A$ is multiplied by $k$ to produce $B$, then $\mathrm{det}\;B = k \cdot \mathrm{det}\;A$.
+
 === Properties of Invertible Matrices ===
 
-If $A$ and $B$ are invertible matrices and $\mathbf{x}$ and $\mathbf{y}$ are vectors:
+If $A$ and $B$ are $n \times n$ invertible matrices and $\vec{x}$ and $\vec{y}$ are vectors:
 1. $(A^{-1})^{-1} = A$
 2. $(AB)^{-1} = B^{-1}A^{-1}$
-3. The equation $A\mathbf{x} = 0$ has only the trivial solution.
-4. The columns of $A$ form a linearly independent set.
-5. The equation $A\mathbf{x} = \mathbf{y}$ has at least one solution.
-6. $A^T$ is an invertible matrix.
-7. The number $0$ is not an eigenvalue of $A$.
-8. $\mathrm{det}\;A \neq 0$
+3. $A$ is row equivalent to the $n \times n$ identity matrix.
+4. The equation $A\vec{x} = \vec{0}$ has only the trivial solution.
+5. The columns of $A$ form a linearly independent set.
+6. The linear transformation $\vec{x} \to A\vec{x}$ is one-to-one.
+7. The equation $A\vec{x} = \vec{y}$ has at least one solution.
+8. $A^T$ is an invertible matrix.
+9. The number $0$ is not an eigenvalue of $A$.
+10. $\mathrm{det}\;A \neq 0$
 
-=== The Leslie Matrix ===
+=== Solving Systems of Linear Equations ===
+
+Let $A$ be a square coefficient matrix, $\vec{x}$ be the vector of variables and $\vec{b}$ be a vector of constants.
+
+If $A$ is invertible, the equation $A\vec{x} = \vec{b}$ has the solution $\vec{x} = A^{-1}\vec{b}$.
+
+=== An Application: The Leslie Matrix ===
+
+$N(t)$ is population over time, where $t = 0,1,2,\dots$ measured at discrete times (e.g. annually).
+
+$N(t+1) = RN(t)$, $N(0) = N_0$, $N(t) = R^tN_0$
+
+$N_x(t)$ is the number of females of age $x$ at time $t$.
+
+{{$
+N(t) =
+\begin{bmatrix}
+  N_0(t) \\
+  N_1(t) \\
+  N_2(t) \\
+  \vdots
+\end{bmatrix}
+}}$
+
+Let $P_x$ be the fraction of females age $x$ at time $t$ that survive to time $t+1$.
+Let $F_x$ be the average number of surviving female offspring per female individual age $x$.
+
+Then the Leslie matrix of the population is:
+{{$
+L = \begin{bmatrix}
+F_0    & F_1    & F_2    & \ldots & F_{m-1} & F_m    \\
+P_0    & 0      & \ldots & \ldots & \ldots  & 0      \\
+0      & P_1    & 0      & \ldots & \ldots  & 0      \\
+\vdots & \ldots & \ldots & \ldots & \ldots  & \vdots \\
+0      & \ldots & \ldots & 0      & P_{m-1} & 0
+\end{bmatrix}
+}}$
+
+The matrix is $(m+1) \times (m+1)$ reflecting $m$ age classes.
+
+$N(t+1) = LN(t)$
+
+{{$
+\begin{bmatrix}
+  N_0(t+1) \\
+  N_1(t+1) \\
+  N_2(t+1) \\
+  \vdots
+\end{bmatrix}
+=
+\begin{bmatrix}
+F_0    & F_1    & F_2    & \ldots & F_{m-1} & F_m    \\
+P_0    & 0      & \ldots & \ldots & \ldots  & 0      \\
+0      & P_1    & 0      & \ldots & \ldots  & 0      \\
+\vdots & \ldots & \ldots & \ldots & \ldots  & \vdots \\
+0      & \ldots & \ldots & 0      & P_{m-1} & 0
+\end{bmatrix}
+\begin{bmatrix}
+  N_0(t) \\
+  N_1(t) \\
+  N_2(t) \\
+  \vdots
+\end{bmatrix}
+}}$
 
 == Linear Maps, Eigenvectors and Eigenvalues ==
+
+=== Linear Maps ===
+
+A map, $\vec{x} \to A\vec{x}$, is a function.
+
+A *linear map* is a map between two vector spaces that preserves the operations of vector addition and scalar multiplication:
+
+1. $A(\vec{x} + \vec{y}) = A\vec{x} + A\vec{y}$
+2. $A(c\vec{x}) = c(A\vec{x})$
+
+In other words, a linear map represents a linear transformation of the space.
+Such a transformation keeps grid lines parallel and evenly spaced.
+
+*Identity Map*
+The simplest linear map is represented by the [[#The Identity Matrix™|identiy matrix]]:
+
+$I\vec{x} = \vec{x}$
+
+The transformation keeps the vector $\vec{x}$ unchanged.
+
+*Rotation*
+
+[[https://xkcd.com/184/|Relevant XKCD]]
+
+{{$
+R_\theta = \begin{bmatrix}
+  \mathrm{cos}\;\theta & -\mathrm{sin}\;\theta \\
+  \mathrm{sin}\;\theta & \mathrm{cos}\;\theta
+\end{bmatrix}
+}}$
+
+_Yes. It rotates a vector._
+
 
 === Eigenvalues and Eigenvectors ===
 
@@ -195,7 +515,7 @@ If $A$ is a square matrix,
 \vec{x} \neq \vec{0}
 }}$
 
-and
+$\lambda$ is a scalar and
 
 {{$
 A \vec{x} = \lambda \vec{x}

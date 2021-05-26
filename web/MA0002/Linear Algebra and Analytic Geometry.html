@@ -15,11 +15,191 @@
   <body class="line-numbers match-braces">
     <div class="content">
       
-<div id="Linear Algebra and Analytic Geometry"><h1 id="Linear Algebra and Analytic Geometry" class="header"><a href="#Linear Algebra and Analytic Geometry">Linear Algebra and Analytic Geometry</a></h1></div>
+<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<ul>
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra">Linear Algebra</a>
 
-<div id="Linear Algebra and Analytic Geometry-Matrices"><h2 id="Matrices" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices">Matrices</a></h2></div>
+<ul>
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Linear Systems">Linear Systems</a>
 
-<div id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations"><h3 id="Basic Matrix Operations" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations">Basic Matrix Operations</a></h3></div>
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Matrices">Matrices</a>
+
+<ul>
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Matrices-Basic Matrix Operations">Basic Matrix Operations</a>
+
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Matrices-Matrix Multiplication">Matrix Multiplication</a>
+
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Matrices-The Identity Matrix™">The Identity Matrix™</a>
+
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Matrices-Inverse Matrices">Inverse Matrices</a>
+
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Matrices-The Determinant">The Determinant</a>
+
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Matrices-Properties of Invertible Matrices">Properties of Invertible Matrices</a>
+
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Matrices-Solving Systems of Linear Equations">Solving Systems of Linear Equations</a>
+
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Matrices-An Application: The Leslie Matrix">An Application: The Leslie Matrix</a>
+
+</ul>
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues">Linear Maps, Eigenvectors and Eigenvalues</a>
+
+<ul>
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues-Linear Maps">Linear Maps</a>
+
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors">Eigenvalues and Eigenvectors</a>
+
+</ul>
+</ul>
+</ul>
+
+<div id="Linear Algebra"><h1 id="Linear Algebra" class="header"><a href="#Linear Algebra">Linear Algebra</a></h1></div>
+
+<div id="Linear Algebra-Linear Systems"><h2 id="Linear Systems" class="header"><a href="#Linear Algebra-Linear Systems">Linear Systems</a></h2></div>
+
+<p>
+A system of \(m\) equations and \(n\) variables:
+</p>
+
+\[
+\begin{align}
+  a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n &amp; = b_1 \\
+  a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n &amp; = b_2 \\
+  \vdots \\
+  a_{m1}x_1 + a_{m2}x_2 + \dots + a_{mn}x_n &amp; = b_m
+\end{align}
+\]
+
+<p>
+We want to transform the system to an equivalent system in upper triangular form
+with three basic operations:
+</p>
+<ol>
+<li>
+Multiply an equation by a nonzero constant.
+
+<li>
+Adding one equation to another.
+
+<li>
+Rearranging the order of equations.
+
+</ol>
+
+\[
+\begin{align}
+  a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n &amp; = b_1 \\
+  a_{22}x_2 + \dots + a_{2n}x_n &amp; = b_2 \\
+  \vdots \\
+  a_{mn}x_n &amp; = b_m
+\end{align}
+\]
+
+<p>
+This method is also called <span id="Linear Algebra-Linear Systems-Gaussian elimination"></span><strong id="Gaussian elimination">Gaussian elimination</strong>.
+</p>
+
+<p>
+A general system may have (2d graphical representation):
+</p>
+<ol>
+<li>
+Exactly one solution. (Lines crossing)
+
+<li>
+No solutions. (Parallel lines)
+
+<li>
+Infinitely many solutions. (Coinciding lines)
+
+</ol>
+
+<ul>
+<li>
+When a system has no solutions, we say that the system is <span id="Linear Algebra-Linear Systems-inconsistent"></span><strong id="inconsistent">inconsistent</strong>.
+
+<li>
+When a system has fewer equations that variables, we say the system is <span id="Linear Algebra-Linear Systems-underdetermined"></span><strong id="underdetermined">underdetermined</strong>.
+
+<li>
+When a system has more equations than variables, we say the system is <span id="Linear Algebra-Linear Systems-overdetermined"></span><strong id="overdetermined">overdetermined</strong>.
+
+</ul>
+
+<p>
+Overdetermined systems are often inconsistent.
+</p>
+
+<p>
+<span id="Linear Algebra-Linear Systems-Shorthand Notation: The Matrix™"></span><strong id="Shorthand Notation: The Matrix™">Shorthand Notation: The Matrix™</strong>
+</p>
+
+\[
+A = \begin{bmatrix}
+  a_{11} &amp; a_{12} &amp; \ldots &amp; a_{1n} \\
+  a_{21} &amp; a_{22} &amp; \ldots &amp; a_{2n} \\
+  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+  a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn}
+\end{bmatrix}
+\]
+
+<p>
+The matrix \(A\) can represent the coefficients of a system of equations, a.k.a the <span id="Linear Algebra-Linear Systems-coefficient matrix"></span><strong id="coefficient matrix">coefficient matrix</strong>.
+</p>
+
+<p>
+The augmented matrix, describing entire the system,
+</p>
+
+\[
+\begin{bmatrix}
+  a_{11} &amp; a_{12} &amp; \ldots &amp; a_{1n} &amp; b_1 \\
+  a_{21} &amp; a_{22} &amp; \ldots &amp; a_{2n} &amp; b_2 \\
+  \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
+  a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn} &amp; b_m
+\end{bmatrix}
+\]
+
+<p>
+is a compact way of describing it.
+</p>
+
+<div id="Linear Algebra-Matrices"><h2 id="Matrices" class="header"><a href="#Linear Algebra-Matrices">Matrices</a></h2></div>
+
+<p>
+<span id="Linear Algebra-Matrices-Notation"></span><strong id="Notation">Notation</strong>
+</p>
+<ul>
+<li>
+Matrices: \(A\).
+
+<li>
+(Column) Vectors: \(\vec{x}\)
+
+<li>
+Scalars: \(c\)
+
+</ul>
+
+<div id="Linear Algebra-Matrices-Basic Matrix Operations"><h3 id="Basic Matrix Operations" class="header"><a href="#Linear Algebra-Matrices-Basic Matrix Operations">Basic Matrix Operations</a></h3></div>
+
+<p>
+TL;DR: <a href="https://numpy.org/doc/stable/reference/routines.linalg.html">Use a computer</a>
+</p>
 
 <p>
 Let \(A\) be an \(m \times n\) matrix:
@@ -35,11 +215,11 @@ A = \begin{bmatrix}
 \]
 
 <p>
-The matrix with all its entries equal to zero is called the <span id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations-zero matrix"></span><strong id="zero matrix">zero matrix</strong> and is denoted by <span id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations-0"></span><strong id="0">0</strong>.
+The matrix with all its entries equal to zero is called the <span id="Linear Algebra-Matrices-Basic Matrix Operations-zero matrix"></span><strong id="zero matrix">zero matrix</strong> and is denoted by <span id="Linear Algebra-Matrices-Basic Matrix Operations-0"></span><strong id="0">0</strong>.
 </p>
 
 <p>
-<span id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations-Equality"></span><strong id="Equality">Equality</strong>
+<span id="Linear Algebra-Matrices-Basic Matrix Operations-Equality"></span><strong id="Equality">Equality</strong>
 </p>
 
 <p>
@@ -51,7 +231,7 @@ The matrix with all its entries equal to zero is called the <span id="Linear Alg
 </p>
 
 <p>
-<span id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations-Addition"></span><strong id="Addition">Addition</strong>
+<span id="Linear Algebra-Matrices-Basic Matrix Operations-Addition"></span><strong id="Addition">Addition</strong>
 </p>
 
 <p>
@@ -63,7 +243,7 @@ The matrix with all its entries equal to zero is called the <span id="Linear Alg
 </p>
 
 <p>
-<span id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations-Scalar Multiplication"></span><strong id="Scalar Multiplication">Scalar Multiplication</strong>
+<span id="Linear Algebra-Matrices-Basic Matrix Operations-Scalar Multiplication"></span><strong id="Scalar Multiplication">Scalar Multiplication</strong>
 </p>
 
 <p>
@@ -79,7 +259,7 @@ Let \(c\) be a scalar.
 </p>
 
 <p>
-<span id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations-Transposition"></span><strong id="Transposition">Transposition</strong>
+<span id="Linear Algebra-Matrices-Basic Matrix Operations-Transposition"></span><strong id="Transposition">Transposition</strong>
 </p>
 
 <p>
@@ -90,7 +270,7 @@ Let \(c\) be a scalar.
 <em>Flip along the diagonal</em>
 </p>
 
-<div id="Linear Algebra and Analytic Geometry-Matrices-Matrix Multiplication"><h3 id="Matrix Multiplication" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-Matrix Multiplication">Matrix Multiplication</a></h3></div>
+<div id="Linear Algebra-Matrices-Matrix Multiplication"><h3 id="Matrix Multiplication" class="header"><a href="#Linear Algebra-Matrices-Matrix Multiplication">Matrix Multiplication</a></h3></div>
 
 <p>
 If \(A\) is an \(m \times l\) matrix and \(B\) is an \(l \times n\) matrix,
@@ -178,7 +358,7 @@ In general \(AB \neq BA\).
 </p>
 
 <p>
-<span id="Linear Algebra and Analytic Geometry-Matrices-Matrix Multiplication-Some properties"></span><strong id="Some properties">Some properties</strong>
+<span id="Linear Algebra-Matrices-Matrix Multiplication-Some properties"></span><strong id="Some properties">Some properties</strong>
 </p>
 
 <ol>
@@ -196,9 +376,7 @@ In general \(AB \neq BA\).
 
 </ol>
 
-<p>
-The <span id="Linear Algebra and Analytic Geometry-Matrices-Matrix Multiplication-identity matrix"></span><strong id="identity matrix">identity matrix</strong>:
-</p>
+<div id="Linear Algebra-Matrices-The Identity Matrix™"><h3 id="The Identity Matrix™" class="header"><a href="#Linear Algebra-Matrices-The Identity Matrix™">The Identity Matrix™</a></h3></div>
 
 \[
 I = \begin{bmatrix}
@@ -221,7 +399,7 @@ If \(A\) is an \(m \times n\) matrix, then
 \(AI_n = I_mA = A\)
 </p>
 
-<div id="Linear Algebra and Analytic Geometry-Matrices-Inverse Matrices"><h3 id="Inverse Matrices" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-Inverse Matrices">Inverse Matrices</a></h3></div>
+<div id="Linear Algebra-Matrices-Inverse Matrices"><h3 id="Inverse Matrices" class="header"><a href="#Linear Algebra-Matrices-Inverse Matrices">Inverse Matrices</a></h3></div>
 
 <p>
 Let \(A\) be an \(n \times n\) square matrix. If there exists an \(n \times n\) square matrix \(B\) such that
@@ -236,14 +414,14 @@ then \(B\) is called the inverse matrix of \(A\) and is denoted \(A^{-1}\).
 </p>
 
 <p>
-If \(A\) has an inverse matrix, \(A\) is called <span id="Linear Algebra and Analytic Geometry-Matrices-Inverse Matrices-invertible"></span><strong id="invertible">invertible</strong> or <span id="Linear Algebra and Analytic Geometry-Matrices-Inverse Matrices-nonsingular"></span><strong id="nonsingular">nonsingular</strong>;
-if \(A\) does not have an inverse matrix, \(A\) is called <span id="Linear Algebra and Analytic Geometry-Matrices-Inverse Matrices-singular"></span><strong id="singular">singular</strong>.
+If \(A\) has an inverse matrix, \(A\) is called <span id="Linear Algebra-Matrices-Inverse Matrices-invertible"></span><strong id="invertible">invertible</strong> or <span id="Linear Algebra-Matrices-Inverse Matrices-nonsingular"></span><strong id="nonsingular">nonsingular</strong>;
+if \(A\) does not have an inverse matrix, \(A\) is called <span id="Linear Algebra-Matrices-Inverse Matrices-singular"></span><strong id="singular">singular</strong>.
 The inverse matrix, if it exists, is unique: If \(B = A^{-1}\) and \(C = A^{-1}\) then \(B = C\).
 </p>
 
 
 <p>
-<span id="Linear Algebra and Analytic Geometry-Matrices-Inverse Matrices-Applications"></span><strong id="Applications">Applications</strong>
+<span id="Linear Algebra-Matrices-Inverse Matrices-Applications"></span><strong id="Applications">Applications</strong>
 </p>
 
 <p>
@@ -262,7 +440,7 @@ then
 \(X = A^{-1}B\)
 </p>
 
-<div id="Linear Algebra and Analytic Geometry-Matrices-The Determinant"><h3 id="The Determinant" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-The Determinant">The Determinant</a></h3></div>
+<div id="Linear Algebra-Matrices-The Determinant"><h3 id="The Determinant" class="header"><a href="#Linear Algebra-Matrices-The Determinant">The Determinant</a></h3></div>
 
 <p>
 <em>It determines stuff!</em>
@@ -288,10 +466,172 @@ For a \(2 \times 2\) matrix \(A = \begin{bmatrix}a &amp; b \\ c &amp; d\end{bmat
 \(A^{-1} = \frac{1}{\mathrm{det}\;A} \begin{bmatrix}d &amp; -b \\ -c &amp; a\end{bmatrix}\)
 </p>
 
-<div id="Linear Algebra and Analytic Geometry-Matrices-Properties of Invertible Matrices"><h3 id="Properties of Invertible Matrices" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-Properties of Invertible Matrices">Properties of Invertible Matrices</a></h3></div>
+<p>
+For \(3 \times 3\) matrices it is a bit more complicated:
+</p>
+
+\[
+A =
+\begin{bmatrix}
+a &amp; b &amp; c \\
+d &amp; e &amp; f \\
+g &amp; h &amp; i
+\end{bmatrix}
+\]
 
 <p>
-If \(A\) and \(B\) are invertible matrices and \(\mathbf{x}\) and \(\mathbf{y}\) are vectors:
+TL;DR: \(aei + bfg + cdh - ceg - bdi - afh\)
+</p>
+
+<p>
+<span id="Linear Algebra-Matrices-The Determinant-A short sidetrack"></span><strong id="A short sidetrack">A short sidetrack</strong>
+</p>
+
+<p>
+If \(A\) is a square matrix, then the <em>minor</em>, \(M_{ij}\), of the entry in the \(i\)th row and \(j\)th column
+is the determinant of the submatrix formed by deleting the \(i\)th row and \(j\)th column.
+</p>
+
+\[
+\begin{align}
+  M_{1,1} &amp; =
+  \begin{vmatrix}
+    ❌ &amp; ❌ &amp; ❌ \\
+    ❌ &amp; e &amp; f \\
+    ❌ &amp; h &amp; i
+  \end{vmatrix}
+  =
+  \begin{vmatrix}
+    e &amp; f \\
+    h &amp; i
+  \end{vmatrix}
+  = ei - fh \\
+
+  M_{1,2} &amp; =
+  \begin{vmatrix}
+    ❌ &amp; ❌ &amp; ❌ \\
+    d &amp; ❌ &amp; f \\
+    g &amp; ❌ &amp; i
+  \end{vmatrix}
+  =
+  \begin{vmatrix}
+    d &amp; f \\
+    g &amp; i
+  \end{vmatrix}
+  = di - fg \\
+
+  M_{1,3} &amp; =
+  \begin{vmatrix}
+    ❌ &amp; ❌ &amp; ❌ \\
+    d &amp; e &amp; ❌ \\
+    g &amp; h &amp; ❌
+  \end{vmatrix}
+  =
+  \begin{vmatrix}
+    d &amp; e \\
+    g &amp; h
+  \end{vmatrix}
+  = dh - eg
+\end{align}
+\]
+
+<p>
+The <em>cofactor</em>, \(C_{i,j}\), is obtained by multiplying the minor by \((-1)^{i+j}\):
+</p>
+
+\[
+\begin{bmatrix}
++ &amp; - &amp; + \\
+- &amp; + &amp; - \\
++ &amp; - &amp; +
+\end{bmatrix}
+\]
+
+\[
+\begin{align}
+  C_{1,1} = M_{1,1}(-1)^{1+1} &amp; = ei - fh \\
+  C_{1,2} = M_{1,2}(-1)^{1+2} &amp; = -(di - fg) \\
+  C_{1,3} = M_{1,3}(-1)^{1+3} &amp; = dh - eg
+\end{align}
+\]
+
+<p>
+Finally, the determinant of a \(3 \times 3\) matrix (with visual aid):
+</p>
+\[
+  \begin{bmatrix}
+    a &amp; ❌ &amp; ❌ \\
+    ❌ &amp; e &amp; f \\
+    ❌ &amp; h &amp; i
+  \end{bmatrix}
+  \begin{bmatrix}
+    ❌ &amp; b &amp; ❌ \\
+    d &amp; ❌ &amp; f \\
+    g &amp; ❌ &amp; i
+  \end{bmatrix}
+  \begin{bmatrix}
+    ❌ &amp; ❌ &amp; c \\
+    d &amp; e &amp; ❌ \\
+    g &amp; h &amp; ❌
+  \end{bmatrix}
+\]
+\[
+\begin{align}
+  &amp; aC_{1,1} + bC_{1,2} + cC{1,3} = \\
+  &amp; aM_{1,1} - bM_{1,2} + cM{1,3} = \\
+  &amp; a\begin{vmatrix}
+      e &amp; f \\
+      h &amp; i
+    \end{vmatrix}
+    -b\begin{vmatrix}
+      d &amp; f \\
+      g &amp; i
+    \end{vmatrix}
+    c\begin{vmatrix}
+      d &amp; e \\
+      g &amp; h
+    \end{vmatrix}
+    = \\
+  &amp; a(ei-fh) - b(di-fg) + c(dh-eg) = \\
+  &amp; aei + bfg + cdh - afh - bdi - ceg
+\end{align}
+\]
+
+<p>
+To make the computation easier, try to making of \(a,b,c\) 0 with row operations.
+</p>
+
+<p>
+Or, <a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.det.html">just use a computer</a>
+</p>
+
+<p>
+<span id="Linear Algebra-Matrices-The Determinant-Row Operations and Determinants"></span><strong id="Row Operations and Determinants">Row Operations and Determinants</strong>
+</p>
+
+<p>
+(As used in Gaussian elimination)
+</p>
+
+<p>
+Let \(A\) be a square matrix.
+</p>
+<ol>
+<li>
+If a multiple of one row of \(A\) is added to another row to produce matrix B, then \(\mathrm{det}\;B = \mathrm{det}\;A\).
+
+<li>
+If two rows of \(A\) are interchanged to produce \(B\), then \(\mathrm{det}\;B = -\mathrm{det}\;A\).
+
+<li>
+If one row of \(A\) is multiplied by \(k\) to produce \(B\), then \(\mathrm{det}\;B = k \cdot \mathrm{det}\;A\).
+
+</ol>
+
+<div id="Linear Algebra-Matrices-Properties of Invertible Matrices"><h3 id="Properties of Invertible Matrices" class="header"><a href="#Linear Algebra-Matrices-Properties of Invertible Matrices">Properties of Invertible Matrices</a></h3></div>
+
+<p>
+If \(A\) and \(B\) are \(n \times n\) invertible matrices and \(\vec{x}\) and \(\vec{y}\) are vectors:
 </p>
 <ol>
 <li>
@@ -301,13 +641,19 @@ If \(A\) and \(B\) are invertible matrices and \(\mathbf{x}\) and \(\mathbf{y}\)
 \((AB)^{-1} = B^{-1}A^{-1}\)
 
 <li>
-The equation \(A\mathbf{x} = 0\) has only the trivial solution.
+\(A\) is row equivalent to the \(n \times n\) identity matrix.
+
+<li>
+The equation \(A\vec{x} = \vec{0}\) has only the trivial solution.
 
 <li>
 The columns of \(A\) form a linearly independent set.
 
 <li>
-The equation \(A\mathbf{x} = \mathbf{y}\) has at least one solution.
+The linear transformation \(\vec{x} \to A\vec{x}\) is one-to-one.
+
+<li>
+The equation \(A\vec{x} = \vec{y}\) has at least one solution.
 
 <li>
 \(A^T\) is an invertible matrix.
@@ -320,11 +666,149 @@ The number \(0\) is not an eigenvalue of \(A\).
 
 </ol>
 
-<div id="Linear Algebra and Analytic Geometry-Matrices-The Leslie Matrix"><h3 id="The Leslie Matrix" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-The Leslie Matrix">The Leslie Matrix</a></h3></div>
+<div id="Linear Algebra-Matrices-Solving Systems of Linear Equations"><h3 id="Solving Systems of Linear Equations" class="header"><a href="#Linear Algebra-Matrices-Solving Systems of Linear Equations">Solving Systems of Linear Equations</a></h3></div>
 
-<div id="Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues"><h2 id="Linear Maps, Eigenvectors and Eigenvalues" class="header"><a href="#Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues">Linear Maps, Eigenvectors and Eigenvalues</a></h2></div>
+<p>
+Let \(A\) be a square coefficient matrix, \(\vec{x}\) be the vector of variables and \(\vec{b}\) be a vector of constants.
+</p>
 
-<div id="Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors"><h3 id="Eigenvalues and Eigenvectors" class="header"><a href="#Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors">Eigenvalues and Eigenvectors</a></h3></div>
+<p>
+If \(A\) is invertible, the equation \(A\vec{x} = \vec{b}\) has the solution \(\vec{x} = A^{-1}\vec{b}\).
+</p>
+
+<div id="Linear Algebra-Matrices-An Application: The Leslie Matrix"><h3 id="An Application: The Leslie Matrix" class="header"><a href="#Linear Algebra-Matrices-An Application: The Leslie Matrix">An Application: The Leslie Matrix</a></h3></div>
+
+<p>
+\(N(t)\) is population over time, where \(t = 0,1,2,\dots\) measured at discrete times (e.g. annually).
+</p>
+
+<p>
+\(N(t+1) = RN(t)\), \(N(0) = N_0\), \(N(t) = R^tN_0\)
+</p>
+
+<p>
+\(N_x(t)\) is the number of females of age \(x\) at time \(t\).
+</p>
+
+\[
+N(t) =
+\begin{bmatrix}
+  N_0(t) \\
+  N_1(t) \\
+  N_2(t) \\
+  \vdots
+\end{bmatrix}
+\]
+
+<p>
+Let \(P_x\) be the fraction of females age \(x\) at time \(t\) that survive to time \(t+1\).
+Let \(F_x\) be the average number of surviving female offspring per female individual age \(x\).
+</p>
+
+<p>
+Then the Leslie matrix of the population is:
+</p>
+\[
+L = \begin{bmatrix}
+F_0    &amp; F_1    &amp; F_2    &amp; \ldots &amp; F_{m-1} &amp; F_m    \\
+P_0    &amp; 0      &amp; \ldots &amp; \ldots &amp; \ldots  &amp; 0      \\
+0      &amp; P_1    &amp; 0      &amp; \ldots &amp; \ldots  &amp; 0      \\
+\vdots &amp; \ldots &amp; \ldots &amp; \ldots &amp; \ldots  &amp; \vdots \\
+0      &amp; \ldots &amp; \ldots &amp; 0      &amp; P_{m-1} &amp; 0
+\end{bmatrix}
+\]
+
+<p>
+The matrix is \((m+1) \times (m+1)\) reflecting \(m\) age classes.
+</p>
+
+<p>
+\(N(t+1) = LN(t)\)
+</p>
+
+\[
+\begin{bmatrix}
+  N_0(t+1) \\
+  N_1(t+1) \\
+  N_2(t+1) \\
+  \vdots
+\end{bmatrix}
+=
+\begin{bmatrix}
+F_0    &amp; F_1    &amp; F_2    &amp; \ldots &amp; F_{m-1} &amp; F_m    \\
+P_0    &amp; 0      &amp; \ldots &amp; \ldots &amp; \ldots  &amp; 0      \\
+0      &amp; P_1    &amp; 0      &amp; \ldots &amp; \ldots  &amp; 0      \\
+\vdots &amp; \ldots &amp; \ldots &amp; \ldots &amp; \ldots  &amp; \vdots \\
+0      &amp; \ldots &amp; \ldots &amp; 0      &amp; P_{m-1} &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+  N_0(t) \\
+  N_1(t) \\
+  N_2(t) \\
+  \vdots
+\end{bmatrix}
+\]
+
+<div id="Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues"><h2 id="Linear Maps, Eigenvectors and Eigenvalues" class="header"><a href="#Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues">Linear Maps, Eigenvectors and Eigenvalues</a></h2></div>
+
+<div id="Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues-Linear Maps"><h3 id="Linear Maps" class="header"><a href="#Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues-Linear Maps">Linear Maps</a></h3></div>
+
+<p>
+A map, \(\vec{x} \to A\vec{x}\), is a function.
+</p>
+
+<p>
+A <span id="Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues-Linear Maps-linear map"></span><strong id="linear map">linear map</strong> is a map between two vector spaces that preserves the operations of vector addition and scalar multiplication:
+</p>
+
+<ol>
+<li>
+\(A(\vec{x} + \vec{y}) = A\vec{x} + A\vec{y}\)
+
+<li>
+\(A(c\vec{x}) = c(A\vec{x})\)
+
+</ol>
+
+<p>
+In other words, a linear map represents a linear transformation of the space.
+Such a transformation keeps grid lines parallel and evenly spaced.
+</p>
+
+<p>
+<span id="Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues-Linear Maps-Identity Map"></span><strong id="Identity Map">Identity Map</strong>
+The simplest linear map is represented by the <a href="Linear Algebra and Analytic Geometry.html#The Identity Matrix™">identiy matrix</a>:
+</p>
+
+<p>
+\(I\vec{x} = \vec{x}\)
+</p>
+
+<p>
+The transformation keeps the vector \(\vec{x}\) unchanged.
+</p>
+
+<p>
+<span id="Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues-Linear Maps-Rotation"></span><strong id="Rotation">Rotation</strong>
+</p>
+
+<p>
+<a href="https://xkcd.com/184/">Relevant XKCD</a>
+</p>
+
+\[
+R_\theta = \begin{bmatrix}
+  \mathrm{cos}\;\theta &amp; -\mathrm{sin}\;\theta \\
+  \mathrm{sin}\;\theta &amp; \mathrm{cos}\;\theta
+\end{bmatrix}
+\]
+
+<p>
+<em>Yes. It rotates a vector.</em>
+</p>
+
+
+<div id="Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors"><h3 id="Eigenvalues and Eigenvectors" class="header"><a href="#Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors">Eigenvalues and Eigenvectors</a></h3></div>
 
 <p>
 If \(A\) is a square matrix,
@@ -335,7 +819,7 @@ If \(A\) is a square matrix,
 \]
 
 <p>
-and
+\(\lambda\) is a scalar and
 </p>
 
 \[
@@ -347,7 +831,7 @@ then \(\vec{x}\) is an eigenvector of \(A\) and \(\lambda\) is an eigenvalue of
 </p>
 
 <p>
-<span id="Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors-Finding Eigenvalues"></span><strong id="Finding Eigenvalues">Finding Eigenvalues</strong>
+<span id="Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors-Finding Eigenvalues"></span><strong id="Finding Eigenvalues">Finding Eigenvalues</strong>
 </p>
 
 \[
@@ -383,7 +867,7 @@ Solving this quadratic equation yields the eigenvalues of the matrix.
 </p>
 
 <p>
-<span id="Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors-Finding Eigenvectors"></span><strong id="Finding Eigenvectors">Finding Eigenvectors</strong>
+<span id="Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors-Finding Eigenvectors"></span><strong id="Finding Eigenvectors">Finding Eigenvectors</strong>
 </p>
 
 <p>
@@ -395,7 +879,7 @@ A \begin{bmatrix}x_1\\x_2\end{bmatrix} = \lambda \begin{bmatrix}x_1\\x_2\end{bma
 \]
 
     </div>
-    <p><small>Page created on 2021-05-25</small></p>
+    <p><small>Page created on 2021-05-26</small></p>
     <script src="../prism.js"></script>
   </body>
 </html>
