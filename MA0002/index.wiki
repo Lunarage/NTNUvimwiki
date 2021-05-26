@@ -9,7 +9,7 @@ Nehauser, _Calculus for Biology and Medicine_
 |---------|------------------------------------------------------|-----------|
 | 7       | [[Integration Techniques and Computational Methods]] | 7.1-7.3   |
 | 8       | [[Differential Equations]]                           | 8.1-8-3   |
-| 9       | [[Linear Algebra and Analytic Geometry]]             | 9.1-9.3   |
+| 9       | [[Linear Algebra]]                                   | 9.1-9.3   |
 | 10      | [[Multivariable Calculus]]                           | 10.1-10.6 |
 | 11      | [[Systems of Differential Equations]]                | 11.1      |
 

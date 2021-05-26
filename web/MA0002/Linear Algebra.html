@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" type="text/css" href="../style.css" />
     <link rel="Stylesheet" type="text/css" href="../prism.css" />
-    <title>Linear Algebra and Analytic Geometry</title>
+    <title>Linear Algebra</title>
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
       MathJax.Hub.Config({
         jax: ["input/TeX","output/HTML-CSS"],
@@ -18,50 +18,47 @@
 <div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
 <ul>
 <li>
-<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra">Linear Algebra</a>
+<a href="Linear Algebra.html#Linear Algebra">Linear Algebra</a>
 
 <ul>
 <li>
-<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Linear Systems">Linear Systems</a>
+<a href="Linear Algebra.html#Linear Algebra-Linear Systems">Linear Systems</a>
 
 <li>
-<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Matrices">Matrices</a>
+<a href="Linear Algebra.html#Linear Algebra-Matrices">Matrices</a>
 
 <ul>
 <li>
-<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Matrices-Basic Matrix Operations">Basic Matrix Operations</a>
+<a href="Linear Algebra.html#Linear Algebra-Matrices-Basic Matrix Operations">Basic Matrix Operations</a>
 
 <li>
-<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Matrices-Matrix Multiplication">Matrix Multiplication</a>
+<a href="Linear Algebra.html#Linear Algebra-Matrices-Matrix Multiplication">Matrix Multiplication</a>
 
 <li>
-<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Matrices-The Identity Matrix™">The Identity Matrix™</a>
+<a href="Linear Algebra.html#Linear Algebra-Matrices-The Identity Matrix™">The Identity Matrix™</a>
 
 <li>
-<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Matrices-Inverse Matrices">Inverse Matrices</a>
+<a href="Linear Algebra.html#Linear Algebra-Matrices-Inverse Matrices">Inverse Matrices</a>
 
 <li>
-<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Matrices-The Determinant">The Determinant</a>
+<a href="Linear Algebra.html#Linear Algebra-Matrices-The Determinant">The Determinant</a>
 
 <li>
-<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Matrices-Properties of Invertible Matrices">Properties of Invertible Matrices</a>
+<a href="Linear Algebra.html#Linear Algebra-Matrices-Properties of Invertible Matrices">Properties of Invertible Matrices</a>
 
 <li>
-<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Matrices-Solving Systems of Linear Equations">Solving Systems of Linear Equations</a>
-
-<li>
-<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Matrices-An Application: The Leslie Matrix">An Application: The Leslie Matrix</a>
+<a href="Linear Algebra.html#Linear Algebra-Matrices-An Application: The Leslie Matrix">An Application: The Leslie Matrix</a>
 
 </ul>
 <li>
-<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues">Linear Maps, Eigenvectors and Eigenvalues</a>
+<a href="Linear Algebra.html#Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues">Linear Maps, Eigenvectors and Eigenvalues</a>
 
 <ul>
 <li>
-<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues-Linear Maps">Linear Maps</a>
+<a href="Linear Algebra.html#Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues-Linear Maps">Linear Maps</a>
 
 <li>
-<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors">Eigenvalues and Eigenvectors</a>
+<a href="Linear Algebra.html#Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors">Eigenvalues and Eigenvectors</a>
 
 </ul>
 </ul>
@@ -425,19 +422,11 @@ The inverse matrix, if it exists, is unique: If \(B = A^{-1}\) and \(C = A^{-1}\
 </p>
 
 <p>
-A system of linear equations can be represented as:
+Let \(A\) be a square coefficient matrix, \(\vec{x}\) be the vector of variables and \(\vec{b}\) be a vector of constants.
 </p>
 
 <p>
-\(AX = B\)
-</p>
-
-<p>
-then
-</p>
-
-<p>
-\(X = A^{-1}B\)
+If \(A\) is invertible, the equation \(A\vec{x} = \vec{b}\) has the solution \(\vec{x} = A^{-1}\vec{b}\).
 </p>
 
 <div id="Linear Algebra-Matrices-The Determinant"><h3 id="The Determinant" class="header"><a href="#Linear Algebra-Matrices-The Determinant">The Determinant</a></h3></div>
@@ -666,16 +655,6 @@ The number \(0\) is not an eigenvalue of \(A\).
 
 </ol>
 
-<div id="Linear Algebra-Matrices-Solving Systems of Linear Equations"><h3 id="Solving Systems of Linear Equations" class="header"><a href="#Linear Algebra-Matrices-Solving Systems of Linear Equations">Solving Systems of Linear Equations</a></h3></div>
-
-<p>
-Let \(A\) be a square coefficient matrix, \(\vec{x}\) be the vector of variables and \(\vec{b}\) be a vector of constants.
-</p>
-
-<p>
-If \(A\) is invertible, the equation \(A\vec{x} = \vec{b}\) has the solution \(\vec{x} = A^{-1}\vec{b}\).
-</p>
-
 <div id="Linear Algebra-Matrices-An Application: The Leslie Matrix"><h3 id="An Application: The Leslie Matrix" class="header"><a href="#Linear Algebra-Matrices-An Application: The Leslie Matrix">An Application: The Leslie Matrix</a></h3></div>
 
 <p>
@@ -777,7 +756,7 @@ Such a transformation keeps grid lines parallel and evenly spaced.
 
 <p>
 <span id="Linear Algebra-Linear Maps, Eigenvectors and Eigenvalues-Linear Maps-Identity Map"></span><strong id="Identity Map">Identity Map</strong>
-The simplest linear map is represented by the <a href="Linear Algebra and Analytic Geometry.html#The Identity Matrix™">identiy matrix</a>:
+The simplest linear map is represented by the <a href="Linear Algebra.html#The Identity Matrix™">identiy matrix</a>:
 </p>
 
 <p>

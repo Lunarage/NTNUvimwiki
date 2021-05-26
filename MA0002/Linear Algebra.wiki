@@ -8,7 +8,6 @@
       - [[#Linear Algebra#Matrices#Inverse Matrices|Inverse Matrices]]
       - [[#Linear Algebra#Matrices#The Determinant|The Determinant]]
       - [[#Linear Algebra#Matrices#Properties of Invertible Matrices|Properties of Invertible Matrices]]
-      - [[#Linear Algebra#Matrices#Solving Systems of Linear Equations|Solving Systems of Linear Equations]]
       - [[#Linear Algebra#Matrices#An Application: The Leslie Matrix|An Application: The Leslie Matrix]]
     - [[#Linear Algebra#Linear Maps, Eigenvectors and Eigenvalues|Linear Maps, Eigenvectors and Eigenvalues]]
       - [[#Linear Algebra#Linear Maps, Eigenvectors and Eigenvalues#Linear Maps|Linear Maps]]
@@ -239,13 +238,9 @@ The inverse matrix, if it exists, is unique: If $B = A^{-1}$ and $C = A^{-1}$ th
 
 *Applications*
 
-A system of linear equations can be represented as:
+Let $A$ be a square coefficient matrix, $\vec{x}$ be the vector of variables and $\vec{b}$ be a vector of constants.
 
-$AX = B$
-
-then
-
-$X = A^{-1}B$
+If $A$ is invertible, the equation $A\vec{x} = \vec{b}$ has the solution $\vec{x} = A^{-1}\vec{b}$.
 
 === The Determinant ===
 
@@ -406,12 +401,6 @@ If $A$ and $B$ are $n \times n$ invertible matrices and $\vec{x}$ and $\vec{y}$ 
 8. $A^T$ is an invertible matrix.
 9. The number $0$ is not an eigenvalue of $A$.
 10. $\mathrm{det}\;A \neq 0$
-
-=== Solving Systems of Linear Equations ===
-
-Let $A$ be a square coefficient matrix, $\vec{x}$ be the vector of variables and $\vec{b}$ be a vector of constants.
-
-If $A$ is invertible, the equation $A\vec{x} = \vec{b}$ has the solution $\vec{x} = A^{-1}\vec{b}$.
 
 === An Application: The Leslie Matrix ===
 
