@@ -8,3 +8,11 @@
   \text{If } a \text{ is constant and if } \\
   \lim_{(x,y) \to (x_0, y_0)} f(x,y) = L_1
 }}$
+
+== Partial Derivatives ==
+
+== Tangent Planes, Differentiability and Linearization ==
+
+== More About Derivatives ==
+
+== Applications ==

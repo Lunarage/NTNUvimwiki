@@ -1,1 +1,26 @@
 = Systems of Differential Equations =
+
+== Linear Systems: Theory ==
+
+A system of linear Differential Equations:
+
+{{$
+\begin{align}
+  \frac{dx_1}{dt} & = a_{11}x_1 + a_{12}x_2 \\
+  \frac{dx_2}{dt} & = a_{21}x_1 + a_{22}x_2
+\end{align}
+}}$
+
+Matrix form:
+
+{{$
+\frac{d\vec{x}}{dt} = A\vec{x}
+}}$
+
+Let $A$ be a $2 \times 2$ matrix with two real and distinct eigenvalues $\lambda_1$ and $\lambda_2$
+with corresponding eigenvectors $\vec{u}$ and $\vec{v}$.
+Then
+{{$
+\vec{x} = c_1e^{\lambda_1t}\vec{u} + c_2e^{\lambda_2t}\vec{v}
+}}$
+is the general solution.
