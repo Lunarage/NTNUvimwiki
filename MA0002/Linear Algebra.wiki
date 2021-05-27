@@ -88,6 +88,7 @@ is a compact way of describing it.
 * Matrices: $A$.
 * (Column) Vectors: $\vec{x}$
 * Scalars: $c$
+* iff = if and only if
 
 === Basic Matrix Operations ===
 
@@ -250,12 +251,6 @@ For an $2 \times 2$ matrix:
 
 $\mathrm{det}\;A = \begin{vmatrix}a & b \\ c & d\end{vmatrix} = ad - bc$
 
-For any square matrix, $A$ is invertible iff $\mathrm{det}\;A \neq 0$.
-
-For a $2 \times 2$ matrix $A = \begin{bmatrix}a & b \\ c & d\end{bmatrix}$:
-
-$A^{-1} = \frac{1}{\mathrm{det}\;A} \begin{bmatrix}d & -b \\ -c & a\end{bmatrix}$
-
 For $3 \times 3$ matrices it is a bit more complicated:
 
 {{$
@@ -388,7 +383,13 @@ Let $A$ be a square matrix.
 2. If two rows of $A$ are interchanged to produce $B$, then $\mathrm{det}\;B = -\mathrm{det}\;A$.
 3. If one row of $A$ is multiplied by $k$ to produce $B$, then $\mathrm{det}\;B = k \cdot \mathrm{det}\;A$.
 
-=== Properties of Invertible Matrices ===
+=== Invertible Matrices ===
+
+For any square matrix, $A$ is invertible iff $\mathrm{det}\;A \neq 0$.
+
+For a $2 \times 2$ matrix $A = \begin{bmatrix}a & b \\ c & d\end{bmatrix}$:
+
+$A^{-1} = \frac{1}{\mathrm{det}\;A} \begin{bmatrix}d & -b \\ -c & a\end{bmatrix}$
 
 If $A$ and $B$ are $n \times n$ invertible matrices and $\vec{x}$ and $\vec{y}$ are vectors:
 1. $(A^{-1})^{-1} = A$
