@@ -1,22 +1,29 @@
+:root {
+  --text-max-width: 60ch;
+  --content-max-width: 60em;
+  --text-default-color: #ffffff;
+  --background-default-color: #222222;
+}
+
 body {
-  font-family: Tahoma, Geneva, sans-serif;
+  font-family: sans-serif;
   margin: 1em 2em 1em 2em;
   font-size: 1em;
-  line-height: 130%;
-  background: #222222;
+  line-height: 1.5;
+  background: var(--background-default-color);
+  color: var(--text-default-color);
 }
 
 div.content {
-  max-width: 960px;
+  max-width: var(--content-max-width);
 }
 
+/* Headers */
 h1, h2, h3, h4, h5, h6 {
-  font-family: Trebuchet MS, Helvetica, sans-serif;
-  font-weight: bold;
-  line-height: 100%;
+  font-style: bold;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
-  max-width: 80ch;
+  max-width: var(--text-max-width);
 }
 
 h1 {
@@ -36,7 +43,7 @@ h3 {
 
 h4 {
   font-size: 1.4em;
-  color: #ffffff;
+  color: #eeeeee;
 }
 
 h5 {
@@ -49,52 +56,24 @@ h6 {
   color: #9c9c9c;
 }
 
+/* Links */
 a {
   color: #9999ee;
-  max-width: 80ch;
+  max-width: var(--text-max-width);
 }
 
 a:hover {
   color: #c570ff;
 }
 
+/* Text blocks */
 p, pre, blockquote, table, ul, ol, dl {
   margin-top: 1em;
   margin-bottom: 1em;
-  color: #ffffff;
 }
 
 p, blockquote, table, ul, ol, dl {
-  max-width: 80ch;
-}
-
-ul ul, ul ol, ol ol, ol ul {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  max-width: 80ch;
-}
-
-li {
-  margin: 0.5em auto;
-}
-
-ul {
-  margin-left: 2em;
-  padding-left: 0.5em;
-}
-
-dt {
-  font-weight: bold;
-}
-
-dd {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-}
-
-img {
-  border: none;
-  max-width: 95vw;
+  max-width: var(--text-max-width);
 }
 
 pre {
@@ -109,6 +88,46 @@ blockquote {
   background-color: #333;
 }
 
+:not(pre)>code {
+  font-family: monospace;
+  font-size: 1.2em;
+  display: inline-block;
+  background-color: #333333;
+  padding: 0 0.2em;
+}
+
+/* Lists */
+ul ul, ul ol, ol ol, ol ul {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  max-width: var(--text-max-width);
+}
+
+li {
+  margin: 0.5em auto;
+}
+
+ul {
+  margin-left: 2em;
+  padding-left: 0.5em;
+}
+
+dt {
+  font-style: bold;
+}
+
+dd {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Images */
+img {
+  border: none;
+  max-width: 95vw;
+}
+
+/* Tables */
 th, td {
   border: 1px solid #333;
   padding: 0.3em;
@@ -129,6 +148,7 @@ del {
   color: #777777;
 }
 
+/* Table of Contents */
 .toc + ul li {
   list-style-type: none;
 }
@@ -139,41 +159,10 @@ del {
   padding: 8px;
 }
 
+/* TODO */
 .todo {
   font-weight: bold;
   color: #a03020;
-}
-
-.justleft {
-  text-align: left;
-}
-
-.justright {
-  text-align: right;
-}
-
-.justcenter {
-  text-align: center;
-}
-
-.center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.tag {
-  /*background-color: #eeeeee;*/
-  font-family: monospace;
-  padding: 2px;
-}
-
-.header a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.MathJax_Display {
-  color: #ffffff;
 }
 
 /* classes for items of todo lists */
@@ -221,15 +210,36 @@ del {
   padding-left: 1.5em;
 }
 
-:not(pre)>code {
-  font-family: monospace;
-  font-size: 1.2em;
-  display: inline-block;
-  background-color: #333333;
-  padding: 0 0.2em;
+.justleft {
+  text-align: left;
 }
 
+.justright {
+  text-align: right;
+}
+
+.justcenter {
+  text-align: center;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tag {
+  font-family: monospace;
+  padding: 2px;
+}
+
+.header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* classes for MathJax */
 .MathJax_Display {
+  color: #ffffff;
   text-align: left !important;
   display: inline !important;
 }
