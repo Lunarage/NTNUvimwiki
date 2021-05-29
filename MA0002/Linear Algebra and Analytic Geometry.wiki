@@ -1,19 +1,23 @@
 = Contents =
-  - [[#Linear Algebra|Linear Algebra]]
-    - [[#Linear Algebra#Linear Systems|Linear Systems]]
-    - [[#Linear Algebra#Matrices|Matrices]]
-      - [[#Linear Algebra#Matrices#Basic Matrix Operations|Basic Matrix Operations]]
-      - [[#Linear Algebra#Matrices#Matrix Multiplication|Matrix Multiplication]]
-      - [[#Linear Algebra#Matrices#The Identity Matrix™|The Identity Matrix™]]
-      - [[#Linear Algebra#Matrices#Inverse Matrices|Inverse Matrices]]
-      - [[#Linear Algebra#Matrices#The Determinant|The Determinant]]
-      - [[#Linear Algebra#Matrices#Properties of Invertible Matrices|Properties of Invertible Matrices]]
-      - [[#Linear Algebra#Matrices#An Application: The Leslie Matrix|An Application: The Leslie Matrix]]
-    - [[#Linear Algebra#Linear Maps, Eigenvectors and Eigenvalues|Linear Maps, Eigenvectors and Eigenvalues]]
-      - [[#Linear Algebra#Linear Maps, Eigenvectors and Eigenvalues#Linear Maps|Linear Maps]]
-      - [[#Linear Algebra#Linear Maps, Eigenvectors and Eigenvalues#Eigenvalues and Eigenvectors|Eigenvalues and Eigenvectors]]
+  - [[#Linear Algebra and Analytic Geometry|Linear Algebra and Analytic Geometry]]
+    - [[#Linear Algebra and Analytic Geometry#Linear Systems|Linear Systems]]
+    - [[#Linear Algebra and Analytic Geometry#Matrices|Matrices]]
+      - [[#Linear Algebra and Analytic Geometry#Matrices#Basic Matrix Operations|Basic Matrix Operations]]
+      - [[#Linear Algebra and Analytic Geometry#Matrices#Matrix Multiplication|Matrix Multiplication]]
+      - [[#Linear Algebra and Analytic Geometry#Matrices#The Identity Matrix™|The Identity Matrix™]]
+      - [[#Linear Algebra and Analytic Geometry#Matrices#Inverse Matrices|Inverse Matrices]]
+      - [[#Linear Algebra and Analytic Geometry#Matrices#The Determinant|The Determinant]]
+      - [[#Linear Algebra and Analytic Geometry#Matrices#Invertible Matrices|Invertible Matrices]]
+      - [[#Linear Algebra and Analytic Geometry#Matrices#An Application: The Leslie Matrix|An Application: The Leslie Matrix]]
+    - [[#Linear Algebra and Analytic Geometry#Linear Maps, Eigenvectors and Eigenvalues|Linear Maps, Eigenvectors and Eigenvalues]]
+      - [[#Linear Algebra and Analytic Geometry#Linear Maps, Eigenvectors and Eigenvalues#Linear Maps|Linear Maps]]
+      - [[#Linear Algebra and Analytic Geometry#Linear Maps, Eigenvectors and Eigenvalues#Eigenvalues and Eigenvectors|Eigenvalues and Eigenvectors]]
+    - [[#Linear Algebra and Analytic Geometry#Analytic Geometry|Analytic Geometry]]
+      - [[#Linear Algebra and Analytic Geometry#Analytic Geometry#Points and Vectors in Higher Dimensions|Points and Vectors in Higher Dimensions]]
+      - [[#Linear Algebra and Analytic Geometry#Analytic Geometry#The Dot Product|The Dot Product]]
+      - [[#Linear Algebra and Analytic Geometry#Analytic Geometry#Parametric Equations of Lines|Parametric Equations of Lines]]
 
-= Linear Algebra =
+= Linear Algebra and Analytic Geometry=
 
 == Linear Systems ==
 
@@ -550,3 +554,83 @@ For each eigenvalue $\lambda$, solve
 {{$
 A \begin{bmatrix}x_1\\x_2\end{bmatrix} = \lambda \begin{bmatrix}x_1\\x_2\end{bmatrix}
 }}$
+
+== Analytic Geometry ==
+
+=== Points and Vectors in Higher Dimensions ===
+
+A vector in $n$-dimensional space is an ordered $n$-tuple
+{{$
+\vec{x} = \begin{bmatrix}
+  x_1 \\ x_2 \\ \vdots \\ x_n
+\end{bmatrix}
+}}$
+
+The length of a vector
+$ |\vec{x}| = \sqrt{x_1^2 + x_2^2 + \dots x_n^2} $
+
+The normalized vector
+$ \frac{\vec{x}}{|\vec{x}|} $
+has length 1.
+
+=== The Dot Product ===
+
+The *scalar product*, or *dot product*, of two vectors $\vec{x}$ and $\vec{y}$ is the number
+{{$
+\vec{x} \cdot \vec{y} = \vec{x}'\vec{y} = \sum_{i=1}^n x_iy_i
+}}$
+
+    This is Matrix multiplication!
+
+The dot product satisfies the following two properties
+1. $\vec{x}\cdot\vec{y} = \vec{y}\cdot\vec{x}$
+2. $\vec{x}\cdot(\vec{y}+\vec{z}) = \vec{x}\cdot\vec{y} + \vec{x}\cdot\vec{z}$
+
+{{$
+  \vec{x}\cdot\vec{x}=\sum_{i=1}^n x_i^2
+}}$
+
+$|\vec{x}|^2 = \vec{x}\cdot\vec{x}$
+
+$\vec{x}\cdot\vec{y} = |\vec{x}||\vec{y}|\mathrm{cos}\;\theta$
+
+$\vec{x}$ and $\vec{y}$ are perpendicular if $\vec{x}\cdot\vec{y} = 0$
+
+    $\mathrm{cos}\;0° = 1 \\ \mathrm{cos}\;30° \approx 0.866\\ \mathrm{cos}\;45° \approx 0.707\\ \mathrm{cos}\;60° = 0.5\\ \mathrm{cos}\;90° = 0$
+
+*Lines in the Plane*
+
+If $\vec{n}$ is a vector perpendicular to a line and $\vec{r}$ is a point on the line
+{{$
+  \vec{n}\cdot(\vec{r}-\vec{r}_0) = 0
+}}$
+where $\vec{r}-\vec{r}_0$ is parallel to the line.
+This equation is called the *vector equation* of the line in the plane.
+
+The line trough $(x_0,y_0)$ perpendicular to $\begin{bmatrix}a\\b\end{bmatrix}$ has the equation
+{{$
+  a(x-x_0)+b(y-y_0) = 0
+}}$
+
+*Planes in Space*
+
+If $\vec{n}$ is a vector perpendicular to a plane and $\vec{r}$ is a point in the plane
+{{$
+  \vec{n}\cdot(\vec{r}-\vec{r}_0) = 0
+}}$
+where $\vec{r}-\vec{r}_0$ is parallel to the plane.
+This equation is called the *vector equation of a plane*.
+
+The plane trough $(x_0,y_0,z_0)$ and perpendicular to $\begin{bmatrix}a&b&c\end{bmatrix}'$ has the equation
+{{$
+a(x-x_0)+b(y-y_0)+c(z-z_0)=0
+}}$
+
+=== Parametric Equations of Lines ===
+
+{{$
+\vec{r}(t) = \vec{r}_0 + t\vec{u}
+}}$
+where $\vec{r}$ is a vector pointing from the origin to a point on the line,
+$\vec{u}$ is a vector parallel to the line,
+and $t$ is the parameter.

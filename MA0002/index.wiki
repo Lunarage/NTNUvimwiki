@@ -1,15 +1,15 @@
 = MA0002 - Brukerkurs i matematikk B =
 
-[[Derivation and Integration Rules]]
+[[Tables of useful stuff]]
 
 == Syllabus ==
 
 Nehauser, _Calculus for Biology and Medicine_
-| Chapter | Title                                                | Syllabus  |
-|---------|------------------------------------------------------|-----------|
-| 7       | [[Integration Techniques and Computational Methods]] | 7.1-7.3   |
-| 8       | [[Differential Equations]]                           | 8.1-8-3   |
-| 9       | [[Linear Algebra]]                                   | 9.1-9.3   |
-| 10      | [[Multivariable Calculus]]                           | 10.1-10.6 |
-| 11      | [[Systems of Differential Equations]]                | 11.1      |
+| Chapter | Title                                                | Syllabus      |
+|---------|------------------------------------------------------|---------------|
+| 7       | [[Integration Techniques and Computational Methods]] | 7.1-7.3       |
+| 8       | [[Differential Equations]]                           | 8.1-8-3       |
+| 9       | [[Linear Algebra and Analytic Geometry]]             | 9.1-9.3       |
+| 10      | [[Multivariable Calculus]]                           | 10.1-10.6.2   |
+| 11      | [[Systems of Differential Equations]]                | 11.1.1-11.1.2 |
 

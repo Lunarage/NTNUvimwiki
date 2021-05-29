@@ -7,7 +7,7 @@
 
 body {
   font-family: sans-serif;
-  margin: 1em 2em 1em 2em;
+  margin: 1em 2em;
   font-size: 1em;
   line-height: 1.5;
   background: var(--background-default-color);
@@ -21,7 +21,7 @@ div.content {
 /* Headers */
 h1, h2, h3, h4, h5, h6 {
   font-style: bold;
-  margin-top: 1.5em;
+  margin-top: 1em;
   margin-bottom: 0.5em;
   max-width: var(--text-max-width);
 }

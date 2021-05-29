@@ -1,3 +1,13 @@
+= Contents =
+  - [[#Integration Techniques and Computational Methods|Integration Techniques and Computational Methods]]
+    - [[#Integration Techniques and Computational Methods#The Substitution Rule|The Substitution Rule]]
+      - [[#Integration Techniques and Computational Methods#The Substitution Rule#Indefinite Integrals|Indefinite Integrals]]
+      - [[#Integration Techniques and Computational Methods#The Substitution Rule#Definite Integrals|Definite Integrals]]
+    - [[#Integration Techniques and Computational Methods#Integration by Parts and Practicing Integration|Integration by Parts and Practicing Integration]]
+      - [[#Integration Techniques and Computational Methods#Integration by Parts and Practicing Integration#Integration by Parts|Integration by Parts]]
+    - [[#Integration Techniques and Computational Methods#Rational Functions and Partial Fractions|Rational Functions and Partial Fractions]]
+      - [[#Integration Techniques and Computational Methods#Rational Functions and Partial Fractions#Partial-Fraction Decomposition|Partial-Fraction Decomposition]]
+
 = Integration Techniques and Computational Methods =
 
 == The Substitution Rule ==

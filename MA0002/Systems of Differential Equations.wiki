@@ -1,3 +1,7 @@
+= Contents =
+  - [[#Systems of Differential Equations|Systems of Differential Equations]]
+    - [[#Systems of Differential Equations#Linear Systems: Theory|Linear Systems: Theory]]
+
 = Systems of Differential Equations =
 
 == Linear Systems: Theory ==

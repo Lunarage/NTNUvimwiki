@@ -1,0 +1,1003 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
+    <title>Linear Algebra and Analytic Geometry</title>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+      MathJax.Hub.Config({
+        jax: ["input/TeX","output/HTML-CSS"],
+        displayAlign: "left"
+      });
+    </script>
+  </head>
+  <body class="line-numbers match-braces">
+    <div class="content">
+      
+<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<ul>
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry">Linear Algebra and Analytic Geometry</a>
+
+<ul>
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Linear Systems">Linear Systems</a>
+
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Matrices">Matrices</a>
+
+<ul>
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations">Basic Matrix Operations</a>
+
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Matrices-Matrix Multiplication">Matrix Multiplication</a>
+
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Matrices-The Identity Matrix™">The Identity Matrix™</a>
+
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Matrices-Inverse Matrices">Inverse Matrices</a>
+
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Matrices-The Determinant">The Determinant</a>
+
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Matrices-Invertible Matrices">Invertible Matrices</a>
+
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Matrices-An Application: The Leslie Matrix">An Application: The Leslie Matrix</a>
+
+</ul>
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues">Linear Maps, Eigenvectors and Eigenvalues</a>
+
+<ul>
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Linear Maps">Linear Maps</a>
+
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors">Eigenvalues and Eigenvectors</a>
+
+</ul>
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Analytic Geometry">Analytic Geometry</a>
+
+<ul>
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Analytic Geometry-Points and Vectors in Higher Dimensions">Points and Vectors in Higher Dimensions</a>
+
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Analytic Geometry-The Dot Product">The Dot Product</a>
+
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Analytic Geometry-Parametric Equations of Lines">Parametric Equations of Lines</a>
+
+</ul>
+</ul>
+</ul>
+
+<div id="Linear Algebra and Analytic Geometry"><h1 id="Linear Algebra and Analytic Geometry" class="header"><a href="#Linear Algebra and Analytic Geometry">Linear Algebra and Analytic Geometry</a></h1></div>
+
+<div id="Linear Algebra and Analytic Geometry-Linear Systems"><h2 id="Linear Systems" class="header"><a href="#Linear Algebra and Analytic Geometry-Linear Systems">Linear Systems</a></h2></div>
+
+<p>
+A system of \(m\) equations and \(n\) variables:
+</p>
+
+\[
+\begin{align}
+  a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n &amp; = b_1 \\
+  a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n &amp; = b_2 \\
+  \vdots \\
+  a_{m1}x_1 + a_{m2}x_2 + \dots + a_{mn}x_n &amp; = b_m
+\end{align}
+\]
+
+<p>
+We want to transform the system to an equivalent system in upper triangular form
+with three basic operations:
+</p>
+<ol>
+<li>
+Multiply an equation by a nonzero constant.
+
+<li>
+Adding one equation to another.
+
+<li>
+Rearranging the order of equations.
+
+</ol>
+
+\[
+\begin{align}
+  a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n &amp; = b_1 \\
+  a_{22}x_2 + \dots + a_{2n}x_n &amp; = b_2 \\
+  \vdots \\
+  a_{mn}x_n &amp; = b_m
+\end{align}
+\]
+
+<p>
+This method is also called <span id="Linear Algebra and Analytic Geometry-Linear Systems-Gaussian elimination"></span><strong id="Gaussian elimination">Gaussian elimination</strong>.
+</p>
+
+<p>
+A general system may have (2d graphical representation):
+</p>
+<ol>
+<li>
+Exactly one solution. (Lines crossing)
+
+<li>
+No solutions. (Parallel lines)
+
+<li>
+Infinitely many solutions. (Coinciding lines)
+
+</ol>
+
+<ul>
+<li>
+When a system has no solutions, we say that the system is <span id="Linear Algebra and Analytic Geometry-Linear Systems-inconsistent"></span><strong id="inconsistent">inconsistent</strong>.
+
+<li>
+When a system has fewer equations that variables, we say the system is <span id="Linear Algebra and Analytic Geometry-Linear Systems-underdetermined"></span><strong id="underdetermined">underdetermined</strong>.
+
+<li>
+When a system has more equations than variables, we say the system is <span id="Linear Algebra and Analytic Geometry-Linear Systems-overdetermined"></span><strong id="overdetermined">overdetermined</strong>.
+
+</ul>
+
+<p>
+Overdetermined systems are often inconsistent.
+</p>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Linear Systems-Shorthand Notation: The Matrix™"></span><strong id="Shorthand Notation: The Matrix™">Shorthand Notation: The Matrix™</strong>
+</p>
+
+\[
+A = \begin{bmatrix}
+  a_{11} &amp; a_{12} &amp; \ldots &amp; a_{1n} \\
+  a_{21} &amp; a_{22} &amp; \ldots &amp; a_{2n} \\
+  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+  a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn}
+\end{bmatrix}
+\]
+
+<p>
+The matrix \(A\) can represent the coefficients of a system of equations, a.k.a the <span id="Linear Algebra and Analytic Geometry-Linear Systems-coefficient matrix"></span><strong id="coefficient matrix">coefficient matrix</strong>.
+</p>
+
+<p>
+The augmented matrix, describing entire the system,
+</p>
+
+\[
+\begin{bmatrix}
+  a_{11} &amp; a_{12} &amp; \ldots &amp; a_{1n} &amp; b_1 \\
+  a_{21} &amp; a_{22} &amp; \ldots &amp; a_{2n} &amp; b_2 \\
+  \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
+  a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn} &amp; b_m
+\end{bmatrix}
+\]
+
+<p>
+is a compact way of describing it.
+</p>
+
+<div id="Linear Algebra and Analytic Geometry-Matrices"><h2 id="Matrices" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices">Matrices</a></h2></div>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Matrices-Notation"></span><strong id="Notation">Notation</strong>
+</p>
+<ul>
+<li>
+Matrices: \(A\).
+
+<li>
+(Column) Vectors: \(\vec{x}\)
+
+<li>
+Scalars: \(c\)
+
+<li>
+iff = if and only if
+
+</ul>
+
+<div id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations"><h3 id="Basic Matrix Operations" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations">Basic Matrix Operations</a></h3></div>
+
+<p>
+TL;DR: <a href="https://numpy.org/doc/stable/reference/routines.linalg.html">Use a computer</a>
+</p>
+
+<p>
+Let \(A\) be an \(m \times n\) matrix:
+</p>
+
+\[
+A = \begin{bmatrix}
+  a_{11} &amp; a_{12} &amp; \ldots &amp; a_{1n} \\
+  a_{21} &amp; a_{22} &amp; \ldots &amp; a_{2n} \\
+  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+  a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn}
+\end{bmatrix}
+\]
+
+<p>
+The matrix with all its entries equal to zero is called the <span id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations-zero matrix"></span><strong id="zero matrix">zero matrix</strong> and is denoted by <span id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations-0"></span><strong id="0">0</strong>.
+</p>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations-Equality"></span><strong id="Equality">Equality</strong>
+</p>
+
+<p>
+\(A = B\) iff. \(a_{ij} = b_{ij}\) for all \(1 \leq i \leq m\) and \(1 \leq j \leq n\).
+</p>
+
+<p>
+<em>All corresponding entries must be equal</em>
+</p>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations-Addition"></span><strong id="Addition">Addition</strong>
+</p>
+
+<p>
+\(C = A + B\) with entries \(c_{ij} = a_{ij} + b_{ij}\) for \(1 \leq i \leq m, 1 \leq j \leq n\).
+</p>
+
+<p>
+<em>Add corresponding entries</em>
+</p>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations-Scalar Multiplication"></span><strong id="Scalar Multiplication">Scalar Multiplication</strong>
+</p>
+
+<p>
+Let \(c\) be a scalar.
+</p>
+
+<p>
+\(cA\) with entries \(ca_{ij}\) for \(1 \leq i \leq m\) and \(1 \leq j \leq n\).
+</p>
+
+<p>
+<em>Multiply every entry by the scalar</em>
+</p>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Matrices-Basic Matrix Operations-Transposition"></span><strong id="Transposition">Transposition</strong>
+</p>
+
+<p>
+\(A^{T} or A'\) with entries \(a'_{ij} = a_{ji}\).
+</p>
+
+<p>
+<em>Flip along the diagonal</em>
+</p>
+
+<div id="Linear Algebra and Analytic Geometry-Matrices-Matrix Multiplication"><h3 id="Matrix Multiplication" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-Matrix Multiplication">Matrix Multiplication</a></h3></div>
+
+<p>
+If \(A\) is an \(m \times l\) matrix and \(B\) is an \(l \times n\) matrix,
+</p>
+
+<p>
+then \(C = AB\) is an \(m \times n\) matrix with entries
+</p>
+\[
+c_{ij} = \sum_{k=1}^{l}a_{ik}b_{kj}
+\]
+<p>
+for \(1 \leq i \leq m\) and \(1 \leq j \leq n\).
+</p>
+
+<p>
+Entry \(c_{ij}\) is the sum of the products of the \(i\)th row of \(A\) and the \(j\)th column of \(B\).
+</p>
+
+<p>
+<em>How to multiply:</em>
+</p>
+
+\[
+A = \begin{bmatrix}
+  a &amp; b &amp; c \\
+  d &amp; e &amp; f
+\end{bmatrix}
+\]
+\[
+B = \begin{bmatrix}
+  g &amp; h \\
+  i &amp; j \\
+  k &amp; l
+\end{bmatrix}
+\]
+
+<p>
+<em>Chop columns</em>
+</p>
+\[
+A_1 = \begin{bmatrix} a \\ d \end{bmatrix},
+A_2 = \begin{bmatrix} b \\ e \end{bmatrix},
+A_3 = \begin{bmatrix} c \\ f \end{bmatrix}
+\]
+
+\[
+B_1 = \begin{bmatrix} g \\ i \\ k \end{bmatrix},
+B_2 = \begin{bmatrix} h \\ j \\ l \end{bmatrix}
+\]
+
+<p>
+Rotate \(B\)'s columns:
+</p>
+
+\[
+B_1' = \begin{bmatrix} g &amp; i &amp; k \end{bmatrix},
+B_2' = \begin{bmatrix} h &amp; j &amp; l \end{bmatrix}
+\]
+
+<p>
+Now multiply entries from \(B_i'\) with the vectors \(A_i\):
+</p>
+
+\[
+\begin{align}
+C &amp; = \begin{bmatrix} gA_1 + iA_2 + kA_3 &amp; hA_1 + jA_2 + lA_3 \end{bmatrix} \\
+&amp; = \begin{bmatrix}
+  g\begin{bmatrix} a \\ d \end{bmatrix} + i\begin{bmatrix} b \\ e \end{bmatrix} + k\begin{bmatrix} c \\ f \end{bmatrix}
+  &amp; h\begin{bmatrix} a \\ d \end{bmatrix} + j\begin{bmatrix} b \\ e \end{bmatrix} + l\begin{bmatrix} c \\ f \end{bmatrix}
+\end{bmatrix} \\
+&amp; = \begin{bmatrix}
+  ga + ib + kc &amp; ha + jb + lc \\
+  gd + ie + kf &amp; hd + je + lf
+\end{bmatrix}
+\end{align}
+\]
+
+<p>
+For the product \(AB\) to be defined, the number of columns in \(A\) must equal the number of rows in \(B\).
+</p>
+
+<p>
+In general \(AB \neq BA\).
+</p>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Matrices-Matrix Multiplication-Some properties"></span><strong id="Some properties">Some properties</strong>
+</p>
+
+<ol>
+<li>
+\((A+B)C = AC + BC\)
+
+<li>
+\(A(B+C) = AB + AC\)
+
+<li>
+\((AB)C = A(BC)\)
+
+<li>
+\(A\mathbf{0} = \mathbf{0}A = \mathbf{0}\)
+
+</ol>
+
+<div id="Linear Algebra and Analytic Geometry-Matrices-The Identity Matrix™"><h3 id="The Identity Matrix™" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-The Identity Matrix™">The Identity Matrix™</a></h3></div>
+
+\[
+I = \begin{bmatrix}
+  1 &amp; 0 &amp; 0 &amp; \ldots &amp; 0 \\
+  0 &amp; 1 &amp; 0 &amp; \ldots &amp; 0 \\
+  \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+  0 &amp; 0 &amp; 0 &amp;\ldots &amp; 1
+\end{bmatrix}
+\]
+
+<p>
+\(I_n\) is a matrix with the diagonal entries equal to 1 while all the others are 0.
+</p>
+
+<p>
+If \(A\) is an \(m \times n\) matrix, then
+</p>
+
+<p>
+\(AI_n = I_mA = A\)
+</p>
+
+<div id="Linear Algebra and Analytic Geometry-Matrices-Inverse Matrices"><h3 id="Inverse Matrices" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-Inverse Matrices">Inverse Matrices</a></h3></div>
+
+<p>
+Let \(A\) be an \(n \times n\) square matrix. If there exists an \(n \times n\) square matrix \(B\) such that
+</p>
+
+<p>
+\(AB = BA = I_n\)
+</p>
+
+<p>
+then \(B\) is called the inverse matrix of \(A\) and is denoted \(A^{-1}\).
+</p>
+
+<p>
+If \(A\) has an inverse matrix, \(A\) is called <span id="Linear Algebra and Analytic Geometry-Matrices-Inverse Matrices-invertible"></span><strong id="invertible">invertible</strong> or <span id="Linear Algebra and Analytic Geometry-Matrices-Inverse Matrices-nonsingular"></span><strong id="nonsingular">nonsingular</strong>;
+if \(A\) does not have an inverse matrix, \(A\) is called <span id="Linear Algebra and Analytic Geometry-Matrices-Inverse Matrices-singular"></span><strong id="singular">singular</strong>.
+The inverse matrix, if it exists, is unique: If \(B = A^{-1}\) and \(C = A^{-1}\) then \(B = C\).
+</p>
+
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Matrices-Inverse Matrices-Applications"></span><strong id="Applications">Applications</strong>
+</p>
+
+<p>
+Let \(A\) be a square coefficient matrix, \(\vec{x}\) be the vector of variables and \(\vec{b}\) be a vector of constants.
+</p>
+
+<p>
+If \(A\) is invertible, the equation \(A\vec{x} = \vec{b}\) has the solution \(\vec{x} = A^{-1}\vec{b}\).
+</p>
+
+<div id="Linear Algebra and Analytic Geometry-Matrices-The Determinant"><h3 id="The Determinant" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-The Determinant">The Determinant</a></h3></div>
+
+<p>
+<em>It determines stuff!</em>
+</p>
+
+<p>
+For an \(2 \times 2\) matrix:
+</p>
+
+<p>
+\(\mathrm{det}\;A = \begin{vmatrix}a &amp; b \\ c &amp; d\end{vmatrix} = ad - bc\)
+</p>
+
+<p>
+For \(3 \times 3\) matrices it is a bit more complicated:
+</p>
+
+\[
+A =
+\begin{bmatrix}
+a &amp; b &amp; c \\
+d &amp; e &amp; f \\
+g &amp; h &amp; i
+\end{bmatrix}
+\]
+
+<p>
+TL;DR: \(aei + bfg + cdh - ceg - bdi - afh\)
+</p>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Matrices-The Determinant-A short sidetrack"></span><strong id="A short sidetrack">A short sidetrack</strong>
+</p>
+
+<p>
+If \(A\) is a square matrix, then the <em>minor</em>, \(M_{ij}\), of the entry in the \(i\)th row and \(j\)th column
+is the determinant of the submatrix formed by deleting the \(i\)th row and \(j\)th column.
+</p>
+
+\[
+\begin{align}
+  M_{1,1} &amp; =
+  \begin{vmatrix}
+    ❌ &amp; ❌ &amp; ❌ \\
+    ❌ &amp; e &amp; f \\
+    ❌ &amp; h &amp; i
+  \end{vmatrix}
+  =
+  \begin{vmatrix}
+    e &amp; f \\
+    h &amp; i
+  \end{vmatrix}
+  = ei - fh \\
+
+  M_{1,2} &amp; =
+  \begin{vmatrix}
+    ❌ &amp; ❌ &amp; ❌ \\
+    d &amp; ❌ &amp; f \\
+    g &amp; ❌ &amp; i
+  \end{vmatrix}
+  =
+  \begin{vmatrix}
+    d &amp; f \\
+    g &amp; i
+  \end{vmatrix}
+  = di - fg \\
+
+  M_{1,3} &amp; =
+  \begin{vmatrix}
+    ❌ &amp; ❌ &amp; ❌ \\
+    d &amp; e &amp; ❌ \\
+    g &amp; h &amp; ❌
+  \end{vmatrix}
+  =
+  \begin{vmatrix}
+    d &amp; e \\
+    g &amp; h
+  \end{vmatrix}
+  = dh - eg
+\end{align}
+\]
+
+<p>
+The <em>cofactor</em>, \(C_{i,j}\), is obtained by multiplying the minor by \((-1)^{i+j}\):
+</p>
+
+\[
+\begin{bmatrix}
++ &amp; - &amp; + \\
+- &amp; + &amp; - \\
++ &amp; - &amp; +
+\end{bmatrix}
+\]
+
+\[
+\begin{align}
+  C_{1,1} = M_{1,1}(-1)^{1+1} &amp; = ei - fh \\
+  C_{1,2} = M_{1,2}(-1)^{1+2} &amp; = -(di - fg) \\
+  C_{1,3} = M_{1,3}(-1)^{1+3} &amp; = dh - eg
+\end{align}
+\]
+
+<p>
+Finally, the determinant of a \(3 \times 3\) matrix (with visual aid):
+</p>
+\[
+  \begin{bmatrix}
+    a &amp; ❌ &amp; ❌ \\
+    ❌ &amp; e &amp; f \\
+    ❌ &amp; h &amp; i
+  \end{bmatrix}
+  \begin{bmatrix}
+    ❌ &amp; b &amp; ❌ \\
+    d &amp; ❌ &amp; f \\
+    g &amp; ❌ &amp; i
+  \end{bmatrix}
+  \begin{bmatrix}
+    ❌ &amp; ❌ &amp; c \\
+    d &amp; e &amp; ❌ \\
+    g &amp; h &amp; ❌
+  \end{bmatrix}
+\]
+\[
+\begin{align}
+  &amp; aC_{1,1} + bC_{1,2} + cC_{1,3} = \\
+  &amp; aM_{1,1} - bM_{1,2} + cM_{1,3} = \\
+  &amp; a\begin{vmatrix}
+      e &amp; f \\
+      h &amp; i
+    \end{vmatrix}
+    -b\begin{vmatrix}
+      d &amp; f \\
+      g &amp; i
+    \end{vmatrix}
+    +c\begin{vmatrix}
+      d &amp; e \\
+      g &amp; h
+    \end{vmatrix}
+    = \\
+  &amp; a(ei-fh) - b(di-fg) + c(dh-eg) = \\
+  &amp; aei + bfg + cdh - afh - bdi - ceg
+\end{align}
+\]
+
+<p>
+To make the computation easier, try making two of \(a,b,c\) 0 with row operations.
+</p>
+
+<p>
+Or, <a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.det.html">just use a computer</a>
+</p>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Matrices-The Determinant-Row Operations and Determinants"></span><strong id="Row Operations and Determinants">Row Operations and Determinants</strong>
+</p>
+
+<p>
+(As used in Gaussian elimination)
+</p>
+
+<p>
+Let \(A\) be a square matrix.
+</p>
+<ol>
+<li>
+If a multiple of one row of \(A\) is added to another row to produce matrix B, then \(\mathrm{det}\;B = \mathrm{det}\;A\).
+
+<li>
+If two rows of \(A\) are interchanged to produce \(B\), then \(\mathrm{det}\;B = -\mathrm{det}\;A\).
+
+<li>
+If one row of \(A\) is multiplied by \(k\) to produce \(B\), then \(\mathrm{det}\;B = k \cdot \mathrm{det}\;A\).
+
+</ol>
+
+<div id="Linear Algebra and Analytic Geometry-Matrices-Invertible Matrices"><h3 id="Invertible Matrices" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-Invertible Matrices">Invertible Matrices</a></h3></div>
+
+<p>
+For any square matrix, \(A\) is invertible iff \(\mathrm{det}\;A \neq 0\).
+</p>
+
+<p>
+For a \(2 \times 2\) matrix \(A = \begin{bmatrix}a &amp; b \\ c &amp; d\end{bmatrix}\):
+</p>
+
+<p>
+\(A^{-1} = \frac{1}{\mathrm{det}\;A} \begin{bmatrix}d &amp; -b \\ -c &amp; a\end{bmatrix}\)
+</p>
+
+<p>
+If \(A\) and \(B\) are \(n \times n\) invertible matrices and \(\vec{x}\) and \(\vec{y}\) are vectors:
+</p>
+<ol>
+<li>
+\((A^{-1})^{-1} = A\)
+
+<li>
+\((AB)^{-1} = B^{-1}A^{-1}\)
+
+<li>
+\(A\) is row equivalent to the \(n \times n\) identity matrix.
+
+<li>
+The equation \(A\vec{x} = \vec{0}\) has only the trivial solution.
+
+<li>
+The columns of \(A\) form a linearly independent set.
+
+<li>
+The linear transformation \(\vec{x} \to A\vec{x}\) is one-to-one.
+
+<li>
+The equation \(A\vec{x} = \vec{y}\) has at least one solution.
+
+<li>
+\(A^T\) is an invertible matrix.
+
+<li>
+The number \(0\) is not an eigenvalue of \(A\).
+
+<li>
+\(\mathrm{det}\;A \neq 0\)
+
+</ol>
+
+<div id="Linear Algebra and Analytic Geometry-Matrices-An Application: The Leslie Matrix"><h3 id="An Application: The Leslie Matrix" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-An Application: The Leslie Matrix">An Application: The Leslie Matrix</a></h3></div>
+
+<p>
+\(N(t)\) is population over time, where \(t = 0,1,2,\dots\) measured at discrete times (e.g. annually).
+</p>
+
+<p>
+\(N(t+1) = RN(t)\), \(N(0) = N_0\), \(N(t) = R^tN_0\)
+</p>
+
+<p>
+\(N_x(t)\) is the number of females of age \(x\) at time \(t\).
+</p>
+
+\[
+N(t) =
+\begin{bmatrix}
+  N_0(t) \\
+  N_1(t) \\
+  N_2(t) \\
+  \vdots
+\end{bmatrix}
+\]
+
+<p>
+Let \(P_x\) be the fraction of females age \(x\) at time \(t\) that survive to time \(t+1\).
+Let \(F_x\) be the average number of surviving female offspring per female individual age \(x\).
+</p>
+
+<p>
+Then the Leslie matrix of the population is:
+</p>
+\[
+L = \begin{bmatrix}
+F_0    &amp; F_1    &amp; F_2    &amp; \ldots &amp; F_{m-1} &amp; F_m    \\
+P_0    &amp; 0      &amp; \ldots &amp; \ldots &amp; \ldots  &amp; 0      \\
+0      &amp; P_1    &amp; 0      &amp; \ldots &amp; \ldots  &amp; 0      \\
+\vdots &amp; \ldots &amp; \ldots &amp; \ldots &amp; \ldots  &amp; \vdots \\
+0      &amp; \ldots &amp; \ldots &amp; 0      &amp; P_{m-1} &amp; 0
+\end{bmatrix}
+\]
+
+<p>
+The matrix is \((m+1) \times (m+1)\) reflecting \(m\) age classes.
+</p>
+
+<p>
+\(N(t+1) = LN(t)\)
+</p>
+
+\[
+\begin{bmatrix}
+  N_0(t+1) \\
+  N_1(t+1) \\
+  N_2(t+1) \\
+  \vdots
+\end{bmatrix}
+=
+\begin{bmatrix}
+F_0    &amp; F_1    &amp; F_2    &amp; \ldots &amp; F_{m-1} &amp; F_m    \\
+P_0    &amp; 0      &amp; \ldots &amp; \ldots &amp; \ldots  &amp; 0      \\
+0      &amp; P_1    &amp; 0      &amp; \ldots &amp; \ldots  &amp; 0      \\
+\vdots &amp; \ldots &amp; \ldots &amp; \ldots &amp; \ldots  &amp; \vdots \\
+0      &amp; \ldots &amp; \ldots &amp; 0      &amp; P_{m-1} &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+  N_0(t) \\
+  N_1(t) \\
+  N_2(t) \\
+  \vdots
+\end{bmatrix}
+\]
+
+<div id="Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues"><h2 id="Linear Maps, Eigenvectors and Eigenvalues" class="header"><a href="#Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues">Linear Maps, Eigenvectors and Eigenvalues</a></h2></div>
+
+<div id="Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Linear Maps"><h3 id="Linear Maps" class="header"><a href="#Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Linear Maps">Linear Maps</a></h3></div>
+
+<p>
+A map, \(\vec{x} \to A\vec{x}\), is a function.
+</p>
+
+<p>
+A <span id="Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Linear Maps-linear map"></span><strong id="linear map">linear map</strong> is a map between two vector spaces that preserves the operations of vector addition and scalar multiplication:
+</p>
+
+<ol>
+<li>
+\(A(\vec{x} + \vec{y}) = A\vec{x} + A\vec{y}\)
+
+<li>
+\(A(c\vec{x}) = c(A\vec{x})\)
+
+</ol>
+
+<p>
+In other words, a linear map represents a linear transformation of the space.
+Such a transformation keeps grid lines parallel and evenly spaced.
+</p>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Linear Maps-Identity Map"></span><strong id="Identity Map">Identity Map</strong>
+The simplest linear map is represented by the <a href="Linear Algebra and Analytic Geometry.html#The Identity Matrix™">identiy matrix</a>:
+</p>
+
+<p>
+\(I\vec{x} = \vec{x}\)
+</p>
+
+<p>
+The transformation keeps the vector \(\vec{x}\) unchanged.
+</p>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Linear Maps-Rotation"></span><strong id="Rotation">Rotation</strong>
+</p>
+
+<p>
+<a href="https://xkcd.com/184/">Relevant XKCD</a>
+</p>
+
+\[
+R_\theta = \begin{bmatrix}
+  \mathrm{cos}\;\theta &amp; -\mathrm{sin}\;\theta \\
+  \mathrm{sin}\;\theta &amp; \mathrm{cos}\;\theta
+\end{bmatrix}
+\]
+
+<p>
+<em>Yes. It rotates a vector.</em>
+</p>
+
+
+<div id="Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors"><h3 id="Eigenvalues and Eigenvectors" class="header"><a href="#Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors">Eigenvalues and Eigenvectors</a></h3></div>
+
+<p>
+If \(A\) is a square matrix,
+</p>
+
+\[
+\vec{x} \neq \vec{0}
+\]
+
+<p>
+\(\lambda\) is a scalar and
+</p>
+
+\[
+A \vec{x} = \lambda \vec{x}
+\]
+
+<p>
+then \(\vec{x}\) is an eigenvector of \(A\) and \(\lambda\) is an eigenvalue of \(A\).
+</p>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors-Finding Eigenvalues"></span><strong id="Finding Eigenvalues">Finding Eigenvalues</strong>
+</p>
+
+\[
+A = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}
+\]
+
+\[
+A \vec{x} - \lambda \vec{x} = \vec{0}
+\]
+
+\[
+A \vec{x} - \lambda I \vec{x} = \vec{0}
+\]
+
+\[
+(A - \lambda I) \vec{x} = \vec{0}
+\]
+
+<p>
+The matrix \(A - \lambda I\) must be non-invertible for this equation to have a non-trivial solution.
+</p>
+
+\[
+|A - \lambda I| = 0
+\]
+
+\[
+\begin{vmatrix} a - \lambda &amp; b \\ c &amp; d - \lambda \end{vmatrix} = \lambda^2 - (a + d)\lambda + ad - bc  =0
+\]
+
+<p>
+Solving this quadratic equation yields the eigenvalues of the matrix.
+</p>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors-Finding Eigenvectors"></span><strong id="Finding Eigenvectors">Finding Eigenvectors</strong>
+</p>
+
+<p>
+For each eigenvalue \(\lambda\), solve
+</p>
+
+\[
+A \begin{bmatrix}x_1\\x_2\end{bmatrix} = \lambda \begin{bmatrix}x_1\\x_2\end{bmatrix}
+\]
+
+<div id="Linear Algebra and Analytic Geometry-Analytic Geometry"><h2 id="Analytic Geometry" class="header"><a href="#Linear Algebra and Analytic Geometry-Analytic Geometry">Analytic Geometry</a></h2></div>
+
+<div id="Linear Algebra and Analytic Geometry-Analytic Geometry-Points and Vectors in Higher Dimensions"><h3 id="Points and Vectors in Higher Dimensions" class="header"><a href="#Linear Algebra and Analytic Geometry-Analytic Geometry-Points and Vectors in Higher Dimensions">Points and Vectors in Higher Dimensions</a></h3></div>
+
+<p>
+A vector in \(n\)-dimensional space is an ordered \(n\)-tuple
+</p>
+\[
+\vec{x} = \begin{bmatrix}
+  x_1 \\ x_2 \\ \vdots \\ x_n
+\end{bmatrix}
+\]
+
+<p>
+The length of a vector
+\( |\vec{x}| = \sqrt{x_1^2 + x_2^2 + \dots x_n^2} \)
+</p>
+
+<p>
+The normalized vector
+\( \frac{\vec{x}}{|\vec{x}|} \)
+has length 1.
+</p>
+
+<div id="Linear Algebra and Analytic Geometry-Analytic Geometry-The Dot Product"><h3 id="The Dot Product" class="header"><a href="#Linear Algebra and Analytic Geometry-Analytic Geometry-The Dot Product">The Dot Product</a></h3></div>
+
+<p>
+The <span id="Linear Algebra and Analytic Geometry-Analytic Geometry-The Dot Product-scalar product"></span><strong id="scalar product">scalar product</strong>, or <span id="Linear Algebra and Analytic Geometry-Analytic Geometry-The Dot Product-dot product"></span><strong id="dot product">dot product</strong>, of two vectors \(\vec{x}\) and \(\vec{y}\) is the number
+</p>
+\[
+\vec{x} \cdot \vec{y} = \vec{x}'\vec{y} = \sum_{i=1}^n x_iy_i
+\]
+<blockquote>
+This is Matrix multiplication!
+</blockquote>
+
+<p>
+The dot product satisfies the following two properties
+</p>
+<ol>
+<li>
+\(\vec{x}\cdot\vec{y} = \vec{y}\cdot\vec{x}\)
+
+<li>
+\(\vec{x}\cdot(\vec{y}+\vec{z}) = \vec{x}\cdot\vec{y} + \vec{x}\cdot\vec{z}\)
+
+</ol>
+
+\[
+  \vec{x}\cdot\vec{x}=\sum_{i=1}^n x_i^2
+\]
+
+<p>
+\(|\vec{x}|^2 = \vec{x}\cdot\vec{x}\)
+</p>
+
+<p>
+\(\vec{x}\cdot\vec{y} = |\vec{x}||\vec{y}|\mathrm{cos}\;\theta\)
+</p>
+
+<p>
+\(\vec{x}\) and \(\vec{y}\) are perpendicular if \(\vec{x}\cdot\vec{y} = 0\)
+</p>
+<blockquote>
+\(\mathrm{cos}\;0° = 1 \\ \mathrm{cos}\;30° \approx 0.866\\ \mathrm{cos}\;45° \approx 0.707\\ \mathrm{cos}\;60° = 0.5\\ \mathrm{cos}\;90° = 0\)
+</blockquote>
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Analytic Geometry-The Dot Product-Lines in the Plane"></span><strong id="Lines in the Plane">Lines in the Plane</strong>
+</p>
+
+<p>
+If \(\vec{n}\) is a vector perpendicular to a line and \(\vec{r}\) is a point on the line
+</p>
+\[
+  \vec{n}\cdot(\vec{r}-\vec{r}_0) = 0
+\]
+<p>
+where \(\vec{r}-\vec{r}_0\) is parallel to the line.
+This equation is called the <span id="Linear Algebra and Analytic Geometry-Analytic Geometry-The Dot Product-vector equation"></span><strong id="vector equation">vector equation</strong> of the line in the plane.
+</p>
+
+<p>
+The line trough \((x_0,y_0)\) perpendicular to \(\begin{bmatrix}a\\b\end{bmatrix}\) has the equation
+</p>
+\[
+  a(x-x_0)+b(y-y_0) = 0
+\]
+
+<p>
+<span id="Linear Algebra and Analytic Geometry-Analytic Geometry-The Dot Product-Planes in Space"></span><strong id="Planes in Space">Planes in Space</strong>
+</p>
+
+<p>
+If \(\vec{n}\) is a vector perpendicular to a plane and \(\vec{r}\) is a point in the plane
+</p>
+\[
+  \vec{n}\cdot(\vec{r}-\vec{r}_0) = 0
+\]
+<p>
+where \(\vec{r}-\vec{r}_0\) is parallel to the plane.
+This equation is called the <span id="Linear Algebra and Analytic Geometry-Analytic Geometry-The Dot Product-vector equation of a plane"></span><strong id="vector equation of a plane">vector equation of a plane</strong>.
+</p>
+
+<p>
+The plane trough \((x_0,y_0,z_0)\) and perpendicular to \(\begin{bmatrix}a&amp;b&amp;c\end{bmatrix}'\) has the equation
+</p>
+\[
+a(x-x_0)+b(y-y_0)+c(z-z_0)=0
+\]
+
+<div id="Linear Algebra and Analytic Geometry-Analytic Geometry-Parametric Equations of Lines"><h3 id="Parametric Equations of Lines" class="header"><a href="#Linear Algebra and Analytic Geometry-Analytic Geometry-Parametric Equations of Lines">Parametric Equations of Lines</a></h3></div>
+
+\[
+\vec{r}(t) = \vec{r}_0 + t\vec{u}
+\]
+<p>
+where \(\vec{r}\) is a vector pointing from the origin to a point on the line,
+\(\vec{u}\) is a vector parallel to the line,
+and \(t\) is the parameter.
+</p>
+
+    </div>
+    <p><small>Page created on 2021-05-29</small></p>
+    <script src="../prism.js"></script>
+  </body>
+</html>

@@ -15,19 +15,381 @@
   <body class="line-numbers match-braces">
     <div class="content">
       
+<div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
+<ul>
+<li>
+<a href="Multivariable Calculus.html#Multivariable Calculus">Multivariable Calculus</a>
+
+<ul>
+<li>
+<a href="Multivariable Calculus.html#Multivariable Calculus-Functions of Two or More Independent Variables">Functions of Two or More Independent Variables</a>
+
+<li>
+<a href="Multivariable Calculus.html#Multivariable Calculus-Limits and Continuity">Limits and Continuity</a>
+
+<ul>
+<li>
+<a href="Multivariable Calculus.html#Multivariable Calculus-Limits and Continuity-Limits">Limits</a>
+
+<li>
+<a href="Multivariable Calculus.html#Multivariable Calculus-Limits and Continuity-Continuity">Continuity</a>
+
+</ul>
+<li>
+<a href="Multivariable Calculus.html#Multivariable Calculus-Partial Derivatives">Partial Derivatives</a>
+
+<li>
+<a href="Multivariable Calculus.html#Multivariable Calculus-Tangent Planes, Differentiability and Linearization">Tangent Planes, Differentiability and Linearization</a>
+
+<ul>
+<li>
+<a href="Multivariable Calculus.html#Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Functions of Two Variables">Functions of Two Variables</a>
+
+<ul>
+<li>
+<a href="Multivariable Calculus.html#Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Functions of Two Variables-Tangent Planes">Tangent Planes</a>
+
+<li>
+<a href="Multivariable Calculus.html#Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Functions of Two Variables-Differentiability">Differentiability</a>
+
+<li>
+<a href="Multivariable Calculus.html#Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Functions of Two Variables-Linearization">Linearization</a>
+
+</ul>
+<li>
+<a href="Multivariable Calculus.html#Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Vector-Valued Functions">Vector-Valued Functions</a>
+
+</ul>
+<li>
+<a href="Multivariable Calculus.html#Multivariable Calculus-More About Derivatives">More About Derivatives</a>
+
+<ul>
+<li>
+<a href="Multivariable Calculus.html#Multivariable Calculus-More About Derivatives-The Chain Rule for Functions of Two Variables">The Chain Rule for Functions of Two Variables</a>
+
+<li>
+<a href="Multivariable Calculus.html#Multivariable Calculus-More About Derivatives-Implicit Differentiation">Implicit Differentiation</a>
+
+<li>
+<a href="Multivariable Calculus.html#Multivariable Calculus-More About Derivatives-Directional Derivatives and Gradient Vectors">Directional Derivatives and Gradient Vectors</a>
+
+</ul>
+<li>
+<a href="Multivariable Calculus.html#Multivariable Calculus-Applications">Applications</a>
+
+<ul>
+<li>
+<a href="Multivariable Calculus.html#Multivariable Calculus-Applications-Maxima and Minima">Maxima and Minima</a>
+
+<li>
+<a href="Multivariable Calculus.html#Multivariable Calculus-Applications-Extrema with Constraints">Extrema with Constraints</a>
+
+</ul>
+</ul>
+</ul>
+
 <div id="Multivariable Calculus"><h1 id="Multivariable Calculus" class="header"><a href="#Multivariable Calculus">Multivariable Calculus</a></h1></div>
 
 <div id="Multivariable Calculus-Functions of Two or More Independent Variables"><h2 id="Functions of Two or More Independent Variables" class="header"><a href="#Multivariable Calculus-Functions of Two or More Independent Variables">Functions of Two or More Independent Variables</a></h2></div>
 
 <div id="Multivariable Calculus-Limits and Continuity"><h2 id="Limits and Continuity" class="header"><a href="#Multivariable Calculus-Limits and Continuity">Limits and Continuity</a></h2></div>
 
+<div id="Multivariable Calculus-Limits and Continuity-Limits"><h3 id="Limits" class="header"><a href="#Multivariable Calculus-Limits and Continuity-Limits">Limits</a></h3></div>
+
+<p>
+<span id="Multivariable Calculus-Limits and Continuity-Limits-Limit Laws for the Two-Dimensional Case"></span><strong id="Limit Laws for the Two-Dimensional Case">Limit Laws for the Two-Dimensional Case</strong>
+</p>
+
+<p>
+If \(a\) is a constant and if
+</p>
 \[
-  \mathrm{If } a \mathrm{ is constant and if} \\
-  \lim_{(x,y) \to (x_0,y_0)} f(x,y) = L_1
+\begin{align}
+  \lim_{(x,y) \to (x_0,y_0)} &amp; f(x,y) = L_1 \\ &amp; \text{and} \\ \lim_{(x,y) \to (x_0,y_0)} &amp; g(x,y) = L_2
+\end{align}
+\]
+<p>
+where \(L_1\) and \(L_2\) are real numbers, then the following hold:
+</p>
+
+<div id="Multivariable Calculus-Limits and Continuity-Continuity"><h3 id="Continuity" class="header"><a href="#Multivariable Calculus-Limits and Continuity-Continuity">Continuity</a></h3></div>
+
+<p>
+A function \(f(x,y)\) is continuous at \((x_0, y_0)\) if the following hold:
+</p>
+<ol>
+<li>
+\(f(x,y)\) is defined at \((x_0, y_0)\)
+
+<li>
+\(\lim_{(x,y) \to (x_0,y_0)} f(x,y)\) exists.
+
+<li>
+\(\lim_{(x,y) \to (x_0,y_0)} f(x,y) = (x_0, y_0)\)
+
+</ol>
+
+<div id="Multivariable Calculus-Partial Derivatives"><h2 id="Partial Derivatives" class="header"><a href="#Multivariable Calculus-Partial Derivatives">Partial Derivatives</a></h2></div>
+
+<p>
+<span id="Multivariable Calculus-Partial Derivatives-Definition"></span><strong id="Definition">Definition</strong>
+</p>
+
+<p>
+If \(f\) is a function of two independent variables \(x\) and \(y\),
+the <span id="Multivariable Calculus-Partial Derivatives-partial derivative"></span><strong id="partial derivative">partial derivative</strong> of \(f\) with respect to \(x\) is defined by
+</p>
+\[
+  \frac{\partial f(x,y)}{\partial x} = \lim_{h \to 0} \frac{f(x+h,y) - f(x,y)}{h}
+\]
+<p>
+The partial derivative of \(f\) withe respect to \(y\) is defined by
+</p>
+\[
+  \frac{\partial f(x,y)}{\partial y} = \lim_{h \to 0} \frac{f(x,y+h) - f(x,y)}{h}
 \]
 
+<p>
+<span id="Multivariable Calculus-Partial Derivatives-Notation"></span><strong id="Notation">Notation</strong>
+</p>
+
+<p>
+\(f_x(x,y) = \frac{\partial f}{\partial x}\)
+</p>
+
+<p>
+\(f_{yx} = \frac{\partial^2f}{\partial x \partial y} = \frac{\partial}{\partial x}\left(\frac{\partial f}{\partial y}\right)\)
+</p>
+
+<p>
+<span id="Multivariable Calculus-Partial Derivatives-Computation"></span><strong id="Computation">Computation</strong>
+</p>
+
+<p>
+To compute \(\frac{\partial f(x,y)}{\partial x}\) we treat \(y\) as a constant and differentiate \(f\) with respect to \(x\).
+</p>
+
+<p>
+<span id="Multivariable Calculus-Partial Derivatives-Disks are two-dimensional analogues to intervals"></span><strong id="Disks are two-dimensional analogues to intervals">Disks are two-dimensional analogues to intervals</strong>
+</p>
+
+<p>
+An <span id="Multivariable Calculus-Partial Derivatives-open disk"></span><strong id="open disk">open disk</strong> with radius \(r\) centered at \((x_0,y_0) \in \mathbb{R}^2\) is the set
+</p>
+\[
+B_r(x_0,y_0) = \left\{ (x,y) \in \mathbb{R}^2 : \sqrt{(x-x_0)^2-(y-y_0)^2} &lt; r \right\}
+\]
+<p>
+A <span id="Multivariable Calculus-Partial Derivatives-closed disk"></span><strong id="closed disk">closed disk</strong> with radius \(r\) centered at \((x_0,y_0) \in \mathbb{R}^2\) is the set
+</p>
+\[
+\overline{B}_r(x_0,y_0) = \left\{ (x,y) \in \mathbb{R}^2 : \sqrt{(x-x_0)^2-(y-y_0)^2} \leq r \right\}
+\]
+
+<p>
+<span id="Multivariable Calculus-Partial Derivatives-The Mixed-Derivative Theorem"></span><strong id="The Mixed-Derivative Theorem">The Mixed-Derivative Theorem</strong>
+</p>
+
+<p>
+If \(f(x,y)\) and its partial derivatives \(f_x,f_y,f_{xy},f_{yx}\)
+are continuous on an open disk centered at the point \((x_0,y_0)\), then
+</p>
+\[
+ f_{xy}(x_0,y_0) = f_{yx}(x_0,y_0)
+\]
+
+<div id="Multivariable Calculus-Tangent Planes, Differentiability and Linearization"><h2 id="Tangent Planes, Differentiability and Linearization" class="header"><a href="#Multivariable Calculus-Tangent Planes, Differentiability and Linearization">Tangent Planes, Differentiability and Linearization</a></h2></div>
+
+<div id="Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Functions of Two Variables"><h3 id="Functions of Two Variables" class="header"><a href="#Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Functions of Two Variables">Functions of Two Variables</a></h3></div>
+
+<div id="Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Functions of Two Variables-Tangent Planes"><h4 id="Tangent Planes" class="header"><a href="#Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Functions of Two Variables-Tangent Planes">Tangent Planes</a></h4></div>
+
+<p>
+If the tangent plane to the surface \(z = f(x,y)\) at the point \((x_0, y_0, z_0)\) exists,
+then the tangent plane has the equation
+</p>
+\[
+z - z_0 = \frac{\partial f(x_0,y_0)}{\partial x}(x-x_0) + \frac{\partial f(x_0,y_0)}{\partial y}(y-y_0)
+\]
+<blockquote>
+Basically 2d equivalent of a tangent line.
+</blockquote>
+
+<div id="Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Functions of Two Variables-Differentiability"><h4 id="Differentiability" class="header"><a href="#Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Functions of Two Variables-Differentiability">Differentiability</a></h4></div>
+
+<p>
+Suppose that \(f(x,y)\) is a function of two independent variables
+and that both \(\frac{\partial f}{\partial x}\) and \(\frac{\partial f}{\partial y}\)
+are defined throughout an open disk containing \((x_0,y_0)\).
+</p>
+<blockquote>
+Some circle of inputs where the function works.
+</blockquote>
+<p>
+Set
+</p>
+\[
+L(x,y) = f(x_0,y_0) + \frac{\partial f(x_0,y_0)}{\partial x}(x-x_0) + \frac{\partial f(x_0,y_0)}{\partial y}(y-y_0)
+\]
+<blockquote>
+Linearize the function (tangent plane).
+</blockquote>
+<p>
+Then \(f(x,y)\) is differentiable at \((x_0,y_0)\) if
+</p>
+\[
+\lim_{(x,y) \to (x_0,y_0)} \left| \frac{f(x,y) - L(x,y)}{\sqrt{(x-x_0)^2-(y-y_0)^2}} \right| = 0
+\]
+<blockquote>
+Difference between the actual function and the linearized version divided by the distance from point of linearization.
+The function is differentiable if the linearization and the function agrees at given point.
+</blockquote>
+<p>
+Furthermore, if \(f(x,y)\) is differentiable at \((x_0,y_0)\),
+then \(z = L(x,y)\) defines the tangent plane to the graph of \(f\) at \((x_0,y_0,f(x_0,y_0))\).
+We say that \(f(x,y)\) is differentiable if it is differentiable at every point of its domain.
+</p>
+
+<p>
+<span id="Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Functions of Two Variables-Differentiability-Theorem"></span><strong id="Theorem">Theorem</strong>
+</p>
+
+<p>
+If \(f(x,y)\) is differentiable at \((x_0,y_0)\), then \(f\) is continuous at \((x_0,y_0)\).
+</p>
+
+<p>
+<span id="Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Functions of Two Variables-Differentiability-Sufficient Condition For Differentiability"></span><strong id="Sufficient Condition For Differentiability">Sufficient Condition For Differentiability</strong>
+</p>
+
+<p>
+Suppose \(f(x,y)\) is defined on an open disk centered at \((x_0,y_0)\)
+and the partial derivatives \(\frac{\partial f}{\partial x}\) and \(\frac{\partial f}{\partial y}\)
+are continuous on an open disk centered at \((x_0,y_0)\).
+Then \(f(x,y)\) is differentiable at \((x_0,y_0)\).
+</p>
+
+<div id="Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Functions of Two Variables-Linearization"><h4 id="Linearization" class="header"><a href="#Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Functions of Two Variables-Linearization">Linearization</a></h4></div>
+
+<p>
+Suppose that \(f(x,y)\) is differentiable at \((x_0,y_0)\).
+The linearization of \(f(x,y)\) at \((x_0,y_0)\) is the function
+</p>
+\[
+L(x,y) = f(x_0,y_0) + \frac{\partial f(x_0,y_0)}{\partial x}(x-x_0) + \frac{\partial f(x_0,y_0)}{\partial y}(y-y_0)
+\]
+<p>
+The approximation
+</p>
+\[
+f(x,y) \approx L(x,y)
+\]
+<p>
+is the <span id="Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Functions of Two Variables-Linearization-standard linear approximation"></span><strong id="standard linear approximation">standard linear approximation</strong>, or the <span id="Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Functions of Two Variables-Linearization-tangent plane approximation"></span><strong id="tangent plane approximation">tangent plane approximation</strong>, of \(f(x,y)\) at \((x_0,y_0)\).
+</p>
+
+<div id="Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Vector-Valued Functions"><h3 id="Vector-Valued Functions" class="header"><a href="#Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Vector-Valued Functions">Vector-Valued Functions</a></h3></div>
+
+<p>
+Vector-valued functions \(\vec{f}:\mathbb{R}^n \to \mathbb{R}^m\)
+</p>
+\[
+\vec{f}(x_1,x_2,\dots,x_n) =
+\begin{bmatrix}
+  f_1(x_1,x_2,\dots,x_n) \\
+  f_2(x_1,x_2,\dots,x_n) \\
+  \vdots \\
+  f_m(x_1,x_2,\dots,x_n)
+\end{bmatrix}
+\]
+<p>
+where \(f_i : \mathbb{R}^n \to \mathbb{R}, i = 1,2,\dots,n\),
+are real-valued functions of \(n\) independent variables,
+then the <span id="Multivariable Calculus-Tangent Planes, Differentiability and Linearization-Vector-Valued Functions-Jacobi matrix"></span><strong id="Jacobi matrix">Jacobi matrix</strong> is an \(m \times n\) matrix of the form
+</p>
+\[
+D\vec{f} =
+\begin{bmatrix}
+  \frac{\partial f_1}{\partial x_1} &amp; \ldots &amp; \frac{\partial f_1}{\partial x_n} \\
+  \vdots &amp; &amp; \vdots \\
+  \frac{\partial f_m}{\partial x_1} &amp; \ldots &amp; \frac{\partial f_m}{\partial x_n}
+\end{bmatrix}
+\]
+<p>
+The linearization of \(\vec{f}\) about the point \((x_1^*, x_2^*, \dots, x_n^*)\) is then
+</p>
+\[
+L(x_1^*, \dots, x_n^*) =
+\begin{bmatrix}
+  f_1(x_1^*,\dots,x_n^*) \\
+  f_2(x_1^*,\dots,x_n^*) \\
+  \vdots \\
+  f_m(x_1^*,\dots,x_n^*)
+\end{bmatrix}
++
+D\vec{f}(x_1^*, \dots, x_n^*)
+\begin{bmatrix}
+  x_1 - x_1^* \\
+  \vdots \\
+  x_n - x_n^*
+\end{bmatrix}
+\]
+
+<div id="Multivariable Calculus-More About Derivatives"><h2 id="More About Derivatives" class="header"><a href="#Multivariable Calculus-More About Derivatives">More About Derivatives</a></h2></div>
+
+<div id="Multivariable Calculus-More About Derivatives-The Chain Rule for Functions of Two Variables"><h3 id="The Chain Rule for Functions of Two Variables" class="header"><a href="#Multivariable Calculus-More About Derivatives-The Chain Rule for Functions of Two Variables">The Chain Rule for Functions of Two Variables</a></h3></div>
+
+<p>
+If \(w = f(x,y)\) is differentiable and \(x\) and \(y\) are differentiable functions of \(t\),
+then \(w\) is a differentiable function for \(t\) and
+</p>
+\[
+  \frac{dw}{dt} = \frac{\partial w}{\partial x}\frac{dx}{dt} + \frac{\partial w}{\partial y}\frac{dy}{dy}
+\]
+
+<div id="Multivariable Calculus-More About Derivatives-Implicit Differentiation"><h3 id="Implicit Differentiation" class="header"><a href="#Multivariable Calculus-More About Derivatives-Implicit Differentiation">Implicit Differentiation</a></h3></div>
+
+<p>
+If a function \(F(x,y)\) is differentiable, with \(x = f(x)\) and \(y = g(x)\),
+and \(F(x,y) = 0\) defines \(y\) implicitly as a differentiable function of \(x\),
+Then, at any point where \(F_y \neq 0\),
+</p>
+\[
+  \frac{dy}{dx} = -\frac{F_x}{F_y}
+\]
+
+<div id="Multivariable Calculus-More About Derivatives-Directional Derivatives and Gradient Vectors"><h3 id="Directional Derivatives and Gradient Vectors" class="header"><a href="#Multivariable Calculus-More About Derivatives-Directional Derivatives and Gradient Vectors">Directional Derivatives and Gradient Vectors</a></h3></div>
+
+<p>
+Assume that \(z = f(x,y)\) is a function of two independent variables
+and that \(\frac{\partial f}{\partial x}\) and \(\frac{\partial f}{\partial y}\) exist. Then the vector
+</p>
+\[
+  \nabla f(x,y) = \begin{bmatrix}
+    \frac{\partial f(x,y)}{\partial x} \\
+    \frac{\partial f(x,y)}{\partial y}
+  \end{bmatrix}
+\]
+<p>
+is called the gradient of \(f\) at \((x,y)\).
+</p>
+
+<p>
+The directional derivative of \(f(x,y)\) at \((x_0,y_0)\)
+in the direction of the unit vector \(\vec{u}=\begin{bmatrix}u_1 \\ u_2\end{bmatrix}\) is
+</p>
+\[
+  D_{\vec{u}}f(x_0,y_0) = (\nabla f(x_0,y_0)) \cdot \vec{u}
+\]
+
+<div id="Multivariable Calculus-Applications"><h2 id="Applications" class="header"><a href="#Multivariable Calculus-Applications">Applications</a></h2></div>
+
+<div id="Multivariable Calculus-Applications-Maxima and Minima"><h3 id="Maxima and Minima" class="header"><a href="#Multivariable Calculus-Applications-Maxima and Minima">Maxima and Minima</a></h3></div>
+
+<div id="Multivariable Calculus-Applications-Extrema with Constraints"><h3 id="Extrema with Constraints" class="header"><a href="#Multivariable Calculus-Applications-Extrema with Constraints">Extrema with Constraints</a></h3></div>
+
     </div>
-    <p><small>Page created on 2021-04-19</small></p>
+    <p><small>Page created on 2021-05-29</small></p>
     <script src="../prism.js"></script>
   </body>
 </html>
