@@ -386,10 +386,220 @@ in the direction of the unit vector \(\vec{u}=\begin{bmatrix}u_1 \\ u_2\end{bmat
 
 <div id="Multivariable Calculus-Applications-Maxima and Minima"><h3 id="Maxima and Minima" class="header"><a href="#Multivariable Calculus-Applications-Maxima and Minima">Maxima and Minima</a></h3></div>
 
+<p>
+A function \(f(x,y)\) defined on a set \(D \subset \mathbb{R}^2\)
+has a <span id="Multivariable Calculus-Applications-Maxima and Minima-local"></span><strong id="local">local</strong> (or <span id="Multivariable Calculus-Applications-Maxima and Minima-relative"></span><strong id="relative">relative</strong>) <span id="Multivariable Calculus-Applications-Maxima and Minima-maximum"></span><strong id="maximum">maximum</strong> at a point \((x_0,y_0)\)
+if there exists a \(\delta &gt; 0\) such that
+</p>
+\[
+  f(x,y) \leq f(x_0,y_0)\;\;\text{for all}\;(x,y) \in B_\delta(x_0,y_0) \cap D
+\]
+<p>
+A function \(f(x,y)\) defined on a set \(D \subset \mathbb{R}^2\)
+has a <span id="Multivariable Calculus-Applications-Maxima and Minima-local"></span><strong id="local">local</strong> (or <span id="Multivariable Calculus-Applications-Maxima and Minima-relative"></span><strong id="relative">relative</strong>) <span id="Multivariable Calculus-Applications-Maxima and Minima-minimum"></span><strong id="minimum">minimum</strong> at a point \((x_0,y_0)\)
+if there exists a \(\delta &gt; 0\) such that
+</p>
+\[
+  f(x,y) \geq f(x_0,y_0)\;\;\text{for all}\;(x,y) \in B_\delta(x_0,y_0) \cap D
+\]
+<blockquote>
+Within a circle where the function is defined:
+if all points around a point of interest is less extreme (higher/lower),
+then the point of interest is a local extremum.
+</blockquote>
+
+<p>
+If \(f(x,y)\) ha a local extremum at \((x_0,y_0)\)
+and if \(f\) is differentiable at \((x_0,y_0)\), then
+</p>
+\[
+  \nabla f(x_0,y_0) = \begin{bmatrix}0\\0\end{bmatrix}
+\]
+<blockquote>
+The slope is flat at an extremum.
+</blockquote>
+
+<p>
+Suppose the second partial derivatives of \(f\)
+are continuous in a disk centered at \((x_0,y_0)\).
+Suppose also that \(\nabla f(x_0,y_0) = \begin{bmatrix}0\\0\end{bmatrix}\)
+Define
+</p>
+\[
+  D = f_{xx}(x_0,y_0)f_{yy}(x_0,y_0) - (f_{xy}(x_0,y_0))^2
+\]
+<ol>
+<li>
+If \(D &gt; 0\) and \(f_{xx}(x_0,y_0) &gt; 0\), then \(f\) has a local minimum at \((x_0,y_0)\)
+
+<li>
+If \(D &gt; 0\) and \(f_{xx}(x_0,y_0) &lt; 0\), then \(f\) has a local maximum at \((x_0,y_0)\)
+
+<li>
+If \(D &lt; 0\), then \(f\) does not have a local extremum at \((x_0,y_0)\).
+   The point \((x_0,y_0)\) is then called a <span id="Multivariable Calculus-Applications-Maxima and Minima-saddle point"></span><strong id="saddle point">saddle point</strong>.
+
+</ol>
+
+<div id="Multivariable Calculus-Applications-Maxima and Minima-A Sufficient Condition Based on Eigenvalues"><h4 id="A Sufficient Condition Based on Eigenvalues" class="header"><a href="#Multivariable Calculus-Applications-Maxima and Minima-A Sufficient Condition Based on Eigenvalues">A Sufficient Condition Based on Eigenvalues</a></h4></div>
+
+<p>
+The <span id="Multivariable Calculus-Applications-Maxima and Minima-A Sufficient Condition Based on Eigenvalues-Hessian matrix"></span><strong id="Hessian matrix">Hessian matrix</strong>
+</p>
+\[
+\mathrm{Hess}\;f(x_0,y_0) =
+\begin{bmatrix}
+  \frac{\partial^2f(x_0,y_0)}{\partial x^2}          &amp; \frac{\partial^2f(x_0,y_0)}{\partial y \partial x} \\
+  \frac{\partial^2f(x_0,y_0)}{\partial x \partial y} &amp; \frac{\partial^2f(x_0,y_0)}{\partial y^2}
+\end{bmatrix}
+=
+\begin{bmatrix}
+  f_{xx}(x_0,y_0) &amp; f_{xy}(x_0,y_0) \\
+  f_{yx}(x_0,y_0) &amp; f_{yy}(x_0,y_0)
+\end{bmatrix}
+\]
+
+<p>
+It turns out that the eigenvalues of this matrix
+provide a sufficient condition for determining whether
+a critical point is a local maximum, local minimum, or neither.
+</p>
+
+<p>
+Suppose the second partial derivatives of \(f\) are continuous in a disk centered at \((x_0,y_0)\).
+Suppose also that \(\nabla f(x_0,y_0) = \begin{bmatrix}0\\0\end{bmatrix}\).
+Then
+</p>
+<ol>
+<li>
+If the two eigenvalues of \(\mathrm{Hess}\;f(x_0,y_0)\) are positive,
+   then \(f\) has a local minimum at \((x_0,y_0)\).
+
+<li>
+If the two eigenvalues of \(\mathrm{Hess}\;f(x_0,y_0)\) are negative,
+   then \(f\) has a local maximum at \((x_0,y_0)\).
+
+<li>
+If the two eigenvalues of \(\mathrm{Hess}\;f(x_0,y_0)\) are of opposite signs,
+   then \(f\) does not have a local extremum at \((x_0,y_0)\).
+   The point \((x_0,y_0)\) is a <span id="Multivariable Calculus-Applications-Maxima and Minima-A Sufficient Condition Based on Eigenvalues-saddle point"></span><strong id="saddle point">saddle point</strong>.
+
+</ol>
+
+<p>
+Because we assume that the second partial derivatives of \(f\)
+are continuous in a disk centered at \((x_0,y_0)\). We have
+</p>
+\[
+  \frac{\partial^2 f(x,y)}{\partial x \partial y} =
+  \frac{\partial^2 f(x,y)}{\partial y \partial x}
+\]
+<p>
+and the Hessian matrix is
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Matrices-Classifications of Matrices-Symmetric Matrices">symmetric</a>.
+The
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors-More properties">eigenvalues</a>
+are real, \(|\mathrm{Hess}\;f(x_0,y_0)| = \lambda_1\lambda_2\) and \(\mathrm{tr}(\mathrm{Hess}\;f(x_0,y_0)) = \lambda_1 + \lambda_2\).
+</p>
+
+<p>
+Suppose the second partial derivatives of \(f\) are continuous in a disk centered at \((x_0,y_0)\).
+Suppose also that \(\nabla f(x_0,y_0) = \begin{bmatrix}0\\0\end{bmatrix}\).
+Then
+</p>
+<ol>
+<li>
+If \(|\mathrm{Hess}\; f(x_0,y_0)| &gt; 0\) and \(\mathrm{tr}(\mathrm{Hess}\; f(x_0,y_0)) &gt; 0\),
+   then \(f\) has a local minimum at \((x_0,y_0)\).
+
+<li>
+If \(|\mathrm{Hess}\; f(x_0,y_0)| &gt; 0\) and \(\mathrm{tr}(\mathrm{Hess}\; f(x_0,y_0)) &lt; 0\),
+   then \(f\) has a local maximum at \((x_0,y_0)\).
+
+<li>
+If \(|\mathrm{Hess}\; f(x_0,y_0)| &lt; 0\), then \((x_0,y_0)\) is not a local extremum;
+   instead, \((x_0,y_0)\) is a saddle point.
+
+</ol>
+
+<div id="Multivariable Calculus-Applications-Maxima and Minima-Global Extrema"><h4 id="Global Extrema" class="header"><a href="#Multivariable Calculus-Applications-Maxima and Minima-Global Extrema">Global Extrema</a></h4></div>
+
+<p>
+With the set \(D \subset \mathbb{R}^2\):
+</p>
+<ul>
+<li>
+A point \((x,y)\) is called an <span id="Multivariable Calculus-Applications-Maxima and Minima-Global Extrema-interior point"></span><strong id="interior point">interior point</strong> of \(D\) if there exists a \(\delta &gt; 0\)
+  such that the disk centered at \((x,y)\) with radius \(\delta\) is contained in \(D\),
+  that is if \(B_\delta(x,y) \subset D\).
+
+<li>
+A point \((x,y)\) is a <span id="Multivariable Calculus-Applications-Maxima and Minima-Global Extrema-boundary point"></span><strong id="boundary point">boundary point</strong> of \(D\)
+  if every disk centered at \((x,y)\) contains both points in \(D\) and points not in \(D\);
+  the boundary point \((x,y)\) need not be contained in \(D\).
+
+<li>
+The <span id="Multivariable Calculus-Applications-Maxima and Minima-Global Extrema-interior"></span><strong id="interior">interior</strong> of \(D\) consists of all interior points of \(D\).
+
+<li>
+The <span id="Multivariable Calculus-Applications-Maxima and Minima-Global Extrema-boundary"></span><strong id="boundary">boundary</strong> of \(D\) consists of all boundary points of \(D\).
+
+<li>
+A set \(D \subset \mathbb{R}^2\) is <span id="Multivariable Calculus-Applications-Maxima and Minima-Global Extrema-open"></span><strong id="open">open</strong>
+  if it consists only of interior points.
+
+<li>
+A set \(D \subset \mathbb{R}^2\) is <span id="Multivariable Calculus-Applications-Maxima and Minima-Global Extrema-closed"></span><strong id="closed">closed</strong>
+  if it contains all its boundary points as well as its interior points.
+
+<li>
+A set is <span id="Multivariable Calculus-Applications-Maxima and Minima-Global Extrema-bounded"></span><strong id="bounded">bounded</strong> if it is contained within some disk.
+
+</ul>
+
+<p>
+<span id="Multivariable Calculus-Applications-Maxima and Minima-Global Extrema-Extreme-Value Theorem in"></span><strong id="Extreme-Value Theorem in">Extreme-Value Theorem in</strong> \(\mathbb{R}^2\)
+</p>
+
+<p>
+If \(f\) is continuous on a closed and bounded set \(D \subset \mathbb{R}^2\),
+then \(f\) has both a global maximum and a global minimum on \(D\).
+</p>
+
+<p>
+To find global extrema for continuous functions defined in a closed bounded set:
+</p>
+<ol>
+<li>
+Determine all candidates for local extrema in the interior of \(D\).
+
+<li>
+Determine all candidates for local extrema on the boundary of \(D\).
+
+<li>
+Select the global maximum and the global minimum from the set of points determined in steps 1 and 2.
+
+</ol>
+
 <div id="Multivariable Calculus-Applications-Extrema with Constraints"><h3 id="Extrema with Constraints" class="header"><a href="#Multivariable Calculus-Applications-Extrema with Constraints">Extrema with Constraints</a></h3></div>
 
+<p>
+<span id="Multivariable Calculus-Applications-Extrema with Constraints-Lagrange's Theorem"></span><strong id="Lagrange's Theorem">Lagrange's Theorem</strong>
+</p>
+
+<p>
+Assume that \(f\) and \(g\) have continuous first partial derivatives
+and that \(f(x,y)\) has an extremum at \((x_0,y_0)\)
+subject to the constraint \(g(x,y) = 0\).
+If \(\nabla g(x,y) \neq \begin{bmatrix}0\\0\end{bmatrix}\),
+then there exists a number \(\lambda\) such that
+</p>
+\[
+  \nabla f(x_0,y_0) = \lambda \nabla g(x_0,y_0)
+\]
+
     </div>
-    <p><small>Page created on 2021-05-29</small></p>
+    <p><small>Page created on 2021-05-30</small></p>
     <script src="../prism.js"></script>
   </body>
 </html>

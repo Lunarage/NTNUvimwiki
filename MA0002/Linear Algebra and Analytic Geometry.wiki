@@ -2,22 +2,38 @@
   - [[#Linear Algebra and Analytic Geometry|Linear Algebra and Analytic Geometry]]
     - [[#Linear Algebra and Analytic Geometry#Linear Systems|Linear Systems]]
     - [[#Linear Algebra and Analytic Geometry#Matrices|Matrices]]
-      - [[#Linear Algebra and Analytic Geometry#Matrices#Basic Matrix Operations|Basic Matrix Operations]]
-      - [[#Linear Algebra and Analytic Geometry#Matrices#Matrix Multiplication|Matrix Multiplication]]
-      - [[#Linear Algebra and Analytic Geometry#Matrices#The Identity Matrix™|The Identity Matrix™]]
-      - [[#Linear Algebra and Analytic Geometry#Matrices#Inverse Matrices|Inverse Matrices]]
-      - [[#Linear Algebra and Analytic Geometry#Matrices#The Determinant|The Determinant]]
-      - [[#Linear Algebra and Analytic Geometry#Matrices#Invertible Matrices|Invertible Matrices]]
+      - [[#Linear Algebra and Analytic Geometry#Matrices#Matrix Operations|Matrix Operations]]
+        - [[#Linear Algebra and Analytic Geometry#Matrices#Matrix Operations#Equality|Equality]]
+        - [[#Linear Algebra and Analytic Geometry#Matrices#Matrix Operations#Addition|Addition]]
+        - [[#Linear Algebra and Analytic Geometry#Matrices#Matrix Operations#Scalar Multiplication|Scalar Multiplication]]
+        - [[#Linear Algebra and Analytic Geometry#Matrices#Matrix Operations#Transposition|Transposition]]
+        - [[#Linear Algebra and Analytic Geometry#Matrices#Matrix Operations#Matrix Multiplication|Matrix Multiplication]]
+        - [[#Linear Algebra and Analytic Geometry#Matrices#Matrix Operations#The Determinant|The Determinant]]
+        - [[#Linear Algebra and Analytic Geometry#Matrices#Matrix Operations#The Trace of a Matrix|The Trace of a Matrix]]
+      - [[#Linear Algebra and Analytic Geometry#Matrices#Classifications of Matrices|Classifications of Matrices]]
+        - [[#Linear Algebra and Analytic Geometry#Matrices#Classifications of Matrices#The Zero Matrix|The Zero Matrix]]
+        - [[#Linear Algebra and Analytic Geometry#Matrices#Classifications of Matrices#The Identity Matrix™|The Identity Matrix™]]
+        - [[#Linear Algebra and Analytic Geometry#Matrices#Classifications of Matrices#Inverse Matrices|Inverse Matrices]]
+        - [[#Linear Algebra and Analytic Geometry#Matrices#Classifications of Matrices#Symmetric Matrices|Symmetric Matrices]]
       - [[#Linear Algebra and Analytic Geometry#Matrices#An Application: The Leslie Matrix|An Application: The Leslie Matrix]]
     - [[#Linear Algebra and Analytic Geometry#Linear Maps, Eigenvectors and Eigenvalues|Linear Maps, Eigenvectors and Eigenvalues]]
       - [[#Linear Algebra and Analytic Geometry#Linear Maps, Eigenvectors and Eigenvalues#Linear Maps|Linear Maps]]
       - [[#Linear Algebra and Analytic Geometry#Linear Maps, Eigenvectors and Eigenvalues#Eigenvalues and Eigenvectors|Eigenvalues and Eigenvectors]]
+        - [[#Linear Algebra and Analytic Geometry#Linear Maps, Eigenvectors and Eigenvalues#Eigenvalues and Eigenvectors#Finding Eigenvalues|Finding Eigenvalues]]
+        - [[#Linear Algebra and Analytic Geometry#Linear Maps, Eigenvectors and Eigenvalues#Eigenvalues and Eigenvectors#Finding Eigenvectors|Finding Eigenvectors]]
+        - [[#Linear Algebra and Analytic Geometry#Linear Maps, Eigenvectors and Eigenvalues#Eigenvalues and Eigenvectors#More properties|More properties]]
     - [[#Linear Algebra and Analytic Geometry#Analytic Geometry|Analytic Geometry]]
       - [[#Linear Algebra and Analytic Geometry#Analytic Geometry#Points and Vectors in Higher Dimensions|Points and Vectors in Higher Dimensions]]
       - [[#Linear Algebra and Analytic Geometry#Analytic Geometry#The Dot Product|The Dot Product]]
       - [[#Linear Algebra and Analytic Geometry#Analytic Geometry#Parametric Equations of Lines|Parametric Equations of Lines]]
 
 = Linear Algebra and Analytic Geometry=
+
+*Notation*
+* Matrices: $A$.
+* (Column) Vectors: $\vec{x}$
+* Scalars: $c$
+* iff = if and only if
 
 == Linear Systems ==
 
@@ -88,13 +104,7 @@ is a compact way of describing it.
 
 == Matrices ==
 
-*Notation*
-* Matrices: $A$.
-* (Column) Vectors: $\vec{x}$
-* Scalars: $c$
-* iff = if and only if
-
-=== Basic Matrix Operations ===
+=== Matrix Operations ===
 
 TL;DR: [[https://numpy.org/doc/stable/reference/routines.linalg.html|Use a computer]]
 
@@ -109,21 +119,19 @@ A = \begin{bmatrix}
 \end{bmatrix}
 }}$
 
-The matrix with all its entries equal to zero is called the *zero matrix* and is denoted by *0*.
-
-*Equality*
+==== Equality ====
 
 $A = B$ iff. $a_{ij} = b_{ij}$ for all $1 \leq i \leq m$ and $1 \leq j \leq n$.
 
 _All corresponding entries must be equal_
 
-*Addition*
+==== Addition ====
 
 $C = A + B$ with entries $c_{ij} = a_{ij} + b_{ij}$ for $1 \leq i \leq m, 1 \leq j \leq n$.
 
 _Add corresponding entries_
 
-*Scalar Multiplication*
+==== Scalar Multiplication ====
 
 Let $c$ be a scalar.
 
@@ -131,13 +139,13 @@ $cA$ with entries $ca_{ij}$ for $1 \leq i \leq m$ and $1 \leq j \leq n$.
 
 _Multiply every entry by the scalar_
 
-*Transposition*
+==== Transposition ====
 
 $A^{T} or A'$ with entries $a'_{ij} = a_{ji}$.
 
 _Flip along the diagonal_
 
-=== Matrix Multiplication ===
+==== Matrix Multiplication ====
 
 If $A$ is an $m \times l$ matrix and $B$ is an $l \times n$ matrix,
 
@@ -211,43 +219,7 @@ In general $AB \neq BA$.
 3. $(AB)C = A(BC)$
 4. $A\mathbf{0} = \mathbf{0}A = \mathbf{0}$
 
-=== The Identity Matrix™ ===
-
-{{$
-I = \begin{bmatrix}
-  1 & 0 & 0 & \ldots & 0 \\
-  0 & 1 & 0 & \ldots & 0 \\
-  \vdots & \vdots & \vdots & \ddots & \vdots \\
-  0 & 0 & 0 &\ldots & 1
-\end{bmatrix}
-}}$
-
-$I_n$ is a matrix with the diagonal entries equal to 1 while all the others are 0.
-
-If $A$ is an $m \times n$ matrix, then
-
-$AI_n = I_mA = A$
-
-=== Inverse Matrices ===
-
-Let $A$ be an $n \times n$ square matrix. If there exists an $n \times n$ square matrix $B$ such that
-
-$AB = BA = I_n$
-
-then $B$ is called the inverse matrix of $A$ and is denoted $A^{-1}$.
-
-If $A$ has an inverse matrix, $A$ is called *invertible* or *nonsingular*;
-if $A$ does not have an inverse matrix, $A$ is called *singular*.
-The inverse matrix, if it exists, is unique: If $B = A^{-1}$ and $C = A^{-1}$ then $B = C$.
-
-
-*Applications*
-
-Let $A$ be a square coefficient matrix, $\vec{x}$ be the vector of variables and $\vec{b}$ be a vector of constants.
-
-If $A$ is invertible, the equation $A\vec{x} = \vec{b}$ has the solution $\vec{x} = A^{-1}\vec{b}$.
-
-=== The Determinant ===
+==== The Determinant ====
 
 _It determines stuff!_
 
@@ -387,7 +359,53 @@ Let $A$ be a square matrix.
 2. If two rows of $A$ are interchanged to produce $B$, then $\mathrm{det}\;B = -\mathrm{det}\;A$.
 3. If one row of $A$ is multiplied by $k$ to produce $B$, then $\mathrm{det}\;B = k \cdot \mathrm{det}\;A$.
 
-=== Invertible Matrices ===
+
+==== The Trace of a Matrix ====
+
+The *trace* of an $n \times n$ matrix $A$ is defined as
+{{$
+  \mathrm{tr}(A) = \sum_{i=1}^n a_{ii}
+}}$
+
+In other words, its the sum of the main diagonal.
+
+=== Classifications of Matrices ===
+==== The Zero Matrix ====
+
+The matrix with all its entries equal to zero is called the *zero matrix* and is denoted by *0*.
+
+==== The Identity Matrix™ ====
+
+{{$
+I = \begin{bmatrix}
+  1 & 0 & 0 & \ldots & 0 \\
+  0 & 1 & 0 & \ldots & 0 \\
+  \vdots & \vdots & \vdots & \ddots & \vdots \\
+  0 & 0 & 0 &\ldots & 1
+\end{bmatrix}
+}}$
+
+$I_n$ is a matrix with the diagonal entries equal to 1 while all the others are 0.
+
+If $A$ is an $m \times n$ matrix, then
+
+$AI_n = I_mA = A$
+
+==== Inverse Matrices ====
+
+Let $A$ be an $n \times n$ square matrix. If there exists an $n \times n$ square matrix $B$ such that
+
+$AB = BA = I_n$
+
+then $B$ is called the inverse matrix of $A$ and is denoted $A^{-1}$.
+
+If $A$ has an inverse matrix, $A$ is called *invertible* or *nonsingular*;
+if $A$ does not have an inverse matrix, $A$ is called *singular*.
+The inverse matrix, if it exists, is unique: If $B = A^{-1}$ and $C = A^{-1}$ then $B = C$.
+
+Let $A$ be a square coefficient matrix, $\vec{x}$ be the vector of variables and $\vec{b}$ be a vector of constants.
+
+If $A$ is invertible, the equation $A\vec{x} = \vec{b}$ has the solution $\vec{x} = A^{-1}\vec{b}$.
 
 For any square matrix, $A$ is invertible iff $\mathrm{det}\;A \neq 0$.
 
@@ -406,6 +424,22 @@ If $A$ and $B$ are $n \times n$ invertible matrices and $\vec{x}$ and $\vec{y}$ 
 8. $A^T$ is an invertible matrix.
 9. The number $0$ is not an eigenvalue of $A$.
 10. $\mathrm{det}\;A \neq 0$
+
+==== Symmetric Matrices ====
+
+Let $A$ be a $n \times n$ matrix:
+{{$
+  A\;\text{is symmetric}\; \iff A=A^T
+}}$
+A $2 \times 2$ matrix is symmetric if it is on the form
+{{$
+\begin{bmatrix}
+  a & c \\
+  c & b
+\end{bmatrix}
+}}$
+
+The eigenvalues of a symmetric matrix are always real.
 
 === An Application: The Leslie Matrix ===
 
@@ -467,7 +501,6 @@ P_0    & 0      & \ldots & \ldots & \ldots  & 0      \\
 }}$
 
 == Linear Maps, Eigenvectors and Eigenvalues ==
-
 === Linear Maps ===
 
 A map, $\vec{x} \to A\vec{x}$, is a function.
@@ -517,7 +550,7 @@ A \vec{x} = \lambda \vec{x}
 
 then $\vec{x}$ is an eigenvector of $A$ and $\lambda$ is an eigenvalue of $A$.
 
-*Finding Eigenvalues*
+==== Finding Eigenvalues ====
 
 {{$
 A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}
@@ -547,13 +580,19 @@ The matrix $A - \lambda I$ must be non-invertible for this equation to have a no
 
 Solving this quadratic equation yields the eigenvalues of the matrix.
 
-*Finding Eigenvectors*
+==== Finding Eigenvectors ====
 
 For each eigenvalue $\lambda$, solve
 
 {{$
 A \begin{bmatrix}x_1\\x_2\end{bmatrix} = \lambda \begin{bmatrix}x_1\\x_2\end{bmatrix}
 }}$
+
+==== More properties ====
+
+For a $2 \times 2$ matrix $A$:
+* $ |A| = \lambda_1 \lambda_2 $
+* $ \mathrm{tr}(A) = \lambda_1 + \lambda_2 $
 
 == Analytic Geometry ==
 
