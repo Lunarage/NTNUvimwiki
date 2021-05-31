@@ -67,6 +67,14 @@
 <li>
 <a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Matrices-Classifications of Matrices-Inverse Matrices">Inverse Matrices</a>
 
+<ul>
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Matrices-Classifications of Matrices-Inverse Matrices-Properties of Invertible Matrices">Properties of Invertible Matrices</a>
+
+<li>
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Matrices-Classifications of Matrices-Inverse Matrices-Computing Inverse Matrices">Computing Inverse Matrices</a>
+
+</ul>
 <li>
 <a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Matrices-Classifications of Matrices-Symmetric Matrices">Symmetric Matrices</a>
 
@@ -666,16 +674,10 @@ If \(A\) is invertible, the equation \(A\vec{x} = \vec{b}\) has the solution \(\
 For any square matrix, \(A\) is invertible iff \(\mathrm{det}\;A \neq 0\).
 </p>
 
-<p>
-For a \(2 \times 2\) matrix \(A = \begin{bmatrix}a &amp; b \\ c &amp; d\end{bmatrix}\):
-</p>
+<div id="Linear Algebra and Analytic Geometry-Matrices-Classifications of Matrices-Inverse Matrices-Properties of Invertible Matrices"><h5 id="Properties of Invertible Matrices" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-Classifications of Matrices-Inverse Matrices-Properties of Invertible Matrices">Properties of Invertible Matrices</a></h5></div>
 
 <p>
-\(A^{-1} = \frac{1}{\mathrm{det}\;A} \begin{bmatrix}d &amp; -b \\ -c &amp; a\end{bmatrix}\)
-</p>
-
-<p>
-If \(A\) and \(B\) are \(n \times n\) invertible matrices and \(\vec{x}\) and \(\vec{y}\) are vectors:
+If \(A\) and \(B\) are \(n \times n\) invertible matrices and \(\vec{x}\) and \(\vec{y}\) are \(n \times 1\) vectors:
 </p>
 <ol>
 <li>
@@ -709,6 +711,32 @@ The number \(0\) is not an eigenvalue of \(A\).
 \(\mathrm{det}\;A \neq 0\)
 
 </ol>
+
+<div id="Linear Algebra and Analytic Geometry-Matrices-Classifications of Matrices-Inverse Matrices-Computing Inverse Matrices"><h5 id="Computing Inverse Matrices" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-Classifications of Matrices-Inverse Matrices-Computing Inverse Matrices">Computing Inverse Matrices</a></h5></div>
+
+<p>
+For a \(2 \times 2\) matrix \(A = \begin{bmatrix}a &amp; b \\ c &amp; d\end{bmatrix}\):
+</p>
+\[
+A^{-1} = \frac{1}{|A|}
+\begin{bmatrix}
+  d &amp; -b \\
+  -c &amp; a
+\end{bmatrix}$
+\]
+
+<p>
+For a \(3 \times 3\) matrix \(B\):
+</p>
+\[
+  B^{-1} = \frac{1}{|B|}C^T
+\]
+<p>
+where \(C\) is the matrix of
+<a href="Linear Algebra and Analytic Geometry.html#Linear Algebra and Analytic Geometry-Matrices-Matrix Operations-The Determinant">cofactors</a>
+for \(B\).
+</p>
+
 
 <div id="Linear Algebra and Analytic Geometry-Matrices-Classifications of Matrices-Symmetric Matrices"><h4 id="Symmetric Matrices" class="header"><a href="#Linear Algebra and Analytic Geometry-Matrices-Classifications of Matrices-Symmetric Matrices">Symmetric Matrices</a></h4></div>
 
@@ -926,7 +954,10 @@ For each eigenvalue \(\lambda\), solve
 </p>
 
 \[
-A \begin{bmatrix}x_1\\x_2\end{bmatrix} = \lambda \begin{bmatrix}x_1\\x_2\end{bmatrix}
+\begin{align}
+  A\vec{x} &amp; = \lambda \vec{x} \\
+  (A-\lambda I)\vec{x} &amp; = \vec{0}
+\end{align}
 \]
 
 <div id="Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors-More properties"><h4 id="More properties" class="header"><a href="#Linear Algebra and Analytic Geometry-Linear Maps, Eigenvectors and Eigenvalues-Eigenvalues and Eigenvectors-More properties">More properties</a></h4></div>
@@ -942,6 +973,24 @@ For a \(2 \times 2\) matrix \(A\):
 \( \mathrm{tr}(A) = \lambda_1 + \lambda_2 \)
 
 </ul>
+
+<p>
+Let \(A\) be a matrix,
+\(\lambda_1\) and \(\lambda_2\) be the eigenvalues of \(A\),
+\(\vec{u}\) and \(\vec{v}\) be the corresponding eigenvectors,
+\(n\) an integer,
+and \(a\) and \(b\) scalars
+Then
+</p>
+\[
+  A^n\vec{u}=\lambda_1^n\vec{u}
+\]
+<p>
+and
+</p>
+\[
+  A^n(a\vec{u}+b\vec{u}) = \lambda_1^na\vec{u}+\lambda_2b\vec{v}
+\]
 
 <div id="Linear Algebra and Analytic Geometry-Analytic Geometry"><h2 id="Analytic Geometry" class="header"><a href="#Linear Algebra and Analytic Geometry-Analytic Geometry">Analytic Geometry</a></h2></div>
 
@@ -1066,7 +1115,7 @@ and \(t\) is the parameter.
 </p>
 
     </div>
-    <p><small>Page created on 2021-05-30</small></p>
+    <p><small>Page created on 2021-05-31</small></p>
     <script src="../prism.js"></script>
   </body>
 </html>

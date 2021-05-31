@@ -14,6 +14,8 @@
         - [[#Linear Algebra and Analytic Geometry#Matrices#Classifications of Matrices#The Zero Matrix|The Zero Matrix]]
         - [[#Linear Algebra and Analytic Geometry#Matrices#Classifications of Matrices#The Identity Matrix™|The Identity Matrix™]]
         - [[#Linear Algebra and Analytic Geometry#Matrices#Classifications of Matrices#Inverse Matrices|Inverse Matrices]]
+          - [[#Linear Algebra and Analytic Geometry#Matrices#Classifications of Matrices#Inverse Matrices#Properties of Invertible Matrices|Properties of Invertible Matrices]]
+          - [[#Linear Algebra and Analytic Geometry#Matrices#Classifications of Matrices#Inverse Matrices#Computing Inverse Matrices|Computing Inverse Matrices]]
         - [[#Linear Algebra and Analytic Geometry#Matrices#Classifications of Matrices#Symmetric Matrices|Symmetric Matrices]]
       - [[#Linear Algebra and Analytic Geometry#Matrices#An Application: The Leslie Matrix|An Application: The Leslie Matrix]]
     - [[#Linear Algebra and Analytic Geometry#Linear Maps, Eigenvectors and Eigenvalues|Linear Maps, Eigenvectors and Eigenvalues]]
@@ -409,11 +411,9 @@ If $A$ is invertible, the equation $A\vec{x} = \vec{b}$ has the solution $\vec{x
 
 For any square matrix, $A$ is invertible iff $\mathrm{det}\;A \neq 0$.
 
-For a $2 \times 2$ matrix $A = \begin{bmatrix}a & b \\ c & d\end{bmatrix}$:
+===== Properties of Invertible Matrices =====
 
-$A^{-1} = \frac{1}{\mathrm{det}\;A} \begin{bmatrix}d & -b \\ -c & a\end{bmatrix}$
-
-If $A$ and $B$ are $n \times n$ invertible matrices and $\vec{x}$ and $\vec{y}$ are vectors:
+If $A$ and $B$ are $n \times n$ invertible matrices and $\vec{x}$ and $\vec{y}$ are $n \times 1$ vectors:
 1. $(A^{-1})^{-1} = A$
 2. $(AB)^{-1} = B^{-1}A^{-1}$
 3. $A$ is row equivalent to the $n \times n$ identity matrix.
@@ -424,6 +424,26 @@ If $A$ and $B$ are $n \times n$ invertible matrices and $\vec{x}$ and $\vec{y}$ 
 8. $A^T$ is an invertible matrix.
 9. The number $0$ is not an eigenvalue of $A$.
 10. $\mathrm{det}\;A \neq 0$
+
+===== Computing Inverse Matrices =====
+
+For a $2 \times 2$ matrix $A = \begin{bmatrix}a & b \\ c & d\end{bmatrix}$:
+{{$
+A^{-1} = \frac{1}{|A|}
+\begin{bmatrix}
+  d & -b \\
+  -c & a
+\end{bmatrix}$
+}}$
+
+For a $3 \times 3$ matrix $B$:
+{{$
+  B^{-1} = \frac{1}{|B|}C^T
+}}$
+where $C$ is the matrix of
+[[#Linear Algebra and Analytic Geometry#Matrices#Matrix Operations#The Determinant|cofactors]]
+for $B$.
+
 
 ==== Symmetric Matrices ====
 
@@ -585,7 +605,10 @@ Solving this quadratic equation yields the eigenvalues of the matrix.
 For each eigenvalue $\lambda$, solve
 
 {{$
-A \begin{bmatrix}x_1\\x_2\end{bmatrix} = \lambda \begin{bmatrix}x_1\\x_2\end{bmatrix}
+\begin{align}
+  A\vec{x} & = \lambda \vec{x} \\
+  (A-\lambda I)\vec{x} & = \vec{0}
+\end{align}
 }}$
 
 ==== More properties ====
@@ -593,6 +616,20 @@ A \begin{bmatrix}x_1\\x_2\end{bmatrix} = \lambda \begin{bmatrix}x_1\\x_2\end{bma
 For a $2 \times 2$ matrix $A$:
 * $ |A| = \lambda_1 \lambda_2 $
 * $ \mathrm{tr}(A) = \lambda_1 + \lambda_2 $
+
+Let $A$ be a matrix,
+$\lambda_1$ and $\lambda_2$ be the eigenvalues of $A$,
+$\vec{u}$ and $\vec{v}$ be the corresponding eigenvectors,
+$n$ an integer,
+and $a$ and $b$ scalars
+Then
+{{$
+  A^n\vec{u}=\lambda_1^n\vec{u}
+}}$
+and
+{{$
+  A^n(a\vec{u}+b\vec{u}) = \lambda_1^na\vec{u}+\lambda_2b\vec{v}
+}}$
 
 == Analytic Geometry ==
 
