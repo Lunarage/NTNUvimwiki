@@ -2,17 +2,34 @@
 
 == TL;DR ==
 
-* *Newton's first law:* In an inertial reference frame,
-  a body at rest remains at rest
-  and a body in motion continues to move at constant velocity
-  unless acted upon by a force.
-* *Newton's second law:* $ma = \sum F$
-* *Newton's third law:* Whenever a body exerts a force on another body,
-  the latter exerts a force of equal magnitude and opposite direction on the former.
-* *Kinetic friction:* $f_k = \mu_kN$
-* *Static friction:* $f_{s,max} = \mu_sN$
-* *Restoring force of a spring (Hooke's law):* $F = -kx$
-* *Force required for uniform circular motion:* $F =h\frac{mv^2}{r}$
+*Newton's first law*
+    In an inertial reference frame,
+    a body at rest remains at rest
+    and a body in motion continues to move at constant velocity
+    unless acted upon by a force.
+*Newton's second law*
+{{$
+ma = \sum F
+}}$
+*Newton's third law*
+    Whenever a body exerts a force on another body,
+    the latter exerts a force of equal magnitude and opposite direction on the former.
+*Kinetic friction:*
+{{$
+f_k = \mu_kN
+}}$
+*Static friction*
+{{$
+f_{s,max} = \mu_sN
+}}$
+*Restoring force of a spring (Hooke's law)*
+{{$
+F = -kx
+}}$
+*Force required for uniform circular motion*
+{{$
+F =h\frac{mv^2}{r}
+}}$
 
 == Newton's First Law ==
 

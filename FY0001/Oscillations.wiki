@@ -1,5 +1,17 @@
 = Oscillations =
 
+== TL;DR ==
+
+* *Simple harmonic motion*: $x = A\cos{\omega t}$
+* *Period*: $T = \frac{2\pi}{\omega}$
+* *Frequency*: $f = \frac{1}{T} = \frac{\omega}{2\pi}$
+* *Equation of motion of simple harmonic oscillator*: $ma = -kx$
+* *Angular frequency of simple harmonic oscillator*: $\omega = \sqrt{\frac{k}{m}}$
+* *Period of simple harmonic oscillator*: $T = 2\pi\sqrt{\frac{m}{k}}$
+* *Energy of simple harmonic oscillator*: $E = \frac{1}{2}kA^2$
+* *Angular frequency of simple pendulum*: $\omega = \sqrt{\frac{g}{l}}$
+* *Period of simple pendulum*: $\omega = 2\pi\sqrt{\frac{l}{g}}$
+
 == Simple Harmonic Motion ==
 
 {{$

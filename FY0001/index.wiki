@@ -1,8 +1,10 @@
 = FY0001 - Brukerkurs i fysikk =
 
+[[Tables of useful stuff]]
+
 == Syllabus ==
 
-Ohanian, Principles of Physics
+Ohanian, _Principles of Physics_ (1994)
 | Chapter | Title                                  | Syllabus             | Problems      |
 |---------|----------------------------------------|----------------------|---------------|
 | 1       | [[Motion Along a Straight Line]]       | All                  | [[Chapter 1]] |

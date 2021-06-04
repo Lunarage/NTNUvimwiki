@@ -1,5 +1,11 @@
 = Electrostatic Potential and Energy =
 
+== TL;DR ==
+
+* *Definition of electrostatic potential*: $V = \frac{U}{q}$
+* *Potential energy of two point charges*: $U = k_e\frac{qq'}{r}$
+* *Electrostatic potential of point charge*: $V = k_e\frac{q'}{r}$
+
 == The Electrostatic Potential ==
 
 {{$

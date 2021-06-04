@@ -2,20 +2,46 @@
 
 == TL;DR ==
 
-* Average speed: $\frac{[\text{distance traveled}]}{[\text{time taken}]}$
-* Average velocity: $\overline{v} = \frac{\Delta x}{\Delta t}$
-* Instantaneous velocity: $v = lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t}$
-* Average acceleration: $\overline{a} = \frac{\Delta v}{\Delta t}$
-* Instantaneous acceleration: $a = lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t}$
-* Motion with constant acceleration
-* $v = v_0 + at$
-* $x = x_0 + v_0t + \frac{1}{2}at^2$
-* $a(x-x_0) = \frac{1}{2}(v^2 - v_0^2)$
-* Acceleration of free fall: $g \simeq 9.81 \mathrm{ms}^{-2}$
-* Free fall (positive direction upwards):
-* $v = v_0 - gt$
-* $x = x_0 + v_0t - \frac{1}{2}gt^2$
-* $-g(x - x_0) = \frac{1}{2}(v^2 - v_0^2)$
+*Average speed*
+{{$
+\frac{[\text{distance traveled}]}{[\text{time taken}]}
+}}$
+*Average velocity*
+{{$
+\overline{v} = \frac{\Delta x}{\Delta t}
+}}$
+*Instantaneous velocity*
+{{$
+v = \lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t}
+}}$
+*Average acceleration*
+{{$
+\overline{a} = \frac{\Delta v}{\Delta t}
+}}$
+*Instantaneous acceleration*
+{{$
+a = \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t}
+}}$
+*Motion with constant acceleration*
+{{$
+\begin{align}
+  v &= v_0 + at \\
+  x &= x_0 + v_0t + \frac{1}{2}at^2 \\
+  a(x-x_0) &= \frac{1}{2}(v^2 - v_0^2) \\
+\end{align}
+}}$
+Acceleration of free fall
+{{$
+g \simeq 9.81 \mathrm{ms}^{-2}
+}}$
+Free fall (positive direction upwards):
+{{$
+\begin{align}
+  v &= v_0 - gt \\
+  x &= x_0 + v_0t - \frac{1}{2}gt^2 \\
+  -g(x - x_0) &= \frac{1}{2}(v^2 - v_0^2)
+\end{align}
+}}$
 
 == Measurement of Space and Time; Units ==
 

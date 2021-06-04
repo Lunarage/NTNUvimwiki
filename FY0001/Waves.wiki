@@ -1,5 +1,13 @@
 = Waves =
 
+== TL;DR ==
+
+* *Wavelength, period, frequency and wave speed*: $\frac{\lambda}{T} = \lambda f = v$
+* *Speed of a wave on a string*: $v = \sqrt{\frac{FL}{M}}$
+* *Beat frequency*: $f_{\text{beat}} = f_2 - f_1$
+* *Wavelengths of normal modes of string*: $\lambda_n = \frac{2L}{n}, n \in \N^+$
+* *Eigenfrequencies*: $f_n = \frac{nv}{2L}, n \in \N^+$
+
 == Traverse and Longitudinal Wave Motion ==
 
 == Periodic Waves ==

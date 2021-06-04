@@ -7,6 +7,7 @@ MathJax = {
     // packages: [],
     macros: {
       R: "\\mathbb{R}",
+      N: "\\mathbb{N}",
     },
   },
 };
