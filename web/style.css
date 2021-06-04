@@ -3,6 +3,7 @@
   --content-max-width: 60em;
   --text-default-color: #ffffff;
   --background-default-color: #222222;
+  --background-box-color: #333333;
 }
 
 body {
@@ -69,7 +70,7 @@ a:hover {
 /* Text blocks */
 p, pre, blockquote, table, ul, ol, dl {
   margin-top: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 0;
 }
 
 p, blockquote, table, ul, ol, dl {
@@ -80,19 +81,19 @@ pre {
   border-left: 1px solid #ccc;
   margin-left: 2em;
   padding-left: 0.5em;
-  background: #333333;
+  background: var(--background-box-color);
 }
 
 blockquote {
   padding: 0.4em;
-  background-color: #333;
+  background-color: var(--background-box-color);
 }
 
 :not(pre)>code {
   font-family: monospace;
   font-size: 1.2em;
   display: inline-block;
-  background-color: #333333;
+  background-color: var(--background-box-color);
   padding: 0 0.2em;
 }
 
@@ -129,12 +130,12 @@ img {
 
 /* Tables */
 th, td {
-  border: 1px solid #333;
+  border: 1px solid var(--background-box-color);
   padding: 0.3em;
 }
 
 th {
-  background-color: #333;
+  background-color: var(--background-box-color);
 }
 
 hr {
@@ -154,7 +155,7 @@ del {
 }
 
 .toc + ul {
-  background-color: #333;
+  background-color: var(--background-box-color);
   max-width: fit-content;
   padding: 8px;
 }
@@ -238,8 +239,9 @@ del {
 }
 
 /* classes for MathJax */
-.MathJax_Display {
-  color: #ffffff;
-  text-align: left !important;
-  display: inline !important;
+.MathJax[jax="CHTML"][display="true"]{
+  max-width: var(--text-max-width);
+  background-color: var(--background-box-color);
+  margin: 0 !important;
+  padding: 1em 0;
 }

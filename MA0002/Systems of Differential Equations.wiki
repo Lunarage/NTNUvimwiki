@@ -28,3 +28,5 @@ Then
 \vec{x} = c_1e^{\lambda_1t}\vec{u} + c_2e^{\lambda_2t}\vec{v}
 }}$
 is the general solution.
+
+

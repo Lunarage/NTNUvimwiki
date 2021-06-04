@@ -5,12 +5,17 @@
     <link rel="Stylesheet" type="text/css" href="../style.css" />
     <link rel="Stylesheet" type="text/css" href="../prism.css" />
     <title>Declarative Computation Model</title>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
-      MathJax.Hub.Config({
-        jax: ["input/TeX","output/HTML-CSS"],
-        displayAlign: "left"
-      });
+    <script src="../mathjax_config.js"> </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js">
     </script>
+    <!-- <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"> -->
+    <!--   MathJax.Hub.Config({ -->
+    <!--     jax: ["input/TeX","output/HTML-CSS"], -->
+    <!--     displayAlign: "left" -->
+    <!--   }); -->
+    <!-- </script> -->
   </head>
   <body class="line-numbers match-braces">
     <div class="content">
@@ -913,8 +918,8 @@ After executing the <code>Browse</code>, we get to the first recursive call:
 <li>
 After executing the <code>if</code> statement in the recursive call, this becomes:
 \[
-([(\{\mathtt{Browse\:I}\},\{\mathtt{I} \rightarrow i_0\})\:(\{\mathtt{Loop10\:I+1}\})],
-\{i_0 = 0\} \cup \sigma)
+([(\{\mathtt{Browse\:I}\},\{\mathtt{I} \rightarrow i_1\})\:(\{\mathtt{Loop10\:I+1}\},\{\mathtt{I} \rightarrow i_1\})],
+\{i_0 = 0,i_1 = 1\} \cup \sigma)
 \]
 
 </ul>
@@ -952,7 +957,7 @@ After executing the <code>if</code> statement in the recursive call, this become
 <div id="Declarative Computation Model-Advanced topics-Dynamic and static typing"><h3 id="Dynamic and static typing" class="header"><a href="#Declarative Computation Model-Advanced topics-Dynamic and static typing">Dynamic and static typing</a></h3></div>
 
     </div>
-    <p><small>Page created on 2020-11-15</small></p>
+    <p><small>Page created on 2021-06-04</small></p>
     <script src="../prism.js"></script>
   </body>
 </html>

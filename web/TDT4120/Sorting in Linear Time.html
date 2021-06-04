@@ -5,10 +5,19 @@
     <link rel="Stylesheet" type="text/css" href="../style.css" />
     <link rel="Stylesheet" type="text/css" href="../prism.css" />
     <title>Sorting in Linear Time</title>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+    <script src="../mathjax_config.js"> </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js">
     </script>
+    <!-- <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"> -->
+    <!--   MathJax.Hub.Config({ -->
+    <!--     jax: ["input/TeX","output/HTML-CSS"], -->
+    <!--     displayAlign: "left" -->
+    <!--   }); -->
+    <!-- </script> -->
   </head>
-  <body>
+  <body class="line-numbers match-braces">
     <div class="content">
       
 <div id="Chapter 8 - Sorting in Linear Time"><h1 id="Chapter 8 - Sorting in Linear Time" class="header"><a href="#Chapter 8 - Sorting in Linear Time">Chapter 8 - Sorting in Linear Time</a></h1></div>
@@ -31,12 +40,12 @@ The position is now given by the accumulative list
 
 </ul>
 
-<pre><code class='lang-python'>
+<pre><code class="language-python">
 def counting_sort(A, k):
     # Output list
     B = [0]*len(A)
     # List of k zeros
-    C = [0]*k
+    C = [-1]*k
     # Count occurrences of values in A
     for j in range(len(A)):
         C[A[j]] = C[A[j]] + 1
@@ -56,7 +65,7 @@ def counting_sort(A, k):
 <div id="Chapter 8 - Sorting in Linear Time-Bucket Sort"><h2 id="Bucket Sort" class="header"><a href="#Chapter 8 - Sorting in Linear Time-Bucket Sort">Bucket Sort</a></h2></div>
 
     </div>
-    <p><small>Page created on 2020-09-29</small></p>
+    <p><small>Page created on 2021-06-04</small></p>
     <script src="../prism.js"></script>
   </body>
 </html>

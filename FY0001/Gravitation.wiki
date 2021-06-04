@@ -1,5 +1,16 @@
 = Gravitation =
 
+== TL;DR ==
+
+* *Law of universal gravitation*: $F=G\frac{m_1m_2}{r^2}$
+* *Gravitational constant*:
+  $G = 6.67 \times 10^{-11}~\mathrm{N}\cdot\mathrm{m}^2\cdot\mathrm{kg}^{-2}$
+* *Acceleration of free fall on Earth*: $g = \frac{GM_E}{r}$
+* *Speed for circular orbit around Sun*: $v^2 = \frac{GM_s}{r}$
+* *Gravitational potential energy*: $U = -\frac{GMm}{r}$
+* *Total mechanical energy*: $E = \frac{1}{2}mv^2 - \frac{GMm}{r}$
+* *Standard gravitational parameter*: $\mu = GM$
+
 == Newton's Law of Universal Gravitation ==
 
 Law of universal gravitation

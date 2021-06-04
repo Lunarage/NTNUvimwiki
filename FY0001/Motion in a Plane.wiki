@@ -1,5 +1,14 @@
 = Motion in a Plane =
 
+== TL;DR ==
+
+* *Motion of a projectile:*
+* $v_x = v_0x = v_0\mathrm{cos}\,\theta$
+* $v_y = v_{0_y} - gt = v_0\mathrm{sin}\,\theta - gt$
+* $x = v_{0_x}t$
+* $y = v_{0_y}t - \frac{1}{2}gt^2$
+* *Centripetal acceleration of uniform circular motion:* $a = \frac{a^2}{r}$
+
 == Components of Velocity and Acceleration ==
 
 Speed

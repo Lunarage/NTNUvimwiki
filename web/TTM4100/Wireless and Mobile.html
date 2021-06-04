@@ -3,11 +3,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
     <title>Wireless and Mobile</title>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+    <script src="../mathjax_config.js"> </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js">
     </script>
+    <!-- <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"> -->
+    <!--   MathJax.Hub.Config({ -->
+    <!--     jax: ["input/TeX","output/HTML-CSS"], -->
+    <!--     displayAlign: "left" -->
+    <!--   }); -->
+    <!-- </script> -->
   </head>
-  <body>
+  <body class="line-numbers match-braces">
     <div class="content">
       
 <div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
@@ -119,7 +129,7 @@
 <div id="Wireless and Mobile Networks"><h1 id="Wireless and Mobile Networks" class="header"><a href="#Wireless and Mobile Networks">Wireless and Mobile Networks</a></h1></div>
 <div id="Wireless and Mobile Networks-Introduction"><h2 id="Introduction" class="header"><a href="#Wireless and Mobile Networks-Introduction">Introduction</a></h2></div>
 <p>
-Elements in a wireless network:<br />
+Elements in a wireless network:
 </p>
 <ul>
 <li>
@@ -179,7 +189,7 @@ The larger network with which a wireless host may wish to communicate
 </ul>
 
 <p>
-We can classify wireless networks according to two criteria: Single-/Multiple-Hop and Infrastructure-based/Infrastructure-less:<br />
+We can classify wireless networks according to two criteria: Single-/Multiple-Hop and Infrastructure-based/Infrastructure-less:
 </p>
 <ul>
 <li>
@@ -221,7 +231,7 @@ mobile ad hoc networks (MANETs), vehicular ad hoc network (VANET)
 
 <div id="Wireless and Mobile Networks-Wireless Links and Networks Characteristics"><h2 id="Wireless Links and Networks Characteristics" class="header"><a href="#Wireless and Mobile Networks-Wireless Links and Networks Characteristics">Wireless Links and Networks Characteristics</a></h2></div>
 <p>
-Differences between wireless and wired links:<br />
+Differences between wireless and wired links:
 </p>
 <ul>
 <li>
@@ -251,7 +261,7 @@ Reflections cause the same signal to take more paths
 </ul>
 
 <p>
-<span id="Wireless and Mobile Networks-Wireless Links and Networks Characteristics-Signal-to-noise ratio (SNR)"></span><strong id="Signal-to-noise ratio (SNR)">Signal-to-noise ratio (SNR)</strong>:<br />
+<span id="Wireless and Mobile Networks-Wireless Links and Networks Characteristics-Signal-to-noise ratio (SNR)"></span><strong id="Signal-to-noise ratio (SNR)">Signal-to-noise ratio (SNR)</strong>:
 </p>
 <ul>
 <li>
@@ -266,7 +276,7 @@ Big SNR Good, Small SNR Bad
 </ul>
 
 <p>
-Bit error rate (BER):<br />
+Bit error rate (BER):
 </p>
 <ul>
 <li>
@@ -275,7 +285,7 @@ The probability that a transmitted bit is received in error at the receiver.
 </ul>
 
 <p>
-Physical-layer characteristics that are important to understand:<br />
+Physical-layer characteristics that are important to understand:
 </p>
 <ul>
 <li>
@@ -302,7 +312,7 @@ Adaptive modulation and coding are used in 802.11 and 4G.
 
 <div id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs"><h2 id="802.11: 802.11 Wireless LANs" class="header"><a href="#Wireless and Mobile Networks-802.11: 802.11 Wireless LANs">802.11: 802.11 Wireless LANs</a></h2></div>
 <p>
-<span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-IEEE 802.11 wireless LAN"></span><strong id="IEEE 802.11 wireless LAN">IEEE 802.11 wireless LAN</strong> aka <span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-WiFi"></span><strong id="WiFi">WiFi</strong><br />
+<span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-IEEE 802.11 wireless LAN"></span><strong id="IEEE 802.11 wireless LAN">IEEE 802.11 wireless LAN</strong> aka <span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-WiFi"></span><strong id="WiFi">WiFi</strong>
 </p>
 
 <table>
@@ -446,7 +456,7 @@ up to 11 Gbps
 
 <div id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 Architecture"><h3 id="The 802.11 Architecture" class="header"><a href="#Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 Architecture">The 802.11 Architecture</a></h3></div>
 <p>
-<span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 Architecture-Basic Service Set (BSS)"></span><strong id="Basic Service Set (BSS)">Basic Service Set (BSS)</strong>:<br />
+<span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 Architecture-Basic Service Set (BSS)"></span><strong id="Basic Service Set (BSS)">Basic Service Set (BSS)</strong>:
 </p>
 <ul>
 <li>
@@ -456,8 +466,8 @@ Contains one or more wireless stations and a central base station known as an <s
 
 <div id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 Architecture-Channels and Associations"><h4 id="Channels and Associations" class="header"><a href="#Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 Architecture-Channels and Associations">Channels and Associations</a></h4></div>
 <p>
-<span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 Architecture-Channels and Associations-Service Set Identifier (SSID)"></span><strong id="Service Set Identifier (SSID)">Service Set Identifier (SSID)</strong><br />
-<span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 Architecture-Channels and Associations-WiFi Jungle"></span><strong id="WiFi Jungle">WiFi Jungle</strong>:<br />
+<span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 Architecture-Channels and Associations-Service Set Identifier (SSID)"></span><strong id="Service Set Identifier (SSID)">Service Set Identifier (SSID)</strong>
+<span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 Architecture-Channels and Associations-WiFi Jungle"></span><strong id="WiFi Jungle">WiFi Jungle</strong>:
 </p>
 <ul>
 <li>
@@ -465,7 +475,7 @@ Basically alle bygårder i Trondheim.
 
 </ul>
 <p>
-<span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 Architecture-Channels and Associations-Beacon Frames"></span><strong id="Beacon Frames">Beacon Frames</strong>:<br />
+<span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 Architecture-Channels and Associations-Beacon Frames"></span><strong id="Beacon Frames">Beacon Frames</strong>:
 </p>
 <ul>
 <li>
@@ -473,7 +483,7 @@ An AP periodically send a beacon frame with the MAC address and SSID.
 
 </ul>
 <p>
-<span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 Architecture-Channels and Associations-Passive Scanning"></span><strong id="Passive Scanning">Passive Scanning</strong>:<br />
+<span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 Architecture-Channels and Associations-Passive Scanning"></span><strong id="Passive Scanning">Passive Scanning</strong>:
 </p>
 <ul>
 <li>
@@ -481,7 +491,7 @@ Listening for beacon frames.
 
 </ul>
 <p>
-<span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 Architecture-Channels and Associations-Active Scanning"></span><strong id="Active Scanning">Active Scanning</strong>;<br />
+<span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 Architecture-Channels and Associations-Active Scanning"></span><strong id="Active Scanning">Active Scanning</strong>;
 </p>
 <ul>
 <li>
@@ -493,7 +503,7 @@ APs respond to the probe request frame with a probe response frame
 </ul>
 
 <p>
-How to connect to WiFi really good:<br />
+How to connect to WiFi really good:
 </p>
 <ol>
 <li>
@@ -509,12 +519,12 @@ The AP responds with an association response frame.
 
 <div id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 MAC Protocol"><h3 id="The 802.11 MAC Protocol" class="header"><a href="#Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 MAC Protocol">The 802.11 MAC Protocol</a></h3></div>
 <p>
-<a href="Link Layer.html#Carrier Sense Multiple Access (CSMA)">CSMA</a> with collision avoidance (CSMA/CA)<br />
-Link-layer acknowledgement/retransmission (ARQ)<br />
+<a href="Link Layer.html#Carrier Sense Multiple Access (CSMA)">CSMA</a> with collision avoidance (CSMA/CA)
+Link-layer acknowledgement/retransmission (ARQ)
 </p>
 
 <p>
-The 802.11 MAC Protocol does not implement collision detection for two important reason:<br />
+The 802.11 MAC Protocol does not implement collision detection for two important reason:
 </p>
 <ul>
 <li>
@@ -526,19 +536,19 @@ More importantly, even if the adapter could transmit and receive at the same tim
 </ul>
 
 <p>
-A frame is always transmitted in its entirety.<br />
+A frame is always transmitted in its entirety.
 </p>
 
 <div id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 MAC Protocol-Link-layer acknowledgement scheme"><h4 id="Link-layer acknowledgement scheme" class="header"><a href="#Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 MAC Protocol-Link-layer acknowledgement scheme">Link-layer acknowledgement scheme</a></h4></div>
 <p>
-When a destination receives a frame that passes  <a href="Link Layer.html#Cyclic Redundancy Check (CRC)">CRC</a> it waits a short period of time, Short Inter-frame Spacing (SIFS), and then sends back an acknowledgement frame.<br />
-If no acknowledgement is received, the frame is retransmitted using CSMA/CA.<br />
-If an acknowledgement is not received after some fixed number of retransmissions, the frame is discarded.<br />
+When a destination receives a frame that passes  <a href="Link Layer.html#Cyclic Redundancy Check (CRC)">CRC</a> it waits a short period of time, Short Inter-frame Spacing (SIFS), and then sends back an acknowledgement frame.
+If no acknowledgement is received, the frame is retransmitted using CSMA/CA.
+If an acknowledgement is not received after some fixed number of retransmissions, the frame is discarded.
 </p>
 
 <div id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 MAC Protocol-CSMA/CA"><h4 id="CSMA/CA" class="header"><a href="#Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 MAC Protocol-CSMA/CA">CSMA/CA</a></h4></div>
 <p>
-Suppose that a station has a frame to transmit:<br />
+Suppose that a station has a frame to transmit:
 </p>
 <ol>
 <li>
@@ -555,7 +565,7 @@ If an acknowledgement is received, start with a new frame, else backoff and retr
 
 </ol>
 
-<pre class="python">
+<pre><code class="language-class="python"">
 while(has_frame()):
     if channel_idle():
         wait(DIFS)
@@ -574,17 +584,17 @@ def backoff():
         if channel_idle():
             wait(DIFS)
             counter -= 1
-</pre>
+</code></pre>
 
 <div id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 MAC Protocol-Dealing with Hidden Terminals: RTS and CTS"><h4 id="Dealing with Hidden Terminals: RTS and CTS" class="header"><a href="#Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 MAC Protocol-Dealing with Hidden Terminals: RTS and CTS">Dealing with Hidden Terminals: RTS and CTS</a></h4></div>
 <p>
-<span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 MAC Protocol-Dealing with Hidden Terminals: RTS and CTS-Hidden Terminal Problem"></span><strong id="Hidden Terminal Problem">Hidden Terminal Problem</strong>:<br />
-A can only see B, B can see A and C, C can only see B.<br />
+<span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 MAC Protocol-Dealing with Hidden Terminals: RTS and CTS-Hidden Terminal Problem"></span><strong id="Hidden Terminal Problem">Hidden Terminal Problem</strong>:
+A can only see B, B can see A and C, C can only see B.
 </p>
 
 <p>
-<span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 MAC Protocol-Dealing with Hidden Terminals: RTS and CTS-Request to Send (RTS)"></span><strong id="Request to Send (RTS)">Request to Send (RTS)</strong> and <span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 MAC Protocol-Dealing with Hidden Terminals: RTS and CTS-Clear to Send (CTS)"></span><strong id="Clear to Send (CTS)">Clear to Send (CTS)</strong> are <em>short</em> control frames.<br />
-The protocol goes something like this:<br />
+<span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 MAC Protocol-Dealing with Hidden Terminals: RTS and CTS-Request to Send (RTS)"></span><strong id="Request to Send (RTS)">Request to Send (RTS)</strong> and <span id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The 802.11 MAC Protocol-Dealing with Hidden Terminals: RTS and CTS-Clear to Send (CTS)"></span><strong id="Clear to Send (CTS)">Clear to Send (CTS)</strong> are <em>short</em> control frames.
+The protocol goes something like this:
 </p>
 <ul>
 <li>
@@ -618,7 +628,7 @@ Profit?
 </ol>
 
 <p>
-Pros:<br />
+Pros:
 </p>
 <ul>
 <li>
@@ -631,7 +641,7 @@ Range 10s of kilometers
 
 <div id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The IEEE 802.11 Frame"><h3 id="The IEEE 802.11 Frame" class="header"><a href="#Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The IEEE 802.11 Frame">The IEEE 802.11 Frame</a></h3></div>
 <p>
-The 802.11 frame:<br />
+The 802.11 frame:
 <table>
 <tr>
 <th>
@@ -701,7 +711,7 @@ CRC
 </p>
 
 <p>
-Frame Control Field:<br />
+Frame Control Field:
 <table>
 <tr>
 <th>
@@ -800,7 +810,7 @@ Usually holds an IP datagram or an ARP packet.
 
 <div id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The IEEE 802.11 Frame-Address Fields"><h4 id="Address Fields" class="header"><a href="#Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The IEEE 802.11 Frame-Address Fields">Address Fields</a></h4></div>
 <p>
-Four address fields:<br />
+Four address fields:
 </p>
 <ol>
 <li>
@@ -818,7 +828,7 @@ Is used when APs forward frames to each other in ad hoc mode.
 </ol>
 
 <p>
-Since APs essentially are wireless link layer switches and don't speak IP, address 3 is required.<br />
+Since APs essentially are wireless link layer switches and don't speak IP, address 3 is required.
 </p>
 
 <div id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The IEEE 802.11 Frame-Sequence Number, Duration and Frame Control Fields"><h4 id="Sequence Number, Duration and Frame Control Fields" class="header"><a href="#Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-The IEEE 802.11 Frame-Sequence Number, Duration and Frame Control Fields">Sequence Number, Duration and Frame Control Fields</a></h4></div>
@@ -842,40 +852,40 @@ WEP indicates whether encryption is used or not.
 
 <div id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-Mobility in the Same IP Subnet"><h3 id="Mobility in the Same IP Subnet" class="header"><a href="#Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-Mobility in the Same IP Subnet">Mobility in the Same IP Subnet</a></h3></div>
 <p>
-How do wireless stations seamlessly move from one BSS to another wile maintaining ongoing TCP sessions?<br />
+How do wireless stations seamlessly move from one BSS to another wile maintaining ongoing TCP sessions?
 </p>
 
 <div id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-Advanced Features in 802.11"><h3 id="Advanced Features in 802.11" class="header"><a href="#Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-Advanced Features in 802.11">Advanced Features in 802.11</a></h3></div>
 
 <div id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-Advanced Features in 802.11-802.11 Rate Adaption"><h4 id="802.11 Rate Adaption" class="header"><a href="#Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-Advanced Features in 802.11-802.11 Rate Adaption">802.11 Rate Adaption</a></h4></div>
 <p>
-Conditions good (May ACKs)? Increase rate<br />
-Conditions bad (Lack of ACKs)? Decrease rate<br />
+Conditions good (May ACKs)? Increase rate
+Conditions bad (Lack of ACKs)? Decrease rate
 </p>
 
 <div id="Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-Advanced Features in 802.11-Power Management"><h4 id="Power Management" class="header"><a href="#Wireless and Mobile Networks-802.11: 802.11 Wireless LANs-Advanced Features in 802.11-Power Management">Power Management</a></h4></div>
 <p>
-A node can be asleep 99% of the time if nothing happens.<br />
+A node can be asleep 99% of the time if nothing happens.
 </p>
 
 <div id="Wireless and Mobile Networks-Cellular Internet Access"><h2 id="Cellular Internet Access" class="header"><a href="#Wireless and Mobile Networks-Cellular Internet Access">Cellular Internet Access</a></h2></div>
 <div id="Wireless and Mobile Networks-Cellular Internet Access-An Overview of Cellular Network Architecture"><h3 id="An Overview of Cellular Network Architecture" class="header"><a href="#Wireless and Mobile Networks-Cellular Internet Access-An Overview of Cellular Network Architecture">An Overview of Cellular Network Architecture</a></h3></div>
 <p>
-Global System for Mobile Communication (GSM) standards.<br />
+Global System for Mobile Communication (GSM) standards.
 </p>
 
 <div id="Wireless and Mobile Networks-Cellular Internet Access-Cellular Network Architecture, 2G: Voice Connections to the Telephone Network"><h3 id="Cellular Network Architecture, 2G: Voice Connections to the Telephone Network" class="header"><a href="#Wireless and Mobile Networks-Cellular Internet Access-Cellular Network Architecture, 2G: Voice Connections to the Telephone Network">Cellular Network Architecture, 2G: Voice Connections to the Telephone Network</a></h3></div>
 <p>
-The term <em>cellular</em> refers to the fact that the region covered by a cellular network is partitioned into a number of geographic coverage areas, known as <span id="Wireless and Mobile Networks-Cellular Internet Access-Cellular Network Architecture, 2G: Voice Connections to the Telephone Network-cells"></span><strong id="cells">cells</strong>.<br />
+The term <em>cellular</em> refers to the fact that the region covered by a cellular network is partitioned into a number of geographic coverage areas, known as <span id="Wireless and Mobile Networks-Cellular Internet Access-Cellular Network Architecture, 2G: Voice Connections to the Telephone Network-cells"></span><strong id="cells">cells</strong>.
 </p>
 
 <p>
-Each cell contains a <span id="Wireless and Mobile Networks-Cellular Internet Access-Cellular Network Architecture, 2G: Voice Connections to the Telephone Network-base transceiver station (BTS)"></span><strong id="base transceiver station (BTS)">base transceiver station (BTS)</strong> <br />
+Each cell contains a <span id="Wireless and Mobile Networks-Cellular Internet Access-Cellular Network Architecture, 2G: Voice Connections to the Telephone Network-base transceiver station (BTS)"></span><strong id="base transceiver station (BTS)">base transceiver station (BTS)</strong> 
 </p>
 
 <p>
-A GSM network's <span id="Wireless and Mobile Networks-Cellular Internet Access-Cellular Network Architecture, 2G: Voice Connections to the Telephone Network-base station controller (BSC)"></span><strong id="base station controller (BSC)">base station controller (BSC)</strong> will typically service several tens of BTSs.<br />
-The role of the BSC is to:<br />
+A GSM network's <span id="Wireless and Mobile Networks-Cellular Internet Access-Cellular Network Architecture, 2G: Voice Connections to the Telephone Network-base station controller (BSC)"></span><strong id="base station controller (BSC)">base station controller (BSC)</strong> will typically service several tens of BTSs.
+The role of the BSC is to:
 </p>
 <ul>
 <li>
@@ -890,11 +900,11 @@ Perform handoff of mobile users.
 </ul>
 
 <p>
-The BSC and BTSs collectively constitutes a GSM <span id="Wireless and Mobile Networks-Cellular Internet Access-Cellular Network Architecture, 2G: Voice Connections to the Telephone Network-base station subsystem (BBS)"></span><strong id="base station subsystem (BBS)">base station subsystem (BBS)</strong>.<br />
+The BSC and BTSs collectively constitutes a GSM <span id="Wireless and Mobile Networks-Cellular Internet Access-Cellular Network Architecture, 2G: Voice Connections to the Telephone Network-base station subsystem (BBS)"></span><strong id="base station subsystem (BBS)">base station subsystem (BBS)</strong>.
 </p>
 
 <p>
-The <span id="Wireless and Mobile Networks-Cellular Internet Access-Cellular Network Architecture, 2G: Voice Connections to the Telephone Network-mobile switching center (MSC)"></span><strong id="mobile switching center (MSC)">mobile switching center (MSC)</strong> plays a central role in:<br />
+The <span id="Wireless and Mobile Networks-Cellular Internet Access-Cellular Network Architecture, 2G: Voice Connections to the Telephone Network-mobile switching center (MSC)"></span><strong id="mobile switching center (MSC)">mobile switching center (MSC)</strong> plays a central role in:
 </p>
 <ul>
 <li>
@@ -912,30 +922,30 @@ Handoff
 </ul>
 
 <p>
-A single MSC will typically contain up to five BSCs, resulting in approximately 200K subscribers.<br />
+A single MSC will typically contain up to five BSCs, resulting in approximately 200K subscribers.
 </p>
 
 <p>
-A cellular provider's network will have a number of MSCs, with special MSCs known as gateways MSCs connecting the provider's cellular network to the larger public telephone network.<br />
+A cellular provider's network will have a number of MSCs, with special MSCs known as gateways MSCs connecting the provider's cellular network to the larger public telephone network.
 </p>
 
 <div id="Wireless and Mobile Networks-Cellular Internet Access-3G Cellular Data Networks: Extending the Internet to Cellular Subscribers"><h3 id="3G Cellular Data Networks: Extending the Internet to Cellular Subscribers" class="header"><a href="#Wireless and Mobile Networks-Cellular Internet Access-3G Cellular Data Networks: Extending the Internet to Cellular Subscribers">3G Cellular Data Networks: Extending the Internet to Cellular Subscribers</a></h3></div>
 <p>
-UMTS (Universal Mobile Telecommunication Service) 3G and 4G standards developed by the 3rd Generation Partnership project (3GPP).<br />
+UMTS (Universal Mobile Telecommunication Service) 3G and 4G standards developed by the 3rd Generation Partnership project (3GPP).
 </p>
 
 <div id="Wireless and Mobile Networks-Cellular Internet Access-3G Cellular Data Networks: Extending the Internet to Cellular Subscribers-3G Core Network"><h4 id="3G Core Network" class="header"><a href="#Wireless and Mobile Networks-Cellular Internet Access-3G Cellular Data Networks: Extending the Internet to Cellular Subscribers-3G Core Network">3G Core Network</a></h4></div>
 <p>
-The approach taken by the designers of 3G:<br />
-Leave the existing core GSM cellular voice network untouched, adding additional cellular data functionality in parallel to the existing cellular voice network.<br />
+The approach taken by the designers of 3G:
+Leave the existing core GSM cellular voice network untouched, adding additional cellular data functionality in parallel to the existing cellular voice network.
 </p>
 
 <p>
-Generalized Packet Radio Service (GPRS) is an early cellular data service in 2G networks.<br />
+Generalized Packet Radio Service (GPRS) is an early cellular data service in 2G networks.
 </p>
 
 <p>
-There are two types of nodes in the 3G core network:<br />
+There are two types of nodes in the 3G core network:
 </p>
 <ul>
 <li>
@@ -978,8 +988,8 @@ Looks like any other gateway router to the outside world.
 
 <div id="Wireless and Mobile Networks-Cellular Internet Access-3G Cellular Data Networks: Extending the Internet to Cellular Subscribers-3G Radio Access Network: The Wireless Edge"><h4 id="3G Radio Access Network: The Wireless Edge" class="header"><a href="#Wireless and Mobile Networks-Cellular Internet Access-3G Cellular Data Networks: Extending the Internet to Cellular Subscribers-3G Radio Access Network: The Wireless Edge">3G Radio Access Network: The Wireless Edge</a></h4></div>
 <p>
-The <span id="Wireless and Mobile Networks-Cellular Internet Access-3G Cellular Data Networks: Extending the Internet to Cellular Subscribers-3G Radio Access Network: The Wireless Edge-Radio Network Controller (RNC)"></span><strong id="Radio Network Controller (RNC)">Radio Network Controller (RNC)</strong> typically controls several cell BTSs similar to the base stations in 2G systems.<br />
-The RNC connects to both:<br />
+The <span id="Wireless and Mobile Networks-Cellular Internet Access-3G Cellular Data Networks: Extending the Internet to Cellular Subscribers-3G Radio Access Network: The Wireless Edge-Radio Network Controller (RNC)"></span><strong id="Radio Network Controller (RNC)">Radio Network Controller (RNC)</strong> typically controls several cell BTSs similar to the base stations in 2G systems.
+The RNC connects to both:
 </p>
 <ul>
 <li>
@@ -991,13 +1001,13 @@ The packet-switched Internet via an SGSN
 </ul>
 
 <p>
-A significant change in 3G UMTS over 2G networks is that rather than using GSM's FDMA/TDMA scheme,<br />
-UMTS uses a <a href="Link Layer.html#Code Division Multiple Access (CDMA)">CDMA</a> technique known as Direct Sequence Wideband CDMA (DS-WCDMA)<br />
+A significant change in 3G UMTS over 2G networks is that rather than using GSM's FDMA/TDMA scheme,
+UMTS uses a <a href="Link Layer.html#Code Division Multiple Access (CDMA)">CDMA</a> technique known as Direct Sequence Wideband CDMA (DS-WCDMA)
 </p>
 
 <div id="Wireless and Mobile Networks-Cellular Internet Access-On to 4G: LTE"><h3 id="On to 4G: LTE" class="header"><a href="#Wireless and Mobile Networks-Cellular Internet Access-On to 4G: LTE">On to 4G: LTE</a></h3></div>
 <p>
-The 4G Long-Term Evolution (LTE) standard has two important innovations over 3G systems:<br />
+The 4G Long-Term Evolution (LTE) standard has two important innovations over 3G systems:
 </p>
 <ul>
 <li>
@@ -1010,12 +1020,12 @@ An enhanced radio access network
 
 <div id="Wireless and Mobile Networks-Cellular Internet Access-On to 4G: LTE-4G System Architecture: An All-IP Core Network"><h4 id="4G System Architecture: An All-IP Core Network" class="header"><a href="#Wireless and Mobile Networks-Cellular Internet Access-On to 4G: LTE-4G System Architecture: An All-IP Core Network">4G System Architecture: An All-IP Core Network</a></h4></div>
 <p>
-Master of acronyms!<br />
-<span id="Wireless and Mobile Networks-Cellular Internet Access-On to 4G: LTE-4G System Architecture: An All-IP Core Network-User Equipment (UE)"></span><strong id="User Equipment (UE)">User Equipment (UE)</strong><br />
+Master of acronyms!
+<span id="Wireless and Mobile Networks-Cellular Internet Access-On to 4G: LTE-4G System Architecture: An All-IP Core Network-User Equipment (UE)"></span><strong id="User Equipment (UE)">User Equipment (UE)</strong>
 </p>
 
 <p>
-There are two important observations about the 4G architecture:<br />
+There are two important observations about the 4G architecture:
 </p>
 <ul>
 <li>
@@ -1038,7 +1048,7 @@ A clear separation between the radio access network, and the all-IP-core network
 </ul>
 
 <p>
-The principal components of the 4G architecture:<br />
+The principal components of the 4G architecture:
 </p>
 <ul>
 <li>
@@ -1060,10 +1070,11 @@ The <span id="Wireless and Mobile Networks-Cellular Internet Access-On to 4G: LT
 
 <div id="Wireless and Mobile Networks-Cellular Internet Access-On to 4G: LTE-LTE Radio Access Network"><h4 id="LTE Radio Access Network" class="header"><a href="#Wireless and Mobile Networks-Cellular Internet Access-On to 4G: LTE-LTE Radio Access Network">LTE Radio Access Network</a></h4></div>
 <p>
-LTE uses a combination of frequency division multiplexing and time division multiplexing on the downstream channel, known as <span id="Wireless and Mobile Networks-Cellular Internet Access-On to 4G: LTE-LTE Radio Access Network-orthogonal frequency division multiplexing (OFDM)"></span><strong id="orthogonal frequency division multiplexing (OFDM)">orthogonal frequency division multiplexing (OFDM)</strong>.<br />
+LTE uses a combination of frequency division multiplexing and time division multiplexing on the downstream channel, known as <span id="Wireless and Mobile Networks-Cellular Internet Access-On to 4G: LTE-LTE Radio Access Network-orthogonal frequency division multiplexing (OFDM)"></span><strong id="orthogonal frequency division multiplexing (OFDM)">orthogonal frequency division multiplexing (OFDM)</strong>.
 </p>
 
     </div>
-    <p><small>Page created on 2020-09-02</small></p>
+    <p><small>Page created on 2021-06-04</small></p>
+    <script src="../prism.js"></script>
   </body>
 </html>

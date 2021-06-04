@@ -3,11 +3,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
     <title>Intro</title>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+    <script src="../mathjax_config.js"> </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js">
     </script>
+    <!-- <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"> -->
+    <!--   MathJax.Hub.Config({ -->
+    <!--     jax: ["input/TeX","output/HTML-CSS"], -->
+    <!--     displayAlign: "left" -->
+    <!--   }); -->
+    <!-- </script> -->
   </head>
-  <body>
+  <body class="line-numbers match-braces">
     <div class="content">
       
 <div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
@@ -69,18 +79,18 @@
 Ten movies streaming across that, that Internet, and what happens to your own personal Internet? I just the other day got... an Internet was sent by my staff at 10 o'clock in the morning on Friday. I got it yesterday [Tuesday]. Why? Because it got tangled up with all these things going on the Internet commercially. [...] They want to deliver vast amounts of information over the Internet. And again, the Internet is not something that you just dump something on. It's not a big truck. <em>It's a series of tubes.</em> And if you don't understand, those tubes can be filled and if they are filled, when you put your message in, it gets in line and it's going to be delayed by anyone that puts into that tube enormous amounts of material, enormous amounts of material.
 </blockquote>
 <p>
--Ted Stevens<br />
+-Ted Stevens
 </p>
 <blockquote>
 Information is moving—you know, nightly news is one way, of course, but it's also moving through the blogosphere and through the Internets.
 </blockquote>
 <p>
--George W. Bush<br />
+-George W. Bush
 </p>
 <div id="Intro-The Network Edge"><h2 id="The Network Edge" class="header"><a href="#Intro-The Network Edge">The Network Edge</a></h2></div>
 <div id="Intro-The Network Edge-Physical Medium"><h3 id="Physical Medium" class="header"><a href="#Intro-The Network Edge-Physical Medium">Physical Medium</a></h3></div>
 <p>
-Two categories:<br />
+Two categories:
 </p>
 <ul>
 <li>
@@ -350,12 +360,12 @@ Propagation Delay: 280 ms
 <div id="Intro-The Network Core"><h2 id="The Network Core" class="header"><a href="#Intro-The Network Core">The Network Core</a></h2></div>
 <div id="Intro-The Network Core-Packet Switching"><h3 id="Packet Switching" class="header"><a href="#Intro-The Network Core-Packet Switching">Packet Switching</a></h3></div>
 <p>
-Packet Length: <em>L</em> bits<br />
-Transmission Rate: <em>R</em> bps<br />
+Packet Length: <em>L</em> bits
+Transmission Rate: <em>R</em> bps
 </p>
 
 <p>
-Store-and-forward transmission:<br />
+Store-and-forward transmission:
 </p>
 <ul>
 <li>
@@ -364,15 +374,15 @@ Packet switch must receive a packet in its entirety before transmitting.
 </ul>
 
 <p>
-Sending a packet of length <em>L</em> bits through <em>N</em> packet switches over links with transmission rate <em>R</em> bps, assuming no propagation delay.<br />
-End-to-end delay:<br />
+Sending a packet of length <em>L</em> bits through <em>N</em> packet switches over links with transmission rate <em>R</em> bps, assuming no propagation delay.
+End-to-end delay:
 </p>
 \[
     d_{end-to-end} = N\frac{L}{N}
 \]
 
 <p>
-For each attached link to the packet switch:<br />
+For each attached link to the packet switch:
 </p>
 <ul>
 <li>
@@ -392,7 +402,7 @@ If full, incoming packet or a packet in buffer is dropped and packet loss has oc
 <div id="Intro-The Network Core-Circuit Switching"><h3 id="Circuit Switching" class="header"><a href="#Intro-The Network Core-Circuit Switching">Circuit Switching</a></h3></div>
 <div id="Intro-The Network Core-Circuit Switching-Multiplexing in Circuit-Switching Networks"><h4 id="Multiplexing in Circuit-Switching Networks" class="header"><a href="#Intro-The Network Core-Circuit Switching-Multiplexing in Circuit-Switching Networks">Multiplexing in Circuit-Switching Networks</a></h4></div>
 <p>
-A circuit link is implemented with either:<br />
+A circuit link is implemented with either:
 </p>
 <ul>
 <li>
@@ -405,7 +415,7 @@ Time-division multiplexing (TDM)
 
 <div id="Intro-Delay, Loss, and Throughput in Packet-Switched Networks"><h2 id="Delay, Loss, and Throughput in Packet-Switched Networks" class="header"><a href="#Intro-Delay, Loss, and Throughput in Packet-Switched Networks">Delay, Loss, and Throughput in Packet-Switched Networks</a></h2></div>
 <p>
-<span id="Intro-Delay, Loss, and Throughput in Packet-Switched Networks-Total nodal delay"></span><strong id="Total nodal delay">Total nodal delay</strong> (\(d_{nodal}\)) is the sum of:<br />
+<span id="Intro-Delay, Loss, and Throughput in Packet-Switched Networks-Total nodal delay"></span><strong id="Total nodal delay">Total nodal delay</strong> (\(d_{nodal}\)) is the sum of:
 </p>
 <ul>
 <li>
@@ -449,7 +459,7 @@ Propagation speed <em>s</em> is typically \( 2\cdot10^8 \)to \( 3\cdot10^8 \)
 
 <div id="Intro-Protocol Layers and Their Service Models-Encapsulation"><h3 id="Encapsulation" class="header"><a href="#Intro-Protocol Layers and Their Service Models-Encapsulation">Encapsulation</a></h3></div>
 <p>
-Packets within payloads.<br />
+Packets within payloads.
 </p>
 
 <div id="Intro-Networks Under Attack"><h2 id="Networks Under Attack" class="header"><a href="#Intro-Networks Under Attack">Networks Under Attack</a></h2></div>
@@ -457,6 +467,7 @@ Packets within payloads.<br />
 <div id="Intro-History of Computer Networking and the Internet"><h2 id="History of Computer Networking and the Internet" class="header"><a href="#Intro-History of Computer Networking and the Internet">History of Computer Networking and the Internet</a></h2></div>
 
     </div>
-    <p><small>Page created on 2020-09-02</small></p>
+    <p><small>Page created on 2021-06-04</small></p>
+    <script src="../prism.js"></script>
   </body>
 </html>

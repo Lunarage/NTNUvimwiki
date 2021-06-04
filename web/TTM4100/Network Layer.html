@@ -3,11 +3,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
     <title>Network Layer</title>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+    <script src="../mathjax_config.js"> </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js">
     </script>
+    <!-- <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"> -->
+    <!--   MathJax.Hub.Config({ -->
+    <!--     jax: ["input/TeX","output/HTML-CSS"], -->
+    <!--     displayAlign: "left" -->
+    <!--   }); -->
+    <!-- </script> -->
   </head>
-  <body>
+  <body class="line-numbers match-braces">
     <div class="content">
       
 <div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
@@ -332,7 +342,7 @@ Other uses such as ICMP
 
 <div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Fragmentation"><h3 id="IPv4 Datagram Fragmentation" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Fragmentation">IPv4 Datagram Fragmentation</a></h3></div>
 <p>
-<span id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Fragmentation-Maximum Transmission Unit (MTU)"></span><strong id="Maximum Transmission Unit (MTU)">Maximum Transmission Unit (MTU)</strong>:<br />
+<span id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Datagram Fragmentation-Maximum Transmission Unit (MTU)"></span><strong id="Maximum Transmission Unit (MTU)">Maximum Transmission Unit (MTU)</strong>:
 </p>
 <ul>
 <li>
@@ -347,8 +357,8 @@ Hard limit for the size of an IP datagram
 </ul>
 
 <p>
-Routers can fragment a datagram into smaller datagrams (fragments) to fit the size of the link-layer frame.<br />
-Fragments are then reassembled at the destination:<br />
+Routers can fragment a datagram into smaller datagrams (fragments) to fit the size of the link-layer frame.
+Fragments are then reassembled at the destination:
 </p>
 <ul>
 <li>
@@ -367,15 +377,15 @@ The order of the fragments are determined by the Fragmentation offset field
 
 <div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Addressing"><h3 id="IPv4 Addressing" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Addressing">IPv4 Addressing</a></h3></div>
 <p>
-The Internet's address assignment strategy is known as <span id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Addressing-Classless Interdomain Routing (CIDR)"></span><strong id="Classless Interdomain Routing (CIDR)">Classless Interdomain Routing (CIDR)</strong>.<br />
-a.b.c.d/x<br />
-The x most significant bits constitute the network portion of the IP address.<br />
+The Internet's address assignment strategy is known as <span id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Addressing-Classless Interdomain Routing (CIDR)"></span><strong id="Classless Interdomain Routing (CIDR)">Classless Interdomain Routing (CIDR)</strong>.
+a.b.c.d/x
+The x most significant bits constitute the network portion of the IP address.
 </p>
 
 <div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Addressing-DHCP"><h4 id="DHCP" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Addressing-DHCP">DHCP</a></h4></div>
 <p>
-<span id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Addressing-DHCP-Dynamic Host Configuration Protocol"></span><strong id="Dynamic Host Configuration Protocol">Dynamic Host Configuration Protocol</strong>:<br />
-Four step process:<br />
+<span id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv4 Addressing-DHCP-Dynamic Host Configuration Protocol"></span><strong id="Dynamic Host Configuration Protocol">Dynamic Host Configuration Protocol</strong>:
+Four step process:
 </p>
 <ol>
 <li>
@@ -423,14 +433,14 @@ DHCP ACK:
 
 <div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-NAT"><h3 id="NAT" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-NAT">NAT</a></h3></div>
 <p>
-<span id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-NAT-Network Address Translation"></span><strong id="Network Address Translation">Network Address Translation</strong>, or how the network layer fucks with the transport layer.<br />
+<span id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-NAT-Network Address Translation"></span><strong id="Network Address Translation">Network Address Translation</strong>, or how the network layer fucks with the transport layer.
 </p>
 
 <div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6"><h3 id="IPv6" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6">IPv6</a></h3></div>
 <div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format"><h4 id="IPv6 Datagram Format" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-IPv6 Datagram Format">IPv6 Datagram Format</a></h4></div>
 
 <p>
-Fixed length 40-byte header<br />
+Fixed length 40-byte header
 </p>
 
 <table>
@@ -558,19 +568,19 @@ Payload
 <div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers"><h4 id="Difference in IPv4 and IPv6 headers" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers">Difference in IPv4 and IPv6 headers</a></h4></div>
 <div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers-Fragmentation"><h5 id="Fragmentation" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers-Fragmentation">Fragmentation</a></h5></div>
 <p>
-Fragmentation is only allowed at sources and destinations.<br />
-If a datagram is too big the router sends "Packet Too Big" ICMP error message back.<br />
-The source can then send smaller datagrams.<br />
+Fragmentation is only allowed at sources and destinations.
+If a datagram is too big the router sends "Packet Too Big" ICMP error message back.
+The source can then send smaller datagrams.
 </p>
 
 <div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers-Header Checksum"><h5 id="Header Checksum" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers-Header Checksum">Header Checksum</a></h5></div>
 <p>
-Link layer and transport layer handles error detection.<br />
+Link layer and transport layer handles error detection.
 </p>
 
 <div id="Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers-Options"><h5 id="Options" class="header"><a href="#Network Layer I: Data Plane-The Internet Protocol (IP): IPv4, Addressing, IPv6 and More-IPv6-Difference in IPv4 and IPv6 headers-Options">Options</a></h5></div>
 <p>
-Removed as field and moved to next header field.<br />
+Removed as field and moved to next header field.
 </p>
 
 <div id="Network Layer II: Control Plane"><h1 id="Network Layer II: Control Plane" class="header"><a href="#Network Layer II: Control Plane">Network Layer II: Control Plane</a></h1></div>
@@ -581,9 +591,9 @@ Removed as field and moved to next header field.<br />
 
 <div id="Network Layer II: Control Plane-ICMP: The Internet Control Message Protocol"><h2 id="ICMP: The Internet Control Message Protocol" class="header"><a href="#Network Layer II: Control Plane-ICMP: The Internet Control Message Protocol">ICMP: The Internet Control Message Protocol</a></h2></div>
 <p>
-Carried in payload of a IP datagram.<br />
-Error messages<br />
-Other uses:<br />
+Carried in payload of a IP datagram.
+Error messages
+Other uses:
 </p>
 <ul>
 <li>
@@ -595,6 +605,7 @@ Traceroute
 </ul>
 
     </div>
-    <p><small>Page created on 2020-09-02</small></p>
+    <p><small>Page created on 2021-06-04</small></p>
+    <script src="../prism.js"></script>
   </body>
 </html>

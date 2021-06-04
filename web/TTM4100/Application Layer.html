@@ -3,11 +3,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
     <title>Application Layer</title>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+    <script src="../mathjax_config.js"> </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js">
     </script>
+    <!-- <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"> -->
+    <!--   MathJax.Hub.Config({ -->
+    <!--     jax: ["input/TeX","output/HTML-CSS"], -->
+    <!--     displayAlign: "left" -->
+    <!--   }); -->
+    <!-- </script> -->
   </head>
-  <body>
+  <body class="line-numbers match-braces">
     <div class="content">
       
 <div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
@@ -71,12 +81,12 @@
 
 <div id="The Application Layer-DNS The Internet's Directory Service"><h2 id="DNS The Internet's Directory Service" class="header"><a href="#The Application Layer-DNS The Internet's Directory Service">DNS The Internet's Directory Service</a></h2></div>
 <p>
-<span id="The Application Layer-DNS The Internet's Directory Service-Hostname"></span><strong id="Hostname">Hostname</strong><br />
+<span id="The Application Layer-DNS The Internet's Directory Service-Hostname"></span><strong id="Hostname">Hostname</strong>
 </p>
 
 <div id="The Application Layer-DNS The Internet's Directory Service-Services Provided by DNS"><h3 id="Services Provided by DNS" class="header"><a href="#The Application Layer-DNS The Internet's Directory Service-Services Provided by DNS">Services Provided by DNS</a></h3></div>
 <p>
-The Internet's <span id="The Application Layer-DNS The Internet's Directory Service-Services Provided by DNS-Domain name system (DNS)"></span><strong id="Domain name system (DNS)">Domain name system (DNS)</strong> is:<br />
+The Internet's <span id="The Application Layer-DNS The Internet's Directory Service-Services Provided by DNS-Domain name system (DNS)"></span><strong id="Domain name system (DNS)">Domain name system (DNS)</strong> is:
 </p>
 <ul>
 <li>
@@ -88,13 +98,13 @@ An application-layer protocol that allows hosts to query said database.
 </ul>
 
 <p>
-Primary function: Translate hostnames to IP addresses.<br />
-<span id="The Application Layer-DNS The Internet's Directory Service-Services Provided by DNS-DNS Servers"></span><strong id="DNS Servers">DNS Servers</strong> are typically UNIX machines running the Berkeley Internet Name Domain (BIND) software.<br />
-The DNS protocol runs over UDP and uses port 53.<br />
+Primary function: Translate hostnames to IP addresses.
+<span id="The Application Layer-DNS The Internet's Directory Service-Services Provided by DNS-DNS Servers"></span><strong id="DNS Servers">DNS Servers</strong> are typically UNIX machines running the Berkeley Internet Name Domain (BIND) software.
+The DNS protocol runs over UDP and uses port 53.
 </p>
 
 <p>
-DNS provides a few other important services:<br />
+DNS provides a few other important services:
 </p>
 <ul>
 <li>
@@ -114,13 +124,13 @@ The real name is called the canonical name.
 </ul>
 
 <p>
-The DNS is specified in RFC 1034 and RFC 1035, and updated in several additional RFCs.<br />
+The DNS is specified in RFC 1034 and RFC 1035, and updated in several additional RFCs.
 </p>
 
 <div id="The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works"><h3 id="Overview of How DNS Works" class="header"><a href="#The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works">Overview of How DNS Works</a></h3></div>
 
 <p>
-Problems with a centralized design include:<br />
+Problems with a centralized design include:
 </p>
 <ul>
 <li>
@@ -138,16 +148,16 @@ Problems with a centralized design include:<br />
 </ul>
 
 <p>
-In summary a centralized database simply does not scale.<br />
+In summary a centralized database simply does not scale.
 </p>
 
 <div id="The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works-A Distributed, Hierarchical Database"><h4 id="A Distributed, Hierarchical Database" class="header"><a href="#The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works-A Distributed, Hierarchical Database">A Distributed, Hierarchical Database</a></h4></div>
 <p>
-No single DNS server has all the mappings for all the hosts in the Internet.<br />
+No single DNS server has all the mappings for all the hosts in the Internet.
 </p>
 
 <p>
-Approximate Hierarchy:<br />
+Approximate Hierarchy:
 </p>
 <ul>
 <li>
@@ -180,24 +190,24 @@ Can also be outsourced
 </ul>
 
 <p>
-<span id="The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works-A Distributed, Hierarchical Database-Local DNS servers"></span><strong id="Local DNS servers">Local DNS servers</strong> (aka default name servers)<br />
+<span id="The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works-A Distributed, Hierarchical Database-Local DNS servers"></span><strong id="Local DNS servers">Local DNS servers</strong> (aka default name servers)
 </p>
 
 <div id="The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works-DNS Caching"><h4 id="DNS Caching" class="header"><a href="#The Application Layer-DNS The Internet's Directory Service-Overview of How DNS Works-DNS Caching">DNS Caching</a></h4></div>
 <p>
-It is just what is sounds like.<br />
-Improves delay performance and reduces the number of DNS messages sent through the Internet.<br />
+It is just what is sounds like.
+Improves delay performance and reduces the number of DNS messages sent through the Internet.
 </p>
 
 <div id="The Application Layer-DNS The Internet's Directory Service-DNS Records and Messages"><h3 id="DNS Records and Messages" class="header"><a href="#The Application Layer-DNS The Internet's Directory Service-DNS Records and Messages">DNS Records and Messages</a></h3></div>
 <p>
-<span id="The Application Layer-DNS The Internet's Directory Service-DNS Records and Messages-Resource records (RRs)"></span><strong id="Resource records (RRs)">Resource records (RRs)</strong>:<br />
-<code>(Name, Value, Type, TTL)</code><br />
+<span id="The Application Layer-DNS The Internet's Directory Service-DNS Records and Messages-Resource records (RRs)"></span><strong id="Resource records (RRs)">Resource records (RRs)</strong>:
+<code>(Name, Value, Type, TTL)</code>
 </p>
 
 <p>
-<code>TTL</code>: Time to live. Determines when the record should be removed from cache.<br />
-The meaning of <code>Name</code> and <code>Value</code> depend on <code>Type</code>:<br />
+<code>TTL</code>: Time to live. Determines when the record should be removed from cache.
+The meaning of <code>Name</code> and <code>Value</code> depend on <code>Type</code>:
 </p>
 <ul>
 <li>
@@ -216,7 +226,7 @@ If <code>Type=MX</code>, then <code>Value</code> is the canonical name of a mail
 
 <div id="The Application Layer-DNS The Internet's Directory Service-DNS Records and Messages-DNS Messages"><h4 id="DNS Messages" class="header"><a href="#The Application Layer-DNS The Internet's Directory Service-DNS Records and Messages-DNS Messages">DNS Messages</a></h4></div>
 <p>
-DNS message format:<br />
+DNS message format:
 <table>
 <tr>
 <td>
@@ -338,6 +348,7 @@ Additional section
 <div id="The Application Layer-Socket Programming: Creating Network Applications"><h2 id="Socket Programming: Creating Network Applications" class="header"><a href="#The Application Layer-Socket Programming: Creating Network Applications">Socket Programming: Creating Network Applications</a></h2></div>
 
     </div>
-    <p><small>Page created on 2020-09-02</small></p>
+    <p><small>Page created on 2021-06-04</small></p>
+    <script src="../prism.js"></script>
   </body>
 </html>

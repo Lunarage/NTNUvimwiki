@@ -3,11 +3,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
     <title>Transaksjoner</title>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+    <script src="../mathjax_config.js"> </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js">
     </script>
+    <!-- <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"> -->
+    <!--   MathJax.Hub.Config({ -->
+    <!--     jax: ["input/TeX","output/HTML-CSS"], -->
+    <!--     displayAlign: "left" -->
+    <!--   }); -->
+    <!-- </script> -->
   </head>
-  <body>
+  <body class="line-numbers match-braces">
     <div class="content">
       
 <div id="Transactions"><h1 id="Transactions" class="header"><a href="#Transactions">Transactions</a></h1></div>
@@ -16,35 +26,35 @@
 
 <div id="Transactions-ACID-Atomicity"><h3 id="Atomicity" class="header"><a href="#Transactions-ACID-Atomicity">Atomicity</a></h3></div>
 <p>
-A transaction must either succeed completely or fail completely.<br />
-A transaction may contain multiple statements. If one of the statements in a transaction fails, all of the statements should fail.<br />
+A transaction must either succeed completely or fail completely.
+A transaction may contain multiple statements. If one of the statements in a transaction fails, all of the statements should fail.
 </p>
 
 <div id="Transactions-ACID-Consistency"><h3 id="Consistency" class="header"><a href="#Transactions-ACID-Consistency">Consistency</a></h3></div>
 <p>
-Ensures that a transaction takes the database from one valid state to another valid state.<br />
-Must respect constraints etc.<br />
+Ensures that a transaction takes the database from one valid state to another valid state.
+Must respect constraints etc.
 </p>
 
 <div id="Transactions-ACID-Isolation"><h3 id="Isolation" class="header"><a href="#Transactions-ACID-Isolation">Isolation</a></h3></div>
 <p>
-A transaction is unaffected by other (simultaneous) transactions.<br />
+A transaction is unaffected by other (simultaneous) transactions.
 </p>
 
 <div id="Transactions-ACID-Durability"><h3 id="Durability" class="header"><a href="#Transactions-ACID-Durability">Durability</a></h3></div>
 <p>
-Once committed, a transaction stays committed.<br />
+Once committed, a transaction stays committed.
 </p>
 
 
 <div id="Transactions-Schedules"><h2 id="Schedules" class="header"><a href="#Transactions-Schedules">Schedules</a></h2></div>
 
 <p>
-A schedule <em>S</em> of <em>n</em> transactions T1, T2, …, Tn is an ordering of the operations of the transactions.<br />
+A schedule <em>S</em> of <em>n</em> transactions T1, T2, …, Tn is an ordering of the operations of the transactions.
 </p>
 
 <p>
-Operations:<br />
+Operations:
 </p>
 <ul>
 <li>
@@ -69,7 +79,7 @@ a: abort
 
 <div id="Transactions-Schedules-Conflicting operations in a schedule"><h3 id="Conflicting operations in a schedule" class="header"><a href="#Transactions-Schedules-Conflicting operations in a schedule">Conflicting operations in a schedule</a></h3></div>
 <p>
-Two operations are said to conflict if they satisfy all of the following conditions:<br />
+Two operations are said to conflict if they satisfy all of the following conditions:
 </p>
 <ol>
 <li>
@@ -84,12 +94,12 @@ At least one of the operations is a write operation
 </ol>
 
 <p>
-Intuitively, two operations are conflicting if changing their order can result in a different outcome.<br />
+Intuitively, two operations are conflicting if changing their order can result in a different outcome.
 </p>
 
 <div id="Transactions-Schedules-Complete schedule"><h3 id="Complete schedule" class="header"><a href="#Transactions-Schedules-Complete schedule">Complete schedule</a></h3></div>
 <p>
-A schedule <em>S</em> of <em>n</em> transactions T1, T2, …, Tn is said to be a <span id="Transactions-Schedules-Complete schedule-complete schedule"></span><strong id="complete schedule">complete schedule</strong> if the following conditions hold:<br />
+A schedule <em>S</em> of <em>n</em> transactions T1, T2, …, Tn is said to be a <span id="Transactions-Schedules-Complete schedule-complete schedule"></span><strong id="complete schedule">complete schedule</strong> if the following conditions hold:
 </p>
 <ol>
 <li>
@@ -104,7 +114,7 @@ For any two conflicting operations, one of the two must occur before the other i
 </ol>
 
 <p>
-Otherwise it is a <span id="Transactions-Schedules-Complete schedule-partial schedule"></span><strong id="partial schedule">partial schedule</strong><br />
+Otherwise it is a <span id="Transactions-Schedules-Complete schedule-partial schedule"></span><strong id="partial schedule">partial schedule</strong>
 </p>
 
 <div id="Transactions-Schedules-Characterizing Schedules Based on Recoverability"><h3 id="Characterizing Schedules Based on Recoverability" class="header"><a href="#Transactions-Schedules-Characterizing Schedules Based on Recoverability">Characterizing Schedules Based on Recoverability</a></h3></div>
@@ -151,7 +161,7 @@ Transactions may not read from nor write to an item, X, until the last transacti
 
 <div id="Transactions-Schedules-Characterizing Schedules Based on Serializability"><h3 id="Characterizing Schedules Based on Serializability" class="header"><a href="#Transactions-Schedules-Characterizing Schedules Based on Serializability">Characterizing Schedules Based on Serializability</a></h3></div>
 <p>
-The concept of <span id="Transactions-Schedules-Characterizing Schedules Based on Serializability-serializability of schedules"></span><strong id="serializability of schedules">serializability of schedules</strong> is used to identify which schedules are correct when transaction executions have interleaving of their operations in the schedules.<br />
+The concept of <span id="Transactions-Schedules-Characterizing Schedules Based on Serializability-serializability of schedules"></span><strong id="serializability of schedules">serializability of schedules</strong> is used to identify which schedules are correct when transaction executions have interleaving of their operations in the schedules.
 </p>
 
 <div id="Transactions-Schedules-Serial, Nonserial and Conflict-Serializable Schedules"><h3 id="Serial, Nonserial and Conflict-Serializable Schedules" class="header"><a href="#Transactions-Schedules-Serial, Nonserial and Conflict-Serializable Schedules">Serial, Nonserial and Conflict-Serializable Schedules</a></h3></div>
@@ -185,21 +195,21 @@ Equivalent to one or more serial schedules.
 
 <div id="Transactions-Schedules-Conflict Equivalence of Two Schedules"><h3 id="Conflict Equivalence of Two Schedules" class="header"><a href="#Transactions-Schedules-Conflict Equivalence of Two Schedules">Conflict Equivalence of Two Schedules</a></h3></div>
 <p>
-Two schedules are said to be <span id="Transactions-Schedules-Conflict Equivalence of Two Schedules-conflict equivalent"></span><strong id="conflict equivalent">conflict equivalent</strong> if the relative order of any two <a href="Transaksjoner.html#Conflicting operations in a schedule">conflicting operations</a> is the same in both schedules.<br />
+Two schedules are said to be <span id="Transactions-Schedules-Conflict Equivalence of Two Schedules-conflict equivalent"></span><strong id="conflict equivalent">conflict equivalent</strong> if the relative order of any two <a href="Transaksjoner.html#Conflicting operations in a schedule">conflicting operations</a> is the same in both schedules.
 </p>
 
 <p>
-Using the notion of conflict equivalence, we define a schedule S to be <span id="Transactions-Schedules-Conflict Equivalence of Two Schedules-(conflict) serializable"></span><strong id="(conflict) serializable">(conflict) serializable</strong> if it is (conflict) equivalent to some serial schedule S′.<br />
+Using the notion of conflict equivalence, we define a schedule S to be <span id="Transactions-Schedules-Conflict Equivalence of Two Schedules-(conflict) serializable"></span><strong id="(conflict) serializable">(conflict) serializable</strong> if it is (conflict) equivalent to some serial schedule S′.
 </p>
 
 <p>
-How to Precedence Graphs really good:<br />
-<img src="../../Precedence Graph.png" alt="Your Precedence Graph Here" /><br />
+How to Precedence Graphs really good:
+<img src="../../FY0001/Precedence Graph.png" alt="Your Precedence Graph Here" />
 </p>
 
 <div id="Transactions-Two-Phase Locking"><h2 id="Two-Phase Locking" class="header"><a href="#Transactions-Two-Phase Locking">Two-Phase Locking</a></h2></div>
 <p>
-Locks:<br />
+Locks:
 </p>
 <ul>
 <li>
@@ -221,16 +231,16 @@ Only one transaction
 </ul>
 
 <p>
-Two-Phase Locking if all locking operations precede the first unlock operation in the transaction.<br />
-A growing phase before a shrinking phase.<br />
+Two-Phase Locking if all locking operations precede the first unlock operation in the transaction.
+A growing phase before a shrinking phase.
 </p>
 
 <p>
-It can be proved that, if every transaction in a schedule follows the two-phase locking protocol, the schedule is guaranteed to be serializable.<br />
+It can be proved that, if every transaction in a schedule follows the two-phase locking protocol, the schedule is guaranteed to be serializable.
 </p>
 
 <p>
-Although the two-phase locking protocol guarantees serializability, it does not permit all possible serializable schedules.<br />
+Although the two-phase locking protocol guarantees serializability, it does not permit all possible serializable schedules.
 </p>
 
 <div id="Transactions-Two-Phase Locking-Basic, Conservative, Strict and Rigorous Two-Phase Locking"><h3 id="Basic, Conservative, Strict and Rigorous Two-Phase Locking" class="header"><a href="#Transactions-Two-Phase Locking-Basic, Conservative, Strict and Rigorous Two-Phase Locking">Basic, Conservative, Strict and Rigorous Two-Phase Locking</a></h3></div>
@@ -283,11 +293,11 @@ Guarantees <a href="Transaksjoner.html#Characterizing Schedules Based on Recover
 
 <div id="Transactions-Two-Phase Locking-Dealing with Deadlock and Starvation"><h3 id="Dealing with Deadlock and Starvation" class="header"><a href="#Transactions-Two-Phase Locking-Dealing with Deadlock and Starvation">Dealing with Deadlock and Starvation</a></h3></div>
 <p>
-<span id="Transactions-Two-Phase Locking-Dealing with Deadlock and Starvation-Deadlock:"></span><strong id="Deadlock:">Deadlock:</strong> Two transactions waiting for each other indefinitely.<br />
+<span id="Transactions-Two-Phase Locking-Dealing with Deadlock and Starvation-Deadlock:"></span><strong id="Deadlock:">Deadlock:</strong> Two transactions waiting for each other indefinitely.
 </p>
 
 <p>
-<span id="Transactions-Two-Phase Locking-Dealing with Deadlock and Starvation-Starvation:"></span><strong id="Starvation:">Starvation:</strong> A transaction cannot proceed for an indefinite period of time while other transactions continue normally.<br />
+<span id="Transactions-Two-Phase Locking-Dealing with Deadlock and Starvation-Starvation:"></span><strong id="Starvation:">Starvation:</strong> A transaction cannot proceed for an indefinite period of time while other transactions continue normally.
 </p>
 
 <div id="Transactions-Recovery"><h2 id="Recovery" class="header"><a href="#Transactions-Recovery">Recovery</a></h2></div>
@@ -341,22 +351,22 @@ UNDO/NO-REDO
 </ul>
 
 <p>
-<span id="Transactions-Recovery-Recovery Algorithm Categorization-Impodent:"></span><strong id="Impodent:">Impodent:</strong> Executing an operation multiple times is equivalent to executing it just once.<br />
+<span id="Transactions-Recovery-Recovery Algorithm Categorization-Impodent:"></span><strong id="Impodent:">Impodent:</strong> Executing an operation multiple times is equivalent to executing it just once.
 </p>
 
 <div id="Transactions-Recovery-Caching of Disk Blocks"><h3 id="Caching of Disk Blocks" class="header"><a href="#Transactions-Recovery-Caching of Disk Blocks">Caching of Disk Blocks</a></h3></div>
 <p>
-Data is cashed in main memory buffers and updated there before written back to disk.<br />
-Operates on units of disk pages (blocks).<br />
-<span id="Transactions-Recovery-Caching of Disk Blocks-Flush"></span><strong id="Flush">Flush</strong> if the memory buffers are full.<br />
+Data is cashed in main memory buffers and updated there before written back to disk.
+Operates on units of disk pages (blocks).
+<span id="Transactions-Recovery-Caching of Disk Blocks-Flush"></span><strong id="Flush">Flush</strong> if the memory buffers are full.
 </p>
 
 <p>
-<span id="Transactions-Recovery-Caching of Disk Blocks-Dirty Bit:"></span><strong id="Dirty Bit:">Dirty Bit:</strong> Indicates whether or not the buffer page has been modified with respect to data on disk.<br />
+<span id="Transactions-Recovery-Caching of Disk Blocks-Dirty Bit:"></span><strong id="Dirty Bit:">Dirty Bit:</strong> Indicates whether or not the buffer page has been modified with respect to data on disk.
 </p>
 
 <p>
-<span id="Transactions-Recovery-Caching of Disk Blocks-Pin-unpin bit:"></span><strong id="Pin-unpin bit:">Pin-unpin bit:</strong> Cannot write buffer page to disk.<br />
+<span id="Transactions-Recovery-Caching of Disk Blocks-Pin-unpin bit:"></span><strong id="Pin-unpin bit:">Pin-unpin bit:</strong> Cannot write buffer page to disk.
 </p>
 
 <div id="Transactions-Recovery-Caching of Disk Blocks-Strategies for flushing cache"><h4 id="Strategies for flushing cache" class="header"><a href="#Transactions-Recovery-Caching of Disk Blocks-Strategies for flushing cache">Strategies for flushing cache</a></h4></div>
@@ -483,7 +493,7 @@ Resume executing transactions.
 </ol>
 
 <p>
-<span id="Transactions-Recovery-Checkpoints in the log-Fuzzy Checkpointing:"></span><strong id="Fuzzy Checkpointing:">Fuzzy Checkpointing:</strong><br />
+<span id="Transactions-Recovery-Checkpoints in the log-Fuzzy Checkpointing:"></span><strong id="Fuzzy Checkpointing:">Fuzzy Checkpointing:</strong>
 </p>
 <ul>
 <li>
@@ -524,7 +534,7 @@ Prevents ARIES from repeating undo
 </ul>
 
 <p>
-Three main steps:<br />
+Three main steps:
 </p>
 <ul>
 <li>
@@ -563,7 +573,7 @@ Undo the uncommitted changes
 </ul>
 
 <p>
-Needs:<br />
+Needs:
 </p>
 <ul>
 <li>
@@ -593,7 +603,7 @@ Each LSN corresponds to a specific change (action)
 </ul>
 
 <p>
-A log record is written for any of the following:<br />
+A log record is written for any of the following:
 </p>
 <ul>
 <li>
@@ -619,7 +629,7 @@ recorded to avoid redoing the undo
 </ul>
 
 <p>
-Common fields for all log records:<br />
+Common fields for all log records:
 </p>
 <ul>
 <li>
@@ -634,7 +644,7 @@ type of log record
 </ul>
 
 <p>
-Additional fields for write:<br />
+Additional fields for write:
 </p>
 <ul>
 <li>
@@ -656,8 +666,8 @@ AFIM of the item
 
 <div id="Transactions-Recovery-ARIES-Transaction Table and Dirty Page Table"><h4 id="Transaction Table and Dirty Page Table" class="header"><a href="#Transactions-Recovery-ARIES-Transaction Table and Dirty Page Table">Transaction Table and Dirty Page Table</a></h4></div>
 <p>
-Rebuilt during analysis step<br />
-Transaction Table contains an entry for each uncommitted transaction:<br />
+Rebuilt during analysis step
+Transaction Table contains an entry for each uncommitted transaction:
 </p>
 <ul>
 <li>
@@ -672,7 +682,7 @@ LSN of the mot recent log record
 </ul>
 
 <p>
-The Dirty Page Table contains an entry for each dirty page in the cache:<br />
+The Dirty Page Table contains an entry for each dirty page in the cache:
 </p>
 <ul>
 <li>
@@ -685,8 +695,8 @@ LSN corresponding to the earliest update to that page
 
 <div id="Transactions-Recovery-ARIES-Checkpoints"><h4 id="Checkpoints" class="header"><a href="#Transactions-Recovery-ARIES-Checkpoints">Checkpoints</a></h4></div>
 <p>
-ARIES uses Fuzzy Checkpointing<br />
-Logs:<br />
+ARIES uses Fuzzy Checkpointing
+Logs:
 </p>
 <ul>
 <li>
@@ -704,13 +714,13 @@ Transaction Table and Dirty Page Table are appended to the end of the log
 </ul>
 
 <p>
-The cache does not have to be flushed during checkpointing.<br />
+The cache does not have to be flushed during checkpointing.
 </p>
 
 <div id="Transactions-Recovery-ARIES-Analysis Phase"><h4 id="Analysis Phase" class="header"><a href="#Transactions-Recovery-ARIES-Analysis Phase">Analysis Phase</a></h4></div>
 <p>
-Reads the log from the last valid checkpoint.<br />
-Reconstructs Transaction Table and Dirty Page Table:<br />
+Reads the log from the last valid checkpoint.
+Reconstructs Transaction Table and Dirty Page Table:
 </p>
 <ul>
 <li>
@@ -723,7 +733,7 @@ If any other entry is found for a transaction, that transaction is added to the 
 
 <div id="Transactions-Recovery-ARIES-REDO Phase"><h4 id="REDO Phase" class="header"><a href="#Transactions-Recovery-ARIES-REDO Phase">REDO Phase</a></h4></div>
 <p>
-Redo from the smallest (earliest/oldest) LSN of all the dirty pages to the end of the log.<br />
+Redo from the smallest (earliest/oldest) LSN of all the dirty pages to the end of the log.
 </p>
 <ul>
 <li>
@@ -733,10 +743,11 @@ If a change pertains a page <em>P</em> that is not int the Dirty Page Table, it 
 
 <div id="Transactions-Recovery-ARIES-UNDO Phase"><h4 id="UNDO Phase" class="header"><a href="#Transactions-Recovery-ARIES-UNDO Phase">UNDO Phase</a></h4></div>
 <p>
-Undo uncommitted actions.<br />
+Undo uncommitted actions.
 </p>
 
     </div>
-    <p><small>Page created on 2020-09-02</small></p>
+    <p><small>Page created on 2021-06-04</small></p>
+    <script src="../prism.js"></script>
   </body>
 </html>

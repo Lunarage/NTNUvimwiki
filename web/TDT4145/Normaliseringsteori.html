@@ -3,11 +3,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
     <title>Normaliseringsteori</title>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+    <script src="../mathjax_config.js"> </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js">
     </script>
+    <!-- <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"> -->
+    <!--   MathJax.Hub.Config({ -->
+    <!--     jax: ["input/TeX","output/HTML-CSS"], -->
+    <!--     displayAlign: "left" -->
+    <!--   }); -->
+    <!-- </script> -->
   </head>
-  <body>
+  <body class="line-numbers match-braces">
     <div class="content">
       
 <div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
@@ -60,8 +70,8 @@
 
 <div id="Normalization-Some Definitions"><h2 id="Some Definitions" class="header"><a href="#Normalization-Some Definitions">Some Definitions</a></h2></div>
 <p>
-<span id="Normalization-Some Definitions-Database Schema"></span><strong id="Database Schema">Database Schema</strong>: The description of a database.<br />
-Formally:<br />
+<span id="Normalization-Some Definitions-Database Schema"></span><strong id="Database Schema">Database Schema</strong>: The description of a database.
+Formally:
 </p>
 <blockquote>
 The formal definition of a database schema is a set of formulas (sentences) called integrity constraints imposed on a database.
@@ -69,13 +79,13 @@ The formal definition of a database schema is a set of formulas (sentences) call
     
 
 <p>
-The implicit goals of the design activity are information preservation and minimum redundancy.<br />
+The implicit goals of the design activity are information preservation and minimum redundancy.
 </p>
 
 <div id="Normalization-Functional Dependencies"><h2 id="Functional Dependencies" class="header"><a href="#Normalization-Functional Dependencies">Functional Dependencies</a></h2></div>
 <p>
-A functional dependency (FD) is a constraint between two sets of attributes.<br />
-Formally:<br />
+A functional dependency (FD) is a constraint between two sets of attributes.
+Formally:
 </p>
 <blockquote>
 A <span id="Normalization-Functional Dependencies-functional dependency"></span><strong id="functional dependency">functional dependency</strong>, denoted by <em>X</em> → <em>Y</em>, between two sets of attributes <em>X</em> and <em>Y</em> that are subsets of <em>R</em> specifies a <em>constraint</em> on the possible tuples that can form a relation state <em>r</em> of <em>R</em>.
@@ -263,7 +273,7 @@ No redundancy from any functional dependency
 
 <div id="Normalization-Normal Forms-1NF"><h3 id="1NF" class="header"><a href="#Normalization-Normal Forms-1NF">1NF</a></h3></div>
 <p>
-First Normal Form (1NF):<br />
+First Normal Form (1NF):
 </p>
 <ul>
 <li>
@@ -271,7 +281,7 @@ Only atomic values (cells have single value).
 
 </ul>
 <p>
-Alternatively:<br />
+Alternatively:
 </p>
 <ul>
 <li>
@@ -283,7 +293,7 @@ Disallows relations as attribute values within tuples
 </ul>
 
 <p>
-Normalization:<br />
+Normalization:
 </p>
 <ul>
 <li>
@@ -293,13 +303,13 @@ Form new relations for each multivalued attribute or nested relation.
 
 <div id="Normalization-Normal Forms-2NF"><h3 id="2NF" class="header"><a href="#Normalization-Normal Forms-2NF">2NF</a></h3></div>
 <p>
-<span id="Normalization-Normal Forms-2NF-Full functional dependency"></span><strong id="Full functional dependency">Full functional dependency</strong>:<br />
-If removal of any attribute <em>A</em> from <em>X</em> causes <em>X</em> → <em>Y</em> to not hold anymore.<br />
-Otherwise it is a <span id="Normalization-Normal Forms-2NF-partial dependency"></span><strong id="partial dependency">partial dependency</strong><br />
+<span id="Normalization-Normal Forms-2NF-Full functional dependency"></span><strong id="Full functional dependency">Full functional dependency</strong>:
+If removal of any attribute <em>A</em> from <em>X</em> causes <em>X</em> → <em>Y</em> to not hold anymore.
+Otherwise it is a <span id="Normalization-Normal Forms-2NF-partial dependency"></span><strong id="partial dependency">partial dependency</strong>
 </p>
 
 <p>
-Second Normal Form (2NF):<br />
+Second Normal Form (2NF):
 </p>
 <ul>
 <li>
@@ -312,12 +322,12 @@ No nonprime attribute is functionally dependent on any proper subset of any cand
 </ul>
 </ul>
 
-<pre>
+<pre><code>
 R = {X, Y, A, B}
 F = {X → A, XY → B}
-</pre>
+</code></pre>
 <p>
-This is not 2NF because:<br />
+This is not 2NF because:
 </p>
 <ul>
 <li>
@@ -337,11 +347,11 @@ Y → B (functional dependent)
 
 </ul>
 <p>
-There are several non-prime attributes that is functionally dependent on proper subsets of the candidate key of the relation.<br />
+There are several non-prime attributes that is functionally dependent on proper subsets of the candidate key of the relation.
 </p>
 
 <p>
-Normalization:<br />
+Normalization:
 </p>
 <ul>
 <li>
@@ -358,18 +368,18 @@ Keep a relation with any attributes that are fully functionally dependent on it.
 </ul>
 
 <p>
-Modified to be 2NF:<br />
+Modified to be 2NF:
 </p>
-<pre>
+<pre><code>
 R1 = {X, A}
 R2 = {X, Y, B}
 F1 = {X → A}
 F2 = {XY → B}
-</pre>
+</code></pre>
 
 <div id="Normalization-Normal Forms-3NF"><h3 id="3NF" class="header"><a href="#Normalization-Normal Forms-3NF">3NF</a></h3></div>
 <p>
-Third Normal Form (3NF):<br />
+Third Normal Form (3NF):
 </p>
 <ul>
 <li>
@@ -377,7 +387,7 @@ Every nonprime attribute of <em>R</em> is non-transitively dependent of every ke
 
 </ul>
 <p>
-Alternatively:<br />
+Alternatively:
 </p>
 <ul>
 <li>
@@ -393,12 +403,12 @@ A is prime attribute for the given table
 </ul>
 </ul>
 
-<pre>
+<pre><code>
 R = {X, A, B, C}
 F = {X → AB, B → C}
-</pre>
+</code></pre>
 <p>
-This is not 3NF because:<br />
+This is not 3NF because:
 </p>
 <ul>
 <li>
@@ -409,7 +419,7 @@ X → B and B → C (Transitive dependency)
 
 </ul>
 <p>
-Alternatively:<br />
+Alternatively:
 </p>
 <ul>
 <li>
@@ -421,7 +431,7 @@ neither A, B or C are prime attributes.
 </ul>
 
 <p>
-Normalization:<br />
+Normalization:
 </p>
 <ul>
 <li>
@@ -430,18 +440,18 @@ Decompose and set up a relation that includes the non-key attribute(s) that func
 </ul>
 
 <p>
-Modified to be 3NF:<br />
+Modified to be 3NF:
 </p>
-<pre>
+<pre><code>
 R1 = {X, A, B}
 R2 = {B, C}
 F1 = {X → AB}
 F2 = {B → C}
-</pre>
+</code></pre>
 
 <div id="Normalization-Normal Forms-BCNF"><h3 id="BCNF" class="header"><a href="#Normalization-Normal Forms-BCNF">BCNF</a></h3></div>
 <p>
-Boyce-Codd Normal Form (BCNF or 3.5NF):<br />
+Boyce-Codd Normal Form (BCNF or 3.5NF):
 </p>
 <ul>
 <li>
@@ -457,12 +467,12 @@ X is a superkey
 </ul>
 </ul>
 
-<pre>
+<pre><code>
 R = {A, B, C}
 F = {AB → C, C → B}
-</pre>
+</code></pre>
 <p>
-This is not BCNF because:<br />
+This is not BCNF because:
 </p>
 <ul>
 <li>
@@ -497,6 +507,7 @@ if, for every nontrivial multivalued dependency <em>X</em> →→ <em>Y</em> in 
 </blockquote>
 
     </div>
-    <p><small>Page created on 2020-09-02</small></p>
+    <p><small>Page created on 2021-06-04</small></p>
+    <script src="../prism.js"></script>
   </body>
 </html>

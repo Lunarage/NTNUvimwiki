@@ -3,11 +3,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
     <title>Elementary Data Structures</title>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+    <script src="../mathjax_config.js"> </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js">
     </script>
+    <!-- <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"> -->
+    <!--   MathJax.Hub.Config({ -->
+    <!--     jax: ["input/TeX","output/HTML-CSS"], -->
+    <!--     displayAlign: "left" -->
+    <!--   }); -->
+    <!-- </script> -->
   </head>
-  <body>
+  <body class="line-numbers match-braces">
     <div class="content">
       
 <div id="Chapter 10 - Elementary Data Structures"><h1 id="Chapter 10 - Elementary Data Structures" class="header"><a href="#Chapter 10 - Elementary Data Structures">Chapter 10 - Elementary Data Structures</a></h1></div>
@@ -15,7 +25,7 @@
 <div id="Chapter 10 - Elementary Data Structures-Stacks and Queues"><h2 id="Stacks and Queues" class="header"><a href="#Chapter 10 - Elementary Data Structures-Stacks and Queues">Stacks and Queues</a></h2></div>
 
 <p>
-<code>DELETE</code> operation:<br />
+<code>DELETE</code> operation:
 </p>
 <blockquote>
 The <span id="Chapter 10 - Elementary Data Structures-Stacks and Queues-stack"></span><strong id="stack">stack</strong> implements <em>last-in, first-out</em>, or <span id="Chapter 10 - Elementary Data Structures-Stacks and Queues-LIFO"></span><strong id="LIFO">LIFO</strong>, policy.
@@ -25,18 +35,18 @@ The <span id="Chapter 10 - Elementary Data Structures-Stacks and Queues-queue"><
 <div id="Chapter 10 - Elementary Data Structures-Stacks and Queues-Stacks"><h3 id="Stacks" class="header"><a href="#Chapter 10 - Elementary Data Structures-Stacks and Queues-Stacks">Stacks</a></h3></div>
 
 <p>
-<code>INSERT</code> operation is often called <code>PUSH</code> and the <code>DELETE</code> operation is often called <code>POP</code>.<br />
+<code>INSERT</code> operation is often called <code>PUSH</code> and the <code>DELETE</code> operation is often called <code>POP</code>.
 </p>
 
 <p>
-We can implement a stack of at most <em>n</em> elements with an array \(S[1 \dots n]\).<br />
-The array has an attribute \(S.top\) that indexes the most recently inserted element.<br />
+We can implement a stack of at most <em>n</em> elements with an array \(S[1 \dots n]\).
+The array has an attribute \(S.top\) that indexes the most recently inserted element.
 </p>
 
 <div id="Chapter 10 - Elementary Data Structures-Stacks and Queues-Queue"><h3 id="Queue" class="header"><a href="#Chapter 10 - Elementary Data Structures-Stacks and Queues-Queue">Queue</a></h3></div>
 
 <p>
-<code>INSERT</code> operation is called <code>ENQUEUE</code> and <code>DELETE</code> operation is called <code>DEQUEUE</code>.<br />
+<code>INSERT</code> operation is called <code>ENQUEUE</code> and <code>DELETE</code> operation is called <code>DEQUEUE</code>.
 </p>
 
 <div id="Chapter 10 - Elementary Data Structures-Linked Lists"><h2 id="Linked Lists" class="header"><a href="#Chapter 10 - Elementary Data Structures-Linked Lists">Linked Lists</a></h2></div>
@@ -46,6 +56,7 @@ The array has an attribute \(S.top\) that indexes the most recently inserted ele
 <div id="Chapter 10 - Elementary Data Structures-Representing Rooted Trees"><h2 id="Representing Rooted Trees" class="header"><a href="#Chapter 10 - Elementary Data Structures-Representing Rooted Trees">Representing Rooted Trees</a></h2></div>
 
     </div>
-    <p><small>Page created on 2020-09-10</small></p>
+    <p><small>Page created on 2021-06-04</small></p>
+    <script src="../prism.js"></script>
   </body>
 </html>

@@ -3,11 +3,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
     <title>Security in Computer Networks</title>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+    <script src="../mathjax_config.js"> </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js">
     </script>
+    <!-- <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"> -->
+    <!--   MathJax.Hub.Config({ -->
+    <!--     jax: ["input/TeX","output/HTML-CSS"], -->
+    <!--     displayAlign: "left" -->
+    <!--   }); -->
+    <!-- </script> -->
   </head>
-  <body>
+  <body class="line-numbers match-braces">
     <div class="content">
       
 <div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
@@ -62,7 +72,7 @@
 
 <div id="Security in Computer Networks-What Is Network Security"><h2 id="What Is Network Security" class="header"><a href="#Security in Computer Networks-What Is Network Security">What Is Network Security</a></h2></div>
 <p>
-Desirable properties of <span id="Security in Computer Networks-What Is Network Security-secure communication"></span><strong id="secure communication">secure communication</strong>:<br />
+Desirable properties of <span id="Security in Computer Networks-What Is Network Security-secure communication"></span><strong id="secure communication">secure communication</strong>:
 </p>
 <ul>
 <li>
@@ -117,8 +127,8 @@ Chosen-plaintext attack:
 <div id="Security in Computer Networks-Message Integrity and Digital Signatures"><h2 id="Message Integrity and Digital Signatures" class="header"><a href="#Security in Computer Networks-Message Integrity and Digital Signatures">Message Integrity and Digital Signatures</a></h2></div>
 <div id="Security in Computer Networks-Message Integrity and Digital Signatures-Cryptographic Hash Functions"><h3 id="Cryptographic Hash Functions" class="header"><a href="#Security in Computer Networks-Message Integrity and Digital Signatures-Cryptographic Hash Functions">Cryptographic Hash Functions</a></h3></div>
 <p>
-A hash function takes an input <em>m</em> and computes a string <em>H(m)</em> known as a hash.<br />
-A <span id="Security in Computer Networks-Message Integrity and Digital Signatures-Cryptographic Hash Functions-cryptographic hash function"></span><strong id="cryptographic hash function">cryptographic hash function</strong> is required to have the following additional property:<br />
+A hash function takes an input <em>m</em> and computes a string <em>H(m)</em> known as a hash.
+A <span id="Security in Computer Networks-Message Integrity and Digital Signatures-Cryptographic Hash Functions-cryptographic hash function"></span><strong id="cryptographic hash function">cryptographic hash function</strong> is required to have the following additional property:
 </p>
 <ul>
 <li>
@@ -130,16 +140,16 @@ It is computational infeasible to find any two different messages <em>x</em> and
 
 <div id="Security in Computer Networks-Securing TCP Connections: SSL"><h2 id="Securing TCP Connections: SSL" class="header"><a href="#Security in Computer Networks-Securing TCP Connections: SSL">Securing TCP Connections: SSL</a></h2></div>
 <p>
-<span id="Security in Computer Networks-Securing TCP Connections: SSL-SSL: Secure Sockets Layer"></span><strong id="SSL: Secure Sockets Layer">SSL: Secure Sockets Layer</strong><br />
-<span id="Security in Computer Networks-Securing TCP Connections: SSL-TLS: Transport Layer Security"></span><strong id="TLS: Transport Layer Security">TLS: Transport Layer Security</strong><br />
+<span id="Security in Computer Networks-Securing TCP Connections: SSL-SSL: Secure Sockets Layer"></span><strong id="SSL: Secure Sockets Layer">SSL: Secure Sockets Layer</strong>
+<span id="Security in Computer Networks-Securing TCP Connections: SSL-TLS: Transport Layer Security"></span><strong id="TLS: Transport Layer Security">TLS: Transport Layer Security</strong>
 </p>
 
 <p>
-Lives in the application layer.<br />
+Lives in the application layer.
 </p>
 
 <p>
-Three Phases:<br />
+Three Phases:
 </p>
 <ul>
 <li>
@@ -178,10 +188,11 @@ The access point decrypts the host-encrypted nonce.
 </ol>
 
 <p>
-WEP bad. Don't use.<br />
+WEP bad. Don't use.
 </p>
 
     </div>
-    <p><small>Page created on 2020-09-02</small></p>
+    <p><small>Page created on 2021-06-04</small></p>
+    <script src="../prism.js"></script>
   </body>
 </html>

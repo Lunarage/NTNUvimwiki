@@ -3,11 +3,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
     <title>Link Layer</title>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML">
+    <script src="../mathjax_config.js"> </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js">
     </script>
+    <!-- <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"> -->
+    <!--   MathJax.Hub.Config({ -->
+    <!--     jax: ["input/TeX","output/HTML-CSS"], -->
+    <!--     displayAlign: "left" -->
+    <!--   }); -->
+    <!-- </script> -->
   </head>
-  <body>
+  <body class="line-numbers match-braces">
     <div class="content">
       
 <div id="Contents" class="toc"><h1 id="Contents">Contents</a></h1></div>
@@ -112,7 +122,7 @@
 
 <div id="The Link Layer"><h1 id="The Link Layer" class="header"><a href="#The Link Layer">The Link Layer</a></h1></div>
 <p>
-Implemented in hardware e.g. Network adapter<br />
+Implemented in hardware e.g. Network adapter
 </p>
 
 <div id="The Link Layer-Services Provided by the Link Layer"><h2 id="Services Provided by the Link Layer" class="header"><a href="#The Link Layer-Services Provided by the Link Layer">Services Provided by the Link Layer</a></h2></div>
@@ -162,7 +172,7 @@ Error detection and correction
 
 <div id="The Link Layer-Error Detection and Correction Techniques-Parity Checks"><h3 id="Parity Checks" class="header"><a href="#The Link Layer-Error Detection and Correction Techniques-Parity Checks">Parity Checks</a></h3></div>
 <p>
-Simplest:<br />
+Simplest:
 </p>
 <ul>
 <li>
@@ -177,7 +187,7 @@ No correction
 </ul>
 
 <p>
-Two-dimensional parity:<br />
+Two-dimensional parity:
 </p>
 <ul>
 <li>
@@ -198,7 +208,7 @@ Can detect (but not correct) any combination of two errors
 </ul>
 
 <p>
-No Errors:<br />
+No Errors:
 <table>
 <tr>
 <td>
@@ -301,7 +311,7 @@ parity
 </p>
 
 <p>
-Error on (2,2):<br />
+Error on (2,2):
 <table>
 <tr>
 <td>
@@ -404,7 +414,7 @@ parity
 </p>
 
 <p>
-<span id="The Link Layer-Error Detection and Correction Techniques-Parity Checks-Forward Error Correction (FEC)"></span><strong id="Forward Error Correction (FEC)">Forward Error Correction (FEC)</strong>:<br />
+<span id="The Link Layer-Error Detection and Correction Techniques-Parity Checks-Forward Error Correction (FEC)"></span><strong id="Forward Error Correction (FEC)">Forward Error Correction (FEC)</strong>:
 </p>
 <ul>
 <li>
@@ -417,7 +427,7 @@ Can decrease the number of sender transmissions required.
 
 <div id="The Link Layer-Error Detection and Correction Techniques-Checksumming Methods"><h3 id="Checksumming Methods" class="header"><a href="#The Link Layer-Error Detection and Correction Techniques-Checksumming Methods">Checksumming Methods</a></h3></div>
 <p>
-Internet Checksum:<br />
+Internet Checksum:
 </p>
 <ul>
 <li>
@@ -432,14 +442,14 @@ All 1's means no error
 </ul>
 
 <p>
-Checksums have low overhead, but are weak.<br />
+Checksums have low overhead, but are weak.
 </p>
 
 <div id="The Link Layer-Error Detection and Correction Techniques-Cyclic Redundancy Check (CRC)"><h3 id="Cyclic Redundancy Check (CRC)" class="header"><a href="#The Link Layer-Error Detection and Correction Techniques-Cyclic Redundancy Check (CRC)">Cyclic Redundancy Check (CRC)</a></h3></div>
 <p>
-d-bit piece of data D<br />
-r-bit CRC-code R<br />
-Sender and receiver agrees on a generator <em>G</em>:<br />
+d-bit piece of data D
+r-bit CRC-code R
+Sender and receiver agrees on a generator <em>G</em>:
 </p>
 <ul>
 <li>
@@ -454,35 +464,35 @@ most significant bit must be 1
 </ul>
 
 <p>
-D + G divisible by G:<br />
+D + G divisible by G:
 </p>
-<pre>
+<pre><code>
 D.append(R) % G == 0
-</pre>
+</code></pre>
 
 <p>
-Receiver divides D + R by G<br />
+Receiver divides D + R by G
 </p>
-<pre>
+<pre><code>
 If non-zero:
     error
 else:
     correct
-</pre>
+</code></pre>
 
 <p>
-The CRC-32 32-bit standard:<br />
-\( G_{CRC-32} = 100000100110000010001110110110111 \)<br />
+The CRC-32 32-bit standard:
+\( G_{CRC-32} = 100000100110000010001110110110111 \)
 </p>
 
 <p>
-Each of the CRC standards can detect burst error of fewer than <em>r</em> + 1 bits.<br />
-Under appropriate assumptions, a burst longer than <em>r</em> + 1 is detected with probability \( 1-0.5^r \).<br />
+Each of the CRC standards can detect burst error of fewer than <em>r</em> + 1 bits.
+Under appropriate assumptions, a burst longer than <em>r</em> + 1 is detected with probability \( 1-0.5^r \).
 </p>
 
 <div id="The Link Layer-Multiple Access Links and Protocols"><h2 id="Multiple Access Links and Protocols" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols">Multiple Access Links and Protocols</a></h2></div>
 <p>
-Three categories:<br />
+Three categories:
 </p>
 <ul>
 <li>
@@ -497,7 +507,7 @@ Taking-turns protocols
 </ul>
 
 <p>
-Desirable characteristics for a protocol on a channel of rate R<br />
+Desirable characteristics for a protocol on a channel of rate R
 </p>
 <ul>
 <li>
@@ -517,10 +527,10 @@ Simple/Inexpensive to implement
 <div id="The Link Layer-Multiple Access Links and Protocols-Channel partitioning protocols"><h3 id="Channel partitioning protocols" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols-Channel partitioning protocols">Channel partitioning protocols</a></h3></div>
 <div id="The Link Layer-Multiple Access Links and Protocols-Channel partitioning protocols-TDM"><h4 id="TDM" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols-Channel partitioning protocols-TDM">TDM</a></h4></div>
 <p>
-Suppose a channel can support N nodes<br />
-time frames devided into N time slots<br />
-Round robin<br />
-Pros:<br />
+Suppose a channel can support N nodes
+time frames devided into N time slots
+Round robin
+Pros:
 </p>
 <ul>
 <li>
@@ -531,7 +541,7 @@ Is perfectly fair
 
 </ul>
 <p>
-Cons:<br />
+Cons:
 </p>
 <ul>
 <li>
@@ -543,14 +553,14 @@ A node is allways limited to an average rate of R/N
 
 <div id="The Link Layer-Multiple Access Links and Protocols-Channel partitioning protocols-Code Division Multiple Access (CDMA)"><h4 id="Code Division Multiple Access (CDMA)" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols-Channel partitioning protocols-Code Division Multiple Access (CDMA)">Code Division Multiple Access (CDMA)</a></h4></div>
 <p>
-Assigns a different code to each node.<br />
+Assigns a different code to each node.
 </p>
 
 <div id="The Link Layer-Multiple Access Links and Protocols-Random Access Protocols"><h3 id="Random Access Protocols" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols-Random Access Protocols">Random Access Protocols</a></h3></div>
 <p>
-All nodes transmit at full rate.<br />
-Backs down on collision and waits a random delay before retransmission.<br />
-Each node choose the delay independently.<br />
+All nodes transmit at full rate.
+Backs down on collision and waits a random delay before retransmission.
+Each node choose the delay independently.
 </p>
 
 <div id="The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Slotted ALOHA"><h4 id="Slotted ALOHA" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Slotted ALOHA">Slotted ALOHA</a></h4></div>
@@ -573,15 +583,15 @@ If two or more frames collide, then all the nodes detect the collision before th
 </ul>
 
 <p>
-Let <em>p</em> be a probability.<br />
-If the frame collides on transmission, it retransmits the frame in the next slot with probability <em>p</em>.<br />
-Transmit: \( p \)<br />
-Skip: \( (1-p) \)<br />
+Let <em>p</em> be a probability.
+If the frame collides on transmission, it retransmits the frame in the next slot with probability <em>p</em>.
+Transmit: \( p \)
+Skip: \( (1-p) \)
 </p>
 
 <p>
-Suppose <em>N</em> nodes.<br />
-Probabilities in the system:<br />
+Suppose <em>N</em> nodes.
+Probabilities in the system:
 </p>
 <ul>
 <li>
@@ -599,14 +609,14 @@ Any one of the nodes has success: \( Np(1-p)^{N-1} \)
 </ul>
 
 <p>
-Maximum efficiency: \( 1/e = 0.37 \)<br />
-Because math.<br />
+Maximum efficiency: \( 1/e = 0.37 \)
+Because math.
 </p>
 
 <div id="The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-ALOHA"><h4 id="ALOHA" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-ALOHA">ALOHA</a></h4></div>
 <p>
-ALOHA but no slots.<br />
-Maximum efficiency: \( 1/2e \)<br />
+ALOHA but no slots.
+Maximum efficiency: \( 1/2e \)
 </p>
 
 <div id="The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Carrier Sense Multiple Access (CSMA)"><h4 id="Carrier Sense Multiple Access (CSMA)" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Carrier Sense Multiple Access (CSMA)">Carrier Sense Multiple Access (CSMA)</a></h4></div>
@@ -631,10 +641,10 @@ If someone else begins talking at the same time, stop talking
 
 <div id="The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Carrier Sense Multiple Access with Collision Detection (CSMA/CD)"><h4 id="Carrier Sense Multiple Access with Collision Detection (CSMA/CD)" class="header"><a href="#The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Carrier Sense Multiple Access with Collision Detection (CSMA/CD)">Carrier Sense Multiple Access with Collision Detection (CSMA/CD)</a></h4></div>
 <p>
-<span id="The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Carrier Sense Multiple Access with Collision Detection (CSMA/CD)-Binary Exponential Backoff"></span><strong id="Binary Exponential Backoff">Binary Exponential Backoff</strong>:<br />
-When transmitting a frame that has already experienced <em>n</em> collisions,<br />
-node chooses a value of <em>K</em> at random from \( \{0,1,2,\dots, 2^{n}-1\} \).<br />
-For Ethernet:<br />
+<span id="The Link Layer-Multiple Access Links and Protocols-Random Access Protocols-Carrier Sense Multiple Access with Collision Detection (CSMA/CD)-Binary Exponential Backoff"></span><strong id="Binary Exponential Backoff">Binary Exponential Backoff</strong>:
+When transmitting a frame that has already experienced <em>n</em> collisions,
+node chooses a value of <em>K</em> at random from \( \{0,1,2,\dots, 2^{n}-1\} \).
+For Ethernet:
 </p>
 <ul>
 <li>
@@ -646,7 +656,7 @@ For Ethernet:<br />
 </ul>
 
 <p>
-Efficiency:<br />
+Efficiency:
 </p>
 <ul>
 <li>
@@ -683,17 +693,17 @@ First 24 bits for companies
 </ul>
 
 <p>
-Special address FF:FF:FF:FF:FF:FF goes to all nodes<br />
+Special address FF:FF:FF:FF:FF:FF goes to all nodes
 </p>
 
 <div id="The Link Layer-Switched Local Area Networks-Link-Layer Addressing and ARP-ARP"><h4 id="ARP" class="header"><a href="#The Link Layer-Switched Local Area Networks-Link-Layer Addressing and ARP-ARP">ARP</a></h4></div>
 <p>
-IP to MAC<br />
-Links network and link layer<br />
+IP to MAC
+Links network and link layer
 </p>
 
 <p>
-Each host and router has an <span id="The Link Layer-Switched Local Area Networks-Link-Layer Addressing and ARP-ARP-ARP Table"></span><strong id="ARP Table">ARP Table</strong>:<br />
+Each host and router has an <span id="The Link Layer-Switched Local Area Networks-Link-Layer Addressing and ARP-ARP-ARP Table"></span><strong id="ARP Table">ARP Table</strong>:
 </p>
 <ul>
 <li>
@@ -705,7 +715,7 @@ Time to live (TTL)
 </ul>
 
 <p>
-<span id="The Link Layer-Switched Local Area Networks-Link-Layer Addressing and ARP-ARP-ARP Packet"></span><strong id="ARP Packet">ARP Packet</strong>:<br />
+<span id="The Link Layer-Switched Local Area Networks-Link-Layer Addressing and ARP-ARP-ARP Packet"></span><strong id="ARP Packet">ARP Packet</strong>:
 </p>
 <ul>
 <li>
@@ -723,7 +733,7 @@ Receiving MAC Address
 </ul>
 
 <p>
-"Who has &lt;ip&gt;? Tell &lt;ip&gt;"<br />
+"Who has &lt;ip&gt;? Tell &lt;ip&gt;"
 </p>
 
 <div id="The Link Layer-Switched Local Area Networks-Ethernet"><h3 id="Ethernet" class="header"><a href="#The Link Layer-Switched Local Area Networks-Ethernet">Ethernet</a></h3></div>
@@ -834,7 +844,7 @@ The layer above removes the stuffing later
 <div id="The Link Layer-Switched Local Area Networks-Link-Layer Switches"><h3 id="Link-Layer Switches" class="header"><a href="#The Link Layer-Switched Local Area Networks-Link-Layer Switches">Link-Layer Switches</a></h3></div>
 
 <p>
-Switch table entry:<br />
+Switch table entry:
 </p>
 <ul>
 <li>
@@ -851,7 +861,7 @@ Time (When)
 <div id="The Link Layer-Switched Local Area Networks-Link-Layer Switches-Properties of Link-Layer Switching"><h4 id="Properties of Link-Layer Switching" class="header"><a href="#The Link Layer-Switched Local Area Networks-Link-Layer Switches-Properties of Link-Layer Switching">Properties of Link-Layer Switching</a></h4></div>
 
 <p>
-Advantages over shared media and hubs:<br />
+Advantages over shared media and hubs:
 </p>
 <ul>
 <li>
@@ -936,6 +946,7 @@ No
 </table>
 
     </div>
-    <p><small>Page created on 2020-09-02</small></p>
+    <p><small>Page created on 2021-06-04</small></p>
+    <script src="../prism.js"></script>
   </body>
 </html>
