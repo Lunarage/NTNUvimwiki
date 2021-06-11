@@ -30,5 +30,3 @@ This is a site where i keep most of my notes from courses i took at NTNU (Norweg
 | TTK4100                   | Kybernetikk, introduskjon                   | V14      |
 | TTK4125                   | Datastyring                                 | V14      |
 | [[TTM4100/index|TTM4100]] | Kommunikasjon - Tjenester og nett           | V20      |
-
-%% vim: spelllang=nb

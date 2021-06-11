@@ -2,11 +2,32 @@
 
 == TL;DR ==
 
-* *Decrease of intensity of sound wave with distance*: $\frac{I_1}{I_2} = \frac{r_1^2}{r_2^2}$
-* *Speed of sound in air*: $v = 331~\mathrm{m\cdot s^{-1}}$
-* *Standing wave in tube open at one end*: $\lambda_n = \frac{4L}{2n-1}, n \in \N^+$
-* *Doppler shift*: $f = f_0\left(\frac{v+v_r}{v+v_s}\right)$
-* *Mach cone*: $\sin{\theta} = \frac{v}{V_E}$
+*Decrease of intensity of sound wave with distance*
+{{$
+\frac{I_1}{I_2} = \frac{r_1^2}{r_2^2}
+}}$
+
+*Speed of sound in air under standard conditions*
+{{$
+v \approx 331~\mathrm{m\cdot s^{-1}}
+}}$
+
+*Standing wave in tube open at one end*
+{{$
+\lambda_n = \frac{4L}{2n-1}, n \in \N^+
+}}$
+
+*Doppler shift*
+{{$
+f = f_0\left(\frac{v+v_r}{v+v_s}\right)
+}}$
+{{local:../FY0001/Doppler Shift.png}}
+
+*Mach cone*
+{{$
+\sin{\theta} = \frac{v}{V_E}
+}}$
+
 
 == Sound Waves In Air ==
 

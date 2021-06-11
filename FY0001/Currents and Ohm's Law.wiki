@@ -1,5 +1,32 @@
 = Currents and Ohm's Law =
 
+== TL;DR ==
+
+*Electric field in uniform wire*
+{{$
+E = \frac{\Delta V}{l}
+}}$
+
+*Electric current*
+{{$
+I = \frac{\Delta q}{\Delta t}
+}}$
+
+*Resistance in terms of resistivity*
+{{$
+R = \rho\frac{l}{A}
+}}$
+
+*Increase of resistance with temperature*
+{{$
+\Delta R = \alpha R_0 \Delta T
+}}$
+
+*Ohm's Law*
+{{$
+I = \frac{\Delta V}{R}
+}}$
+
 == Electric Current ==
 
 == Resistance and Ohm's Law ==

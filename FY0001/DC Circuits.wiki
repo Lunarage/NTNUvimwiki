@@ -1,5 +1,9 @@
 = DC Circuits =
 
+== TL;DR ==
+
+
+
 == Electromotive Force ==
 
 == Sources of Electromotive Force ==

@@ -1,54 +1,151 @@
+= Contents =
+  - [[#Units and Constants|Units and Constants]]
+    - [[#Units and Constants#SI defining constants|SI defining constants]]
+    - [[#Units and Constants#SI Base Units|SI Base Units]]
+    - [[#Units and Constants#Other Constants|Other Constants]]
+    - [[#Units and Constants#Other Units|Other Units]]
+  - [[#Equations|Equations]]
+    - [[#Equations#Mechanics|Mechanics]]
+    - [[#Equations#Momentum|Momentum]]
+    - [[#Equations#Waves and Sound|Waves and Sound]]
+    - [[#Equations#Light|Light]]
+    - [[#Equations#Electric forces and DC-circuits|Electric forces and DC-circuits]]
+    - [[#Equations#Misc|Misc]]
+
 = Units and Constants =
 
 == SI defining constants ==
 
-| Constant                                 | Value                                               |
-| *Hyperfine transition frequency of Cs*   | $\Delta v_{Cs} = 9.19 \cdot 10^{9}~\mathrm{s^{-1}}$ |
-| *Speed of light in vacuum*               | $c = 3.00 \cdot 10^{8}~\mathrm{m \cdot s^{-1}}$     |
-| *Planck constant*                        | $h = 6.63 \cdot 10^{-34}~\mathrm{J \cdot s}$        |
-| *Elementary charge*                      | $e = 1.60 \cdot 10^{-19}~\mathrm{C}$                |
-| *Boltzmann constant*                     | $k_b = 1.38 \cdot 10^{-23}~\mathrm{J \cdot K^{-1}}$ |
-| *Avogadro constant*                      | $N_A = 6.02 \cdot 10^{23}~\mathrm{mol^{-1}}$        |
-| *Luminous efficacy of 540 Thz radiation* | $K_{cd} = 683~\mathrm{lm \cdot W^{-1}}$             |
+| Constant                                 | Value                                        |
+| *Hyperfine transition frequency of Cs*   | $\Delta v_{Cs} = 9.19 \e{9}~\mathrm{s^{-1}}$ |
+| *Speed of light in vacuum*               | $c = 3.00 \e{8}~\mathrm{m \cdot s^{-1}}$     |
+| *Planck constant*                        | $h = 6.63 \e{-34}~\mathrm{J \cdot s}$        |
+| *Elementary charge*                      | $e = 1.60 \e{-19}~\mathrm{C}$                |
+| *Boltzmann constant*                     | $k_b = 1.38 \e{-23}~\mathrm{J \cdot K^{-1}}$ |
+| *Avogadro constant*                      | $N_A = 6.02 \e{23}~\mathrm{mol^{-1}}$        |
+| *Luminous efficacy of 540 Thz radiation* | $K_{cd} = 683~\mathrm{lm \cdot W^{-1}}$      |
 
 == SI Base Units ==
 
-| Measurement         | Unit               | Symbol         | Value                                                                                                |
-|---------------------|--------------------|----------------|------------------------------------------------------------------------------------------------------|
-| Time                | *Second*           | $\mathrm{s}$   | $9.19 \cdot 10^{9}\frac{1}{\Delta v_{Cs}}$                                                           |
-| Length              | *Metre*            | $\mathrm{m}$   | $\frac{9.19 \cdot 10^{9}}{3.00 \cdot 10^{8}}\frac{c}{\Delta v_{Cs}}$                                 |
-| Mass                | *Kilogram*         | $\mathrm{kg}$  | $\frac{(3.00 \cdot 10^{8})^2}{(6.63 \cdot 10^{-34})(9.19 \cdot 10^{9})}\frac{h\Delta v_{Cs}}{{c^2}}$ |
-| Electric Current    | *Ampere*           | $\mathrm{A}$   | $\frac{1}{(1.60 \cdot 10^{-19})(9.19 \cdot 10^{9})}e\Delta v_{Cs}$                                   |
-| Temperature         | *Kelvin*           | $\mathrm{K}$   | $\frac{1.38 \cdot 10^{-23}}{(6.63 \cdot 10^{-34})(9.19 \cdot 10^{9})}\frac{h\Delta v_{Cs}}{k_b}$     |
-| Amount of substance | *Mole*             | $\mathrm{mol}$ | $\frac{1}{6.02 \cdot 10^{23}}N_A$                                                                    |
-| Luminous intensity  | *Candela*          | $\mathrm{cd}$  | $\frac{1}{683(6.63 \cdot 10^{-34})(9.19 \cdot 10^{9})^2}K_{cd}h(\Delta v_{Cs})^2$                    |
+| Measurement         | Unit       | Symbol         | Value                                                                           |
+|---------------------|------------|----------------|---------------------------------------------------------------------------------|
+| Time                | *Second*   | $\mathrm{s}$   | $9.19 \e{9}\frac{1}{\Delta v_{Cs}}$                                             |
+| Length              | *Metre*    | $\mathrm{m}$   | $\frac{9.19 \e{9}}{3.00 \e{8}}\frac{c}{\Delta v_{Cs}}$                          |
+| Mass                | *Kilogram* | $\mathrm{kg}$  | $\frac{(3.00 \e{8})^2}{(6.63 \e{-34})(9.19 \e{9})}\frac{h\Delta v_{Cs}}{{c^2}}$ |
+| Electric Current    | *Ampere*   | $\mathrm{A}$   | $\frac{1}{(1.60 \e{-19})(9.19 \e{9})}e\Delta v_{Cs}$                            |
+| Temperature         | *Kelvin*   | $\mathrm{K}$   | $\frac{1.38 \e{-23}}{(6.63 \e{-34})(9.19 \e{9})}\frac{h\Delta v_{Cs}}{k_b}$     |
+| Amount of substance | *Mole*     | $\mathrm{mol}$ | $\frac{1}{6.02 \e{23}}N_A$                                                      |
+| Luminous intensity  | *Candela*  | $\mathrm{cd}$  | $\frac{1}{683(6.63 \e{-34})(9.19 \e{9})^2}K_{cd}h(\Delta v_{Cs})^2$             |
 
 == Other Constants ==
 
 | Constant                                   | Value                                                                     |
 |--------------------------------------------|---------------------------------------------------------------------------|
 | *Acceleration of free fall on Earth*       | $g = 9.81~\mathrm{m \cdot s^{-2}}$                                        |
-| *Gravitational Constant*                   | $G = 6.67 \cdot 10^{-11}~\mathrm{N \cdot m^2 \cdot kg^{-2}}$              |
-| *Coulomb constant*                         | $k_e = 8.99 \cdot 10^{9}~\mathrm{N \cdot m^2 \cdot C^{-2}}$               |
+| *Gravitational Constant*                   | $G = 6.67 \e{-11}~\mathrm{N \cdot m^2 \cdot kg^{-2}}$                     |
+| *Coulomb constant*                         | $k_e = 8.99 \e{9}~\mathrm{N \cdot m^2 \cdot C^{-2}}$                      |
 | *Speed of sound under standard conditions* | $v = 343~\mathrm{m \cdot s^{-1}}$                                         |
-| *Stefan–Boltzmann constant*                | $\sigma = 5.67 \cdot 10^{-8}~\mathrm{W \cdot m^{-2} \cdot K^{-4}}$        |
-| *Permittivity constant*                    | $\epsilon_0 = 8.85 \cdot 10^{-12}~\mathrm{C^2 \cdot N^{-1} \cdot m^{-2}}$ |
+| *Stefan–Boltzmann constant*                | $\sigma = 5.67 \e{-8}~\mathrm{W \cdot m^{-2} \cdot K^{-4}}$               |
+| *Permittivity constant*                    | $\epsilon_0 = 8.85 \e{-12}~\mathrm{C^2 \cdot N^{-1} \cdot m^{-2}}$        |
+| *Permeability constant*                    | $\mu_0 = 1.26 \e{-6} ~\mathrm{N \cdot s^2 \cdot C^{-2}}$                  |
 
 == Other Units ==
 
-| Measurement | Unit               | Symbol        | Value                             |
-|-------------|--------------------|---------------|-----------------------------------|
-| Mass        | *Atomic unit mass* | $\mathrm{u}$  | $1.66 \cdot 10^{-27}~\mathrm{kg}$ |
-| Energy      | *Electronvolt*     | $\mathrm{eV}$ | $1.60 \cdot 10^{-19}~\mathrm{J}$  |
+| Measurement             | Unit               | Symbol        | Value                                            |
+|-------------------------|--------------------|---------------|--------------------------------------------------|
+| Mass                    | *Atomic unit mass* | $\mathrm{u}$  | $1.66 \e{-27}~\mathrm{kg}$                       |
+| Energy                  | *Electronvolt*     | $\mathrm{eV}$ | $1.60 \e{-19}~\mathrm{J}$                        |
+| Force                   | *Newton*           | $\mathrm{N}$  | $1~\mathrm{kg \cdot m \cdot s^{-2}}$             |
+| Energy                  | *Joule*            | $\mathrm{J}$  | $1~\mathrm{N \cdot m}$                           |
+| Power                   | *Watt*             | $\mathrm{W}$  | $1~\mathrm{J \cdot s^{-1}}$                      |
+| Frequency               | *Hertz*            | $\mathrm{Hz}$ | $1~\mathrm{s^{-1}}$                              |
+| Charge                  | *Coulomb*          | $\mathrm{C}$  | $1~\mathrm{A \cdot s}$                           |
+| Electrostatic Potential | *Volt*             | $\mathrm{V}$  | $1~\mathrm{J \cdot C^{-1}}$                      |
+| Capacitance             | *Farad*            | $\mathrm{F}$  | $1~\mathrm{C \cdot V^{-1}}$                      |
+| Resistance              | *Ohm*              | $\Omega$      | $1~\mathrm{V \cdot A^{-1}}$                      |
+| Magnetic flux density   | *Tesla*            | $\mathrm{T}$  | $1~\mathrm{N \cdot C^{-1} \cdot m^{-1} \cdot s}$ |
 
 = Equations =
 
 == Mechanics ==
 
+| *Speed with constant acceleration*         | $v = v_0 + at$                                                                         |
+| *Distance with constant acceleration*      | $x = x_0 + v_0t + \frac{1}{2}at^2$                                                     |
+| *Time less formula*                        | $a(x - x_0) = \frac{1}{2}(v^2 - v_0^2)$                                                |
+| *Newton's 1st law*                         | $\sum \vec{F} = 0$                                                                     |
+| *Newton's 2nd law*                         | $\sum \vec{F} = m\vec{a}$                                                              |
+| *Friction force*                           | $F_k = \mu_k N$                                                                        |
+| \/                                         | $F_{s,max} = \mu_s N$                                                                  |
+| *Gravitational force, constant field*      | $F_g = mg$                                                                             |
+| *Restoring force of a spring*              | $F = -kx$                                                                              |
+| *Kinetic energy*                           | $K=E_{\text{kin}}=\frac{1}{2}mv^2$                                                     |
+| *Potential energy in constant field*       | $U=E_{\text{pot}}=mgh$                                                                 |
+| *Centripetal acceleration*                 | $a_\perp = \frac{v^2}{R}$                                                              |
+| *Gravitational force between point bodies* | $F=G\frac{Mm}{r^2}$                                                                    |
+| *Potential energy, two point bodies*       | $U=-G\frac{mM}{r}$                                                                     |
+| *Work, constant force*                     | $W = \vec{F}\cdot\vec{s} = \lvert\vec{F}\rvert \cdot \lvert\vec{s}\rvert \cos{\theta}$ |
+| *Work and energy*                          | $W_{\sum F} = \Delta K = -\Delta U$                                                    |
+| *Power*                                    | $\overline{P} = \frac{W}{\Delta t}$                                                    |
+
 == Momentum ==
+
+| *Impulse and linear momentum* | $I = F \cdot \Delta t$                                         |
+| \/                            | $\overline{p} = m\overline{v}$                                 |
+| *Elastic central collision*   | $\sum_i m_i\overline{v_i} = \sum_i m_i \overline{v_i^\prime}$  |
+| \/                            | $\sum_i \frac{1}{2}mv_i^2 = \sum_i \frac{1}{2}mv_i^{\prime 2}$ |
+| \/                            | $(v_2^\prime - v_1^\prime) = -(v_2-v_1) $                      |
 
 == Waves and Sound ==
 
+| *Waves*                                             | $\frac{\lambda}{T} = \lambda f = v$                                     |
+| *Harmonic oscillation*                              | $y(t) = A\cos{\omega t}$                                                |
+| \/                                                  | $f = \frac{1}{T}$                                                       |
+| \/                                                  | $\omega = \frac{2\pi}{T}$                                               |
+| *Harmonic wave*                                     | $y(x,t) = A\sin{(kx-\omega t)}$                                         |
+| \/                                                  | $y(x,t) = A\sin{\left( \frac{2\pi}{\lambda}x -2\pi f \cdot t\right)}$   |
+| \/                                                  | $y(x,t) = A\sin{\left( \frac{2\pi}{\lambda}x - \frac{2\pi}{T}t\right)}$ |
+| \/                                                  | $v_{\text{phase}} = \frac{\omega}{k}$                                   |
+| *Standing waves on a string*                        | $\lambda_n = \frac{2L}{n},~ n \in \N^+$                                 |
+| \/                                                  | $v = \sqrt{\frac{F}{M/L}}$                                              |
+| *Beat frequency*                                    | $f_{\text{beat}} = f_2 - f_1$                                           |
+| *Sanding sound waves in a tube with one end closed* | $\lambda = \frac{4L}{2n-1},~ n \in \N^+$                                |
+| *Doppler shift*                                     | $f^\prime = f_0\left( \frac{v+v_r}{v+v_s} \right)$                      |
+
 == Light ==
 
+| *Reflection*                                   | $\theta_{\text{reflection}} = \theta_{\text{incident}}$                       |
+| *Refraction (Snell's Law)*                     | $n_1 \sin{\theta_1} = n_2\sin{\theta_2}$                                      |
+| *Critical angle for total internal reflection* | $\sin{\theta_{\text{crit}}} = \frac{n_2}{n_1}, n_1 > n_2$                     |
+| *Speed of light in vacuum and air*             | $c = \lambda_{\text{vac}}f_{\text{vac}}~(= 3.00 \e8 \mathrm{m \cdot s^{-1}})$ |
+| *Light speed and wavelength for* $n>1$         | $v = \frac{c}{n}$                                                             |
+| \/                                             | $\lambda = \frac{\lambda_{\text{vac}}}{n}$                                    |
+| \/                                             | $f = f_{\text{vac}}$                                                          |
+| *Thin lens formula*                            | $\frac{1}{s^\prime} + \frac{1}{s} = \frac{1}{f}$                              |
+| *Magnification*                                | $M = -\frac{s^\prime}{s}$                                                     |
+
 == Electric forces and DC-circuits ==
+
+| *Electric force between point charges*             | $F_e = \frac{1}{4\pi\epsilon_0}\frac{q \cdot q^\prime}{r^2} = k_e\frac{q \cdot q^\prime}{r^2}$ |
+| *Electric force in uniform electric field*         | $\vec{F_e} = q\vec{E}$                                                                         |
+| *Electric field*                                   | $\vec{E} = \frac{\vec{F_e}}{q}$                                                                |
+| *Electric field for uniform field*                 | $E = \frac{V}{d}$                                                                              |
+| *Potential energy (two point charges)*             | $U = k_e\frac{q \cdot q^\prime}{r}$                                                            |
+| *Potential energy (point charge in uniform field)* | $U = qE$                                                                                       |
+| *Electrostatic potential*                          | $V = \frac{U}{q}$                                                                              |
+| \/                                                 | $V = \sum_{i=1}^{N} V_i$i for $N$ point charges                                                |
+| *Ohm's law*                                        | $V = R \cdot I$                                                                                |
+| *Resistance*                                       | $R=\rho\frac{L}{A}$                                                                            |
+| *Electric power*                                   | $P = V \cdot I$                                                                                |
+| *Capacitance for a parallel plate capacitor*       | $C = \frac{Q}{V}$                                                                              |
+| *Force on moving charge*                           | $\vec{F} = q(\vec{v}\times\vec{B})$                                                            |
+| \/                                                 | $F = q \lvert \vec{v} \rvert \lvert \vec{B} \rvert \sin{\theta}$                               |
+| *Magnetic field for current in straight conductor* | $B = \frac{\mu_0 I}{2 \pi r}$                                                                  |
+| *Magnetic field for current ion circular loop*     | $B = \frac{\mu_0 I}{2 r}$                                                                      |
+| *Motional emf induced by a rod*                    | $\varepsilon = l \cdot v \cdot B$                                                              |
+
+== Misc ==
+
+| *Energy of a photon*      | $E = hf = \frac{hc}{f}$                                           |
+| *Wien's displacement law* | $\lambda_{\text{peak}} = \frac{2.90 \e{-3}\mathrm{m \cdot K}}{T}$ |
+| *Stefan-Boltzmann Law*    | $S = \sigma T^4$                                                  |
+| *Work function*           | $K = hf - \phi$                                                   |

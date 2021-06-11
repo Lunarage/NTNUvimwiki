@@ -2,6 +2,15 @@
 
 == TL;DR ==
 
+*Momentum*
+{{$
+  \vec{p} = m\vec{v}
+}}$
+
+*Elastic collision where one particle starts at rest*
+{{$
+  v_1^\prime = \frac{m_1-m_2}{m_1+m_2}v_1
+}}$
 
 == Momentum ==
 
@@ -53,7 +62,7 @@ Simply the sum of of the kinetic energy
 
 *Average force*
 {{$
-\bar{\vec{F}} = \frac{\vec{p}' - \vec{p}}{\Delta t}
+\overline{\vec{F}} = \frac{\vec{p}' - \vec{p}}{\Delta t}
 }}$
 Where $\vec{p}$ is the initial momentum, and $\vec{p}'$ is the final momentum.
 
@@ -68,12 +77,67 @@ the laws of conservation of momentum and energy
 completely determine the final velocities in terms of the initial velocities.
 
 {{$
-m_1v_1 + m_2+v_2 = m_1v_1' + m_2+v_2'
+m_1v_1 + m_2v_2 = m_1v_1' + m_2v_2'
 }}$
 and
 {{$
-\frac{1}{2} m_1 v_1^2 + \frac{1}{2} m_2 v_2^2 = \frac{1}{2} m_1 v_1^{2\prime} + \frac{1}{2} m_2 v_2^{2\prime}
+\frac{1}{2} m_1 v_1^2 + \frac{1}{2} m_2 v_2^2 = \frac{1}{2} m_1 v_1^{\prime 2} + \frac{1}{2} m_2 v_2^{\prime 2}
 }}$
+
+If one of the two particles start at rest, we have
+
+{{$
+\begin{equation}
+  m_1v_1 = m_1v_1^\prime + m_2v_2^\prime
+  \label{momentum1}
+\end{equation}
+}}$
+{{$
+\begin{equation}
+  m_1(v_1-v_1^\prime) = m_2v_2^\prime
+  \label{momentum2}
+\end{equation}
+}}$
+and
+{{$
+\begin{equation}
+  \frac{1}{2} m_1 v_1^2 = \frac{1}{2} m_1 v_1^{2\prime} + \frac{1}{2} m_2 v_2^{\prime 2}
+  \label{energy1}
+\end{equation}
+}}$
+{{$
+\begin{equation}
+  m_1(v_1^2-v_1^{\prime 2}) = m_2v_2^{\prime 2}
+  \label{energy2}
+\end{equation}
+}}$
+{{$
+\begin{equation}
+  m_1(v_1-v_1^\prime)(v_1+v_1^\prime) = m_2v_2^{\prime 2}
+  \label{energy3}
+\end{equation}
+}}$
+Divide $\eqref{energy3}$ by $\eqref{momentum2}$
+{{$
+\begin{equation}
+  v_1 + v_1^\prime = v_2^\prime
+  \label{energymomentum1}
+\end{equation}
+}}$
+Combine $\eqref{energymomentum1}$ and $\eqref{momentum2}$
+{{$
+\begin{equation}
+  m_1(v_1 - v_1^\prime) = m_2(v_1 + v_1^\prime)
+  \label{energymomentum2}
+\end{equation}
+}}$
+{{$
+\begin{equation}
+  v_1^\prime = \frac{m_1-m_2}{m_1+m_2}v_1
+  \label{energymomentumsolution}
+\end{equation}
+}}$
+
 
 == Inelastic Collisions On a Straight Line ==
 

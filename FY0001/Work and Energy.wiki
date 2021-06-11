@@ -2,19 +2,56 @@
 
 == TL;DR ==
 
-* *Work done by a constant force*: $W = Fs\cos{\theta}$
-* *Work done by a variable force:* $W = \overline{F_x}\Delta x$
-* *Kinetic energy:* $K = \frac{1}{2}mv^2$
-* Work-energy theorem: $\Delta K = W$
-* *Gravitational potential energy:* $U = mgy$
-* *Mechanical energy:* $E = K + U$
-* *Conservation of mechanical energy:* $E = K + U = [\text{constant}]$
-* *Conservative force*: The work done by the force is zero for any roundtrip.
-* *Work done by a conservative force*: $W = U_1 - U_2$
-* *Potential energy of a spring*: $U = \frac{1}{2}kx^2$
-* *Average power*: $\overline{P} = \frac{W}{\Delta t}$
-* *Instantaneous power*: $P = \lim_{\Delta t \to 0} \frac{W}{\Delta t}$
-* *Mechanical power delivered by a force*: $P = Fv~cos{\theta}$
+*Work done by a constant force*
+{{$
+W = Fs\cos{\theta}
+}}$
+*Work done by a variable force*
+{{$
+W = \overline{F_x}\Delta x
+}}$
+*Kinetic energy*
+{{$
+K = \frac{1}{2}mv^2
+}}$
+*Work-energy theorem*
+{{$
+\Delta K = W
+}}$
+*Gravitational potential energy*
+{{$
+U = mgy
+}}$
+*Mechanical energy*
+{{$
+E = K + U
+}}$
+*Conservation of mechanical energy*
+{{$
+E = K + U = [\text{constant}]
+}}$
+*Conservative force*
+    The work done by the force is zero for any roundtrip.
+*Work done by a conservative force*:
+{{$
+W = U_1 - U_2
+}}$
+*Potential energy of a spring*
+{{$
+U = \frac{1}{2}kx^2
+}}$
+*Average power*
+{{$
+\overline{P} = \frac{W}{\Delta t}
+}}$
+*Instantaneous power*
+{{$
+P = \lim_{\Delta t \to 0} \frac{W}{\Delta t}
+}}$
+*Mechanical power delivered by a force*
+{{$
+P = Fv~cos{\theta}
+}}$
 
 == Work ==
 
@@ -27,7 +64,7 @@ W = \vec{F} \cdot \vec{\Delta x}
 Work done by a variable force
 
 {{$
-W = \bar{\vec{F}} \cdot \vec{\Delta x}
+W = \overline{\vec{F}} \cdot \vec{\Delta x}
 }}$
 
 == Kinetic Energy ==
@@ -69,7 +106,7 @@ E = K + U = [constant]
 Potential energy of a spring
 
 {{$
-U = \int kx \,dx = \frac{1}{2}kx^2
+U = \frac{1}{2}kx^2
 }}$
 
 == Other Forms of Energy ==
@@ -79,7 +116,7 @@ U = \int kx \,dx = \frac{1}{2}kx^2
 Average power
 
 {{$
-\bar{P} = \frac{W}{\Delta t}
+\overline{P} = \frac{W}{\Delta t}
 }}$
 
 Instantaneous power

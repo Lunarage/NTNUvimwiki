@@ -1,9 +1,92 @@
 = Reflection, Refraction and Optics =
 
+== TL;DR ==
+
+*Law of Reflection*
+    The angle of incident equals the angle of reflection.
+
+*Index of refraction*
+{{$
+  v = \frac{c}{n}
+}}$
+
+*Law of refraction*
+{{$
+  \sin{\theta} = n~\sin{\theta^\prime}
+}}$
+
+*Critical angle for total internal reflection*
+{{$
+  \sin{\theta_{\text{crit}}^\prime} = \frac{1}{n}
+}}$
+
 == Huygens's Construction ==
+
+    To find the change of position of a wave front in a small time interval $\Delta t$,
+    draw many small spheres of radius $[\text{wave speed}] \times \Delta t$
+    with centers on the old wave fronts.
+    The new wave front is the surface that touches the leading edges of these small spheres.
 
 == Reflection ==
 
+The angle of incidence equals the angle of reflection.
+
 == Refraction ==
 
+{{$
+  v = \frac{c}{n}
+}}$
+Where $n$ is the index of refraction.
+
+The speed of light in the material is slower than the speed of light in a vacuum.
+
+{{$
+\begin{align*}
+  \lambda f &= v = \frac{c}{n} \\
+  \lambda &= \frac{1}{n}\frac{c}{f} \\
+  \lambda &= \frac{\lambda_{\text{vac}}}{n}
+\end{align*}
+}}$
+
+When light penetrates from air into water its speed is reduced by a factor of $n$,
+but its *frequency remains constant*.
+
+The color we perceive depends on the frequency of the light reaching our eyes.
+
+{{$
+  \sin{\theta} = n~\sin{\theta}
+}}$
+
+This change of direction is called refraction,
+and this equation is called the law of refraction, or Snell's Law.
+The angle $\theta$ is the *angle of incident*,
+and $\theta^\prime$ is the *angle of refraction*.
+It is usually convenient to measure these angles
+between the rays and the normal to the surface.
+
 == Thin Lenses ==
+
+*The lens-makers formula*
+{{$
+  \frac{1}{f} = (n-1)\left(\frac{1}{R_1}+\frac{1}{R_2}\right)
+}}$
+where $n$ is the index of refraction of the material of the lens,
+$R_1$ and $R_2$ are the radii of the two spherical surfaces making up the lens,
+and $f$ is the focal length.
+The radii and the focal length are positive for a convex lens,
+end negative for a concave lens.
+
+*Lens equation*
+{{$
+  \frac{1}{s}+\frac{1}{s^\prime} = \frac{1}{f}
+}}$
+
+Where $s$ is the object distance, and $s^\prime$ is the object image.
+
+*Magnification*
+{{$
+  M = -\frac{s^\prime}{s}
+}}$
+
+If $M$ is positive, then the image is upright and virtual.
+If $M$ is negative, then the image is inverted and real.

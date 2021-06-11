@@ -2,11 +2,32 @@
 
 == TL;DR ==
 
-* *Definition of electric field*: $E = \frac{F}{q}$
-* *Electric field of point charge*: $E = k_e\frac{q'}{r^2}$
-* *Electric field of large, uniform charged flat sheet*: $E = \frac{\sigma}{2\epsilon_0}$
-* *Electric field of charged line*: $E = \frac{1}{2}k_e\frac{\lambda}{r}$
+*Definition of electric field*
+{{$
+E = \frac{F}{q}
+}}$
+
+*Electric field of point charge*
+{{$
+E = k_e\frac{q'}{r^2}
+}}$
+
+*Electric field of large, uniform charged flat sheet*
+{{$
+E = \frac{\sigma}{2\epsilon_0}
+}}$
+
+*Electric field of charged line*
+{{$
+E = \frac{1}{2}k_e\frac{\lambda}{r}
+}}$
+
 
 == The Electric Field ==
+
+{{$
+\sigma = \frac{Q}{A}
+}}$
+Where $Q$ is the charge and $A$ is the area.
 
 == Lines of Electric Field ==

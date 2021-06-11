@@ -2,9 +2,35 @@
 
 == TL;DR ==
 
-* *Definition of electrostatic potential*: $V = \frac{U}{q}$
-* *Potential energy of two point charges*: $U = k_e\frac{qq'}{r}$
-* *Electrostatic potential of point charge*: $V = k_e\frac{q'}{r}$
+*Definition of electrostatic potential*
+{{$
+V = \frac{U}{q}
+}}$
+
+*Potential energy of two point charges*
+{{$
+U = k_e\frac{qq'}{r}
+}}$
+
+*Electrostatic potential of point charge*
+{{$
+V = k_e\frac{q'}{r}
+}}$
+
+*Capacitance*
+{{$
+  C = \frac{Q}{V}
+}}$
+
+*Capacitance of parallel plates*
+{{$
+  C = \epsilon_0\frac{A}{d}
+}}$
+
+*Potential energy in capacitor*
+{{$
+  U = \frac{1}{2}QV
+}}$
 
 == The Electrostatic Potential ==
 

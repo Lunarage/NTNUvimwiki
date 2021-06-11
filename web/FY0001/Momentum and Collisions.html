@@ -24,6 +24,19 @@
 
 <div id="Momentum and Collisions-TL;DR"><h2 id="TL;DR" class="header"><a href="#Momentum and Collisions-TL;DR">TL;DR</a></h2></div>
 
+<p>
+<span id="Momentum and Collisions-TL;DR-Momentum"></span><strong id="Momentum">Momentum</strong>
+</p>
+\[
+  \vec{p} = m\vec{v}
+\]
+
+<p>
+<span id="Momentum and Collisions-TL;DR-Elastic collision where one particle starts at rest"></span><strong id="Elastic collision where one particle starts at rest">Elastic collision where one particle starts at rest</strong>
+</p>
+\[
+  v_1^\prime = \frac{m_1-m_2}{m_1+m_2}v_1
+\]
 
 <div id="Momentum and Collisions-Momentum"><h2 id="Momentum" class="header"><a href="#Momentum and Collisions-Momentum">Momentum</a></h2></div>
 
@@ -85,7 +98,7 @@ Simply the sum of of the kinetic energy
 <span id="Momentum and Collisions-Collisions-Average force"></span><strong id="Average force">Average force</strong>
 </p>
 \[
-\bar{\vec{F}} = \frac{\vec{p}' - \vec{p}}{\Delta t}
+\overline{\vec{F}} = \frac{\vec{p}' - \vec{p}}{\Delta t}
 \]
 <p>
 Where \(\vec{p}\) is the initial momentum, and \(\vec{p}'\) is the final momentum.
@@ -108,14 +121,77 @@ completely determine the final velocities in terms of the initial velocities.
 </p>
 
 \[
-m_1v_1 + m_2+v_2 = m_1v_1' + m_2+v_2'
+m_1v_1 + m_2v_2 = m_1v_1' + m_2v_2'
 \]
 <p>
 and
 </p>
 \[
-\frac{1}{2} m_1 v_1^2 + \frac{1}{2} m_2 v_2^2 = \frac{1}{2} m_1 v_1^{2\prime} + \frac{1}{2} m_2 v_2^{2\prime}
+\frac{1}{2} m_1 v_1^2 + \frac{1}{2} m_2 v_2^2 = \frac{1}{2} m_1 v_1^{\prime 2} + \frac{1}{2} m_2 v_2^{\prime 2}
 \]
+
+<p>
+If one of the two particles start at rest, we have
+</p>
+
+\[
+\begin{equation}
+  m_1v_1 = m_1v_1^\prime + m_2v_2^\prime
+  \label{momentum1}
+\end{equation}
+\]
+\[
+\begin{equation}
+  m_1(v_1-v_1^\prime) = m_2v_2^\prime
+  \label{momentum2}
+\end{equation}
+\]
+<p>
+and
+</p>
+\[
+\begin{equation}
+  \frac{1}{2} m_1 v_1^2 = \frac{1}{2} m_1 v_1^{2\prime} + \frac{1}{2} m_2 v_2^{\prime 2}
+  \label{energy1}
+\end{equation}
+\]
+\[
+\begin{equation}
+  m_1(v_1^2-v_1^{\prime 2}) = m_2v_2^{\prime 2}
+  \label{energy2}
+\end{equation}
+\]
+\[
+\begin{equation}
+  m_1(v_1-v_1^\prime)(v_1+v_1^\prime) = m_2v_2^{\prime 2}
+  \label{energy3}
+\end{equation}
+\]
+<p>
+Divide \(\eqref{energy3}\) by \(\eqref{momentum2}\)
+</p>
+\[
+\begin{equation}
+  v_1 + v_1^\prime = v_2^\prime
+  \label{energymomentum1}
+\end{equation}
+\]
+<p>
+Combine \(\eqref{energymomentum1}\) and \(\eqref{momentum2}\)
+</p>
+\[
+\begin{equation}
+  m_1(v_1 - v_1^\prime) = m_2(v_1 + v_1^\prime)
+  \label{energymomentum2}
+\end{equation}
+\]
+\[
+\begin{equation}
+  v_1^\prime = \frac{m_1-m_2}{m_1+m_2}v_1
+  \label{energymomentumsolution}
+\end{equation}
+\]
+
 
 <div id="Momentum and Collisions-Inelastic Collisions On a Straight Line"><h2 id="Inelastic Collisions On a Straight Line" class="header"><a href="#Momentum and Collisions-Inelastic Collisions On a Straight Line">Inelastic Collisions On a Straight Line</a></h2></div>
 
@@ -134,7 +210,7 @@ v_1' = v_2' = v_{CM} = \frac{m_1v_1}{m_1+m_2}
 \]
 
     </div>
-    <p><small>Page created on 2021-06-04</small></p>
+    <p><small>Page created on 2021-06-06</small></p>
     <script src="../prism.js"></script>
   </body>
 </html>

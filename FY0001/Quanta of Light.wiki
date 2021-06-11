@@ -2,8 +2,37 @@
 
 == Blackbody Radiation ==
 
+A body with a perfectly absorbing (and emitting) surface is called a blackbody.
+
 == Energy Quanta ==
 
+In an oscillator of frequency $f$, the only permitted values of energy are
+{{$
+  E = 0, hf, 2hf, \dots, nhf, n \in \N
+}}$
+All other values of energy are forbidden!
+
+*Planck's constant ❤️*
+{{$
+  h = 6.63 \cdot 10^{-34}~\mathrm{J \cdot s}
+}}$
+
+The distribution of energy in the spectrum of Blackbody radiation has a maxima at a wavelength.
+
+*Wien's Law*
+{{$
+  \lambda_{\text{max}} = \frac{2.90 \cdot 10^{-3}~\mathrm{m \cdot K}}{T}
+}}$
+
 == Photons and the Photoelectric Effect ==
+
+The work function of a metal, designated $\phi$.
+
+{{$
+  K = hf - \phi
+}}$
+
+According to this equation, a minimum frequency is required to achieve the ejection of an electron.
+This minimum frequency, called the threshold frequency corresponds to the ejection of an electron of zero kinetic energy.
 
 == X Rays ==

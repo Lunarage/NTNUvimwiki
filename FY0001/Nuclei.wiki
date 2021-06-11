@@ -6,4 +6,47 @@
 
 == Radioactivity ==
 
+Radioactive substances emit three kinds of rays:
+* alpha rays (α), helium nuclei
+* beta rays (β), electrons
+* gamma rays (γ), electromagnetic radiation
+
+=== Alpha Decay ===
+
+The alpha particle consists of two protons and two neutrons;
+it has the same structure as the helium nucleus, $\isotope{He}{4}$.
+
+Two examples:
+{{$
+\isotope{U}{238} \to \isotope{Th}{234} + \alpha
+}}$
+{{$
+\isotope{Ra}{226} \to \isotope{Rn}{222} + \alpha
+}}$
+
+=== Beta Decay ===
+
+The free neutron is unstable, and it decays into a proton, an electron, and an anti-neutrino.
+
+{{$
+  n \to p + e^- + \bar{\nu}
+}}$
+
+Two examples:
+{{$
+  \isotope{Co}{60} \to \isotope{Ni}{60} + e^- + \bar{\nu}
+}}$
+{{$
+  \isotope{C}{14} \to \isotope{N}{14} + e^- + \bar{\nu}
+}}$
+
+=== Gamma Emission ===
+
+Excess energy form alpha or beta decay as electromagnetic radiation.
+
 == The Law of Radioactive Decay ==
+
+{{$
+  n = n_0\left(\frac{1}{2}\right)^{t/t_{1/2}}
+}}$
+where $n$ is the number of nuclei, $n_0$ is the original number of nuclei and $t_{1/2}$ is the half-life.

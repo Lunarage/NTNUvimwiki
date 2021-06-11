@@ -2,7 +2,25 @@
 
 == The Magnetic Force ==
 
+*Permeability constant*
+{{$
+  \mu_0 = 4\pi \cdot 10^{-7}~\mathrm{N \cdot s^2 \cdot C^{-2}} = 1.26 \cdot 10^{-6} ~\mathrm{N \cdot s^2 \cdot C^{-2}}
+}}$
+
+*Magnetic force; Charge moving parallel to current*
+{{$
+  F = -\frac{\mu_0}{2\pi} \frac{qvI}{r}
+}}$
+in the radial direction
+
 == The Magnetic Field ==
+
+{{$
+  F = q\vec{v} \times \vec{B}
+}}$
+
+[[https://xkcd/199|Relevant XKCD]]
+{{https://imgs.xkcd.com/comics/right_hand_rule.png}}
 
 == Ampère's Law ==
 
