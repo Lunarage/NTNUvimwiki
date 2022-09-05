@@ -4,6 +4,10 @@
 
 == Selvledelse - en hovedmodell ==
 
+    Selvledelse er en prosess som har som mål at medarbeiderne
+    i større grad skal bestemme hvilke oppgaver som skal gjøres,
+    og hvordan arbeidet skal utføres.
+
 === Formål og verdier - meningen med arbeidslivet ===
 
 === Selvobservasjon ===
