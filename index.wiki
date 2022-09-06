@@ -7,7 +7,7 @@ This is a site where i keep most of my notes from courses i took at NTNU (Norweg
 == Courses ==
 | Emnekode                  | Navn                                        | Semester |
 |---------------------------|---------------------------------------------|----------|
-| EXPH0001                  | Filisofi of vitenskapsteori                 | H12      |
+| EXPH0001                  | Filosofi og vitenskapsteori                 | H12      |
 | FRA0501                   | Fransk 1                                    | V15      |
 | [[FY0001/index|FY0001]]   | Brukerkurs i fysikk                         | V21      |
 | [[IT1901/index|IT1901]]   | Informatikk prosjektarbeid I                | H20      |
@@ -22,12 +22,14 @@ This is a site where i keep most of my notes from courses i took at NTNU (Norweg
 | [[TDT4145/index|TDT4145]] | Datamodellering og databasesystemer         | V20      |
 | [[TDT4160/index|TDT4160]] | Datamaskiner og digitalteknikk              | H19      |
 | [[TDT4165/index|TDT4165]] | Programmeringsspråk                         | H20      |
-| TDT4180                   | Menneskemaskin-interaskjon                  | V20      |
+| TDT4180                   | Menneskemaskin-interaksjon                  | V20      |
 | TFE4100                   | Kretsteknikk                                | H12      |
 | TMA4115                   | Matematikk 3                                | V14      |
 | TMA4140                   | Diskret matematikk                          | H19      |
 | TMA4245                   | Statistikk                                  | V14      |
-| TTK4100                   | Kybernetikk, introduskjon                   | V14      |
+| TTK4100                   | Kybernetikk, introduksjon                   | V14      |
 | TTK4125                   | Datastyring                                 | V14      |
 | [[TTM4100/index|TTM4100]] | Kommunikasjon - Tjenester og nett           | V20      |
 | [[ØKO1001/index|ØKO1001]] | Ledelse                                     | H22      |
+
+%% vim: spelllang=nb

@@ -8,7 +8,7 @@
 * Lederen bruker seg selv for å utøve innflytelse gjennom sosiale relasjoner
 * Gode relasjoner forutsetter et tillitsforhold mellom leder og medarbeider
 * Begge parter må tilstrebe dialog, likeverdighet, respekt og gjensidig samspill
-* Å skape sterke relasjonser krever relasjonskompetanse kommunikasjon relasjonelt
+* Å skape sterke relasjoner krever relasjonskompetanse kommunikasjon relasjonelt
 
 === Leder-medarbeider-utveksling ===
 
@@ -37,7 +37,7 @@ Medarbeidere med nær relasjon til leder:
 * Relasjonskompetanse er kunnskap ferdigheter erfaringer og evner et menneske trenger
   for å oppnå kontakt og bygge et godt forhold til et annet menneske.
 
-* Mpet i første omgang for en leder må være å bebare og forvedre forholdet til medarbeideren
+* Målet i første omgang for en leder må være å bevare og forbedre forholdet til medarbeideren
 * De rasjonelle ferdighetene lederen trenger er:
   * evnen til å ta initiativ
   * til å opptre forsiktig, interessert, og løsningsorientert
@@ -49,7 +49,7 @@ Avgjørende er avgjørende for et godt samarbeid
 
 == Dialog bygger relasjon ==
 
-Dialog _latin_: "gjennom samtale" mellom to eller flere personer.
+Dialog: _latin_ "gjennom samtale" mellom to eller flere personer.
 * Dialogen er et av de viktigste midlene for å skape kontakt mellom mennesker.
 * Dialogen er den likeverdige og balanserte samtalen og er en brobygger mellom egne og andres synspunkter.
 * Er undersøkende i formen gjennom at man viser interesse for og stiller spørsmål til hverandre.
@@ -70,3 +70,5 @@ Dialog _latin_: "gjennom samtale" mellom to eller flere personer.
 == Emosjonell intelligens ==
 
 == Anerkjennende adferd ==
+
+%% vim: spelllang=nb
