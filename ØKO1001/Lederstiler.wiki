@@ -4,9 +4,47 @@
 
 == Lederstiler ==
 
+_Lederstil_: lederens adferdsmønster slik den oppfattes av andre.
+
+_Oppgaveorientert lederadferd_ handler om betydningen av mål og å få utført virksomhetens arbeidsoppgaver.
+
+_Relasjonsorientert lederadferd_ handler om at lederen er opptatt av medarbeidernes behov.
+
 == Ledergitteret ==
 
+To akser: _relasjonsorientert_ og _oppgaveorientert_.
+
+_Personalorientert ledelse_: høy relasjon og lav oppgave.
+
+* Legger stor vekt på følelser, omtanke og mellommenneskelige forhold.
+* Konfliktsky
+* Unngår endringer som påvirker medarbeiderne for mye
+* For lite opptatt av å skape resultater
+* Tilfredse medarbeidere
+
+_Oppgaveorientert ledelse_: lav relasjon og høy oppgave.
+
+* Opptatt av effektivitet
+* God til å administrere
+* Medmenneskelighet får lite plass
+* Kan være i nødvendig i enkelte situasjoner
+
+_Laissez-faire ledelse_: lav relasjon og lav oppgave.
+
+* maktesløs ledelse
+
+_Gruppeorientert ledelse_: høy relasjon og høy oppgave.
+
+* fremstår på mange måter som idealbildet på en god leder
+
+_Middelhavsfareren_: midt i.
+
+* Godt nok, gjør så godt du kan, vi får gjøre det beste ut av situasjonen
+
 === Anvendelsen av ledergitteret ===
+
+Det er viktig å presisere at modellen ikke primært har som oppgave å fortelle ledere hvordan de skal oppføre seg,
+men beskriver hovedkomponentene i lederens adferd.
 
 == Situasjonsbestemt ledelse ==
 
