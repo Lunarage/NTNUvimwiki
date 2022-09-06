@@ -31,3 +31,5 @@ _Økonomiforståelse for ledere og styremedlemmer_, Terje Berg
 | 6        | Styret og ulike langsiktige beslutningsproblemer | 40              |
 | 7        | Styret og prestasjonsmålinger                    | 41              |
 | 8        | Avrunding                                        | 41              |
+
+%% vim: spelllang=nb

@@ -7,39 +7,62 @@
 _Lederstil_: lederens adferdsmønster slik den oppfattes av andre.
 
 _Oppgaveorientert lederadferd_ handler om betydningen av mål og å få utført virksomhetens arbeidsoppgaver.
+* Dette innebærer blant annet organisering av arbeidet, strukturering av virksomheten, planlegging og kontroll.
+*Administrasjon*.
 
 _Relasjonsorientert lederadferd_ handler om at lederen er opptatt av medarbeidernes behov.
+Denne typen lederadferd har vekt på at medarbeiderne trives og utvikler seg i virksomheten.
+* Denne formen for lederadferd handler mye om å motivere og inspirere medarbeidere
+  og skape engasjement for arbeidsoppgaver og forpliktelse overfor virksomheten.
+*Lederskap*.
 
 == Ledergitteret ==
 
-To akser: _relasjonsorientert_ og _oppgaveorientert_.
+To akser:
+* Interesse for organisasjon (_oppgaveorientert lederstil_).
+* Interesse for medarbeidere (_relasjonsorientert lederstil_).
 
-_Personalorientert ledelse_: høy relasjon og lav oppgave.
+_Personalorientert ledelse_: høy relasjon og lav oppgave (1,9).
 
 * Legger stor vekt på følelser, omtanke og mellommenneskelige forhold.
 * Konfliktsky
+* Kompis
 * Unngår endringer som påvirker medarbeiderne for mye
 * For lite opptatt av å skape resultater
 * Tilfredse medarbeidere
 
-_Oppgaveorientert ledelse_: lav relasjon og høy oppgave.
+_Oppgaveorientert ledelse_: lav relasjon og høy oppgave (9,1).
 
 * Opptatt av effektivitet
+* Autoritære
 * God til å administrere
 * Medmenneskelighet får lite plass
 * Kan være i nødvendig i enkelte situasjoner
+* Fungerer i veldig maskuline kulturer. Det forventes at en leder er hard. (Øst-Europa).
+* Typisk:
+  * Fabrikkledere eller andre situasjoner der mennesker nærmest oppfattes som maskiner
 
-_Laissez-faire ledelse_: lav relasjon og lav oppgave.
+_Laissez-faire ledelse_: lav relasjon og lav oppgave (1,1).
 
+* minst effektive formen for ledelse
+* likegyldig
 * maktesløs ledelse
+* konfliktsky
+* 15-20% av norske ledere
+* typisk:
+  * vært leder lenge og på vei til å gå av
+  * forbigått. Mister engasjementet.
+  * Ikke føler personlig utvikling
 
-_Gruppeorientert ledelse_: høy relasjon og høy oppgave.
+_Gruppeorientert ledelse_: høy relasjon og høy oppgave (9,9).
 
 * fremstår på mange måter som idealbildet på en god leder
+* leder et team, ikke bare en kolleksjon av individer
 
-_Middelhavsfareren_: midt i.
+_Middelhavsfareren_: midt i (5,5).
 
-* Godt nok, gjør så godt du kan, vi får gjøre det beste ut av situasjonen
+* "Godt nok", "gjør så godt du kan", "vi får gjøre det beste ut av situasjonen"
+* Ofte konfliktsky
 
 === Anvendelsen av ledergitteret ===
 
@@ -48,18 +71,66 @@ men beskriver hovedkomponentene i lederens adferd.
 
 == Situasjonsbestemt ledelse ==
 
+Det er ikke det samme å lede et internasjonalt konsern som Apple som å lede en liten kraftlevrandør i Midt-Norge.
+Ei heller det samme å lede en salgsavdeling som en utviklingsavdeling eller produksjonsavdeling.
+
 === Støttende og styrende lederstil og kunsten å delegere ===
 
 === Kjernen til situasjonsbestemt ledelse ===
 
 == Inspirerende lederstil ==
 
+_Inspirerende ledelse/transformasjonsledelse_: (11,11)
+
+* Setter utfordrende mål og bruker mye tid på å utvikle medarbeiderne
+* Flinke til å skape og pleie relasjoner med sine underordnede
+* Samarbeid
+* Opptatt av endring
+* Selvinnsikt
+* Kommuniserer visjoner
+* Steve Jobs
+* Elon Musk
+* IKEA
+
 == Transformasjonsledelse ==
+
+Kjernen i transformasjonsledelse er lederens evner til 
+å omdanne og forbedre medarbeiderne innstilling, motivasjon og innsats for virksomheten.
+
+_Transaksjonsledelse_ beskriver ledelse som en utveksling eller byttehandel mellom leder og medarbeider,
+altså en ren transaksjon mellom to parter.
+Det er mye som tyder på at transaksjonsledelse ikke vil resultere i entusiasme hos medarbeidere
+eller forpliktelser overfor virksomheten.
+
+Transformasjonsledelse består av fire faktorer - de fire I-ene:
+
+1. *Inspirerende motivasjon*
+2. *Idealisert innflytelse*
+3. *Individuell støtte eller individuell oppmerksomhet*
+4. *Intellektuell stimulering*
+
+Ledere som utfører transformasjonsledelse bør jobbe etter følgende retningslinjer:
+
+* utvikle en klar visjon som vekker bred appell
+* forklare og veilede veien frem til oppnåelse av visjonen
+* fremstå optimistisk og selvsikkert
+* uttrykke tillit til medarbeidere
+* bruke dramatiske og symbolske handlinger for å understreke nøkkelverdier
+* være rollemodell
 
 === Transformasjonsledelse og effektivitet ===
 
 == Verdibasert ledelse ==
 
+* Virksomhetens verdier vil bidra til å medarbeiderne opplever
+  å være forent med hverandre og virksomheten.
+* Medarbeidere finner sine bidrag meningsfulle
+  fordi de kan kobles til noe felles, overordnet og formålsrettet.
+* Positivt menneskesyn
+* Handlingsrom for ledere og medarbeidere til å ta initiativ
+
 == Destruktiv og ineffektiv ledelse ==
 
 == Avsluttende kommentarer ==
+
+%% vim: spelllang=nb
