@@ -1,0 +1,30 @@
+= Algoritmer og Datastrukturer =
+
+== Curriculum ==
+
+_Introduction to Algorithms, Fourth Edition_ by CLRS
+
+| Chapter | Title                               | Curriculum | Lecture | Week |
+|---------|-------------------------------------|------------|---------|------|
+| 1       | The role of algorithms in computing |            | 1       | 34   |
+| 2       | Getting started                     |            | 1,3     |      |
+| 3       | Characterizing running times        |            | 1       |      |
+| 4       | Divide-and-conquer                  |            | 3       |      |
+| 6       | Heapsort                            |            | 5       |      |
+| 7       | Quicksort                           |            | 3       |      |
+| 8       | Sorting in linear time              |            | 4       |      |
+| 9       | Medians and order statistics        |            | 4       |      |
+| 10      | Elementary data structures          |            | 2,5     |      |
+| 11      | Hash tables                         |            | 2       |      |
+| 12      | Binary search trees                 |            | 5       |      |
+| 14      | Dynamic programming                 |            | 6       |      |
+| 15      | Greedy algorithms                   |            | 7       |      |
+| 16      | Amortized analysis                  |            | 2       |      |
+| 19      | Data structures for disjoint sets   |            | 9       |      |
+| 20      | Elementary graph algorithms         |            | 8       |      |
+| 21      | Minimum spanning trees              |            | 9       |      |
+| 22      | Single-source shortest paths        |            | 10      |      |
+| 23      | All-pairs shortest paths            |            | 11      |      |
+| 24      | Maximum flow                        |            | 12      |      |
+| 25      | Matching in bipartite graphs        |            | 7       |      |
+| 34      | NP-completeness                     |            | 13,14   |      |
