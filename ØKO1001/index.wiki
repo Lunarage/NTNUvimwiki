@@ -7,7 +7,7 @@ _Ledelse i små og mellomstore bedrifter_ 3. utgave, Morten Erichsen, Frode Solb
 | Kapittel | Tittel                               | Forelesningsuke |
 |----------|--------------------------------------|-----------------|
 | 1        | Innledning                           |                 |
-| 2        | Lederoppgaver og lederroller         | 35              |
+| 2        | [[Lederoppgaver og lederroller]]     | 35              |
 | 3        | [[Lederstiler]]                      | 35,36           |
 | 4        | [[Relasjonsledelse]]                 | 36              |
 | 6        | Organisering av virksomheten         | 45              |
@@ -15,9 +15,9 @@ _Ledelse i små og mellomstore bedrifter_ 3. utgave, Morten Erichsen, Frode Solb
 | 8        | Strategi og strategiske prosesser    | 43              |
 | 10       | Omdømme, samfunnsansvar og bærekraft | 44              |
 | 11       | Endringsledelse                      | 47              |
-| 14       | Lederegenskaper                      | 37              |
+| 14       | [[Lederegenskaper]]                  | 37              |
 | 15       | [[Selvledelse]]                      | 34              |
-| 16       | Lederutvikling                       | 37              |
+| 16       | [[Lederutvikling]]                   | 37              |
 
 _Økonomiforståelse for ledere og styremedlemmer_, Terje Berg
 

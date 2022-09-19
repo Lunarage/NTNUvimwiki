@@ -1,0 +1,85 @@
+= Lederegenskaper =
+
+== Lederegenskaper ==
+
+== Lederens personlighet ==
+
+    Personlighet er den mer eller mindre fast organiserte helhet av de for individet
+    karakteristiske måter å reagere på, tankemessig, følelsesmessig og ved ytre atferd.
+Schelderup, 1959
+
+    Personlighet er samlingen av psykologiske trekk og mekanismer i et individ som
+    er organiserte og relativt varige tendenser i personen og som påvirker dennes
+    samhandling og tilpasning til omgivelsene
+Larsen og Buss 2013,4
+
+Det som er felles for de ulike definisjonene på personlighet,
+er vekten på individuelle forskjeller og varighet.
+Forskerne er relativt enige i at personligheten er relativt stabil og konsistent over tid.
+Personlighet er et resultat av både ar og miljø. Det er viktig å poengtere at 
+personlighet lite sannsynlig kan endres gjennom kursing.
+
+=== Femfaktormodellen ===
+
+*_Ekstroversjon_*.
+
+Høy score:
+* Behov for variert og stimulerende aktivitet.
+* Pratsomme og lett og få kontakt med.
+* Stort behov for å markere seg.
+
+Lav score:
+* Introverte.
+* Reservert og stille.
+* Trives godt i eget selskap.
+* Oppgaveorienterte.
+
+*_Nevrotisisme_*.
+
+Høy score:
+* Foo
+
+Lav score:
+* Bar
+
+*_Omgjengelighet_*.
+
+*_Samvittighetsfullhet_*
+
+*_Åpenhet for erfaring og utvikling_*
+
+| *_Ekstroversjon_*                     | Sosial, ønske om variert aktivitet, aktiv, utadvendt, initiativrik |
+| *_Nevrotisisme_*                      | Følelsesmessig stabilitet, toleranse for stress og usikkerhet      |
+| *_Omgjengelighet_*                    | Vennlig, medmenneskelig, hjelpsom, omsorgsfull, tillitsfull        |
+| *_Samvittighetsfullhet_*              | Orden, målrettet, punktlig, pålitelig                              |
+| *_Åpenhet for erfaring og utvikling_* | Fantasifull, nysgjerrig, åpen for nye inntrykk                     |
+
+=== Femfaktormodellen og ledelse ===
+
+== Lederens motivasjon ==
+
+=== Prestasjonsmotivasjon ===
+
+=== Energi ===
+
+=== Ambisjoner ===
+
+=== Initiativ ===
+
+== Intelligens ==
+
+== Emosjonell intelligens ==
+
+== Verdier og holdninger ==
+
+== Lederens kompetanse og fagkunnskap ==
+
+== Selvtillit ==
+
+== Selvinnsikt ==
+
+=== Grunner til at ledere mangler selvinnsikt ===
+
+== Avsluttende kommentarer ==
+
+%% vim: spelllang=nb
