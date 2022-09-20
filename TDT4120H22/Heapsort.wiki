@@ -1,0 +1,13 @@
+= Heapsort =
+
+== Heaps ==
+
+The *_(binary) heap_* data structure is an array object that we can view as a nearly complete binary tree.
+
+In a *_max-heap_*, the *_max-heap property_* is that for every node $i$ other than the root,
+
+{{$
+A[{\rm P{\small ARENT}}(i)] \geq A[i]
+}}$
+
+that is, the value of a node is at most the value of its parent.
