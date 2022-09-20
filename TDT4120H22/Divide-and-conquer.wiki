@@ -13,3 +13,35 @@
 {{{
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vTNFajiyXtU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 }}}
+
+== The master method for solving recurrences ==
+
+The master method provides a "cookbook" method for solving algorithmic recurrences of the form
+
+{{$
+T(n) = aT(n/b) + c(n)
+}}$
+
+where $a>0$ and $b>1$ are constants.
+
+We call $c(n)$ a *_driving function_*, and we call a recurrence of this general form a *_master recurrence_*
+
+{{/img/recursion_tree.png.png|recursion-tree}}
+
+{{$
+T(n) = \Theta(n^{log_b(a)}) + \sum_{j=0}^{log_b(n-1)} a^jc(n/b^j)
+}}$
+
+Informally:
+1. If the problem gets easier $\Rightarrow$ $T(n) = \Theta(c(n))$
+2. If the problem gets harder $\Rightarrow$ $T(n) = \Theta(n^{log_b(a)})$
+3. If the hardness is evenly distributed $\Rightarrow$ $T(n) = log_b(n)\cdot\Theta(n^{log_b(a)})$
+
+Formally:
+1. If there exists a constant $\epsilon > 0$ such that $c(n) = O(n^{log_b(a-\epsilon)})$,
+   then $T(n) = \Theta(n^{log_b(a)})$
+2. If there exists a constant $k \geq 0$ such that $c(n) = O(n^{log_b(a)}\ln^kn)$,
+   then $T(n) = \Theta(n^{log_b(a)}\ln^{k+1}n)$
+3. If there exists a constant $\epsilon > 0$ such that $c(n) = \Omega(n^{log_b(a+\epsilon)})$,
+   and if $c(n)$ additionally satisfies the *_regularity condition_* $ac(n/b) = dc(n)$
+   for some constant $d<1$ and all sufficiently large $n$, then $T(n) = \Theta(c(n))$

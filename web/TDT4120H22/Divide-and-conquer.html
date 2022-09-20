@@ -38,10 +38,72 @@
 
 <div id="Divide-and-conquer-Designing algorithms-Merge Sort"><h3 id="Merge Sort" class="header"><a href="#Divide-and-conquer-Designing algorithms-Merge Sort">Merge Sort</a></h3></div>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vTNFajiyXtU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<pre>
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/vTNFajiyXtU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+</pre>
+
+<div id="Divide-and-conquer-The master method for solving recurrences"><h2 id="The master method for solving recurrences" class="header"><a href="#Divide-and-conquer-The master method for solving recurrences">The master method for solving recurrences</a></h2></div>
+
+<p>
+The master method provides a "cookbook" method for solving algorithmic recurrences of the form
+</p>
+
+\[
+T(n) = aT(n/b) + c(n)
+\]
+
+<p>
+where \(a&gt;0\) and \(b&gt;1\) are constants.
+</p>
+
+<p>
+We call \(c(n)\) a <span id="Divide-and-conquer-The master method for solving recurrences-<em>driving function</em>"></span><strong id="<em>driving function</em>"><em>driving function</em></strong>, and we call a recurrence of this general form a <span id="Divide-and-conquer-The master method for solving recurrences-<em>master recurrence</em>"></span><strong id="<em>master recurrence</em>"><em>master recurrence</em></strong>
+</p>
+
+<p>
+<img src="../../img/recursion_tree.png" alt="recursion-tree" />
+</p>
+
+\[
+T(n) = \Theta(n^{log_b(a)}) + \sum_{j=0}^{log_b(n-1)} a^jc(n/b^j)
+\]
+
+<p>
+Informally:
+</p>
+<ol>
+<li>
+If the problem gets easier \(\Rightarrow\) \(T(n) = \Theta(c(n))\)
+
+<li>
+If the problem gets harder \(\Rightarrow\) \(T(n) = \Theta(n^{log_b(a)})\)
+
+<li>
+If the hardness is evenly distributed \(\Rightarrow\) \(T(n) = log_b(n)\cdot\Theta(n^{log_b(a)})\)
+
+</ol>
+
+<p>
+Formally:
+</p>
+<ol>
+<li>
+If there exists a constant \(\epsilon &gt; 0\) such that \(c(n) = O(n^{log_b(a-\epsilon)})\),
+   then \(T(n) = \Theta(n^{log_b(a)})\)
+
+<li>
+If there exists a constant \(k \geq 0\) such that \(c(n) = O(n^{log_b(a)}\ln^kn)\),
+   then \(T(n) = \Theta(n^{log_b(a)}\ln^{k+1}n)\)
+
+<li>
+If there exists a constant \(\epsilon &gt; 0\) such that \(c(n) = \Omega(n^{log_b(a+\epsilon)})\),
+   and if \(c(n)\) additionally satisfies the <span id="Divide-and-conquer-The master method for solving recurrences-<em>regularity condition</em>"></span><strong id="<em>regularity condition</em>"><em>regularity condition</em></strong> \(ac(n/b) = dc(n)\)
+   for some constant \(d&lt;1\) and all sufficiently large \(n\), then \(T(n) = \Theta(c(n))\)
+
+</ol>
 
     </div>
-    <p><small>Page created on 2022-09-16</small></p>
+    <p><small>Page created on 2022-09-20</small></p>
     <script src="../prism.js"></script>
   </body>
 </html>
