@@ -37,12 +37,21 @@ Lav score:
 *_Nevrotisisme_*.
 
 Høy score:
-* Foo
+* følelsesmessig ustabil
+* lettere stresset, mer impulsiv
 
 Lav score:
-* Bar
+* rolig
+* ikke så lett rive med rent følelsesmessig
 
 *_Omgjengelighet_*.
+
+Høy score:
+* 
+
+Lav score:
+* individualistiske
+* konkurranseorientert
 
 *_Samvittighetsfullhet_*
 
@@ -58,6 +67,11 @@ Lav score:
 
 == Lederens motivasjon ==
 
+* Hva er det som får oss til å handle?
+* De drivkrefene som setter oss i gang og bestemmer den retningen vi skal ta.
+* Hvor mye energi vi legger i våre handlinger.
+  Sentralt i motivasjon er hvilket mål vi har for våre handlinger.
+
 === Prestasjonsmotivasjon ===
 
 Med _prestasjonsmotivasjon_ menes i denne sammenheng
@@ -71,19 +85,55 @@ som viser at effektive ledere tenderer å ha mye energi og et høy aktivitetsniv
 
 === Ambisjoner ===
 
+Toppledere preges også av generelt sett høyere ambisjoner enn gjennomsnittet i en befolkning.
+
 === Initiativ ===
+
+Får ting til å skje.
 
 == Intelligens ==
 
+Forskere så allerede tidlig at det var sammenheng mellom intelligens og godt lederskap.
+Intelligens sier også noe om verbal formuleringsevne.
+
 == Emosjonell intelligens ==
+
+Emosjonell intelligens er evnen et menneske har til å oppdage og regulere egne følelser,
+_og_ hvordan dette mennesket oppdager og påvirker andre menneskers følelser.
+Emosjonell intelligens består av flere forskjellige egenskaper,
+som empati sosiale egenskaper selvbevissthet, selvkontroll og motivasjon.
 
 == Verdier og holdninger ==
 
+Våre _verdier_ er lært gjennom sosialisering og gjør oss i stand
+til å reflektere over hva som er rett eller galt,
+moralsk riktig eller umoralsk.
+
 == Lederens kompetanse og fagkunnskap ==
+
+Høy fagkunnskap er ikke alltid en nødvendig betingelse for å lede,
+men kan sees på som en fordel fordi:
+* Fagkunnskap og ekspertise øker lederens evne til å styre medarbeidernes problemløsning
+* Fagkunnskap øker innflytelsen til lederen for å nå bestemte mål
+* Fagkunnskap gir et sunt grunnlag for å utøve myndighet
+* Fagkunnskap gir ledere nødvendig tillit hos medarbeidere
 
 == Selvtillit ==
 
+Selvtillit er evnen til å føle seg trygg på egne kvalifikasjoner og ferdigheter
+og troen på egen evne til å prestere.
+
+Forskningen viser at i det store og hele har ledere større selvtillit enn sine underordnede.
+
 == Selvinnsikt ==
+
+    Kjenn deg selv, og du skal kjenne universets hemmeligheter
+Oracle of Delphi
+
+* Selvinnsikt betyr at en leder er bevisst og kjenner både sine sterke og svake sider.
+  Da er heller ikke redd for å snakke om sine sterke og svake sider.
+* Selvinnsikt er med andre ord samsvaret mellom egen og andres vurdering av en selv.
+* Selvinnsikt oppstår når lederen innser sine svakheter og tar konsekvensene av sine handlinger.
 
 === Grunner til at ledere mangler selvinnsikt ===
 

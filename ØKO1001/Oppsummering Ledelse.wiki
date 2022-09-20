@@ -1,0 +1,28 @@
+= Oppsummering Ledelse =
+Eksamensoppgave
+
+Hvordan lede høyt kompetente medarbeidere?
+
+Med utgangspunkt i pensum skal du drøfte hvilke ledelsesteorier
+som kan anvendes ved ledelse av høyt kvalifiserte kunnskapsmedarbeidere.
+
+Hva er å drøfte?
+Belyse et tema med ulike synspunkter (ulike lederteorier).
+
+Vurdere de ulike lederteoriene opp mot en problemstilling.
+
+Hvilke teorier anvende? (Og hvilke er mest relevant?)
+kap. 3, 4, 15, 11
+* *Ledergitteret*
+* *Situasjonsbestemt ledelse*
+* Inspirerende lederstil
+* *Transformerende lederstil* Husk 4i
+* Relasjonsledelse, LMX-teorier, tillitsbasert ledelse
+* Verdibasert ledelse
+* Teori O, Teori E, Endringsledelse
+* Selvledelse
+
+5 eller 6 av disse
+
+
+%% vim: spelllang=nb

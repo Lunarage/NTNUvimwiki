@@ -19,6 +19,9 @@ _Ledelse i små og mellomstore bedrifter_ 3. utgave, Morten Erichsen, Frode Solb
 | 15       | [[Selvledelse]]                      | 34              |
 | 16       | [[Lederutvikling]]                   | 37              |
 
+
+|          | [[Oppsummering Ledelse]]             | 38              |
+
 _Økonomiforståelse for ledere og styremedlemmer_, Terje Berg
 
 | Kapittel | Tittel                                           | Forelesningsuke |
