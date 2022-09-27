@@ -24,15 +24,15 @@ _Ledelse i små og mellomstore bedrifter_ 3. utgave, Morten Erichsen, Frode Solb
 
 _Økonomiforståelse for ledere og styremedlemmer_, Terje Berg
 
-| Kapittel | Tittel                                           | Forelesningsuke |
-|----------|--------------------------------------------------|-----------------|
-| 1        | Styret og bedriftens økonomi og økonomistyring   | 39              |
-| 2        | Hvordan man tolker regnskapet                    | 39              |
-| 3        | Styret og kostnadsforståelse                     | 40              |
-| 4        | Styrets bruk av kalkyler og budsjetter           | 40              |
-| 5        | Styret og ulike kortsiktige beslutningsproblemer | 40              |
-| 6        | Styret og ulike langsiktige beslutningsproblemer | 40              |
-| 7        | Styret og prestasjonsmålinger                    | 41              |
-| 8        | Avrunding                                        | 41              |
+| Kapittel | Tittel                                               | Forelesningsuke |
+|----------|------------------------------------------------------|-----------------|
+| 1        | [[Styret og bedriftens økonomi og økonomistyring]]   | 39              |
+| 2        | [[Hvordan man tolker regnskapet]]                    | 39              |
+| 3        | [[Styret og kostnadsforståelse]]                     | 40              |
+| 4        | [[Styrets bruk av kalkyler og budsjetter]]           | 40              |
+| 5        | [[Styret og ulike kortsiktige beslutningsproblemer]] | 40              |
+| 6        | [[Styret og ulike langsiktige beslutningsproblemer]] | 40              |
+| 7        | [[Styret og prestasjonsmålinger]]                    | 41              |
+| 8        | [[Avrunding]]                                        | 41              |
 
 %% vim: spelllang=nb

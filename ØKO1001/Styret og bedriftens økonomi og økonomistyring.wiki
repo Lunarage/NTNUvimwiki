@@ -1,0 +1,20 @@
+= Styret og bedriftens økonomi og økonomistyring =
+
+== Hva økonomistyring er ==
+
+== Hva bedriftsøkonomi er ==
+
+Bedriftsøkonomi handler om å forvalte bedriftens ressurser.
+Bedriften har tre hovedgrupper av ressurser: mennesker, kapital og kompetanse.
+
+Det generelle utgangspunktet for bedriftsøkonomien
+er at kapitalen som eierne har skutt inn i bedriften,
+skal få størst mulig verdi.
+
+    Resultat = inntekter - kostnader
+
+
+    Lønnsomhet = resultat / ressurser
+
+
+%% vim: spelllang=nb
