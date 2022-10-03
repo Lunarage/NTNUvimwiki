@@ -1,0 +1,15 @@
+= Styret og ulike langsiktige beslutningsproblemer =
+
+== Finansinvesteringer og realinvesteringer – begge langsiktige ==
+
+== Noen metoder for langsiktige beslutningsproblemer ==
+
+== Et kritisk blikk på valg av metode ==
+
+== Knapphet på kapital ==
+
+== Sensitivitetsanalyser ==
+
+== Oppsummering ==
+
+%% vim: spelllang=nb

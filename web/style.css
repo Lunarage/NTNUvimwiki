@@ -4,6 +4,7 @@
   --text-default-color: #ffffff;
   --background-default-color: #222222;
   --background-box-color: #282828;
+  --background-box-header: #4C017D;
 }
 
 body {
@@ -135,7 +136,15 @@ th, td {
 }
 
 th {
-  background-color: var(--background-box-color);
+  background-color: var(--background-box-header);
+}
+
+th:first-child {
+  border-top-left-radius: 5px;
+}
+
+th:last-child {
+  border-top-right-radius: 5px;
 }
 
 hr {

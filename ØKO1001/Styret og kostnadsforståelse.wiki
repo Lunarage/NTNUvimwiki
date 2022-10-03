@@ -1,0 +1,17 @@
+= Styret og kostnadsforståelse =
+
+== Å forstå kostnader er å forstå økonomisk tankegang ==
+
+== Kostnadsobjekter og kostnadsdrivere ==
+
+== Direkte og indirekte kostnader ==
+
+== Variable og faste kostnader ==
+
+== Alternativkostnad og sunk cost ==
+
+== Beslutningsrelevante kostnader ==
+
+== Oppsummering ==
+
+%% vim: spelllang=nb

@@ -1,5 +1,20 @@
 = Styret og bedriftens økonomi og økonomistyring =
 
+== Innhold ==
+  - [[#Styret og bedriftens økonomi og økonomistyring|Styret og bedriftens økonomi og økonomistyring]]
+    - [[#Styret og bedriftens økonomi og økonomistyring#Hva økonomistyring er|Hva økonomistyring er]]
+    - [[#Styret og bedriftens økonomi og økonomistyring#Hva bedriftsøkonomi er|Hva bedriftsøkonomi er]]
+    - [[#Styret og bedriftens økonomi og økonomistyring#Styring - å gi retning til|Styring - å gi retning til]]
+      - [[#Styret og bedriftens økonomi og økonomistyring#Styring - å gi retning til#Ledelse - Organisering - Styring|Ledelse - Organisering - Styring]]
+      - [[#Styret og bedriftens økonomi og økonomistyring#Styring - å gi retning til#Anvendelsesområdene - ulike metoder, ulike formål|Anvendelsesområdene - ulike metoder, ulike formål]]
+      - [[#Styret og bedriftens økonomi og økonomistyring#Styring - å gi retning til#Økonomistyringen og hvem som utøver den|Økonomistyringen og hvem som utøver den]]
+      - [[#Styret og bedriftens økonomi og økonomistyring#Styring - å gi retning til#Økonomistyringens grunnleggende spørsmål|Økonomistyringens grunnleggende spørsmål]]
+      - [[#Styret og bedriftens økonomi og økonomistyring#Styring - å gi retning til#Økonomistyring - for hvem|Økonomistyring - for hvem]]
+      - [[#Styret og bedriftens økonomi og økonomistyring#Styring - å gi retning til#Økonomistyringsprosessen|Økonomistyringsprosessen]]
+      - [[#Styret og bedriftens økonomi og økonomistyring#Styring - å gi retning til#Styring og bedriftens livssyklus|Styring og bedriftens livssyklus]]
+    - [[#Styret og bedriftens økonomi og økonomistyring#Vi må avgrense|Vi må avgrense]]
+    - [[#Styret og bedriftens økonomi og økonomistyring#Oppsummering|Oppsummering]]
+
 == Hva økonomistyring er ==
 
 == Hva bedriftsøkonomi er ==
@@ -13,8 +28,78 @@ skal få størst mulig verdi.
 
     Resultat = inntekter - kostnader
 
-
     Lønnsomhet = resultat / ressurser
 
+    Alternativkostnad er hva en knapp ressurs er verdt i sin beste alternative anvendelse.
+    Verdien av den knappe ressursen tilsvarer inntektene og kostnadene alternativet ville gitt.
+
+== Styring – å gi retning til ==
+
+=== Ledelse – Organisering – Styring ===
+
+| Ledelse                                        | Organisering                        | Styring                                      |
+|------------------------------------------------|-------------------------------------|----------------------------------------------|
+| Motivere til handling for å nå aksepterte mål. | Skape struktur og fordele oppgaver. | Gi retning i form av incentiver og analyser. |
+| Utvikle verdier og kultur.                     |                                     |                                              |
+
+=== Anvendelsesområdene – ulike metoder, ulike formål ===
+
+=== Økonomistyringen og hvem som utøver den ===
+
+*Styrets rolle*
+vil være å utforme prinsipper for økonomistyringen som må være i samsvar med bedriftens strategi:
+Verktøy, virkemidler og analyser skal bidra til at
+bedriften kan realisere de veivalgene styret tar i samarbeid med ledelsen.
+
+*Ledelsen*
+har det daglige ansvaret for å sett ut i livet de mål som utformes av styret.
+Likevel er det slik at det er de medarbeiderne som utfører de daglige små og store handlinger,
+som til syvende og sist er de som utøver økonomistyring ved å opptre i tråd med bedriftens mål og planer.
+
+*Revisor*
+velges formelt av bedriftens generalforsamling.
+Revisor skal være en uavhengig tillitsmann for å ivareta allmennhetens interesser.
+Revisorer som opptrer uaktsomt, kan bli holdt økonomisk ansvarlige ved en konkurs.
+Merk likevel at revisors hovedoppgave er å verifisere regnskapstallene.
+
+=== Økonomistyringens grunnleggende spørsmål ===
+
+| Ressursstyring           | Produktivitetsstyring     | Målstyring                    |
+|--------------------------|---------------------------|-------------------------------|
+| Hva bruker vi penger på? | Hvordan bruker vi penger? | Hvilke effekter vil vi oppnå? |
+
+*Ressursstyring*
+handler om hva bedriften bruker penger på.
+
+*Produktivitetsstyring*
+dreier seg om hva bedriften får ut av de ressurser som er stil til rådighet for bedriften.
+
+*Målstyring*
+er knyttet til om bedriften anvender ressursene på en slik måte
+at kundene er villige til å betale for produktene.
+
+=== Økonomistyring – for hvem ===
+
+*Interessenter*: de har en interesse i bedriften.
+Noen viktige interessenter er eierne, långiverne, ledelsen, medarbeiderne, kunder,
+leverandører, konkurrenter, offentlige myndigheter, fagforeninger og bransjeorganisasjoner.
+
+=== Økonomistyringsprosessen ===
+
+*Planlegging*
+
+*Måling*
+
+*Oppfølging*
+
+=== Styring og bedriftens livssyklus ===
+
+== Vi må avgrense ==
+
+== Oppsummering ==
+
+* Økonomistyring handler om ressursforvaltning.
+* Verdiskaping skjer i samspill med bedriftens interessenter.
+* De fleste bedrifter søker en tilfredsstillende lønnsomhet over tid.
 
 %% vim: spelllang=nb

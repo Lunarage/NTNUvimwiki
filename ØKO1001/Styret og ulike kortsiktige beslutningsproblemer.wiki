@@ -1,0 +1,15 @@
+= Styret og ulike kortsiktige beslutningsproblemer =
+
+== Tallene taler aldri for seg selv ==
+
+== Beslutningsrelevante kostnader ==
+
+== Beslutningssituasjoner med ledig kapasitet ==
+
+== Beslutningssituasjoner med full kapasitet ==
+
+== Prisbeslutninger ==
+
+== Oppsummering ==
+
+%% vim: spelllang=nb

@@ -1,0 +1,141 @@
+= Hvordan tolker man regnskapet =
+
+== Innhold ==
+  - [[#Hvordan tolker man regnskapet|Hvordan tolker man regnskapet]]
+    - [[#Hvordan tolker man regnskapet#Regnskapet er for alle|Regnskapet er for alle]]
+      - [[#Hvordan tolker man regnskapet#Regnskapet er for alle#Innledende eksempel: Regnskap privatperson|Innledende eksempel: Regnskap privatperson]]
+      - [[#Hvordan tolker man regnskapet#Regnskapet er for alle#Hva regnskap er|Hva regnskap er]]
+      - [[#Hvordan tolker man regnskapet#Regnskapet er for alle#Rollefordeling i arbeidet med regnskapet|Rollefordeling i arbeidet med regnskapet]]
+      - [[#Hvordan tolker man regnskapet#Regnskapet er for alle#Bruk av ekstern regnskapsfører|Bruk av ekstern regnskapsfører]]
+      - [[#Hvordan tolker man regnskapet#Regnskapet er for alle#Tre ulike regnskaper|Tre ulike regnskaper]]
+    - [[#Hvordan tolker man regnskapet#Periodisering – når skjer og skjedde hva|Periodisering – når skjer og skjedde hva]]
+    - [[#Hvordan tolker man regnskapet#Resultat, balanse og kontantstrøm|Resultat, balanse og kontantstrøm]]
+      - [[#Hvordan tolker man regnskapet#Resultat, balanse og kontantstrøm#Resultatet|Resultatet]]
+      - [[#Hvordan tolker man regnskapet#Resultat, balanse og kontantstrøm#Balansen|Balansen]]
+      - [[#Hvordan tolker man regnskapet#Resultat, balanse og kontantstrøm#Kontantstrømmen|Kontantstrømmen]]
+    - [[#Hvordan tolker man regnskapet#Kilder til støy i regnskapet|Kilder til støy i regnskapet]]
+    - [[#Hvordan tolker man regnskapet#Oppsummering|Oppsummering]]
+
+== Regnskapet er for alle ==
+
+=== Innledende eksempel: Regnskap privatperson ===
+
+| Hva              | Hvor mye |
+|------------------|---------:|
+| Lønn             |  500 000 |
+| Skatt            |  200 000 |
+| Husleie          |  144 000 |
+| Strøm            |   12 000 |
+| Strømmetjenester |   24 000 |
+| Mat              |   60 000 |
+| *Resultat*       |   60 000 |
+
+| Langsiktige eiendeler     | +  | Kortsiktige eiendeler | =  | Formue                            | +  | Langsiktig gjeld         | +  | Kortsiktig gjeld  |
+|---------------------------|----|-----------------------|----|-----------------------------------|----|--------------------------|----|-------------------|
+| Leilighet <br/> 3 500 000 |    | Bank <br/> 75 000     |    | Eiendeler - gjeld <br/> 1 950 000 |    | Banklån <br/> 2 000 000  |    | Sven <br/> 50 000 |
+| Møbler <br/> 250 000      | \/ | Bøker <br/> 500 000   | \/ |                                   | \/ | Studielån  <br/> 350 000 | \/ |                   |
+| Sykkel <br/> 25 000       | \/ |                       | \/ |                                   | \/ |                          | \/ |                   |
+
+=== Hva regnskap er ===
+
+Bedriftens *resultat* er en rapport som redegjør for hva som er opptjent som vederlag for utført arbeid (inntekter),
+og hvilke ressurser som er påløpt for å utføre det samme arbeidet for en gitt periode (kostnader).
+
+Regnskapet skal også redegjøre for hva eiere og kreditorer har plassert av penger i bedriften,
+og hva disse pengene er brukt til. Denne rapporten kalles *balansen*.
+Balansen viser *kapitalanskaffelse* og *kapitalanvendelse*.
+
+*Kapitalanskaffelsen* viser hvordan bedriften er finansiert i form av egen- og fremmedkapital.
+
+*Egenkapital* er de penger bedriftens eiere har skutt inn i bedriften i form av aksjekapital
+pluss det som er avsatt av det løpende resultatet som opptjent egenkapital.
+I aksjeselskaper benevnes eierne *aksjonær*.
+
+*Fremmedkapital* er de penger som andre enn eierne stiller til disposisjon for bedriften.
+Dette kan være banker eller ulike leverandører av varer og tjenester.
+Dette kalles gjerne ekstern finansiering.
+
+*Intern finansiering* er de løpende resultater bedriften selv skaper, og eventuelt påfyll av penger fra aksjonærene.
+
+*Kapitalanvendelsen* er eiendeler bedriften investerer i.
+Postene kapitalanskaffelse og kapitalanvendelse skal være like store i regnskapet
+– derfor begrepet balanse.
+
+For å bøte på svakhetene ved resultat og balanse, utarbeider bedriften den tredje hovedrapporten, *kontantstrømoppstillingen*.
+Kontantstrømmen finnes ved å åpne nettbanken og se hvor mye saldoen er endret i løpet av en periode:
+Kontantstrømmen er de penger som kommer inn på og går ut av bedriftens bankkonto, som også kalles endring i bedriftens betalingsmidler.
+
+=== Rollefordeling i arbeidet med regnskapet ===
+
+Årsregnskapet utarbeides rent teknisk av bedriftens regnskapsfører eller økonomiavdeling.
+Deretter går ledelsen gjennom regnskapet
+og vurderer om tallene synes å gi et korrekt bilde for den aktuelle regnskapsperioden.
+*Daglig leder* presenterer så resultat, balanse og eventuelt kontantstrøm for styret,
+som anbefaler regnskapet fastsatt som bedriftens regnskap for det aktuelle året.
+Årsregnskapet godkjennes formelt av bedriftens generalforsamling.
+
+=== Bruk av ekstern regnskapsfører ===
+
+| Tema                   | Sjekk                                                                              |
+|------------------------|------------------------------------------------------------------------------------|
+| *Tidsfrister*          | Når må bilag leveres for å bli med i en gitt periode?                              |
+| \/                     | Når skal bedriften motta ferdig regnskap?                                          |
+| \/                     | Hvor ofte skal regnskapet avsluttes?                                               |
+| *Format*               | Skal det utarbeides bearbeidede tall eller kun per regnskapskonto (saldobalanser)? |
+| \/                     | Skal alle hovedrapportene utarbeides for hver rapportering?                        |
+| *Hvem skal gjøre hva?* | Fakturering?                                                                       |
+| \/                     | Skanne fakturaer etter behov?                                                      |
+| \/                     | Beregne og utbetale lønn?                                                          |
+| \/                     | Behandle reiseregninger?                                                           |
+| \/                     | Bokføring?                                                                         |
+| \/                     | Purring/inkasso?                                                                   |
+| \/                     | Vurdere avsetninger?                                                               |
+
+I tillegg til disse punktene er det også viktig å avklare om regnskapsføreren også skal ha en rådgivende rolle.
+Det vil si om de har kompetanse og kapasitet til å utføre analyser for bedriften.
+
+=== Tre ulike regnskaper ===
+
+|                | Finansregnskapet                | Skatteregnskapet           | Driftregnskapet                                    |
+|----------------|---------------------------------|----------------------------|----------------------------------------------------|
+| *Hvorfor*      | Redegjøre for bruk av midler    | Lovpålagt                  | Grunnlag for beslutninger                          |
+| *Hva*          | Verdiskaping og ressursbruk     | Skatteberegning            | Styringsinformasjon                                |
+| *Orientering*  | Eksternt                        | Eksternt                   | Internt                                            |
+| *Målgruppe*    | Eiere                           | Samfunnet                  | Ledelsen og styret                                 |
+| *Regulering*   | Regnskapsloven mv.              | Skatteloven mv.            | Ingen                                              |
+| *Kobling*      | Basis for skatteregnskapet      | Basert på finansregnskapet | I prinsippet ingen, men i praksis finansregnskapet |
+| *Uttrykksform* | Resultat, balanse, kontantstrøm | Skattemeldingen            | Regneark eller lignende                            |
+| *Frekvens*     | Månedlig                        | Årlig                      | Når det måtte passe                                |
+
+== Periodisering – når skjer og skjedde hva ==
+
+Å *periodisere* vil si at inntekter og kostnader fordeles til korrekt periode.
+Korrekt periode er den perioden bedriften leverer produktene,
+som dermed gir opphav til at en inntekt oppstår.
+De ressursene som forbrukes for å frembringe produktene,
+anses også å ha gått med når inntekten opptjenes.
+
+| "Inntekter" |                                  | "Kostnader" |                                      |
+|-------------|----------------------------------|-------------|--------------------------------------|
+| Salg        | Avtale om produktleveranse       | Utgift      | Anskaffelse av ressurser             |
+| Inntekt     | Produktet leveres                | Kostnad     | Forbruk av ressurser                 |
+| Innbetaling | Mottak av betaling for produktet | Utbetaling  | Frigjøring fra betalingsforpliktelse |
+
+== Resultat, balanse og kontantstrøm ==
+
+=== Resultatet ===
+
+=== Balansen ===
+
+=== Kontantstrømmen ===
+
+== Kilder til støy i regnskapet ==
+
+== Oppsummering ==
+
+* Prioriter å bruke tid på kontantstrømanalysen
+* Gå til balansen før du går til banken
+* Poster som vesentlig avviker fra virkelig verdi,
+  må kommenteres
+
+%% vim: spelllang=nb
