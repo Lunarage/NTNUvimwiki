@@ -2,16 +2,57 @@
 
 == Å forstå kostnader er å forstå økonomisk tankegang ==
 
+Kostnader er forbruk av ressurser.
+Grunnlaget for økonomiske analyser er alternativkostnad:
+hva en knapp ressurs er verdt i sin beste alternative anvendelse.
+
 == Kostnadsobjekter og kostnadsdrivere ==
+
+    Et kostnadsobjekt er den enheten bedriften ønsker å kjenne kostnadene til.
+
+    En kostnadsdriver er den underliggende årsaken til endring i kostnadsnivå.
 
 == Direkte og indirekte kostnader ==
 
+    Direkte kostnader er kostnader som det objektivt sett er enkelt å tildele et kostnadsobjekt.
+
+    Indirekte kostnader har en uklar sammenheng med et kostnadsobjekt,
+    og det er vanskelig å fastsette det konkrete bidraget de yter til objektet.
+
 == Variable og faste kostnader ==
+
+    Variable kostnader er kostnader som endres med aktivitetsnivået.
+
+    Faste kostnader er kostnader som er uavhengige av aktivitetsnivået.
+
+    Totale kostnader = variable kostnader + faste kostnader
+
+    Totale kostnader = variable enhetskostnader ✕ aktivitetsnivå + faste enhetskostnader ✕ normalaktivitet
+
+    TK = VEK ✕ aktivtetsnivå + FK
+
+    K(x) = ax + b
+
+    VEK = variable enhetskostnader,<br/>
+    VK = variable kostnader<br/>
+    FEK = faste enhetskostnader,<br/>
+    FK = faste kostnader,<br/>
+    aktivitetsnivå = produksjon i perioden,<br/>
+    normalaktivitet = gjennomsnittlig produksjon for perioden
 
 == Alternativkostnad og sunk cost ==
 
 == Beslutningsrelevante kostnader ==
 
 == Oppsummering ==
+
+* Kostnader er forbruk av ressurser som skaper inntekter.
+* Kostnadskontroll er ikke det samme som kostnadskutt.
+* Hvordan en kostnad skal klassifiseres, avhenger av beslutningssituasjonen.
+* Ikke alle alternativkostnader er like enkle å tallfeste,
+  men det er ingen unnskyldning for ikke å diskutere hva de potensielt er.
+* At kostnad ville kunne defineres som sunk cost,
+  innebærer ikke at dette er unødvendige kostnader,
+  tvert imot kan de gi fremtidige besparelser.
 
 %% vim: spelllang=nb

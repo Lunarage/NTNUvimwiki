@@ -127,6 +127,55 @@ anses også å ha gått med når inntekten opptjenes.
 
 === Balansen ===
 
+Balanseoppstillingen viser kaptialanskaffelse og kaptialanvendelse.
+
+| Balanseregnskap                 | 31.12. siste år | 31.12. forrige år |
+|---------------------------------|----------------:|------------------:|
+| Immaterielle eiendeler          |             178 |               350 |
+| Varige driftsmidler             |             736 |             1 254 |
+| Finansielle anleggsmidler       |               — |                12 |
+| *Sum anleggsmidler*             |           *914* |           *1 616* |
+| Varelager                       |           3 350 |             3 211 |
+| Kundefordringer                 |           1 874 |             2 607 |
+| Andre fordringer                |             529 |               262 |
+| Bank                            |          10 107 |             3 627 |
+| *Sum omløpsmidler*              |        *15 860* |           *9 707* |
+| *Sum eiendeler*                 |        *16 774* |          *11 323* |
+|                                 |                 |                   |
+| Aksjekapital                    |           1 000 |             1 000 |
+| Overkurs                        |               — |                 — |
+| *Sum innskutt egenkapital*      |         *1 000* |           *1 000* |
+| Opptjent egenkapital            |          10 967 |             3 435 |
+| *Sum egenkapital*               |        *11 967* |           *4 435* |
+| *Avsetninger til forpliktelser* |               — |                 — |
+| *Langsiktig gjeld*              |               — |                 — |
+| Kassakreditt                    |               — |                 — |
+| Leverandørgjeld                 |             412 |                69 |
+| Skyldige offentlige avgifter    |             368 |               242 |
+| Betalbar skatt                  |               — |                 — |
+| Utbytte                         |               — |                 — |
+| Annen kortsiktig gjeld          |           4 027 |             6 577 |
+| *Sum kortsiktig gjeld*          |         *4 807* |           *6 888* |
+| *Sum egenkapital og gjeld*      |        *16 774* |          *11 323* |
+| Kontroll:                       |               — |                 — |
+
+Anleggsmidler er eiendeler som bedriften har til varig eie eller bruk.
+Vi deler anleggsmidlene i tre grupper:
+
+* *Immaterielle eiendeler* er for eksempel forskning og utvikling eller patenter og rettigheter.
+* *Varige driftsmidler* er for eksempel håndfaste eiendeler som lokaler, inventar, biler og PC-er.
+* *Finansielle anleggsmidler* er for eksempel aksjer i datterselskaper eller andre langsiktige finansielle plasseringer.
+
+En tommelfingerregel er at "varig" betyr eiendeler med et forventet bidrag til inntekter i mer enn ett år.
+
+Øvrige eiendeler kalles *omløpsmidler*.
+
+*Egenkapital*
+
+*Langsiktig gjeld*
+
+*Kortsiktig gjeld*
+
 === Kontantstrømmen ===
 
 == Kilder til støy i regnskapet ==
