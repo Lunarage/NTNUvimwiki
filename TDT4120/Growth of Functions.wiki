@@ -2,7 +2,7 @@
 
 == Asymptotic Notation ==
 
-===== *Θ-notation* =====
+=== *Θ-notation* ===
 
 For a given function $g(n)$, we denote by $\Theta(g(n))$ the _set of functions_
 {{$
@@ -17,7 +17,7 @@ for sufficiently large $n$.
 
 We say that $g(n)$ is *asymptotically tight bound* for $f(n)$.
 
-===== *_O_-notation* =====
+=== *_O_-notation* ===
 
 When we only have an *asymptotic upper bound*, we use _O_-notation.
 
@@ -30,7 +30,7 @@ For a given function $g(n)$, we denote by $O(g(n))$ the set of functions
 }}$
 We use _O_-notation to give an upper bound on a function, to within a constant factor.
 
-===== *Ω-notation* =====
+=== *Ω-notation* ===
 
 When we only have an *asymptotic lower bound*, we use Ω-notation.
 
@@ -43,7 +43,7 @@ For a given function $g(n)$, we denote by $\Omega(g(n))$ the set of functions
 }}$
 We use Ω-notation to give an lower bound on a function, to within a constant factor.
 
-===== _o_-notation =====
+=== _o_-notation ===
 
 Strict _O_.
 
@@ -53,7 +53,7 @@ Strict _O_.
     \\ n_0 > 0 \text{ such that } 0 \leq f(n) < cg(n) \text{ for all } n \geq n_0 \}.
 }}$
 
-===== ω-notation =====
+=== ω-notation ===
 
 Strict Ω.
 
@@ -63,12 +63,12 @@ Strict Ω.
     \\ n_0 > 0 \text{ such that } 0 \leq cg(n) < f(n) \text{ for all } n \geq n_0 \}.
 }}$
 
-===== Comparing functions =====
+=== Comparing functions ===
 
 Many of the relational properties of real number apply to asymptotic comparisons as well.
 For the following, assume that $f(n)$ and $g(n)$ are asymptotically positive.
 
-====== Transitivity: ======
+==== Transitivity: ====
 {{$
   f(n)\;=\;\Theta(g(n))\;=\;\Theta(h(n))\;\text{imply}\;f(n)\;=\;\Theta(h(n))\;.
 \\  f(n)\;=\;O(g(n))\;=\;O(h(n))\;\text{imply}\;f(n)\;=\;O(h(n))\;.
@@ -77,25 +77,25 @@ For the following, assume that $f(n)$ and $g(n)$ are asymptotically positive.
 \\  f(n)\;=\;\omega(g(n))\;=\;\omega(h(n))\;\text{imply}\;f(n)\;=\;\omega(h(n))\;.
 }}$
 
-====== Reflexivity: ======
+==== Reflexivity: ====
 {{$
     f(n)\;=\;\Theta(f(n))\;.
 \\  f(n)\;=\;O(f(n))\;.
 \\  f(n)\;=\;\Omega(f(n))\;.
 }}$
 
-====== Symmetry: ======
+==== Symmetry: ====
 {{$
     f(n) = \Theta(g(n)) \;\text{if and only if}\; g(n) = \Theta(f(n))\;.
 }}$
 
-====== Transpose Symmetry: ======
+==== Transpose Symmetry: ====
 {{$
     f(n)\;=\;O(g(n))\;\text{if and only if}\;g(n)\;=\;\Omega(f(n))\;.
 \\  f(n)\;=\;o(g(n))\;\text{if and only if}\;g(n)\;=\;\omega(f(n))\;.
 }}$
 
-====== Analogy With Comparison ======
+==== Analogy With Comparison ====
 
 
 | Asymptotic            | Comparison |
@@ -106,7 +106,7 @@ For the following, assume that $f(n)$ and $g(n)$ are asymptotically positive.
 | $f(n) = o(g(n))$      | $a < b$    |
 | $f(n) = O(g(n))$      | $a \leq b$ |
 
-====== Asymptotic Notation In Equations and Inequalities ======
+==== Asymptotic Notation In Equations and Inequalities ====
 
     No matter how the anonymous functions are chosen on the left side of the equal sign,
     there is a way to choose the anonymous functions on the right hand of the equation to make the equation valid.

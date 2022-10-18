@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
+    <title>Hash tables</title>
+    <script src="../mathjax_config.js"> </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js">
+    </script>
+    <!-- <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"> -->
+    <!--   MathJax.Hub.Config({ -->
+    <!--     jax: ["input/TeX","output/HTML-CSS"], -->
+    <!--     displayAlign: "left" -->
+    <!--   }); -->
+    <!-- </script> -->
+  </head>
+  <body class="line-numbers match-braces">
+    <div class="content">
+      
+<div id="Hash tables"><h1 id="Hash tables" class="header"><a href="#Hash tables">Hash tables</a></h1></div>
+
+<p>
+<span id="Hash tables-Hash function"></span><strong id="Hash function">Hash function</strong>
+</p>
+
+<p>
+<span id="Hash tables-Hash table"></span><strong id="Hash table">Hash table</strong>
+</p>
+
+<p>
+<span id="Hash tables-Hashes"></span><strong id="Hashes">Hashes</strong>
+</p>
+
+<p>
+<span id="Hash tables-Hash value"></span><strong id="Hash value">Hash value</strong>
+</p>
+
+<p>
+<span id="Hash tables-Collision"></span><strong id="Collision">Collision</strong>
+</p>
+
+<div id="Hash tables-Hash functions"><h2 id="Hash functions" class="header"><a href="#Hash tables-Hash functions">Hash functions</a></h2></div>
+
+<p>
+A good hash function satisfies (approximately) the assumption of independent uniform hashing:
+each key is equally likely to hash to any of the m slots,
+independently of where any other keys have hashed to.
+</p>
+
+<p>
+What does "equally likely" mean here?
+</p>
+
+<p>
+If the hash function is fixed,
+any probabilities would have to be based on the probability distribution of the input keys.
+</p>
+
+<div id="Hash tables-Hash functions-Static hashing"><h3 id="Static hashing" class="header"><a href="#Hash tables-Hash functions-Static hashing">Static hashing</a></h3></div>
+
+<p>
+\(h(k)\) is the hash function, 
+\(k\) is the key, 
+\(m\) is the number of slots, 
+\(A\) is a constant
+</p>
+
+<div id="Hash tables-Hash functions-Static hashing-The division method"><h4 id="The division method" class="header"><a href="#Hash tables-Hash functions-Static hashing-The division method">The division method</a></h4></div>
+
+\[
+h(k) = k\ \textrm{mod}\ m
+\]
+
+<div id="Hash tables-Hash functions-Static hashing-The multiplication method"><h4 id="The multiplication method" class="header"><a href="#Hash tables-Hash functions-Static hashing-The multiplication method">The multiplication method</a></h4></div>
+
+\[
+h(k) = \lfloor m\ (kA\ \textrm{mod}\ 1)\rfloor
+\]
+
+    </div>
+    <p><small>Page created on 2022-10-18</small></p>
+    <script src="../prism.js"></script>
+  </body>
+</html>

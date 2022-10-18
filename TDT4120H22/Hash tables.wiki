@@ -1,0 +1,41 @@
+= Hash tables =
+
+*Hash function*
+
+*Hash table*
+
+*Hashes*
+
+*Hash value*
+
+*Collision*
+
+== Hash functions ==
+
+A good hash function satisfies (approximately) the assumption of independent uniform hashing:
+each key is equally likely to hash to any of the m slots,
+independently of where any other keys have hashed to.
+
+What does "equally likely" mean here?
+
+If the hash function is fixed,
+any probabilities would have to be based on the probability distribution of the input keys.
+
+=== Static hashing ===
+
+$h(k)$ is the hash function, 
+$k$ is the key, 
+$m$ is the number of slots, 
+$A$ is a constant
+
+==== The division method ====
+
+{{$
+h(k) = k\ \textrm{mod}\ m
+}}$
+
+==== The multiplication method ====
+
+{{$
+h(k) = \lfloor m\ (kA\ \textrm{mod}\ 1)\rfloor
+}}$

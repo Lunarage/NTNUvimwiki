@@ -22,16 +22,64 @@
       
 <div id="Elementary Data Structures"><h1 id="Elementary Data Structures" class="header"><a href="#Elementary Data Structures">Elementary Data Structures</a></h1></div>
 
-<p>
-<em><span id="Elementary Data Structures-Dynamic sets"></span><strong id="Dynamic sets">Dynamic sets</strong></em>: unlike mathematical sets, these can change.
-</p>
+<div id="Elementary Data Structures-Simple array-based data structures: arrays, matrices, stacks, queues"><h2 id="Simple array-based data structures: arrays, matrices, stacks, queues" class="header"><a href="#Elementary Data Structures-Simple array-based data structures: arrays, matrices, stacks, queues">Simple array-based data structures: arrays, matrices, stacks, queues</a></h2></div>
 
-<p>
-<em><span id="Elementary Data Structures-Dictionary"></span><strong id="Dictionary">Dictionary</strong></em>: 
-</p>
+<div id="Elementary Data Structures-Simple array-based data structures: arrays, matrices, stacks, queues-Arrays"><h3 id="Arrays" class="header"><a href="#Elementary Data Structures-Simple array-based data structures: arrays, matrices, stacks, queues-Arrays">Arrays</a></h3></div>
+
+<div id="Elementary Data Structures-Simple array-based data structures: arrays, matrices, stacks, queues-Matrices"><h3 id="Matrices" class="header"><a href="#Elementary Data Structures-Simple array-based data structures: arrays, matrices, stacks, queues-Matrices">Matrices</a></h3></div>
+
+<div id="Elementary Data Structures-Simple array-based data structures: arrays, matrices, stacks, queues-Stacks and queues"><h3 id="Stacks and queues" class="header"><a href="#Elementary Data Structures-Simple array-based data structures: arrays, matrices, stacks, queues-Stacks and queues">Stacks and queues</a></h3></div>
+
+<div id="Elementary Data Structures-Simple array-based data structures: arrays, matrices, stacks, queues-Stacks and queues-Stacks"><h4 id="Stacks" class="header"><a href="#Elementary Data Structures-Simple array-based data structures: arrays, matrices, stacks, queues-Stacks and queues-Stacks">Stacks</a></h4></div>
+
+<div id="Elementary Data Structures-Simple array-based data structures: arrays, matrices, stacks, queues-Stacks and queues-Queues"><h4 id="Queues" class="header"><a href="#Elementary Data Structures-Simple array-based data structures: arrays, matrices, stacks, queues-Stacks and queues-Queues">Queues</a></h4></div>
+
+<div id="Elementary Data Structures-Linked lists"><h2 id="Linked lists" class="header"><a href="#Elementary Data Structures-Linked lists">Linked lists</a></h2></div>
+
+<div id="Elementary Data Structures-Linked lists-Searching a linked list"><h3 id="Searching a linked list" class="header"><a href="#Elementary Data Structures-Linked lists-Searching a linked list">Searching a linked list</a></h3></div>
+
+<pre><code  class="language-python">
+def list_search(L,k):
+  x = L.head
+  while x != None and x.key != k
+    x = x.next
+  return x
+</code></pre>
+
+<div id="Elementary Data Structures-Linked lists-Inserting into a linked list"><h3 id="Inserting into a linked list" class="header"><a href="#Elementary Data Structures-Linked lists-Inserting into a linked list">Inserting into a linked list</a></h3></div>
+
+<pre><code  class="language-python">
+def list_prepend(L,x):
+  x.next = L.head
+  x.prev = None
+  if L.head != None:
+    L.head.prev = x
+  L.head = x
+</code></pre>
+
+<pre><code  class="language-python">
+def list_insert(x,y):
+  x.next = y.next
+  x.prev = y
+  if y.next != None:
+    y.next.prev = x
+  y.next = x
+</code></pre>
+
+<div id="Elementary Data Structures-Linked lists-Deleting from a linked list"><h3 id="Deleting from a linked list" class="header"><a href="#Elementary Data Structures-Linked lists-Deleting from a linked list">Deleting from a linked list</a></h3></div>
+
+<pre><code  class="language-python">
+def list_delete(L,x):
+  if x.prev != None:
+    x.prev.next = x.next
+  else:
+    L.head = x.next
+  if x.next != None
+    x.next.prev = x.prev
+</code></pre>
 
     </div>
-    <p><small>Page created on 2022-09-16</small></p>
+    <p><small>Page created on 2022-10-18</small></p>
     <script src="../prism.js"></script>
   </body>
 </html>

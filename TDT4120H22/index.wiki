@@ -15,11 +15,11 @@ _Introduction to Algorithms, Fourth Edition_ by CLRS
 | 8       | Sorting in linear time              |            | 4       |
 | 9       | Medians and order statistics        |            | 4       |
 | 10      | [[Elementary data structures]]      |            | 2,5     |
-| 11      | Hash tables                         |            | 2       |
+| 11      | [[Hash tables]]                     |            | 2       |
 | 12      | Binary search trees                 |            | 5       |
 | 14      | Dynamic programming                 |            | 6       |
 | 15      | Greedy algorithms                   |            | 7       |
-| 16      | Amortized analysis                  |            | 2       |
+| 16      | [[Amortized analysis]]              |            | 2       |
 | 19      | Data structures for disjoint sets   |            | 9       |
 | 20      | Elementary graph algorithms         |            | 8       |
 | 21      | Minimum spanning trees              |            | 9       |

@@ -1,5 +1,57 @@
 = Elementary Data Structures =
 
-_*Dynamic sets*_: unlike mathematical sets, these can change.
+== Simple array-based data structures: arrays, matrices, stacks, queues ==
 
-_*Dictionary*_: 
+=== Arrays ===
+
+=== Matrices ===
+
+=== Stacks and queues ===
+
+==== Stacks ====
+
+==== Queues ====
+
+== Linked lists ==
+
+=== Searching a linked list ===
+
+{{{ class="language-python"
+def list_search(L,k):
+  x = L.head
+  while x != None and x.key != k
+    x = x.next
+  return x
+}}}
+
+=== Inserting into a linked list ===
+
+{{{ class="language-python"
+def list_prepend(L,x):
+  x.next = L.head
+  x.prev = None
+  if L.head != None:
+    L.head.prev = x
+  L.head = x
+}}}
+
+{{{ class="language-python"
+def list_insert(x,y):
+  x.next = y.next
+  x.prev = y
+  if y.next != None:
+    y.next.prev = x
+  y.next = x
+}}}
+
+=== Deleting from a linked list ===
+
+{{{ class="language-python"
+def list_delete(L,x):
+  if x.prev != None:
+    x.prev.next = x.next
+  else:
+    L.head = x.next
+  if x.next != None
+    x.next.prev = x.prev
+}}}
