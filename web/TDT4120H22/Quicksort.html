@@ -22,29 +22,29 @@
       
 <div id="Quicksort"><h1 id="Quicksort" class="header"><a href="#Quicksort">Quicksort</a></h1></div>
 
-<pre>
-Quicksort(A, p, r)
-if p &lt; r
-  // Partition the subarray around the pivot, which ends up in A[q]
-  q = Partition(A, p, r)
-  Quicksort(A, p, q - 1) // recursively sort the low side
-  Quicksort(A, q + 1, r) // recursively sort the high side
-</pre>
+<pre><code  class="language-python">
+def quicksort(A, p, r):
+  if p &lt; r:
+    # Partition the subarray around the pivot, which ends up in A[q]
+    q = Partition(A, p, r)
+    Quicksort(A, p, q - 1) # recursively sort the low side
+    Quicksort(A, q + 1, r) # recursively sort the high side
+</code></pre>
 
-<pre>
-Partition(A, p, r)
-  x = A[r]                    // the pivot
-  i = p - 1                   // highest index into the low side
-  for j = p to r - 1          // process each element other than the pivot
-    if A[j] &lt;= x              // does this element belong on the low side?
-      i = i + 1               // index of a new slot in the low side
-      exchange A[i] with A[j] // put this element here
-  exchange A[i + 1] with A[r] // pivot goes just to the right side of the low side
-  return i + 1                // new index of the pivot
-</pre>
+<pre><code  class="language-python">
+def partition(A, p, r):
+  x = A[r]                    # the pivot
+  i = p - 1                   # highest index into the low side
+  for j in range(p, r):       # process each element other than the pivot
+    if A[j] &lt;= x:             # does this element belong on the low side?
+      i = i + 1               # index of a new slot in the low side
+      exchange A[i] with A[j] # put this element here
+  exchange A[i + 1] with A[r] # pivot goes just to the right side of the low side
+  return i + 1                # new index of the pivot
+</code></pre>
 
     </div>
-    <p><small>Page created on 2022-09-16</small></p>
+    <p><small>Page created on 2022-10-20</small></p>
     <script src="../prism.js"></script>
   </body>
 </html>

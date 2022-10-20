@@ -1,4 +1,12 @@
-= Hash tables =
+= Hash Tables =
+
+When the number of keys actually stored is small relative to the total number of possible keys,
+hash tables become an effective alternative to directly addressing an array,
+since a hash table typically uses an array of size proportional to the number of keys actually stored.
+
+== Direct-address tables ==
+
+== Hash tables ==
 
 *Hash function*
 
@@ -9,6 +17,19 @@
 *Hash value*
 
 *Collision*
+
+=== Independent uniform hashing ===
+
+=== Collision resolution by chaining ===
+
+Each nonempty slot points to a linked list,
+and all the elements that hash to the same slot go into that slot's linked list.
+
+=== Analysis of hashing with chaining ===
+
+Given a hash table _T_ with _m_ slots that stores _n_ elements,
+we define the *load factor* $\alpha$ for _T_ as _n/m_,
+that is, the average number of elements stored in a chain.
 
 == Hash functions ==
 
@@ -31,11 +52,11 @@ $A$ is a constant
 ==== The division method ====
 
 {{$
-h(k) = k\ \textrm{mod}\ m
+h(k) = k\ \bmod\ m
 }}$
 
 ==== The multiplication method ====
 
 {{$
-h(k) = \lfloor m\ (kA\ \textrm{mod}\ 1)\rfloor
+h(k) = \lfloor m\ (kA\ \bmod\ 1)\rfloor
 }}$

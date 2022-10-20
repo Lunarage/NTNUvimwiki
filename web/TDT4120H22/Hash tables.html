@@ -20,29 +20,56 @@
   <body class="line-numbers match-braces">
     <div class="content">
       
-<div id="Hash tables"><h1 id="Hash tables" class="header"><a href="#Hash tables">Hash tables</a></h1></div>
+<div id="Hash Tables"><h1 id="Hash Tables" class="header"><a href="#Hash Tables">Hash Tables</a></h1></div>
 
 <p>
-<span id="Hash tables-Hash function"></span><strong id="Hash function">Hash function</strong>
+When the number of keys actually stored is small relative to the total number of possible keys,
+hash tables become an effective alternative to directly addressing an array,
+since a hash table typically uses an array of size proportional to the number of keys actually stored.
+</p>
+
+<div id="Hash Tables-Direct-address tables"><h2 id="Direct-address tables" class="header"><a href="#Hash Tables-Direct-address tables">Direct-address tables</a></h2></div>
+
+<div id="Hash Tables-Hash tables"><h2 id="Hash tables" class="header"><a href="#Hash Tables-Hash tables">Hash tables</a></h2></div>
+
+<p>
+<span id="Hash Tables-Hash tables-Hash function"></span><strong id="Hash function">Hash function</strong>
 </p>
 
 <p>
-<span id="Hash tables-Hash table"></span><strong id="Hash table">Hash table</strong>
+<span id="Hash Tables-Hash tables-Hash table"></span><strong id="Hash table">Hash table</strong>
 </p>
 
 <p>
-<span id="Hash tables-Hashes"></span><strong id="Hashes">Hashes</strong>
+<span id="Hash Tables-Hash tables-Hashes"></span><strong id="Hashes">Hashes</strong>
 </p>
 
 <p>
-<span id="Hash tables-Hash value"></span><strong id="Hash value">Hash value</strong>
+<span id="Hash Tables-Hash tables-Hash value"></span><strong id="Hash value">Hash value</strong>
 </p>
 
 <p>
-<span id="Hash tables-Collision"></span><strong id="Collision">Collision</strong>
+<span id="Hash Tables-Hash tables-Collision"></span><strong id="Collision">Collision</strong>
 </p>
 
-<div id="Hash tables-Hash functions"><h2 id="Hash functions" class="header"><a href="#Hash tables-Hash functions">Hash functions</a></h2></div>
+<div id="Hash Tables-Hash tables-Independent uniform hashing"><h3 id="Independent uniform hashing" class="header"><a href="#Hash Tables-Hash tables-Independent uniform hashing">Independent uniform hashing</a></h3></div>
+
+<div id="Hash Tables-Hash tables-Collision resolution by chaining"><h3 id="Collision resolution by chaining" class="header"><a href="#Hash Tables-Hash tables-Collision resolution by chaining">Collision resolution by chaining</a></h3></div>
+
+<p>
+Each nonempty slot points to a linked list,
+and all the elements that hash to the same slot go into that slot's linked list.
+</p>
+
+<div id="Hash Tables-Hash tables-Analysis of hashing with chaining"><h3 id="Analysis of hashing with chaining" class="header"><a href="#Hash Tables-Hash tables-Analysis of hashing with chaining">Analysis of hashing with chaining</a></h3></div>
+
+<p>
+Given a hash table <em>T</em> with <em>m</em> slots that stores <em>n</em> elements,
+we define the <span id="Hash Tables-Hash tables-Analysis of hashing with chaining-load factor"></span><strong id="load factor">load factor</strong> \(\alpha\) for <em>T</em> as <em>n/m</em>,
+that is, the average number of elements stored in a chain.
+</p>
+
+<div id="Hash Tables-Hash functions"><h2 id="Hash functions" class="header"><a href="#Hash Tables-Hash functions">Hash functions</a></h2></div>
 
 <p>
 A good hash function satisfies (approximately) the assumption of independent uniform hashing:
@@ -59,7 +86,7 @@ If the hash function is fixed,
 any probabilities would have to be based on the probability distribution of the input keys.
 </p>
 
-<div id="Hash tables-Hash functions-Static hashing"><h3 id="Static hashing" class="header"><a href="#Hash tables-Hash functions-Static hashing">Static hashing</a></h3></div>
+<div id="Hash Tables-Hash functions-Static hashing"><h3 id="Static hashing" class="header"><a href="#Hash Tables-Hash functions-Static hashing">Static hashing</a></h3></div>
 
 <p>
 \(h(k)\) is the hash function, 
@@ -68,20 +95,20 @@ any probabilities would have to be based on the probability distribution of the 
 \(A\) is a constant
 </p>
 
-<div id="Hash tables-Hash functions-Static hashing-The division method"><h4 id="The division method" class="header"><a href="#Hash tables-Hash functions-Static hashing-The division method">The division method</a></h4></div>
+<div id="Hash Tables-Hash functions-Static hashing-The division method"><h4 id="The division method" class="header"><a href="#Hash Tables-Hash functions-Static hashing-The division method">The division method</a></h4></div>
 
 \[
-h(k) = k\ \textrm{mod}\ m
+h(k) = k\ \bmod\ m
 \]
 
-<div id="Hash tables-Hash functions-Static hashing-The multiplication method"><h4 id="The multiplication method" class="header"><a href="#Hash tables-Hash functions-Static hashing-The multiplication method">The multiplication method</a></h4></div>
+<div id="Hash Tables-Hash functions-Static hashing-The multiplication method"><h4 id="The multiplication method" class="header"><a href="#Hash Tables-Hash functions-Static hashing-The multiplication method">The multiplication method</a></h4></div>
 
 \[
-h(k) = \lfloor m\ (kA\ \textrm{mod}\ 1)\rfloor
+h(k) = \lfloor m\ (kA\ \bmod\ 1)\rfloor
 \]
 
     </div>
-    <p><small>Page created on 2022-10-18</small></p>
+    <p><small>Page created on 2022-10-19</small></p>
     <script src="../prism.js"></script>
   </body>
 </html>
