@@ -38,9 +38,44 @@
 
 <div id="Divide-and-conquer-Designing algorithms-Merge Sort"><h3 id="Merge Sort" class="header"><a href="#Divide-and-conquer-Designing algorithms-Merge Sort">Merge Sort</a></h3></div>
 
-<pre>
+<pre><code  class="language-python">
+def merge_sort(A, first, last):
+  if first &gt;= last:          # Done when one or zero elements
+    return
+  mid = (first+last)//2      # Midpoint
+  merge_sort(A, fist, mid)   # Left
+  merge_sort(A, mid+1, last) # Right
+  mrege(A, first, mid, last)
+</code></pre>
+
+<pre><code  class="language-python">
+def merge(A, first, mid, last):
+  left = array[first:mid+1]   # Splice it right in two
+  right = array[mid+1:last+1]
+  i, j, k = 0, 0, first       # Iterator variables
+  # Main loop
+  while i &lt; len(left) and j &lt; len(right):
+    if left[i] &lt;= right[j]:
+      A[k] = left[i]
+      i = i + 1
+    else:
+      A[k] = right[j]
+      j = j + 1
+    k = k + 1
+  # Remaining elements
+  while i &lt; len(left):
+    A[k] = left[i]
+    i = i + 1
+    k = k + 1
+  while j &lt; len(right):
+    A[k] = right[j]
+    j = j + 1
+    k = k + 1
+</code></pre>
+
+<pre><code>
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/vTNFajiyXtU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-</pre>
+</code></pre>
 
 <div id="Divide-and-conquer-The master method for solving recurrences"><h2 id="The master method for solving recurrences" class="header"><a href="#Divide-and-conquer-The master method for solving recurrences">The master method for solving recurrences</a></h2></div>
 
@@ -49,61 +84,95 @@ The master method provides a "cookbook" method for solving algorithmic recurrenc
 </p>
 
 \[
-T(n) = aT(n/b) + c(n)
+T(n) = aT(n/b) + f(n)
 \]
 
 <p>
-where \(a&gt;0\) and \(b&gt;1\) are constants.
+where \(a\geq1\) and \(b&gt;1\) are constants.
 </p>
 
 <p>
-We call \(c(n)\) a <span id="Divide-and-conquer-The master method for solving recurrences-<em>driving function</em>"></span><strong id="<em>driving function</em>"><em>driving function</em></strong>, and we call a recurrence of this general form a <span id="Divide-and-conquer-The master method for solving recurrences-<em>master recurrence</em>"></span><strong id="<em>master recurrence</em>"><em>master recurrence</em></strong>
+We call \(f(n)\) a <span id="Divide-and-conquer-The master method for solving recurrences-<em>driving function</em>"></span><strong id="<em>driving function</em>"><em>driving function</em></strong>, and we call a recurrence of this general form a <span id="Divide-and-conquer-The master method for solving recurrences-<em>master recurrence</em>"></span><strong id="<em>master recurrence</em>"><em>master recurrence</em></strong>.
 </p>
 
 <p>
-<img src="../../img/recursion_tree.png" alt="recursion-tree" />
+Three cases:
 </p>
 
-\[
-T(n) = \Theta(n^{log_b(a)}) + \sum_{j=0}^{log_b(n-1)} a^jc(n/b^j)
-\]
-
-<p>
-Informally:
-</p>
 <ol>
 <li>
-If the problem gets easier \(\Rightarrow\) \(T(n) = \Theta(c(n))\)
+If \(f(n) = O(n^{\log_b a-\epsilon})\), then \(T(n) = \Theta(n^{\log_b a})\)
 
 <li>
-If the problem gets harder \(\Rightarrow\) \(T(n) = \Theta(n^{log_b(a)})\)
+If \(f(n) = \Theta(n^{\log_b a}\log^k n)\), then \(T(n) = \Theta(n^{\log_b a}\log^{k+1} n)\)
 
 <li>
-If the hardness is evenly distributed \(\Rightarrow\) \(T(n) = log_b(n)\cdot\Theta(n^{log_b(a)})\)
+If \(f(n) = \Omega(n^{\log_b a+\epsilon})\), then \(T(n) = \Theta(f(n))\)
 
 </ol>
 
 <p>
-Formally:
+where \(\epsilon &gt; 0\), and \(k \geq 0\) are a constants.
 </p>
+
+<p>
+Each of the above conditions can be interpreted as:
+</p>
+
 <ol>
 <li>
-If there exists a constant \(\epsilon &gt; 0\) such that \(c(n) = O(n^{log_b(a-\epsilon)})\),
-   then \(T(n) = \Theta(n^{log_b(a)})\)
+If the cost of solving the sub-problems at each level increases by a certain factor,
+   the value of \(f(n)\) will become polynomially smaller than \(n^{\log_b a}\).
+   Thus, the time complexity is oppressed by the cost of the last level i.e. \(n^{\log_b a}\)
 
 <li>
-If there exists a constant \(k \geq 0\) such that \(c(n) = O(n^{log_b(a)}\ln^kn)\),
-   then \(T(n) = \Theta(n^{log_b(a)}\ln^{k+1}n)\)
+If the cost of solving the sub-problem at each level is nearly equal,
+   then the value of \(f(n)\) will be \(n^{\log_b a}\).
+   Thus the time complexity will be
+   \(f(n)\) times the total number of levels i.e. \(n^{\log_b a}\log n\)
 
 <li>
-If there exists a constant \(\epsilon &gt; 0\) such that \(c(n) = \Omega(n^{log_b(a+\epsilon)})\),
-   and if \(c(n)\) additionally satisfies the <span id="Divide-and-conquer-The master method for solving recurrences-<em>regularity condition</em>"></span><strong id="<em>regularity condition</em>"><em>regularity condition</em></strong> \(ac(n/b) = dc(n)\)
-   for some constant \(d&lt;1\) and all sufficiently large \(n\), then \(T(n) = \Theta(c(n))\)
+If the cost of solving the subproblems at each level decreases by a certain factor,
+   the value of \(f(n)\) will become polynomially larger than \(n^{\log_b a}\).
+   Thus, the time complexity is oppressed by the cost of \(f(n)\).
 
 </ol>
+
+<p>
+The master theorem cannot be used if:
+</p>
+<ul>
+<li>
+\(T(n)\) is not monotone. e.g. \(T(n) = \sin n\)
+
+<li>
+\(f(n)\) is not a polynomial. e.g. \(f(n) = 2^n\)
+
+<li>
+\(a\) is not a constant. e.g. \(a = 2n\)
+
+<li>
+\(a &lt; 1\)
+
+</ul>
+
+<p>
+Example
+</p>
+<blockquote>
+\(T(n) = 3T(n/2) + n^2\) <br/>
+Here, <br/>
+\(a = 3\) <br/>
+\(b = 2\) <br/>
+\(f(n) = n^2\) <br/>
+\(\log_b a = \log_2 3 \approx 1.58 &lt; 2\) <br/>
+i.e. \(f(n) &lt; n^{\log_b a+\epsilon}\), where, \(\epsilon\) is a constant. <br/>
+Case 3 implies here. <br/>
+Thus, \(T(n) = f(n) = \Theta(n^2)\)
+</blockquote>
 
     </div>
-    <p><small>Page created on 2022-09-20</small></p>
+    <p><small>Page created on 2022-10-26</small></p>
     <script src="../prism.js"></script>
   </body>
 </html>

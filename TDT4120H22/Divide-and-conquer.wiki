@@ -10,6 +10,41 @@
 
 === Merge Sort ===
 
+{{{ class="language-python"
+def merge_sort(A, first, last):
+  if first >= last:          # Done when one or zero elements
+    return
+  mid = (first+last)//2      # Midpoint
+  merge_sort(A, fist, mid)   # Left
+  merge_sort(A, mid+1, last) # Right
+  mrege(A, first, mid, last)
+}}}
+
+{{{ class="language-python"
+def merge(A, first, mid, last):
+  left = array[first:mid+1]   # Splice it right in two
+  right = array[mid+1:last+1]
+  i, j, k = 0, 0, first       # Iterator variables
+  # Main loop
+  while i < len(left) and j < len(right):
+    if left[i] <= right[j]:
+      A[k] = left[i]
+      i = i + 1
+    else:
+      A[k] = right[j]
+      j = j + 1
+    k = k + 1
+  # Remaining elements
+  while i < len(left):
+    A[k] = left[i]
+    i = i + 1
+    k = k + 1
+  while j < len(right):
+    A[k] = right[j]
+    j = j + 1
+    k = k + 1
+}}}
+
 {{{
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vTNFajiyXtU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 }}}
@@ -19,29 +54,48 @@
 The master method provides a "cookbook" method for solving algorithmic recurrences of the form
 
 {{$
-T(n) = aT(n/b) + c(n)
+T(n) = aT(n/b) + f(n)
 }}$
 
-where $a>0$ and $b>1$ are constants.
+where $a\geq1$ and $b>1$ are constants.
 
-We call $c(n)$ a *_driving function_*, and we call a recurrence of this general form a *_master recurrence_*
+We call $f(n)$ a *_driving function_*, and we call a recurrence of this general form a *_master recurrence_*.
 
-{{/img/recursion_tree.png.png|recursion-tree}}
+Three cases:
 
-{{$
-T(n) = \Theta(n^{log_b(a)}) + \sum_{j=0}^{log_b(n-1)} a^jc(n/b^j)
-}}$
+1. If $f(n) = O(n^{\log_b a-\epsilon})$, then $T(n) = \Theta(n^{\log_b a})$
+2. If $f(n) = \Theta(n^{\log_b a}\log^k n)$, then $T(n) = \Theta(n^{\log_b a}\log^{k+1} n)$
+3. If $f(n) = \Omega(n^{\log_b a+\epsilon})$, then $T(n) = \Theta(f(n))$
 
-Informally:
-1. If the problem gets easier $\Rightarrow$ $T(n) = \Theta(c(n))$
-2. If the problem gets harder $\Rightarrow$ $T(n) = \Theta(n^{log_b(a)})$
-3. If the hardness is evenly distributed $\Rightarrow$ $T(n) = log_b(n)\cdot\Theta(n^{log_b(a)})$
+where $\epsilon > 0$, and $k \geq 0$ are a constants.
 
-Formally:
-1. If there exists a constant $\epsilon > 0$ such that $c(n) = O(n^{log_b(a-\epsilon)})$,
-   then $T(n) = \Theta(n^{log_b(a)})$
-2. If there exists a constant $k \geq 0$ such that $c(n) = O(n^{log_b(a)}\ln^kn)$,
-   then $T(n) = \Theta(n^{log_b(a)}\ln^{k+1}n)$
-3. If there exists a constant $\epsilon > 0$ such that $c(n) = \Omega(n^{log_b(a+\epsilon)})$,
-   and if $c(n)$ additionally satisfies the *_regularity condition_* $ac(n/b) = dc(n)$
-   for some constant $d<1$ and all sufficiently large $n$, then $T(n) = \Theta(c(n))$
+Each of the above conditions can be interpreted as:
+
+1. If the cost of solving the sub-problems at each level increases by a certain factor,
+   the value of $f(n)$ will become polynomially smaller than $n^{\log_b a}$.
+   Thus, the time complexity is oppressed by the cost of the last level i.e. $n^{\log_b a}$
+2. If the cost of solving the sub-problem at each level is nearly equal,
+   then the value of $f(n)$ will be $n^{\log_b a}$.
+   Thus the time complexity will be
+   $f(n)$ times the total number of levels i.e. $n^{\log_b a}\log n$
+3. If the cost of solving the subproblems at each level decreases by a certain factor,
+   the value of $f(n)$ will become polynomially larger than $n^{\log_b a}$.
+   Thus, the time complexity is oppressed by the cost of $f(n)$.
+
+The master theorem cannot be used if:
+* $T(n)$ is not monotone. e.g. $T(n) = \sin n$
+* $f(n)$ is not a polynomial. e.g. $f(n) = 2^n$
+* $a$ is not a constant. e.g. $a = 2n$
+* $a < 1$
+
+Example
+
+    $T(n) = 3T(n/2) + n^2$ <br/>
+    Here, <br/>
+    $a = 3$ <br/>
+    $b = 2$ <br/>
+    $f(n) = n^2$ <br/>
+    $\log_b a = \log_2 3 \approx 1.58 < 2$ <br/>
+    i.e. $f(n) < n^{\log_b a+\epsilon}$, where, $\epsilon$ is a constant. <br/>
+    Case 3 implies here. <br/>
+    Thus, $T(n) = f(n) = \Theta(n^2)$
