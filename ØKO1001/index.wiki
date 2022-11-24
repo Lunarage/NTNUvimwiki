@@ -4,23 +4,20 @@
 
 _Ledelse i små og mellomstore bedrifter_ 3. utgave, Morten Erichsen, Frode Solberg, Trond Stiklestad
 
-| Kapittel | Tittel                               | Forelesningsuke |
-|----------|--------------------------------------|-----------------|
-| 1        | Innledning                           |                 |
-| 2        | [[Lederoppgaver og lederroller]]     | 35              |
-| 3        | [[Lederstiler]]                      | 35,36           |
-| 4        | [[Relasjonsledelse]]                 | 36              |
-| 6        | Organisering av virksomheten         | 45              |
-| 7        | Menneskelige ressurser               | 45              |
-| 8        | Strategi og strategiske prosesser    | 43              |
-| 10       | Omdømme, samfunnsansvar og bærekraft | 44              |
-| 11       | Endringsledelse                      | 47              |
-| 14       | [[Lederegenskaper]]                  | 37              |
-| 15       | [[Selvledelse]]                      | 34              |
-| 16       | [[Lederutvikling]]                   | 37              |
-
-
-|          | [[Oppsummering Ledelse]]             | 38              |
+| Kapittel | Tittel                                   | Forelesningsuke |
+|----------|------------------------------------------|-----------------|
+| 1        | Innledning                               |                 |
+| 2        | [[Lederoppgaver og lederroller]]         | 35              |
+| 3        | [[Lederstiler]]                          | 35,36           |
+| 4        | [[Relasjonsledelse]]                     | 36              |
+| 6        | [[Organisering av virksomheten]]         | 45              |
+| 7        | [[Menneskelige ressurser]]               | 45              |
+| 8        | [[Strategi og strategiske prosesser]]    | 43              |
+| 10       | [[Omdømme, samfunnsansvar og bærekraft]] | 44              |
+| 11       | [[Endringsledelse]]                      | 47              |
+| 14       | [[Lederegenskaper]]                      | 37              |
+| 15       | [[Selvledelse]]                          | 34              |
+| 16       | [[Lederutvikling]]                       | 37              |
 
 _Økonomiforståelse for ledere og styremedlemmer_, Terje Berg
 
@@ -31,7 +28,6 @@ _Økonomiforståelse for ledere og styremedlemmer_, Terje Berg
 | 3        | [[Styret og kostnadsforståelse]]                     | 40              |
 | 4        | [[Styrets bruk av kalkyler og budsjetter]]           | 40              |
 | 5        | [[Styret og ulike kortsiktige beslutningsproblemer]] | 40              |
-| 6        | [[Styret og ulike langsiktige beslutningsproblemer]] | 40              |
 | 7        | [[Styret og prestasjonsmålinger]]                    | 41              |
 | 8        | [[Avrunding]]                                        | 41              |
 

@@ -1,6 +1,21 @@
-= Selvledelse =
+= Contents =
+  - [[#Selvledelse|Selvledelse]]
+    - [[#Selvledelse#Selvledelse - en hovedmodell|Selvledelse - en hovedmodell]]
+      - [[#Selvledelse#Selvledelse - en hovedmodell#Formål og verdier - meningen med arbeidslivet|Formål og verdier - meningen med arbeidslivet]]
+      - [[#Selvledelse#Selvledelse - en hovedmodell#Selvobservasjon|Selvobservasjon]]
+      - [[#Selvledelse#Selvledelse - en hovedmodell#Selvmålsetting|Selvmålsetting]]
+      - [[#Selvledelse#Selvledelse - en hovedmodell#Selvbelønning|Selvbelønning]]
+      - [[#Selvledelse#Selvledelse - en hovedmodell#Selvmotivasjon|Selvmotivasjon]]
+      - [[#Selvledelse#Selvledelse - en hovedmodell#Selvsnakk og styring av egne tanker|Selvsnakk og styring av egne tanker]]
+      - [[#Selvledelse#Selvledelse - en hovedmodell#Selvutvikling og læring|Selvutvikling og læring]]
+    - [[#Selvledelse#Forutsetninger for selvledelse|Forutsetninger for selvledelse]]
+      - [[#Selvledelse#Forutsetninger for selvledelse#Kjennetegn på virksomheten|Kjennetegn på virksomheten]]
+      - [[#Selvledelse#Forutsetninger for selvledelse#Krav til medarbeideren|Krav til medarbeideren]]
+      - [[#Selvledelse#Forutsetninger for selvledelse#Krav til toppledelsen|Krav til toppledelsen]]
+    - [[#Selvledelse#Superledelse|Superledelse]]
+    - [[#Selvledelse#Er selvledelse effektivt?|Er selvledelse effektivt?]]
 
-== Introduksjon ==
+= Selvledelse =
 
 == Selvledelse - en hovedmodell ==
 
@@ -34,4 +49,4 @@
 
 == Er selvledelse effektivt? ==
 
-== Avsluttende kommentarer ==
+%% vim: spelllang=nb

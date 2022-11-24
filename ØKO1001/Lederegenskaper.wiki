@@ -1,3 +1,23 @@
+= Contents =
+  - [[#Lederegenskaper|Lederegenskaper]]
+    - [[#Lederegenskaper#Lederegenskaper|Lederegenskaper]]
+    - [[#Lederegenskaper#Lederens personlighet|Lederens personlighet]]
+      - [[#Lederegenskaper#Lederens personlighet#Femfaktormodellen|Femfaktormodellen]]
+      - [[#Lederegenskaper#Lederens personlighet#Femfaktormodellen og ledelse|Femfaktormodellen og ledelse]]
+    - [[#Lederegenskaper#Lederens motivasjon|Lederens motivasjon]]
+      - [[#Lederegenskaper#Lederens motivasjon#Prestasjonsmotivasjon|Prestasjonsmotivasjon]]
+      - [[#Lederegenskaper#Lederens motivasjon#Energi|Energi]]
+      - [[#Lederegenskaper#Lederens motivasjon#Ambisjoner|Ambisjoner]]
+      - [[#Lederegenskaper#Lederens motivasjon#Initiativ|Initiativ]]
+    - [[#Lederegenskaper#Intelligens|Intelligens]]
+    - [[#Lederegenskaper#Emosjonell intelligens|Emosjonell intelligens]]
+    - [[#Lederegenskaper#Verdier og holdninger|Verdier og holdninger]]
+    - [[#Lederegenskaper#Lederens kompetanse og fagkunnskap|Lederens kompetanse og fagkunnskap]]
+    - [[#Lederegenskaper#Selvtillit|Selvtillit]]
+    - [[#Lederegenskaper#Selvinnsikt|Selvinnsikt]]
+      - [[#Lederegenskaper#Selvinnsikt#Grunner til at ledere mangler selvinnsikt|Grunner til at ledere mangler selvinnsikt]]
+    - [[#Lederegenskaper#Avsluttende kommentarer|Avsluttende kommentarer]]
+
 = Lederegenskaper =
 
 == Lederegenskaper ==

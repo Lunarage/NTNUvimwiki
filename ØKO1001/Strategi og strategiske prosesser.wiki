@@ -1,0 +1,89 @@
+= Contents =
+  - [[#Strategi og strategiske prosesser|Strategi og strategiske prosesser]]
+    - [[#Strategi og strategiske prosesser#Introduksjon|Introduksjon]]
+    - [[#Strategi og strategiske prosesser#Hvorfor er strategi viktig, og hva er strategi?|Hvorfor er strategi viktig, og hva er strategi?]]
+      - [[#Strategi og strategiske prosesser#Hvorfor er strategi viktig, og hva er strategi?#Definisjoner av strategi|Definisjoner av strategi]]
+      - [[#Strategi og strategiske prosesser#Hvorfor er strategi viktig, og hva er strategi?#Perspektiver på strategi|Perspektiver på strategi]]
+    - [[#Strategi og strategiske prosesser#Strategiprosessen — fra misjon til evaluering|Strategiprosessen — fra misjon til evaluering]]
+      - [[#Strategi og strategiske prosesser#Strategiprosessen — fra misjon til evaluering#Misjon, visjon, verdier og forretningsidé|Misjon, visjon, verdier og forretningsidé]]
+      - [[#Strategi og strategiske prosesser#Strategiprosessen — fra misjon til evaluering#Overordnede mål|Overordnede mål]]
+      - [[#Strategi og strategiske prosesser#Strategiprosessen — fra misjon til evaluering#SWOT — eksterne og interne analyser|SWOT — eksterne og interne analyser]]
+      - [[#Strategi og strategiske prosesser#Strategiprosessen — fra misjon til evaluering#Konkrete mål|Konkrete mål]]
+      - [[#Strategi og strategiske prosesser#Strategiprosessen — fra misjon til evaluering#Valg av strategi|Valg av strategi]]
+      - [[#Strategi og strategiske prosesser#Strategiprosessen — fra misjon til evaluering#Iverksettelse av strategi|Iverksettelse av strategi]]
+      - [[#Strategi og strategiske prosesser#Strategiprosessen — fra misjon til evaluering#Kontroll og evaluering|Kontroll og evaluering]]
+    - [[#Strategi og strategiske prosesser#Strategisk ledelse når strategien bør endres|Strategisk ledelse når strategien bør endres]]
+    - [[#Strategi og strategiske prosesser#Strategisk ledelse og strategi som prosess|Strategisk ledelse og strategi som prosess]]
+
+= Strategi og strategiske prosesser =
+
+== Introduksjon ==
+
+Strategi handler mye om å bruke gode modeller, verktøy og analyser.
+
+== Hvorfor er strategi viktig, og hva er strategi? ==
+
+=== Definisjoner av strategi ===
+
+    Strategi er en bedrifts _langsiktige retningsvalg_ og _nedslagsfelt_,
+    som skaper en _fordelaktig posisjon_ i _omskiftelige omgivelser_
+    gjennom _sammensetting av ressurser og kompetanser_
+    som oppfyller _behov i markedene_ og _interessentenes forventninger_.
+
+_Langsiktige retningsvalg_ forstås av de fleste å innebære tre år eller mer.
+
+_Nedslagsfelt_
+
+_Fordelaktig posisjon_
+
+_Omskiftelige omgivelser_
+
+_Sammensetting av ressurser og kompetanser_
+
+_Interessentenes forventninger_
+
+=== Perspektiver på strategi ===
+
+_Mintzberg_
+
+_Plan_
+
+_Manøver (ploy)_
+
+_Posisjon (position)_
+
+_Mønster (pattern)
+
+_Perspektiv (perspective)_
+
+_Roos_
+
+_Konkurranseperspektiv_
+
+_Ressursbaseperspektiv_
+
+_Omgivelsesperspektiv_ (evolusjonsperspektiv)
+
+_Integrert perspektiv_
+
+== Strategiprosessen — fra misjon til evaluering ==
+
+=== Misjon, visjon, verdier og forretningsidé ===
+
+=== Overordnede mål ===
+
+=== SWOT — eksterne og interne analyser ===
+
+=== Konkrete mål ===
+
+=== Valg av strategi ===
+
+=== Iverksettelse av strategi ===
+
+=== Kontroll og evaluering ===
+
+== Strategisk ledelse når strategien bør endres ==
+
+== Strategisk ledelse og strategi som prosess ==
+
+%% vim: spelllang=nb

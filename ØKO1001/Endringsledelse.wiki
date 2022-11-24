@@ -1,0 +1,21 @@
+= Contents =
+  - [[#Endringsledelse|Endringsledelse]]
+    - [[#Endringsledelse#Endringsbehov og behov for å lede endring|Endringsbehov og behov for å lede endring]]
+    - [[#Endringsledelse#Rammeverk for endringsledelse|Rammeverk for endringsledelse]]
+      - [[#Endringsledelse#Rammeverk for endringsledelse#Diagnose av endringssituasjonen|Diagnose av endringssituasjonen]]
+      - [[#Endringsledelse#Rammeverk for endringsledelse#Ledertilnærming ved endring av roller ved endring|Ledertilnærming ved endring av roller ved endring]]
+      - [[#Endringsledelse#Rammeverk for endringsledelse#Virkemidler for endring — et endringsprogram i åtte trinn|Virkemidler for endring — et endringsprogram i åtte trinn]]
+
+= Endringsledelse =
+
+== Endringsbehov og behov for å lede endring ==
+
+== Rammeverk for endringsledelse ==
+
+=== Diagnose av endringssituasjonen ===
+
+=== Ledertilnærming ved endring av roller ved endring ===
+
+=== Virkemidler for endring — et endringsprogram i åtte trinn ===
+
+%% vim: spelllang=nb

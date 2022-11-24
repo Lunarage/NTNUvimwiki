@@ -1,0 +1,109 @@
+= Contents =
+  - [[#Organisering av virksomheten|Organisering av virksomheten]]
+    - [[#Organisering av virksomheten#Organisering av virksomhetens ulike deler|Organisering av virksomhetens ulike deler]]
+    - [[#Organisering av virksomheten#Funksjons- eller markedsbasert organisering|Funksjons- eller markedsbasert organisering]]
+    - [[#Organisering av virksomheten#Virksomhetens oppgave, omgivelser og standardiseringsmuligheter|Virksomhetens oppgave, omgivelser og standardiseringsmuligheter]]
+    - [[#Organisering av virksomheten#Virtuell organisasjon|Virtuell organisasjon]]
+    - [[#Organisering av virksomheten#Koordinering og styringsoptimisme|Koordinering og styringsoptimisme]]
+    - [[#Organisering av virksomheten#Selvorganisering i kunnskapsorganisasjoner|Selvorganisering i kunnskapsorganisasjoner]]
+    - [[#Organisering av virksomheten#Organisering av team|Organisering av team]]
+      - [[#Organisering av virksomheten#Organisering av team#Hva er et team?|Hva er et team?]]
+      - [[#Organisering av virksomheten#Organisering av team#Sammensetting og organisering av team|Sammensetting og organisering av team]]
+      - [[#Organisering av virksomheten#Organisering av team#"Et team er ikke lederløst" — teameier og teamleder|"Et team er ikke lederløst" — teameier og teamleder]]
+      - [[#Organisering av virksomheten#Organisering av team#Myter om team og oppsummerende kommentarer om team|Myter om team og oppsummerende kommentarer om team]]
+
+= Organisering av virksomheten =
+
+== Organisering av virksomhetens ulike deler ==
+
+== Funksjons- eller markedsbasert organisering ==
+
+== Virksomhetens oppgave, omgivelser og standardiseringsmuligheter ==
+
+_Enkel struktur_
+Håndverksbedrifter, småindustri, handel, mindre IT-selskaper.
+
+_Maskinbyråkrati_
+Fiskemottak, Staten lånekasse, McDonalds.
+
+_Profesjonelt byråkrati_
+Sykehus, barnevernet, universiteter og høyskoler.
+
+_Flate og dynamiske organisasjoner_
+Reklamebyråer, konsulentforetak, forskningsavdelinger.
+
+_Prosjektorganisering_
+Bygg og anlegg, håndverk, consulting, tjenesteyting, FoU.
+
+== Virtuell organisasjon ==
+
+Avanserte kommunikasjonsverktøy.
+
+== Koordinering og styringsoptimisme ==
+
+_Gjensidig tilpasning_
+Gjensidig tillit og respekt
+
+_Standardisering av arbeidsprosesser_
+Maskinbyråkrati
+
+_Standardisering av resultater_
+
+_Standardisering av ferdigheter_
+_Profesjonelt byråkrati_
+
+_Standardisering av normer_
+Flat struktur
+
+_Koordinering gjennom direkte tilsyn_
+
+_Koordinering gjennom uformelle koalisjoner_
+
+== Selvorganisering i kunnskapsorganisasjoner ==
+
+Selvstyrte team, desentralisering og høy grad av selvstendighet fremfor måling og kontroll.
+
+== Organisering av team ==
+
+=== Hva er et team? ===
+
+1. _Team innebærer noe mer enn arbeidsgrupper_
+2. _Team kan være både tverrfaglig og homogent sammensatt_
+3. _Team har potensial til å være høyprestasjonsgruppe_
+4. _Team er ikke lederløse_
+5. _Team er en autonom gruppe_
+
+    Et team er en relativt autonom arbeidsgruppe på minst 3 personer
+    som i høy grad arbeider gjensidig avhengig av hverandre over tid,
+    som i stor grad er felles ansvarlig for å innfri gruppens resultatmål,
+    og hvor gruppemedlemmenes relasjoner er gruppens grunnleggende bestanddel.
+
+=== Sammensetting og organisering av team ===
+
+Teamroller:
+1. praktikeren (får jobben gjort)
+2. ressursutnytteren (spiller på andre)
+3. pådriver (git form og retning)
+4. undersøkeren (innhenter og kombinerer andres ideer)
+5. oppfinneren (kommer med originale innspill)
+6. lagspilleren (skaper god tone)
+7. fullføreren (ser viktige detaljer)
+8. vurdereren (analytiker)
+9. spesialisten (har spisskompetansen på teamets hovedoppgave)
+
+=== "Et team er ikke lederløst" — teameier og teamleder ===
+
+Teamleder — tre kjerneprosesser:
+1. å sette en retning for teamets aktiviteter og handlinger
+2. å lede teamets aktiviteter og handlinger
+3. å utvikle teamets kapasitet og evne slik at teamet kan lede egen problemløsningsprosess
+
+Ulike funksjoner:
+* _kontroll_
+* _omsorg_
+* _opposisjon_
+* _lojalitet_
+
+=== Myter om team og oppsummerende kommentarer om team ===
+
+%% vim: spelllang=nb

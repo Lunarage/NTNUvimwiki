@@ -1,3 +1,19 @@
+= Contents =
+  - [[#Lederstiler|Lederstiler]]
+    - [[#Lederstiler#Introduksjon|Introduksjon]]
+    - [[#Lederstiler#Lederstiler|Lederstiler]]
+    - [[#Lederstiler#Ledergitteret|Ledergitteret]]
+      - [[#Lederstiler#Ledergitteret#Anvendelsen av ledergitteret|Anvendelsen av ledergitteret]]
+    - [[#Lederstiler#Situasjonsbestemt ledelse|Situasjonsbestemt ledelse]]
+      - [[#Lederstiler#Situasjonsbestemt ledelse#Støttende og styrende lederstil og kunsten å delegere|Støttende og styrende lederstil og kunsten å delegere]]
+      - [[#Lederstiler#Situasjonsbestemt ledelse#Kjernen til situasjonsbestemt ledelse|Kjernen til situasjonsbestemt ledelse]]
+    - [[#Lederstiler#Inspirerende lederstil|Inspirerende lederstil]]
+    - [[#Lederstiler#Transformasjonsledelse|Transformasjonsledelse]]
+      - [[#Lederstiler#Transformasjonsledelse#Transformasjonsledelse og effektivitet|Transformasjonsledelse og effektivitet]]
+    - [[#Lederstiler#Verdibasert ledelse|Verdibasert ledelse]]
+    - [[#Lederstiler#Destruktiv og ineffektiv ledelse|Destruktiv og ineffektiv ledelse]]
+    - [[#Lederstiler#Avsluttende kommentarer|Avsluttende kommentarer]]
+
 = Lederstiler =
 
 == Introduksjon ==
