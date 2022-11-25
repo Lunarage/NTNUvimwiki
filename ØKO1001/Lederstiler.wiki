@@ -12,7 +12,6 @@
       - [[#Lederstiler#Transformasjonsledelse#Transformasjonsledelse og effektivitet|Transformasjonsledelse og effektivitet]]
     - [[#Lederstiler#Verdibasert ledelse|Verdibasert ledelse]]
     - [[#Lederstiler#Destruktiv og ineffektiv ledelse|Destruktiv og ineffektiv ledelse]]
-    - [[#Lederstiler#Avsluttende kommentarer|Avsluttende kommentarer]]
 
 = Lederstiler =
 
@@ -146,7 +145,5 @@ Ledere som utfører transformasjonsledelse bør jobbe etter følgende retningsli
 * Handlingsrom for ledere og medarbeidere til å ta initiativ
 
 == Destruktiv og ineffektiv ledelse ==
-
-== Avsluttende kommentarer ==
 
 %% vim: spelllang=nb
