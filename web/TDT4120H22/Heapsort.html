@@ -40,8 +40,42 @@ A[{\rm P{\small ARENT}}(i)] \geq A[i]
 that is, the value of a node is at most the value of its parent.
 </p>
 
+\[
+\begin{aligned}
+&amp; {\rm P{\small ARENT}}(i) \\
+&amp; \qquad{\bf return}\ \lfloor i/2 \rfloor \\
+&amp; {\rm L{\small EFT}}(i) \\
+&amp; \qquad{\bf return}\ 2i \\
+&amp; {\rm R{\small IGHT}}(i) \\
+&amp; \qquad{\bf return}\ 2i + 1 \\
+\end{aligned}
+\]
+
+<div id="Heapsort-Priority Queues"><h2 id="Priority Queues" class="header"><a href="#Heapsort-Priority Queues">Priority Queues</a></h2></div>
+
+<p>
+A <em><span id="Heapsort-Priority Queues-priority queue"></span><strong id="priority queue">priority queue</strong></em> is a data structure for maintaining a set <em>S</em> of elements,
+each with an associated value called a <em><span id="Heapsort-Priority Queues-key"></span><strong id="key">key</strong></em>.
+A <em><span id="Heapsort-Priority Queues-max-priority queue"></span><strong id="max-priority queue">max-priority queue</strong></em> supports the following operations:
+</p>
+
+<ul>
+<li>
+\({\rm I{\small NSERT}}(S, x, k)\)
+
+<li>
+\({\rm M{\small AXIMUM}}(S)\)
+
+<li>
+\({\rm E{\small XTRACT} \hyp M{\small AX}}(S)\)
+
+<li>
+\({\rm I{\small NCREASE} \hyp K{\small EY}}(S, x, k)\)
+
+</ul>
+
     </div>
-    <p><small>Page created on 2022-09-20</small></p>
+    <p><small>Page created on 2022-12-01</small></p>
     <script src="../prism.js"></script>
   </body>
 </html>

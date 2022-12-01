@@ -11,3 +11,27 @@ A[{\rm P{\small ARENT}}(i)] \geq A[i]
 }}$
 
 that is, the value of a node is at most the value of its parent.
+
+{{$
+\begin{aligned}
+& {\rm P{\small ARENT}}(i) \\
+& \qquad{\bf return}\ \lfloor i/2 \rfloor \\
+& {\rm L{\small EFT}}(i) \\
+& \qquad{\bf return}\ 2i \\
+& {\rm R{\small IGHT}}(i) \\
+& \qquad{\bf return}\ 2i + 1 \\
+\end{aligned}
+}}$
+
+== Priority Queues ==
+
+A _*priority queue*_ is a data structure for maintaining a set _S_ of elements,
+each with an associated value called a _*key*_.
+A _*max-priority queue*_ supports the following operations:
+
+* ${\rm I{\small NSERT}}(S, x, k)$
+* ${\rm M{\small AXIMUM}}(S)$
+* ${\rm E{\small XTRACT} \hyp M{\small AX}}(S)$
+* ${\rm I{\small NCREASE} \hyp K{\small EY}}(S, x, k)$
+
+
