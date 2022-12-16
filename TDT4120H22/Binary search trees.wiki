@@ -5,7 +5,7 @@ The keys in a binary search tree are always stored in such a way as to satisfy t
     Let $x$ be a node in a binary search tree.
     If $y$ is a node in the left subtree of $x$, then $y.key \leq x.key$.
     If $y$ is a node in the right subtree of $x$, then $y.key \geq x.key$.
-    
+
 Operations:
 
 * $\bigcap{I}{NORDER} \hyp \bigcap{T}{REE} \hyp \bigcap{W}{ALK}(S, x, k)$

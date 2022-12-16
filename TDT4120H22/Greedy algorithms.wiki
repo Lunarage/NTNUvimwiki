@@ -1,0 +1,14 @@
+= Greedy algorithms =
+
+For many optimization problems,
+using dynamic programming to determine the best choices is overkill,
+and simpler, more efficient algorithms will do.
+
+A _*greedy algorithm*_ always makes the choice that looks best at the moment.
+That is, it makes a locally optimal choice in the hope that this choice leads to a globally optimal solution.
+
+== Elements of the greedy strategy ==
+
+=== Greedy-choice property ===
+
+You can assemble a globally optimal solution by making locally optimal choices.

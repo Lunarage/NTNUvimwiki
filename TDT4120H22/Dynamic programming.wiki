@@ -1,0 +1,23 @@
+= Dynamic programming =
+
+1. Characterize the structure of an optimal solution.
+2. Recursively define the value of an optimal solution.
+3. Compute the value of an optimal solution, typically in a bottom-up fashion.
+4. Construct an optimal solution form computed information.
+
+== Elements of dynamic programming ==
+
+=== Optimal substructure ===
+
+A problem exhibits _*optimal substructure*_ if an optimal solution contains within it optimal solutions to subproblems.
+
+=== Overlapping subproblems ===
+
+When a recursive algorithm revisits the same problem repeatedly,
+we say that the optimization problem has _*overlapping subproblems*_.
+
+=== Reconstructing an optimal solution ===
+
+=== Memoization ===
+
+Recursive top-down strategy, but with memory.

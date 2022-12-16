@@ -1,0 +1,35 @@
+= Elementary graph algorithms =
+
+== Breadth-first search ==
+
+== Depth-first search ==
+
+=== Parenthesis theorem ===
+
+In any depth-first search of a (directed or undirected) graph $G=(V,E)$,
+for any two vertices $u$ and $v$, exactly one of the following three conditions hold:
+
+* the intervals $[u.d,u.f]$ and $[v.d,v.f]$ are entirely disjoint,
+  and neither $u$ nor $v$ is a descendant of the other in the depth-first forest,
+* the interval $[u.d,u.f]$ is contained entirely within the interval $[v.d,v.f]$,
+  and $u$ is a descendant of $v$ in a depth-first tree, or
+* the interval $[v.d,v.f]$ is contained entirely within the interval $[u.d,u.f]$,
+  and $v$ is a descendant of $u$ in a depth-first tree.
+
+=== White-path theorem ===
+
+In a depth-first forest of a (directed or undirected) graph $G=(V,E)$,
+vertex $v$ is a descendant of vertex $u$
+if and only if at the time $u.d$ that the search discovers $u$,
+there is a path from $u$ to $v$ consisting entirely of white vertices.
+
+=== Classification of edges ===
+
+1. _*Tree edges*_ are edges in the depth-first forest.
+   Edge $(u,v)$ is a tree edge if $v$ was discovered by exploring edge $(u,v)$.
+2. _*Back edges*_ are those edges $(u,v)$ containing a vertex $u$ to an ancestor $v$ in a depth-first tree.
+   We consider self-loops, which may occur in directed graphs, to be back edges.
+3. _*Forward edges*_ are those nontree edges $(u,v)$ connecting vertex $u$ to a proper descendant $v$ in a depth-first tree.
+4. _*Cross edges*_ are all the other edges.
+
+== Topological sort ==

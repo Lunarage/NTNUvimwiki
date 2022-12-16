@@ -1,0 +1,10 @@
+= Data structures for disjoint sets =
+
+== Disjoint-set operations ==
+
+A _*disjoint-set data structure*_ maintains a collection $\mathbb{S} = \{S_1, S_2, \ldots, S_k\}$ of disjoint dynamic sets.
+To identify each set, choose a _*representative*_, which is some member of the set.
+
+== Disjoint-set forests ==
+
+

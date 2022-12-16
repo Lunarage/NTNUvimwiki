@@ -1,0 +1,17 @@
+= Minimum spanning trees =
+
+== Growing a minimum spanning tree ==
+
+A _*cut*_ $(S, V-S)$ of an undirected graph $G = (V,E)$ is a partition of $V$.
+We say that an edge $(u,v) \in E$ _*crosses*_ the cut $(S, V-S)$
+if one of its endpoints belongs to $S$ and the other belongs to $V-S$.
+A cut _*respects*_ a set $A$ of edges if no edge in $A$ crosses the cut.
+An edge is a _*light edge*_ crossing a cut if its weight is the minimum of any edge crossing the cut.
+
+=== Theorem ===
+
+Let $G = (V,E)$ be a connected, undirected graph with a real-valued weight function $w$ defined on $E$.
+Let $A$ be a subset of $E$ that is included in some minimum spanning tree for $G$,
+let $(S, S-V)$ be any cut of $G$ that respects $A$,
+and let $(u,v)$ be a light edge crossing $(S, S-V)$.
+Then, the edge $(u,v)$ is safe for $A$.

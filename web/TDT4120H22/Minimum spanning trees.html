@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
+    <title>Minimum spanning trees</title>
+    <script src="../mathjax_config.js"> </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js">
+    </script>
+    <!-- <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"> -->
+    <!--   MathJax.Hub.Config({ -->
+    <!--     jax: ["input/TeX","output/HTML-CSS"], -->
+    <!--     displayAlign: "left" -->
+    <!--   }); -->
+    <!-- </script> -->
+  </head>
+  <body class="line-numbers match-braces">
+    <div class="content">
+      
+<div id="Minimum spanning trees"><h1 id="Minimum spanning trees" class="header"><a href="#Minimum spanning trees">Minimum spanning trees</a></h1></div>
+
+<div id="Minimum spanning trees-Growing a minimum spanning tree"><h2 id="Growing a minimum spanning tree" class="header"><a href="#Minimum spanning trees-Growing a minimum spanning tree">Growing a minimum spanning tree</a></h2></div>
+
+<p>
+A <em><span id="Minimum spanning trees-Growing a minimum spanning tree-cut"></span><strong id="cut">cut</strong></em> \((S, V-S)\) of an undirected graph \(G = (V,E)\) is a partition of \(V\).
+We say that an edge \((u,v) \in E\) <em><span id="Minimum spanning trees-Growing a minimum spanning tree-crosses"></span><strong id="crosses">crosses</strong></em> the cut \((S, V-S)\)
+if one of its endpoints belongs to \(S\) and the other belongs to \(V-S\).
+A cut <em><span id="Minimum spanning trees-Growing a minimum spanning tree-respects"></span><strong id="respects">respects</strong></em> a set \(A\) of edges if no edge in \(A\) crosses the cut.
+An edge is a <em><span id="Minimum spanning trees-Growing a minimum spanning tree-light edge"></span><strong id="light edge">light edge</strong></em> crossing a cut if its weight is the minimum of any edge crossing the cut.
+</p>
+
+<div id="Minimum spanning trees-Growing a minimum spanning tree-Theorem"><h3 id="Theorem" class="header"><a href="#Minimum spanning trees-Growing a minimum spanning tree-Theorem">Theorem</a></h3></div>
+
+<p>
+Let \(G = (V,E)\) be a connected, undirected graph with a real-valued weight function \(w\) defined on \(E\).
+Let \(A\) be a subset of \(E\) that is included in some minimum spanning tree for \(G\),
+let \((S, S-V)\) be any cut of \(G\) that respects \(A\),
+and let \((u,v)\) be a light edge crossing \((S, S-V)\).
+Then, the edge \((u,v)\) is safe for \(A\).
+</p>
+
+    </div>
+    <p><small>Page created on 2022-12-16</small></p>
+    <script src="../prism.js"></script>
+  </body>
+</html>

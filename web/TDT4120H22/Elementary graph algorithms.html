@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" type="text/css" href="../style.css" />
+    <link rel="Stylesheet" type="text/css" href="../prism.css" />
+    <title>Elementary graph algorithms</title>
+    <script src="../mathjax_config.js"> </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js">
+    </script>
+    <!-- <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"> -->
+    <!--   MathJax.Hub.Config({ -->
+    <!--     jax: ["input/TeX","output/HTML-CSS"], -->
+    <!--     displayAlign: "left" -->
+    <!--   }); -->
+    <!-- </script> -->
+  </head>
+  <body class="line-numbers match-braces">
+    <div class="content">
+      
+<div id="Elementary graph algorithms"><h1 id="Elementary graph algorithms" class="header"><a href="#Elementary graph algorithms">Elementary graph algorithms</a></h1></div>
+
+<div id="Elementary graph algorithms-Breadth-first search"><h2 id="Breadth-first search" class="header"><a href="#Elementary graph algorithms-Breadth-first search">Breadth-first search</a></h2></div>
+
+<div id="Elementary graph algorithms-Depth-first search"><h2 id="Depth-first search" class="header"><a href="#Elementary graph algorithms-Depth-first search">Depth-first search</a></h2></div>
+
+<div id="Elementary graph algorithms-Depth-first search-Parenthesis theorem"><h3 id="Parenthesis theorem" class="header"><a href="#Elementary graph algorithms-Depth-first search-Parenthesis theorem">Parenthesis theorem</a></h3></div>
+
+<p>
+In any depth-first search of a (directed or undirected) graph \(G=(V,E)\),
+for any two vertices \(u\) and \(v\), exactly one of the following three conditions hold:
+</p>
+
+<ul>
+<li>
+the intervals \([u.d,u.f]\) and \([v.d,v.f]\) are entirely disjoint,
+  and neither \(u\) nor \(v\) is a descendant of the other in the depth-first forest,
+
+<li>
+the interval \([u.d,u.f]\) is contained entirely within the interval \([v.d,v.f]\),
+  and \(u\) is a descendant of \(v\) in a depth-first tree, or
+
+<li>
+the interval \([v.d,v.f]\) is contained entirely within the interval \([u.d,u.f]\),
+  and \(v\) is a descendant of \(u\) in a depth-first tree.
+
+</ul>
+
+<div id="Elementary graph algorithms-Depth-first search-White-path theorem"><h3 id="White-path theorem" class="header"><a href="#Elementary graph algorithms-Depth-first search-White-path theorem">White-path theorem</a></h3></div>
+
+<p>
+In a depth-first forest of a (directed or undirected) graph \(G=(V,E)\),
+vertex \(v\) is a descendant of vertex \(u\)
+if and only if at the time \(u.d\) that the search discovers \(u\),
+there is a path from \(u\) to \(v\) consisting entirely of white vertices.
+</p>
+
+<div id="Elementary graph algorithms-Depth-first search-Classification of edges"><h3 id="Classification of edges" class="header"><a href="#Elementary graph algorithms-Depth-first search-Classification of edges">Classification of edges</a></h3></div>
+
+<ol>
+<li>
+<em><span id="Elementary graph algorithms-Depth-first search-Classification of edges-Tree edges"></span><strong id="Tree edges">Tree edges</strong></em> are edges in the depth-first forest.
+   Edge \((u,v)\) is a tree edge if \(v\) was discovered by exploring edge \((u,v)\).
+
+<li>
+<em><span id="Elementary graph algorithms-Depth-first search-Classification of edges-Back edges"></span><strong id="Back edges">Back edges</strong></em> are those edges \((u,v)\) containing a vertex \(u\) to an ancestor \(v\) in a depth-first tree.
+   We consider self-loops, which may occur in directed graphs, to be back edges.
+
+<li>
+<em><span id="Elementary graph algorithms-Depth-first search-Classification of edges-Forward edges"></span><strong id="Forward edges">Forward edges</strong></em> are those nontree edges \((u,v)\) connecting vertex \(u\) to a proper descendant \(v\) in a depth-first tree.
+
+<li>
+<em><span id="Elementary graph algorithms-Depth-first search-Classification of edges-Cross edges"></span><strong id="Cross edges">Cross edges</strong></em> are all the other edges.
+
+</ol>
+
+<div id="Elementary graph algorithms-Topological sort"><h2 id="Topological sort" class="header"><a href="#Elementary graph algorithms-Topological sort">Topological sort</a></h2></div>
+
+    </div>
+    <p><small>Page created on 2022-12-15</small></p>
+    <script src="../prism.js"></script>
+  </body>
+</html>
