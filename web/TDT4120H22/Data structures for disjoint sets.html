@@ -29,6 +29,24 @@ A <em><span id="Data structures for disjoint sets-Disjoint-set operations-disjoi
 To identify each set, choose a <em><span id="Data structures for disjoint sets-Disjoint-set operations-representative"></span><strong id="representative">representative</strong></em>, which is some member of the set.
 </p>
 
+
+<ul>
+<li>
+\(\bigcap{M}{AKE} \hyp \bigcap{S}{ET}(x)\), where \(x\) does not already belong to some other set,
+  creates a new set whose only member (and thus representative) is \(x\).
+
+<li>
+\(\bigcap{U}{NION}(x, y)\) unites two disjoint dynamic sets that contain \(x\) and \(y\), say \(S_x\) and \(S_y\),
+  into a new set that is the union of these two sets.
+  The representative of the resulting set is any member of \(S_x \cup S_y\).
+  Since the sets in the collection must at all time be disjoint,
+  the \(\bigcap{U}{NION}\) operation destroys sets \(S_x\) and \(S_y\), removing them from the collection \(\mathbb{S}\).
+
+<li>
+\(\bigcap{F}{IND} \hyp \bigcap{S}{ET}(x)\) returns a pointer to the representative of the unique set containing \(x\).
+
+</ul>
+
 <div id="Data structures for disjoint sets-Disjoint-set forests"><h2 id="Disjoint-set forests" class="header"><a href="#Data structures for disjoint sets-Disjoint-set forests">Disjoint-set forests</a></h2></div>
 
     </div>

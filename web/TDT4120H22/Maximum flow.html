@@ -22,8 +22,34 @@
       
 <div id="Maximum flow"><h1 id="Maximum flow" class="header"><a href="#Maximum flow">Maximum flow</a></h1></div>
 
+<div id="Maximum flow-Flow networks"><h2 id="Flow networks" class="header"><a href="#Maximum flow-Flow networks">Flow networks</a></h2></div>
+
+<p>
+A <em><span id="Maximum flow-Flow networks-Flow network"></span><strong id="Flow network">Flow network</strong></em> \(G = (V, E)\) is a directed graph in which each edge \((u, v) \in E\)
+has a nonnegative <em><span id="Maximum flow-Flow networks-capacity"></span><strong id="capacity">capacity</strong></em> \(c(u, v) \geq 0\).
+We further require that if \(E\) contains an edge \((u, v)\),
+then there is no edge \((v, u)\) in the reverse direction.
+If \((u, v) \notin E\), then for convenience we define \(c(u,v) = 0\),
+and we disallow self-loops.
+Each network contains two distinguished vertices: a <em><span id="Maximum flow-Flow networks-source"></span><strong id="source">source</strong></em> \(s\) and a <em><span id="Maximum flow-Flow networks-sink"></span><strong id="sink">sink</strong></em> \(t\).
+</p>
+
+<p>
+A <em><span id="Maximum flow-Flow networks-flow"></span><strong id="flow">flow</strong></em> in \(G\) is a real-valued function \(f: V \times V \to \R\)
+that satisfies the following two properties:
+</p>
+
+<ul>
+<li>
+The flow from one vertex to another must be nonnegative and must not exceed the given capacity.
+
+<li>
+The total flow into a vertex other than the source and sink must equal the total flow out of that vertex.
+
+</ul>
+
     </div>
-    <p><small>Page created on 2022-12-16</small></p>
+    <p><small>Page created on 2022-12-19</small></p>
     <script src="../prism.js"></script>
   </body>
 </html>

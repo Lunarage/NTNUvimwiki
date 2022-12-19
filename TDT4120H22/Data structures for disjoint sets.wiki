@@ -5,6 +5,16 @@
 A _*disjoint-set data structure*_ maintains a collection $\mathbb{S} = \{S_1, S_2, \ldots, S_k\}$ of disjoint dynamic sets.
 To identify each set, choose a _*representative*_, which is some member of the set.
 
+
+* $\bigcap{M}{AKE} \hyp \bigcap{S}{ET}(x)$, where $x$ does not already belong to some other set,
+  creates a new set whose only member (and thus representative) is $x$.
+* $\bigcap{U}{NION}(x, y)$ unites two disjoint dynamic sets that contain $x$ and $y$, say $S_x$ and $S_y$,
+  into a new set that is the union of these two sets.
+  The representative of the resulting set is any member of $S_x \cup S_y$.
+  Since the sets in the collection must at all time be disjoint,
+  the $\bigcap{U}{NION}$ operation destroys sets $S_x$ and $S_y$, removing them from the collection $\mathbb{S}$.
+* $\bigcap{F}{IND} \hyp \bigcap{S}{ET}(x)$ returns a pointer to the representative of the unique set containing $x$.
+
 == Disjoint-set forests ==
 
 

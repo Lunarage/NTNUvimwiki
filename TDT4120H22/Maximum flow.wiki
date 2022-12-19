@@ -1,1 +1,19 @@
 = Maximum flow =
+
+== Flow networks ==
+
+A _*Flow network*_ $G = (V, E)$ is a directed graph in which each edge $(u, v) \in E$
+has a nonnegative _*capacity*_ $c(u, v) \geq 0$.
+We further require that if $E$ contains an edge $(u, v)$,
+then there is no edge $(v, u)$ in the reverse direction.
+If $(u, v) \notin E$, then for convenience we define $c(u,v) = 0$,
+and we disallow self-loops.
+Each network contains two distinguished vertices: a _*source*_ $s$ and a _*sink*_ $t$.
+
+A _*flow*_ in $G$ is a real-valued function $f: V \times V \to \R$
+that satisfies the following two properties:
+
+* The flow from one vertex to another must be nonnegative and must not exceed the given capacity.
+* The total flow into a vertex other than the source and sink must equal the total flow out of that vertex.
+
+

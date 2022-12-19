@@ -23,7 +23,7 @@ _Introduction to Algorithms, Fourth Edition_ by CLRS
 | 19      | [[Data structures for disjoint sets]] |            | 9       |
 | 20      | [[Elementary graph algorithms]]       |            | 8       |
 | 21      | [[Minimum spanning trees]]            |            | 9       |
-| 22      | Single-source shortest paths          |            | 10      |
+| 22      | [[Single-source shortest paths]]      |            | 10      |
 | 23      | All-pairs shortest paths              |            | 11      |
 | 24      | [[Maximum flow]]                      |            | 12      |
 | 25      | Matching in bipartite graphs          |            | 7       |
